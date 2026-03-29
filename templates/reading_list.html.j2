@@ -154,7 +154,7 @@
 
         {% for article in section.articles %}
           <article class="article">
-            <a class="article__inner" href="{{ article._page }}">
+            <a class="article__inner" href="{{ article.url }}" target="_blank" rel="noopener noreferrer">
               <h2 class="article__headline">{{ article.title }}</h2>
               {% if article.summary %}
                 <p class="article__summary">{{ article.summary }}</p>

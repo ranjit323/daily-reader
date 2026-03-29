@@ -64,30 +64,20 @@ def _login(page, email: str, password: str) -> bool:
         _dismiss_consent(page)
         page.wait_for_timeout(1000)
 
-        # Fill email via JavaScript to bypass any overlay issues
+        # Fill and submit email
         page.wait_for_selector("#enter-email", timeout=15000)
-        page.evaluate(f'document.querySelector("#enter-email").value = {repr(email)}')
-        page.evaluate('document.querySelector("form").submit()')
+        page.locator("#enter-email").fill(email)
+        page.wait_for_timeout(500)
+        page.locator('button[type="submit"]').click(force=True)
         page.wait_for_load_state("domcontentloaded", timeout=20000)
         page.wait_for_timeout(3000)
         print(f"[FT] After email submit, URL: {page.url}")
 
-        # Password page — fill via JS and submit
-        page.wait_for_selector('input[type="password"]', timeout=15000)
-        # Use the visible password input (not the honeypot _notUsed)
-        page.evaluate(f'''
-            var inputs = document.querySelectorAll('input[type="password"]');
-            for (var i = 0; i < inputs.length; i++) {{
-                if (inputs[i].id !== "_notUsed") {{
-                    inputs[i].value = {repr(password)};
-                    break;
-                }}
-            }}
-            if (document.querySelector('input[type="password"]:not([id="_notUsed"])') === null) {{
-                document.querySelector('input[type="password"]').value = {repr(password)};
-            }}
-        ''')
-        page.evaluate('document.querySelector("form").submit()')
+        # Password page
+        page.wait_for_selector('input[type="password"]:not([id="_notUsed"])', timeout=15000)
+        page.locator('input[type="password"]:not([id="_notUsed"])').fill(password)
+        page.wait_for_timeout(500)
+        page.locator('button[type="submit"]').click(force=True)
         page.wait_for_load_state("domcontentloaded", timeout=20000)
         page.wait_for_timeout(3000)
         print(f"[FT] After password submit, URL: {page.url}")
