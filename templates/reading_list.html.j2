@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morning Reading — {{ date_display }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      color-scheme: light;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    /* ─── Layout ─────────────────────────────── */
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Header ─────────────────────────────── */
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 56px;
+    }
+
+    .header__date {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 13px;
+      color: #999999;
+      letter-spacing: 0.01em;
+    }
+
+    .header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #111111;
+    }
+
+    /* ─── Publication section ────────────────── */
+
+    .section {
+      margin-bottom: 52px;
+    }
+
+    .section__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 28px;
+    }
+
+    /* ─── Article ────────────────────────────── */
+
+    .article {
+      margin-bottom: 36px;
+    }
+
+    .article + .article {
+      padding-top: 36px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article__headline {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+      color: #111111;
+      margin: 0 0 10px 0;
+    }
+
+    .article__headline a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .article__headline a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #cccccc;
+    }
+
+    .article__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: #555555;
+      margin: 0 0 12px 0;
+    }
+
+    .article__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11.5px;
+      color: #aaaaaa;
+      letter-spacing: 0.01em;
+    }
+
+    .article__meta-sep {
+      margin: 0 6px;
+      color: #dddddd;
+    }
+
+    /* ─── Section divider ────────────────────── */
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid #e8e8e8;
+      margin: 52px 0;
+    }
+
+    /* ─── Footer ─────────────────────────────── */
+
+    .footer {
+      padding-top: 32px;
+      border-top: 1px solid #eeeeee;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      color: #cccccc;
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── Responsive ─────────────────────────── */
+
+    @media (max-width: 600px) {
+      .page {
+        padding: 36px 20px 72px;
+      }
+
+      .article__headline {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <header class="header">
+      <span class="header__date">{{ date_display }}</span>
+      <span class="header__title">Morning Reading</span>
+    </header>
+
+    {% for section in sections %}
+      <section class="section">
+        <div class="section__label">{{ section.source }}</div>
+
+        {% for article in section.articles %}
+          <article class="article">
+            <h2 class="article__headline">
+              <a href="{{ article.url }}" target="_blank" rel="noopener noreferrer">
+                {{- article.title -}}
+              </a>
+            </h2>
+
+            {% if article.summary %}
+              <p class="article__summary">{{ article.summary }}</p>
+            {% endif %}
+
+            <div class="article__meta">
+              {% if article.author and article.author not in ('FT', 'The Economist', 'London Review of Books', 'New Left Review', 'LRB') %}
+                <span class="article__meta-author">{{ article.author }}</span>
+                <span class="article__meta-sep">&middot;</span>
+              {% endif %}
+              {% if article.published %}
+                <span class="article__meta-date">{{ article.published | format_date }}</span>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </section>
+
+      {% if not loop.last %}
+        <hr class="section-divider">
+      {% endif %}
+    {% endfor %}
+
+    <footer class="footer">
+      Generated {{ date_display }} &middot; FT &middot; The Economist &middot; LRB &middot; NLR
+    </footer>
+
+  </main>
+</body>
+</html>
