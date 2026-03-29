@@ -20,6 +20,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.scrapers import economist, lrb, nlr, ft
+from src.scrapers.ft import fetch_selected_bodies as ft_fetch_bodies
 from src.scrapers.fetch_body import fetch_bodies
 from src.filter import select_articles
 from src import renderer, mailer
@@ -53,6 +54,7 @@ def run():
 
     ft_selected = select_articles(ft_raw, QUOTAS["Financial Times"])
     if ft_selected:
+        ft_selected = ft_fetch_bodies(ft_selected)
         sections.append({"source": "Financial Times", "articles": ft_selected})
     else:
         print("[main] Warning: no FT articles selected")

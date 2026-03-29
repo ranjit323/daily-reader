@@ -277,20 +277,42 @@ def fetch(quota: int = 5) -> list[dict]:
                 continue
 
         print(f"[FT] {len(all_candidates)} candidates found")
-
-        # Fetch article bodies for top candidates (up to quota*2 to allow filtering)
-        from src.filter import score_article
-        for a in all_candidates:
-            a["_score"] = score_article(a["title"], a["summary"])
-
-        top_candidates = sorted(all_candidates, key=lambda x: x["_score"], reverse=True)[:quota * 2]
-
-        for a in top_candidates:
-            if not a.get("content"):
-                print(f"[FT] Fetching body: {a['title'][:60]}")
-                a["content"] = _fetch_article_body(page, a["url"])
-                time.sleep(1)
-
         browser.close()
 
     return all_candidates
+
+
+def fetch_selected_bodies(articles: list[dict]) -> list[dict]:
+    """
+    Fetch full article bodies for already-selected FT articles.
+    Call this after filter.select_articles() so we only fetch bodies for the final 5.
+    """
+    email = os.environ.get("FT_EMAIL", "")
+    password = os.environ.get("FT_PASSWORD", "")
+    if not email or not password:
+        return articles
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context(
+            user_agent=(
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/124.0.0.0 Safari/537.36"
+            ),
+            viewport={"width": 1280, "height": 900},
+        )
+        page = context.new_page()
+
+        if not _login(page, email, password):
+            browser.close()
+            return articles
+
+        for a in articles:
+            print(f"[FT] Fetching body: {a['title'][:60]}")
+            a["content"] = _fetch_article_body(page, a["url"])
+            time.sleep(1)
+
+        browser.close()
+
+    return articles
