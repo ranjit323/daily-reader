@@ -60,39 +60,37 @@ def _login(page, email: str, password: str) -> bool:
         page.wait_for_timeout(1000)
 
         page.goto("https://accounts.ft.com/login", wait_until="networkidle", timeout=40000)
-        page.wait_for_timeout(2000)
+        page.wait_for_timeout(3000)
         _dismiss_consent(page)
+        page.wait_for_timeout(1000)
 
-        # Wait for the known email input to be visible and enabled
-        page.wait_for_selector("#enter-email", state="visible", timeout=15000)
-        page.click("#enter-email")
-        page.fill("#enter-email", email)
-        page.wait_for_timeout(500)
+        # Fill email via JavaScript to bypass any overlay issues
+        page.wait_for_selector("#enter-email", timeout=15000)
+        page.evaluate(f'document.querySelector("#enter-email").value = {repr(email)}')
+        page.evaluate('document.querySelector("form").submit()')
+        page.wait_for_load_state("domcontentloaded", timeout=20000)
+        page.wait_for_timeout(3000)
+        print(f"[FT] After email submit, URL: {page.url}")
 
-        # Submit email form
-        page.click('button[type="submit"]')
-        page.wait_for_load_state("domcontentloaded", timeout=15000)
-        page.wait_for_timeout(2000)
-
-        # Step 2: password page
-        try:
-            page.wait_for_selector('input[type="password"]:not([id="_notUsed"])', state="visible", timeout=15000)
-        except Exception:
-            # Fall back to any password input
-            page.wait_for_selector('input[type="password"]', state="visible", timeout=10000)
-
-        pw_input = page.query_selector('input[type="password"]:not([id="_notUsed"])') or \
-                   page.query_selector('input[type="password"]')
-
-        if pw_input:
-            page.click('input[type="password"]:not([id="_notUsed"])' if page.query_selector('input[type="password"]:not([id="_notUsed"])') else 'input[type="password"]')
-            pw_input.fill(password)
-            pw_input.press("Enter")
-            page.wait_for_load_state("domcontentloaded", timeout=20000)
-            page.wait_for_timeout(2000)
-        else:
-            print("[FT] Could not find password input")
-            return False
+        # Password page — fill via JS and submit
+        page.wait_for_selector('input[type="password"]', timeout=15000)
+        # Use the visible password input (not the honeypot _notUsed)
+        page.evaluate(f'''
+            var inputs = document.querySelectorAll('input[type="password"]');
+            for (var i = 0; i < inputs.length; i++) {{
+                if (inputs[i].id !== "_notUsed") {{
+                    inputs[i].value = {repr(password)};
+                    break;
+                }}
+            }}
+            if (document.querySelector('input[type="password"]:not([id="_notUsed"])') === null) {{
+                document.querySelector('input[type="password"]').value = {repr(password)};
+            }}
+        ''')
+        page.evaluate('document.querySelector("form").submit()')
+        page.wait_for_load_state("domcontentloaded", timeout=20000)
+        page.wait_for_timeout(3000)
+        print(f"[FT] After password submit, URL: {page.url}")
 
         # Verify login succeeded by checking for sign-out link or user nav
         logged_in = page.query_selector(
