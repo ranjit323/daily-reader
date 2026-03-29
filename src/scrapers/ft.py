@@ -59,13 +59,30 @@ def _login(page, email: str, password: str) -> bool:
         _dismiss_consent(page)
         page.wait_for_timeout(1000)
 
-        page.goto(
+        # Try direct accounts subdomain first, fall back to main login
+        for login_url in [
+            "https://accounts.ft.com/login",
             "https://www.ft.com/login?location=https://www.ft.com",
-            wait_until="networkidle",
-            timeout=40000,
-        )
-        page.wait_for_timeout(3000)
-        _dismiss_consent(page)
+        ]:
+            page.goto(login_url, wait_until="networkidle", timeout=40000)
+            page.wait_for_timeout(4000)
+            _dismiss_consent(page)
+
+            # Wait explicitly for an input to appear
+            try:
+                page.wait_for_selector("input", timeout=10000)
+            except Exception:
+                pass
+
+            all_inputs = page.query_selector_all("input")
+            print(f"[FT] {login_url} — inputs found: {len(all_inputs)}")
+            for inp in all_inputs[:5]:
+                try:
+                    print(f"[FT]   input type={inp.get_attribute('type')} name={inp.get_attribute('name')} id={inp.get_attribute('id')} placeholder={inp.get_attribute('placeholder')}")
+                except Exception:
+                    pass
+            if all_inputs:
+                break
 
         # FT login form may be in an iframe
         email_input = None
