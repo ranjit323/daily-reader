@@ -59,106 +59,33 @@ def _login(page, email: str, password: str) -> bool:
         _dismiss_consent(page)
         page.wait_for_timeout(1000)
 
-        # Try direct accounts subdomain first, fall back to main login
-        for login_url in [
-            "https://accounts.ft.com/login",
-            "https://www.ft.com/login?location=https://www.ft.com",
-        ]:
-            page.goto(login_url, wait_until="networkidle", timeout=40000)
-            page.wait_for_timeout(4000)
-            _dismiss_consent(page)
+        page.goto("https://accounts.ft.com/login", wait_until="networkidle", timeout=40000)
+        page.wait_for_timeout(2000)
+        _dismiss_consent(page)
 
-            # Wait explicitly for an input to appear
-            try:
-                page.wait_for_selector("input", timeout=10000)
-            except Exception:
-                pass
+        # Wait for the known email input to be visible and enabled
+        page.wait_for_selector("#enter-email", state="visible", timeout=15000)
+        page.click("#enter-email")
+        page.fill("#enter-email", email)
+        page.wait_for_timeout(500)
 
-            all_inputs = page.query_selector_all("input")
-            print(f"[FT] {login_url} — inputs found: {len(all_inputs)}")
-            for inp in all_inputs[:5]:
-                try:
-                    print(f"[FT]   input type={inp.get_attribute('type')} name={inp.get_attribute('name')} id={inp.get_attribute('id')} placeholder={inp.get_attribute('placeholder')}")
-                except Exception:
-                    pass
-            if all_inputs:
-                break
-
-        # FT login form may be in an iframe
-        email_input = None
-
-        # Try main page first
-        INPUT_SELECTORS = (
-            'input[type="email"]',
-            'input[name="email"]',
-            'input[id*="email"]',
-            'input[autocomplete="email"]',
-            'input[placeholder*="email" i]',
-            'input[type="text"]',
-        )
-        for sel in INPUT_SELECTORS:
-            email_input = page.query_selector(sel)
-            if email_input:
-                break
-
-        # Try inside iframes if not found on main page
-        if not email_input:
-            for frame in page.frames:
-                if frame == page.main_frame:
-                    continue
-                for sel in INPUT_SELECTORS:
-                    try:
-                        el = frame.query_selector(sel)
-                        if el:
-                            email_input = el
-                            print(f"[FT] Found email input in iframe: {frame.url}")
-                            break
-                    except Exception:
-                        continue
-                if email_input:
-                    break
-
-        if not email_input:
-            print(f"[FT] Login page URL: {page.url}")
-            print(f"[FT] Could not find email input — frames: {[f.url for f in page.frames]}")
-            return False
-
-        email_input.fill(email)
-        email_input.press("Enter")
+        # Submit email form
+        page.click('button[type="submit"]')
         page.wait_for_load_state("domcontentloaded", timeout=15000)
         page.wait_for_timeout(2000)
 
-        # Step 2: password
-        pw_input = None
-        for frame in [page.main_frame] + [f for f in page.frames if f != page.main_frame]:
-            try:
-                pw_input = frame.query_selector('input[type="password"]')
-                if pw_input:
-                    break
-            except Exception:
-                continue
+        # Step 2: password page
+        try:
+            page.wait_for_selector('input[type="password"]:not([id="_notUsed"])', state="visible", timeout=15000)
+        except Exception:
+            # Fall back to any password input
+            page.wait_for_selector('input[type="password"]', state="visible", timeout=10000)
 
-        if not pw_input:
-            # Click continue/submit if email-only step
-            for frame in [page.main_frame] + [f for f in page.frames if f != page.main_frame]:
-                try:
-                    submit = frame.query_selector('button[type="submit"], button[id*="submit"], input[type="submit"]')
-                    if submit:
-                        submit.click()
-                        page.wait_for_load_state("domcontentloaded", timeout=10000)
-                        page.wait_for_timeout(2000)
-                        break
-                except Exception:
-                    continue
-            for frame in [page.main_frame] + [f for f in page.frames if f != page.main_frame]:
-                try:
-                    pw_input = frame.query_selector('input[type="password"]')
-                    if pw_input:
-                        break
-                except Exception:
-                    continue
+        pw_input = page.query_selector('input[type="password"]:not([id="_notUsed"])') or \
+                   page.query_selector('input[type="password"]')
 
         if pw_input:
+            page.click('input[type="password"]:not([id="_notUsed"])' if page.query_selector('input[type="password"]:not([id="_notUsed"])') else 'input[type="password"]')
             pw_input.fill(password)
             pw_input.press("Enter")
             page.wait_for_load_state("domcontentloaded", timeout=20000)
