@@ -73,9 +73,21 @@ def _login(page, email: str, password: str) -> bool:
         page.wait_for_timeout(3000)
         print(f"[FT] After email submit, URL: {page.url}")
 
-        # Password page
-        page.wait_for_selector('input[type="password"]:not([id="_notUsed"])', timeout=15000)
-        page.locator('input[type="password"]:not([id="_notUsed"])').fill(password)
+        # Password page — wait longer, try both selector forms
+        print(f"[FT] Looking for password input on: {page.url}")
+        try:
+            page.wait_for_selector('input[type="password"]', timeout=25000)
+        except Exception:
+            print(f"[FT] No password input after 25s, URL: {page.url}")
+            return False
+
+        pw = page.query_selector('input[type="password"]:not([id="_notUsed"])') or \
+             page.query_selector('input[type="password"]')
+        if not pw:
+            print("[FT] Could not find password input")
+            return False
+
+        pw.fill(password)
         page.wait_for_timeout(500)
         page.locator('button[type="submit"]').click(force=True)
         page.wait_for_load_state("domcontentloaded", timeout=20000)
