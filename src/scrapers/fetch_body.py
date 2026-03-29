@@ -55,11 +55,11 @@ def _extract_body(page) -> str:
             if paras:
                 text = "\n\n".join(
                     re.sub(r"\s+", " ", p.inner_text()).strip()
-                    for p in paras[:25]
+                    for p in paras[:60]
                     if len(p.inner_text().strip()) > 40
                 )
                 if len(text) > 200:
-                    return text[:4000]
+                    return text[:12000]
         except Exception:
             continue
     return ""

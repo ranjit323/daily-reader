@@ -64,18 +64,32 @@ def _login(page, email: str, password: str) -> bool:
             wait_until="domcontentloaded",
             timeout=30000,
         )
-        page.wait_for_timeout(1500)
+        page.wait_for_timeout(2000)
         _dismiss_consent(page)
 
-        # Step 1: email
-        email_input = page.query_selector('input[type="email"], input[name="email"]')
+        # Step 1: email — wait for any input to appear, try broad selectors
+        try:
+            page.wait_for_selector("input", timeout=10000)
+        except Exception:
+            pass
+
+        email_input = page.query_selector(
+            'input[type="email"], '
+            'input[name="email"], '
+            'input[id*="email"], '
+            'input[autocomplete="email"], '
+            'input[placeholder*="email" i], '
+            'input[type="text"]'
+        )
         if not email_input:
-            print("[FT] Could not find email input")
+            # Log page URL and title to help diagnose
+            print(f"[FT] Login page URL: {page.url}")
+            print(f"[FT] Could not find email input")
             return False
         email_input.fill(email)
         page.keyboard.press("Enter")
         page.wait_for_load_state("domcontentloaded", timeout=15000)
-        page.wait_for_timeout(1500)
+        page.wait_for_timeout(2000)
 
         # Step 2: password (may be on same or next page)
         pw_input = page.query_selector('input[type="password"]')
@@ -229,7 +243,7 @@ def _fetch_article_body(page, url: str) -> str:
             if paras:
                 text = " ".join(_clean(p.inner_text()) for p in paras[:12] if p.inner_text().strip())
                 if len(text) > 100:
-                    return text[:2000]
+                    return text[:12000]
 
     except Exception as e:
         print(f"[FT] Body fetch error for {url}: {e}")
