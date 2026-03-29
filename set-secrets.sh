@@ -23,8 +23,9 @@ prompt_secret() {
   fi
 }
 
-prompt_secret "FT_EMAIL"           "FT email"
-prompt_secret "FT_PASSWORD"        "FT password"
+prompt_secret "FT_RSS_URL"         "FT myFT RSS URL (from myft.ft.com → Contact preferences → RSS)"
+prompt_secret "FT_EMAIL"           "FT email (no longer needed — leave blank)"
+prompt_secret "FT_PASSWORD"        "FT password (no longer needed — leave blank)"
 prompt_secret "GMAIL_ADDRESS"      "Gmail address"
 prompt_secret "GMAIL_APP_PASSWORD" "Gmail App Password"
 prompt_secret "ECONOMIST_EMAIL"    "Economist email"
