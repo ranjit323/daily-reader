@@ -17,8 +17,7 @@ prompt_secret() {
   local required="$3"
 
   while true; do
-    read -r -s -p "$label: " value
-    echo ""
+    read -r -p "$label: " value
     if [ -z "$value" ]; then
       if [ "$required" = "required" ]; then
         echo "  ✗ Required — please enter a value"
@@ -28,7 +27,7 @@ prompt_secret() {
       fi
     else
       gh secret set "$name" --repo "$REPO" --body "$value"
-      echo "  ✓ $name set"
+      echo "  ✓ $name saved"
       return
     fi
   done
