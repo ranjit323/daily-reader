@@ -56,10 +56,10 @@ def _dismiss_consent(page):
 def _login(page, email: str, password: str) -> bool:
     try:
         page.goto("https://www.ft.com", wait_until="domcontentloaded", timeout=30000)
-        _dismiss_consent(page)
         page.wait_for_timeout(1000)
+        _dismiss_consent(page)
 
-        page.goto("https://accounts.ft.com/login", wait_until="networkidle", timeout=40000)
+        page.goto("https://accounts.ft.com/login", wait_until="domcontentloaded", timeout=40000)
         page.wait_for_timeout(3000)
         _dismiss_consent(page)
         page.wait_for_timeout(1000)
