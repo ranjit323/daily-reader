@@ -31,6 +31,9 @@ def run():
     today = datetime.now(tz=timezone.utc)
     print(f"[main] Starting — {today.strftime('%Y-%m-%d')}")
 
+    print("[main] Fetching FT...")
+    ft_raw = ft.fetch(quota=20)
+
     print("[main] Fetching Economist...")
     economist_raw = economist.fetch(quota=20)
 
@@ -40,14 +43,13 @@ def run():
     print("[main] Fetching NLR...")
     nlr_raw = nlr.fetch(quota=10)
 
-    print("[main] Fetching FT (Playwright)...")
-    ft_raw = ft.fetch(quota=20)
-
     sections = []
 
+    # FT first
     ft_selected = select_articles(ft_raw, QUOTAS["Financial Times"])
     if ft_selected:
         sections.append({"source": "Financial Times", "articles": ft_selected})
+        print(f"[main] FT: {len(ft_selected)} articles selected")
     else:
         print("[main] Warning: no FT articles selected")
 
