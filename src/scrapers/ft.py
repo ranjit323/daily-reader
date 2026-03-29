@@ -1,6 +1,7 @@
 """
-Financial Times scraper — uses Playwright (Chromium headless) to authenticate
-and extract article metadata from selected sections.
+Financial Times scraper — Playwright (Chromium headless).
+Authenticates, scrapes section pages for candidates, then fetches
+article bodies for the selected articles.
 
 Requires env vars: FT_EMAIL, FT_PASSWORD
 """
@@ -13,85 +14,227 @@ from datetime import datetime, timezone
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
 
 
-FT_LOGIN_URL = "https://accounts.ft.com/login"
 FT_SECTIONS = [
-    "https://www.ft.com/banking",
-    "https://www.ft.com/companies/banks",
     "https://www.ft.com/world/global-economy",
+    "https://www.ft.com/companies/banks",
+    "https://www.ft.com/banking",
+    "https://www.ft.com/books-arts",
     "https://www.ft.com/arts",
-    "https://www.ft.com/books",
     "https://www.ft.com/world",
+    "https://www.ft.com/technology",
 ]
 
 
-def _clean_text(text: str) -> str:
-    return re.sub(r"\s+", " ", text).strip()
+def _clean(text: str) -> str:
+    return re.sub(r"\s+", " ", text or "").strip()
 
 
-def _extract_articles_from_page(page) -> list[dict]:
-    """Extract article cards visible on the current FT page."""
+def _strip_html(html: str) -> str:
+    """Remove HTML tags and decode common entities."""
+    text = re.sub(r"<[^>]+>", " ", html)
+    text = text.replace("&nbsp;", " ").replace("&amp;", "&").replace(
+        "&lt;", "<").replace("&gt;", ">").replace("&quot;", '"').replace("&#39;", "'")
+    return re.sub(r"\s{2,}", " ", text).strip()
+
+
+def _dismiss_consent(page):
+    for selector in (
+        "#onetrust-accept-btn-handler",
+        "button[id*='accept']",
+        "button[class*='consent']",
+    ):
+        try:
+            btn = page.query_selector(selector)
+            if btn and btn.is_visible():
+                btn.click()
+                page.wait_for_timeout(500)
+                return
+        except Exception:
+            pass
+
+
+def _login(page, email: str, password: str) -> bool:
+    try:
+        page.goto("https://www.ft.com", wait_until="domcontentloaded", timeout=30000)
+        _dismiss_consent(page)
+        page.wait_for_timeout(1000)
+
+        page.goto(
+            "https://www.ft.com/login?location=https://www.ft.com",
+            wait_until="domcontentloaded",
+            timeout=30000,
+        )
+        page.wait_for_timeout(1500)
+        _dismiss_consent(page)
+
+        # Step 1: email
+        email_input = page.query_selector('input[type="email"], input[name="email"]')
+        if not email_input:
+            print("[FT] Could not find email input")
+            return False
+        email_input.fill(email)
+        page.keyboard.press("Enter")
+        page.wait_for_load_state("domcontentloaded", timeout=15000)
+        page.wait_for_timeout(1500)
+
+        # Step 2: password (may be on same or next page)
+        pw_input = page.query_selector('input[type="password"]')
+        if not pw_input:
+            # Try submitting a visible submit button first
+            submit = page.query_selector('button[type="submit"]')
+            if submit:
+                submit.click()
+                page.wait_for_load_state("domcontentloaded", timeout=10000)
+                page.wait_for_timeout(1500)
+            pw_input = page.query_selector('input[type="password"]')
+
+        if pw_input:
+            pw_input.fill(password)
+            page.keyboard.press("Enter")
+            page.wait_for_load_state("domcontentloaded", timeout=20000)
+            page.wait_for_timeout(2000)
+        else:
+            print("[FT] Could not find password input")
+            return False
+
+        # Verify login succeeded by checking for sign-out link or user nav
+        logged_in = page.query_selector(
+            'a[href*="logout"], a[href*="sign-out"], [data-trackable="navigation-user-account"]'
+        )
+        if not logged_in:
+            print("[FT] Login may not have succeeded — continuing anyway")
+
+        return True
+
+    except PlaywrightTimeout as e:
+        print(f"[FT] Login timeout: {e}")
+        return False
+    except Exception as e:
+        print(f"[FT] Login error: {e}")
+        return False
+
+
+def _extract_candidates(page) -> list[dict]:
+    """Extract article cards from an FT section page."""
     articles = []
 
-    # FT uses various article card selectors depending on the section
-    selectors = [
-        "div[data-trackable='article']",
-        "li[class*='headline']",
-        "div[class*='story-card']",
-        "article",
-    ]
+    # Wait for content
+    try:
+        page.wait_for_selector("h3, h2, article", timeout=8000)
+    except Exception:
+        pass
 
-    for selector in selectors:
-        cards = page.query_selector_all(selector)
-        if cards:
-            for card in cards:
-                try:
-                    # Title
-                    title_el = card.query_selector("a[data-trackable='heading-link'], h3 a, h2 a, .o-teaser__heading a")
-                    if not title_el:
-                        continue
-                    title = _clean_text(title_el.inner_text())
-                    url = title_el.get_attribute("href") or ""
-                    if url and not url.startswith("http"):
-                        url = "https://www.ft.com" + url
+    # Broad selector: any element containing a headline link
+    cards = page.query_selector_all(
+        "div[data-trackable='article'], "
+        "li[class*='story'], "
+        "div[class*='story-card'], "
+        "div[class*='teaser'], "
+        "article"
+    )
 
-                    # Summary / standfirst
-                    summary_el = card.query_selector(
-                        ".o-teaser__standfirst, [data-trackable='standfirst'], p[class*='standfirst']"
-                    )
-                    summary = _clean_text(summary_el.inner_text()) if summary_el else ""
+    if not cards:
+        # Fallback: grab all headline links directly
+        links = page.query_selector_all("h3 a[href*='/content/'], h2 a[href*='/content/']")
+        for link in links:
+            title = _clean(link.inner_text())
+            url = link.get_attribute("href") or ""
+            if url and not url.startswith("http"):
+                url = "https://www.ft.com" + url
+            if title and url:
+                articles.append({
+                    "title": title,
+                    "summary": "",
+                    "content": "",
+                    "url": url,
+                    "author": "FT",
+                    "published": None,
+                    "source": "Financial Times",
+                })
+        return articles
 
-                    # Author
-                    author_el = card.query_selector(
-                        ".o-teaser__author, [data-trackable='author'], a[href*='/stream/authorsId']"
-                    )
-                    author = _clean_text(author_el.inner_text()) if author_el else "FT"
+    for card in cards:
+        try:
+            title_el = card.query_selector(
+                "a[data-trackable='heading-link'], "
+                ".o-teaser__heading a, "
+                "h3 a, h2 a, h4 a"
+            )
+            if not title_el:
+                continue
+            title = _clean(title_el.inner_text())
+            url = title_el.get_attribute("href") or ""
+            if url and not url.startswith("http"):
+                url = "https://www.ft.com" + url
+            if not title or not url or "ft.com" not in url:
+                continue
 
-                    # Timestamp
-                    time_el = card.query_selector("time")
-                    published = None
-                    if time_el:
-                        dt_attr = time_el.get_attribute("datetime")
-                        if dt_attr:
-                            try:
-                                published = datetime.fromisoformat(dt_attr.replace("Z", "+00:00"))
-                            except ValueError:
-                                pass
+            summary_el = card.query_selector(
+                ".o-teaser__standfirst, "
+                "[data-trackable='standfirst'], "
+                "p[class*='standfirst']"
+            )
+            summary = _clean(summary_el.inner_text()) if summary_el else ""
 
-                    if title and url and "ft.com" in url:
-                        articles.append({
-                            "title": title,
-                            "summary": summary[:280],
-                            "url": url,
-                            "author": author,
-                            "published": published,
-                            "source": "Financial Times",
-                        })
-                except Exception:
-                    continue
-            if articles:
-                break
+            author_el = card.query_selector(
+                ".o-teaser__author, "
+                "[data-trackable='author'], "
+                "a[href*='/stream/authorsId']"
+            )
+            author = _clean(author_el.inner_text()) if author_el else "FT"
+
+            time_el = card.query_selector("time")
+            published = None
+            if time_el:
+                dt_attr = time_el.get_attribute("datetime")
+                if dt_attr:
+                    try:
+                        published = datetime.fromisoformat(dt_attr.replace("Z", "+00:00"))
+                    except ValueError:
+                        pass
+
+            articles.append({
+                "title": title,
+                "summary": summary[:280],
+                "content": "",
+                "url": url,
+                "author": author,
+                "published": published,
+                "source": "Financial Times",
+            })
+        except Exception:
+            continue
 
     return articles
+
+
+def _fetch_article_body(page, url: str) -> str:
+    """Navigate to an FT article and extract the body text."""
+    try:
+        page.goto(url, wait_until="domcontentloaded", timeout=25000)
+        page.wait_for_timeout(2000)
+        _dismiss_consent(page)
+
+        # FT article body selectors
+        body_selectors = [
+            ".article__content-body p",
+            ".article-body p",
+            "[class*='article__content'] p",
+            "[class*='body-text'] p",
+            ".n-content-body p",
+        ]
+
+        for selector in body_selectors:
+            paras = page.query_selector_all(selector)
+            if paras:
+                text = " ".join(_clean(p.inner_text()) for p in paras[:12] if p.inner_text().strip())
+                if len(text) > 100:
+                    return text[:2000]
+
+    except Exception as e:
+        print(f"[FT] Body fetch error for {url}: {e}")
+
+    return ""
 
 
 def fetch(quota: int = 5) -> list[dict]:
@@ -99,10 +242,10 @@ def fetch(quota: int = 5) -> list[dict]:
     password = os.environ.get("FT_PASSWORD", "")
 
     if not email or not password:
-        print("[FT] Warning: FT_EMAIL or FT_PASSWORD not set — skipping FT scrape")
+        print("[FT] FT_EMAIL or FT_PASSWORD not set — skipping")
         return []
 
-    all_articles = []
+    all_candidates = []
     seen_urls = set()
 
     with sync_playwright() as p:
@@ -117,48 +260,42 @@ def fetch(quota: int = 5) -> list[dict]:
         )
         page = context.new_page()
 
-        # --- Login ---
-        try:
-            page.goto(FT_LOGIN_URL, wait_until="domcontentloaded", timeout=30000)
-            page.fill('input[type="email"], input[name="email"]', email)
-            page.click('button[type="submit"], input[type="submit"]')
-            # After email submission FT may redirect to password step
-            page.wait_for_load_state("domcontentloaded", timeout=15000)
-
-            # Check if we're now on a password page
-            if page.query_selector('input[type="password"]'):
-                page.fill('input[type="password"]', password)
-                page.click('button[type="submit"], input[type="submit"]')
-                page.wait_for_load_state("domcontentloaded", timeout=20000)
-
-        except PlaywrightTimeout:
-            print("[FT] Login timed out")
-            browser.close()
-            return []
-        except Exception as e:
-            print(f"[FT] Login error: {e}")
+        if not _login(page, email, password):
             browser.close()
             return []
 
-        # Brief wait for session cookies to settle
-        time.sleep(2)
-
-        # --- Scrape sections ---
+        # Scrape section pages for candidates
         for section_url in FT_SECTIONS:
-            if len(all_articles) >= quota * 3:
+            if len(all_candidates) >= quota * 4:
                 break
             try:
                 page.goto(section_url, wait_until="domcontentloaded", timeout=20000)
                 page.wait_for_timeout(2000)
-                articles = _extract_articles_from_page(page)
+                _dismiss_consent(page)
+                articles = _extract_candidates(page)
                 for a in articles:
                     if a["url"] not in seen_urls:
                         seen_urls.add(a["url"])
-                        all_articles.append(a)
+                        all_candidates.append(a)
             except Exception as e:
-                print(f"[FT] Error scraping {section_url}: {e}")
+                print(f"[FT] Section error {section_url}: {e}")
                 continue
+
+        print(f"[FT] {len(all_candidates)} candidates found")
+
+        # Fetch article bodies for top candidates (up to quota*2 to allow filtering)
+        from src.filter import score_article
+        for a in all_candidates:
+            a["_score"] = score_article(a["title"], a["summary"])
+
+        top_candidates = sorted(all_candidates, key=lambda x: x["_score"], reverse=True)[:quota * 2]
+
+        for a in top_candidates:
+            if not a.get("content"):
+                print(f"[FT] Fetching body: {a['title'][:60]}")
+                a["content"] = _fetch_article_body(page, a["url"])
+                time.sleep(1)
 
         browser.close()
 
-    return all_articles
+    return all_candidates

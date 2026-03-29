@@ -1,8 +1,8 @@
 """
 Economist scraper — public RSS feeds, no auth required.
-Pulls from Finance & Economics and Books & Arts sections.
 """
 
+import re
 import feedparser
 from dateutil import parser as dateparser
 from datetime import timezone
@@ -29,6 +29,13 @@ def _parse_date(entry):
     return None
 
 
+def _strip_html(html: str) -> str:
+    text = re.sub(r"<[^>]+>", " ", html or "")
+    text = text.replace("&nbsp;", " ").replace("&amp;", "&").replace(
+        "&lt;", "<").replace("&gt;", ">").replace("&quot;", '"').replace("&#39;", "'")
+    return re.sub(r"\s{2,}", " ", text).strip()
+
+
 def fetch(quota: int = 5) -> list[dict]:
     articles = []
     seen_urls = set()
@@ -45,13 +52,22 @@ def fetch(quota: int = 5) -> list[dict]:
                 continue
             seen_urls.add(url)
 
-            summary = entry.get("summary", "")
-            # feedparser sometimes includes HTML tags; strip basic ones
-            summary = summary.replace("<p>", "").replace("</p>", " ").strip()
+            # Full content (if available in RSS)
+            content = ""
+            if entry.get("content"):
+                content = _strip_html(entry["content"][0].get("value", ""))[:2000]
+
+            summary_raw = entry.get("summary", "")
+            summary = _strip_html(summary_raw)[:280]
+
+            # Use content as summary if summary is empty
+            if not summary and content:
+                summary = content[:280]
 
             articles.append({
                 "title": entry.get("title", "").strip(),
-                "summary": summary[:280],
+                "summary": summary,
+                "content": content,
                 "url": url,
                 "author": entry.get("author", "The Economist").strip(),
                 "published": _parse_date(entry),

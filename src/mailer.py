@@ -26,7 +26,7 @@ def send(pages_url: str, date: datetime | None = None) -> None:
         date = datetime.now(tz=timezone.utc)
 
     date_str = date.strftime("%-d %B %Y")
-    subject = f"Morning Reading — {date_str}"
+    subject = f"The Daily — {date_str}"
 
     # Plain text fallback
     text_body = f"Your morning reading list is ready.\n\n{pages_url}\n"
@@ -93,7 +93,7 @@ def send(pages_url: str, date: datetime | None = None) -> None:
 <body>
   <div class="wrap">
     <div class="label">{date_str}</div>
-    <h1>Morning Reading</h1>
+    <h1>The Daily</h1>
     <p>12 articles from the FT, The Economist,<br>London Review of Books, and New Left Review.</p>
     <a class="cta" href="{pages_url}">Open reading list &rarr;</a>
     <div class="footer">daily-reader &middot; delivered at 7am</div>

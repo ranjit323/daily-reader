@@ -1,14 +1,15 @@
 """
 Morning Reading List — orchestrator.
 
-Runs all scrapers, applies topic filtering, renders HTML, and sends email.
-
 Required env vars:
-  FT_EMAIL            — FT account email
-  FT_PASSWORD         — FT account password
-  GMAIL_ADDRESS       — Gmail address (send + receive)
-  GMAIL_APP_PASSWORD  — Gmail App Password
-  PAGES_URL           — Full GitHub Pages URL (set in workflow)
+  FT_EMAIL / FT_PASSWORD
+  GMAIL_ADDRESS / GMAIL_APP_PASSWORD
+  PAGES_URL
+
+Optional (for full article bodies):
+  ECONOMIST_EMAIL / ECONOMIST_PASSWORD
+  LRB_EMAIL / LRB_PASSWORD
+  NLR_EMAIL / NLR_PASSWORD
 """
 
 import os
@@ -16,10 +17,10 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-# Allow running from repo root: python src/main.py
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.scrapers import economist, lrb, nlr, ft
+from src.scrapers.fetch_body import fetch_bodies
 from src.filter import select_articles
 from src import renderer, mailer
 
@@ -34,9 +35,8 @@ QUOTAS = {
 
 def run():
     today = datetime.now(tz=timezone.utc)
-    print(f"[main] Starting morning reader for {today.strftime('%Y-%m-%d')}")
+    print(f"[main] Starting — {today.strftime('%Y-%m-%d')}")
 
-    # --- Fetch ---
     print("[main] Fetching Economist...")
     economist_raw = economist.fetch(quota=20)
 
@@ -49,57 +49,45 @@ def run():
     print("[main] Fetching FT (Playwright)...")
     ft_raw = ft.fetch(quota=20)
 
-    # --- Filter & select ---
     sections = []
 
     ft_selected = select_articles(ft_raw, QUOTAS["Financial Times"])
     if ft_selected:
-        sections.append({
-            "source": "Financial Times",
-            "articles": ft_selected,
-        })
+        sections.append({"source": "Financial Times", "articles": ft_selected})
     else:
         print("[main] Warning: no FT articles selected")
 
     economist_selected = select_articles(economist_raw, QUOTAS["The Economist"])
     if economist_selected:
-        sections.append({
-            "source": "The Economist",
-            "articles": economist_selected,
-        })
+        economist_selected = fetch_bodies(economist_selected, "economist")
+        sections.append({"source": "The Economist", "articles": economist_selected})
 
     lrb_selected = select_articles(lrb_raw, QUOTAS["London Review of Books"])
     if lrb_selected:
-        sections.append({
-            "source": "London Review of Books",
-            "articles": lrb_selected,
-        })
+        lrb_selected = fetch_bodies(lrb_selected, "lrb")
+        sections.append({"source": "London Review of Books", "articles": lrb_selected})
 
     nlr_selected = select_articles(nlr_raw, QUOTAS["New Left Review"])
     if nlr_selected:
-        sections.append({
-            "source": "New Left Review",
-            "articles": nlr_selected,
-        })
+        nlr_selected = fetch_bodies(nlr_selected, "nlr")
+        sections.append({"source": "New Left Review", "articles": nlr_selected})
 
     total = sum(len(s["articles"]) for s in sections)
-    print(f"[main] {total} articles selected across {len(sections)} publications")
+    print(f"[main] {total} articles across {len(sections)} publications")
 
     if not sections:
         print("[main] No articles — aborting")
         sys.exit(1)
 
-    # --- Render ---
-    print("[main] Rendering HTML...")
+    print("[main] Rendering...")
     renderer.render(sections, date=today)
-    print("[main] Written to docs/index.html")
+    print("[main] Written to docs/")
 
-    # --- Email ---
     pages_url = os.environ.get(
         "PAGES_URL",
-        "https://your-github-username.github.io/daily-reader/",
+        "https://ranjit323.github.io/daily-reader/",
     )
-    print(f"[main] Sending email with link: {pages_url}")
+    print(f"[main] Sending email → {pages_url}")
     mailer.send(pages_url, date=today)
 
     print("[main] Done.")
