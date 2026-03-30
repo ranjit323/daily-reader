@@ -121,62 +121,68 @@ def _extract_nlr_body_and_footnotes(page) -> tuple[str, list[str]]:
         pass
 
     # --- Extract footnotes ---
+    # NLR structure: <footer class="article-footnotes">
+    #                  <div class="article-footnote" id="note-N">
+    #                    <a class="number">N</a> footnote text ...
+    #                  </div>
     footnotes = []
-    fn_selectors = [
-        ".article-body__notes li",
-        ".article-body__notes p",
-        ".footnotes li",
-        ".article-footnotes li",
-        "#footnotes li",
-        ".endnotes li",
-        "ol.footnotes li",
-        ".fn-group li",
-        "section.footnotes li",
-        "[class*='notes'] li",
-    ]
-    for sel in fn_selectors:
-        try:
-            items = page.query_selector_all(sel)
-            if items:
-                candidates = [
-                    re.sub(r"\s+", " ", item.inner_text()).strip()
-                    for item in items
-                    if len(item.inner_text().strip()) > 10
-                ]
-                if candidates:
-                    footnotes = candidates
-                    print(f"[nlr]   footnotes via {sel}: {len(footnotes)} found")
-                    break
-        except Exception:
-            continue
+    try:
+        fn_divs = page.query_selector_all(".article-footnote")
+        if fn_divs:
+            for div in fn_divs:
+                html = div.inner_html()
+                soup = BeautifulSoup(html, "html.parser")
+                # Remove the leading number link <a class="number">N</a>
+                for a in soup.find_all("a", class_="number"):
+                    a.decompose()
+                text = re.sub(r"\s+", " ", soup.get_text()).strip()
+                if text:
+                    footnotes.append(text)
+            print(f"[nlr]   footnotes via .article-footnote: {len(footnotes)} found")
+    except Exception as e:
+        print(f"[nlr]   footnote extraction error: {e}")
 
     # --- Extract body paragraphs ---
+    # NLR: paragraphs are <p> inside .article-body, but the footnotes
+    # <footer class="article-footnotes"> is also a child of .article-body.
+    # We use JS to get only paragraphs NOT inside the footnotes footer.
     paragraphs = []
-    body_selectors = [
-        ".article-body p",
-        ".entry-content p",
-        ".post-content p",
-        ".article__body p",
-        "article p",
-        "main p",
-    ]
-    for sel in body_selectors:
-        try:
-            paras = page.query_selector_all(sel)
-            if not paras:
-                continue
-            for p in paras:
-                try:
-                    html = p.inner_html()
-                    text = _parse_nlr_paragraph(html)
-                except Exception:
-                    text = re.sub(r"\s+", " ", p.inner_text()).strip()
+    try:
+        # Get all <p> elements inside .article-body that are NOT inside .article-footnotes
+        para_handles = page.evaluate("""() => {
+            const body = document.querySelector('.article-body');
+            if (!body) return [];
+            const paras = Array.from(body.querySelectorAll('p'));
+            return paras
+                .filter(p => !p.closest('.article-footnotes'))
+                .map(p => p.innerHTML);
+        }""")
+        if para_handles:
+            for html in para_handles:
+                text = _parse_nlr_paragraph(html)
                 if len(text) > 40:
                     paragraphs.append(text)
-            if paragraphs:
-                break
-        except Exception:
-            continue
+    except Exception as e:
+        print(f"[nlr]   body extraction error: {e}")
+
+    # Fallback to generic selectors if JS approach failed
+    if not paragraphs:
+        for sel in [".article-body p", ".entry-content p", "article p", "main p"]:
+            try:
+                paras = page.query_selector_all(sel)
+                if not paras:
+                    continue
+                for p in paras:
+                    try:
+                        text = _parse_nlr_paragraph(p.inner_html())
+                    except Exception:
+                        text = re.sub(r"\s+", " ", p.inner_text()).strip()
+                    if len(text) > 40:
+                        paragraphs.append(text)
+                if paragraphs:
+                    break
+            except Exception:
+                continue
 
     if not paragraphs:
         plain = _extract_body(page)
