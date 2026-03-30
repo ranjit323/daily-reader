@@ -1,14 +1,14 @@
 """
 Article body fetcher using Playwright.
 Attempts unauthenticated fetch first; falls back to authenticated if credentials set.
-NLR articles get special treatment: footnotes extracted separately.
+NLR articles get special treatment: always fetched via Playwright, footnotes extracted.
 """
 
 import os
 import re
 import time
 
-from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
+from playwright.sync_api import sync_playwright
 
 
 def _dismiss_consent(page):
@@ -29,22 +29,24 @@ def _dismiss_consent(page):
             pass
 
 
+def _clean_html_to_text(html: str) -> str:
+    """Strip all HTML tags, collapse whitespace."""
+    text = re.sub(r"<[^>]+>", " ", html)
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+
+
 def _extract_body(page) -> str:
     """Try common article body selectors, return cleaned text."""
     selectors = [
-        # Economist
         ".article__body-text p",
         "[data-test-id='Article'] p",
         ".ds-layout-grid p",
-        # LRB
         ".article-body p",
         ".lrb-readmore p",
         ".article__body p",
-        # NLR
-        ".article-body p",
         ".entry-content p",
         ".post-content p",
-        # Generic
         "article p",
         "main p",
         ".content p",
@@ -68,13 +70,29 @@ def _extract_body(page) -> str:
 
 def _extract_nlr_body_and_footnotes(page) -> tuple[str, list[str]]:
     """
-    NLR-specific extraction. Returns (body_text, footnotes_list).
-    - body_text: paragraphs joined by double newlines, with [N] markers for footnotes
-    - footnotes_list: list of footnote strings, index 0 = footnote 1
+    NLR-specific extraction.
+    Returns (body_text, footnotes_list).
+
+    NLR wraps each in-text footnote as:
+      <a class="article-body__note-ref" ...> footnote </a><sup>N</sup>
+    We strip the <a> wrapper and convert <sup>N</sup> → [N].
+    Footnotes themselves live in .article-body__notes or similar.
     """
-    # --- Extract footnotes first ---
+
+    # Scroll to bottom to trigger any lazy-loaded content
+    try:
+        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+        page.wait_for_timeout(2000)
+        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+        page.wait_for_timeout(1000)
+    except Exception:
+        pass
+
+    # --- Extract footnotes ---
     footnotes = []
     fn_selectors = [
+        ".article-body__notes li",
+        ".article-body__notes p",
         ".footnotes li",
         ".article-footnotes li",
         "#footnotes li",
@@ -82,21 +100,25 @@ def _extract_nlr_body_and_footnotes(page) -> tuple[str, list[str]]:
         "ol.footnotes li",
         ".fn-group li",
         "section.footnotes li",
+        "[class*='notes'] li",
     ]
     for sel in fn_selectors:
         try:
             items = page.query_selector_all(sel)
             if items:
-                footnotes = [
+                candidates = [
                     re.sub(r"\s+", " ", item.inner_text()).strip()
                     for item in items
-                    if item.inner_text().strip()
+                    if len(item.inner_text().strip()) > 10
                 ]
-                break
+                if candidates:
+                    footnotes = candidates
+                    print(f"[nlr]   footnotes via {sel}: {len(footnotes)} found")
+                    break
         except Exception:
             continue
 
-    # --- Extract body paragraphs, preserving [N] footnote markers ---
+    # --- Extract body paragraphs ---
     paragraphs = []
     body_selectors = [
         ".article-body p",
@@ -112,28 +134,38 @@ def _extract_nlr_body_and_footnotes(page) -> tuple[str, list[str]]:
             if not paras:
                 continue
             for p in paras:
-                # Get inner HTML so we can see <sup> tags
                 try:
                     html = p.inner_html()
                 except Exception:
-                    html = p.inner_text()
-                # Convert <sup>N</sup> or <sup><a ...>N</a></sup> → [N]
+                    paragraphs.append(re.sub(r"\s+", " ", p.inner_text()).strip())
+                    continue
+
+                # Step 1: remove NLR footnote anchor wrappers entirely
+                # These look like: <a class="article-body__note-ref" ...> footnote </a>
+                html = re.sub(
+                    r'<a\b[^>]*\bclass="[^"]*note-ref[^"]*"[^>]*>.*?</a>',
+                    '',
+                    html,
+                    flags=re.DOTALL,
+                )
+
+                # Step 2: convert <sup>N</sup> or <sup><a ...>N</a></sup> → [N]
                 html = re.sub(
                     r'<sup[^>]*>\s*(?:<a[^>]*>)?\s*(\d+)\s*(?:</a>)?\s*</sup>',
                     r'[\1]',
                     html,
                 )
-                # Strip remaining HTML tags
-                text = re.sub(r"<[^>]+>", " ", html)
-                text = re.sub(r"\s+", " ", text).strip()
+
+                # Step 3: strip remaining HTML tags
+                text = _clean_html_to_text(html)
                 if len(text) > 40:
                     paragraphs.append(text)
+
             if paragraphs:
                 break
         except Exception:
             continue
 
-    # Fall back to plain _extract_body if nothing found
     if not paragraphs:
         plain = _extract_body(page)
         return plain, footnotes
@@ -199,8 +231,10 @@ def _login(page, cfg: dict) -> bool:
 
 def fetch_bodies(articles: list[dict], site_key: str) -> list[dict]:
     """
-    Fetch full article bodies. Tries unauthenticated first, then authenticated
-    if credentials are available. NLR gets footnote extraction.
+    Fetch full article bodies.
+    - NLR: always fetches via Playwright (never skips based on RSS content length)
+      and extracts footnotes separately.
+    - Others: skip if RSS already provided >400 chars of content.
     """
     cfg = LOGIN_CONFIGS.get(site_key)
     has_credentials = cfg and os.environ.get(cfg["email_env"]) and os.environ.get(cfg["password_env"])
@@ -227,12 +261,14 @@ def fetch_bodies(articles: list[dict], site_key: str) -> list[dict]:
             print(f"[{site_key}] No credentials — fetching open content")
 
         for article in articles:
-            if article.get("content") and len(article["content"]) > 400:
+            # NLR: always fetch full page (RSS only gives abstract)
+            # Others: skip if RSS already gave substantial content
+            if not is_nlr and article.get("content") and len(article["content"]) > 400:
                 continue
             try:
                 print(f"[{site_key}] Fetching body: {article['title'][:55]}")
-                page.goto(article["url"], wait_until="domcontentloaded", timeout=25000)
-                page.wait_for_timeout(2000)
+                page.goto(article["url"], wait_until="domcontentloaded", timeout=30000)
+                page.wait_for_timeout(2500)
                 _dismiss_consent(page)
 
                 if is_nlr:
