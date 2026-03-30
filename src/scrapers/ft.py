@@ -13,11 +13,12 @@ from datetime import timezone
 
 
 PUBLIC_FEEDS = [
-    "https://www.ft.com/world?format=rss",
-    "https://www.ft.com/companies?format=rss",
-    "https://www.ft.com/markets?format=rss",
+    "https://www.ft.com/life-arts?format=rss",
+    "https://www.ft.com/weekend?format=rss",
+    "https://www.ft.com/house-home?format=rss",
+    "https://www.ft.com/books-arts?format=rss",
+    "https://www.ft.com/lunch-with-the-ft?format=rss",
     "https://www.ft.com/opinion?format=rss",
-    "https://www.ft.com/firstft?format=rss",
 ]
 
 

@@ -27,7 +27,10 @@ TOPICS = {
         "unusual", "curious", "odd", "surprising", "remarkable", "unexpected",
         "strange", "forgotten", "obsession", "eccentric", "bizarre", "peculiar",
         "absurd", "weird", "niche", "obscure", "hidden", "overlooked", "lesser-known",
-        "secret", "mystery", "myth", "legend", "folklore",
+        "secret", "mystery", "myth", "legend", "folklore", "thatched", "antiquarian",
+        "esoteric", "arcane", "taxidermy", "relic", "collector", "obsessive",
+        "oddity", "curiosity", "arcane", "archaic", "quaint", "whimsical",
+        "idiosyncratic", "unconventional", "offbeat", "underrated", "rediscovered",
     ],
 }
 

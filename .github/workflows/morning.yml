@@ -39,6 +39,14 @@ jobs:
           FT_RSS_URL: ${{ secrets.FT_RSS_URL }}
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENT_EMAIL_2: ${{ secrets.RECIPIENT_EMAIL_2 }}
+          TWITTER_USERNAME: ${{ secrets.TWITTER_USERNAME }}
+          ECONOMIST_EMAIL: ${{ secrets.ECONOMIST_EMAIL }}
+          ECONOMIST_PASSWORD: ${{ secrets.ECONOMIST_PASSWORD }}
+          LRB_EMAIL: ${{ secrets.LRB_EMAIL }}
+          LRB_PASSWORD: ${{ secrets.LRB_PASSWORD }}
+          NLR_EMAIL: ${{ secrets.NLR_EMAIL }}
+          NLR_PASSWORD: ${{ secrets.NLR_PASSWORD }}
           PAGES_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
         run: python src/main.py
 
@@ -46,7 +54,7 @@ jobs:
         run: |
           git config user.name "morning-reader[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/ docs/articles/
+          git add docs/ docs/articles/ docs/archive/
           git diff --staged --quiet && echo "No changes to commit" || (
             git commit -m "reading list $(date -u +%Y-%m-%d)" &&
             git push

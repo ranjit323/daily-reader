@@ -46,11 +46,11 @@ def fetch(quota: int = 1) -> list[dict]:
 
         content = ""
         if entry.get("content"):
-            content = _strip_html(entry["content"][0].get("value", ""))[:2000]
+            content = _strip_html(entry["content"][0].get("value", ""))
 
-        summary = _strip_html(entry.get("summary", ""))[:280]
+        summary = _strip_html(entry.get("summary", ""))[:400]
         if not summary and content:
-            summary = content[:280]
+            summary = content[:400]
 
         author = entry.get("author", "") or entry.get("dc_creator", "New Left Review")
 

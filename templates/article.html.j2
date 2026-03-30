@@ -161,14 +161,11 @@
 
     <div class="article-body">
       {% if article.content %}
-        {% for para in article.content.split('\n') %}
+        {% for para in article.content.split('\n\n') %}
           {% if para.strip() %}
             <p>{{ para.strip() }}</p>
           {% endif %}
         {% endfor %}
-        {% if article.content and '\n' not in article.content %}
-          <p>{{ article.content }}</p>
-        {% endif %}
       {% else %}
         <p style="color:#aaaaaa; font-style:italic;">Full text not available — read on the source site below.</p>
       {% endif %}

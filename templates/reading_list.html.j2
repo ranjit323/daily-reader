@@ -42,7 +42,7 @@
 
     .header__title {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 64px;
+      font-size: 88px;
       font-weight: 900;
       letter-spacing: -0.04em;
       line-height: 1;
@@ -158,7 +158,11 @@
 
         {% for article in section.articles %}
           <article class="article">
+            {% if article._page %}
+            <a class="article__inner" href="{{ article._page }}">
+            {% else %}
             <a class="article__inner" href="{{ article.url }}" target="_blank" rel="noopener noreferrer">
+            {% endif %}
               <h2 class="article__headline">{{ article.title }}</h2>
               {% if article.summary %}
                 <p class="article__summary">{{ article.summary }}</p>

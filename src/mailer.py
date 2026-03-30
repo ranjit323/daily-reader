@@ -17,6 +17,7 @@ from email.mime.text import MIMEText
 def send(pages_url: str, date: datetime | None = None) -> None:
     gmail_address = os.environ.get("GMAIL_ADDRESS", "")
     app_password = os.environ.get("GMAIL_APP_PASSWORD", "")
+    recipient_2 = os.environ.get("RECIPIENT_EMAIL_2", "")
 
     if not gmail_address or not app_password:
         print("[mailer] GMAIL_ADDRESS or GMAIL_APP_PASSWORD not set — skipping email")
@@ -94,23 +95,25 @@ def send(pages_url: str, date: datetime | None = None) -> None:
   <div class="wrap">
     <div class="label">{date_str}</div>
     <h1>The Daily</h1>
-    <p>12 articles from the FT, The Economist,<br>London Review of Books, and New Left Review.</p>
+    <p>11 articles from the FT, The Economist, London Review<br>of Books, New Left Review, and Substack.</p>
     <a class="cta" href="{pages_url}">Open reading list &rarr;</a>
     <div class="footer">daily-reader &middot; delivered at 7am</div>
   </div>
 </body>
 </html>"""
 
+    recipients = [r for r in [gmail_address, recipient_2] if r]
+
     msg = MIMEMultipart("alternative")
     msg["Subject"] = subject
     msg["From"] = gmail_address
-    msg["To"] = gmail_address
+    msg["To"] = ", ".join(recipients)
 
     msg.attach(MIMEText(text_body, "plain"))
     msg.attach(MIMEText(html_body, "html"))
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
         server.login(gmail_address, app_password)
-        server.sendmail(gmail_address, gmail_address, msg.as_string())
+        server.sendmail(gmail_address, recipients, msg.as_string())
 
-    print(f"[mailer] Email sent to {gmail_address}")
+    print(f"[mailer] Email sent to {', '.join(recipients)}")

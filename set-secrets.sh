@@ -34,6 +34,8 @@ prompt_secret "LRB_EMAIL"          "LRB email"
 prompt_secret "LRB_PASSWORD"       "LRB password"
 prompt_secret "NLR_EMAIL"          "NLR email"
 prompt_secret "NLR_PASSWORD"       "NLR password"
+prompt_secret "RECIPIENT_EMAIL_2"  "Second recipient email (e.g. steph.raill@gmail.com)"
+prompt_secret "TWITTER_USERNAME"   "Twitter/X username (without @) for Substack discovery"
 
 echo ""
 echo "────────────────────────────────────"
