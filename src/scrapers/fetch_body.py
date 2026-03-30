@@ -199,10 +199,10 @@ LOGIN_CONFIGS = {
         "email_selector": 'input[type="email"], input[name="email"], input[name="username"]',
     },
     "nlr": {
-        "login_url": "https://newleftreview.org/my-account/login",
+        "login_url": "https://newleftreview.org/sign_in",
         "email_env": "NLR_EMAIL",
         "password_env": "NLR_PASSWORD",
-        "email_selector": 'input[type="email"], input[name="email"], input[name="log"]',
+        "email_selector": 'input[type="email"], input[type="text"], input[name="email"], input[name="log"]',
     },
 }
 
@@ -211,16 +211,21 @@ def _login(page, cfg: dict) -> bool:
     email = os.environ.get(cfg["email_env"], "")
     password = os.environ.get(cfg["password_env"], "")
     if not email or not password:
+        print(f"  Login: credentials not set")
         return False
     try:
+        print(f"  Login: navigating to {cfg['login_url']}")
         page.goto(cfg["login_url"], wait_until="domcontentloaded", timeout=30000)
         page.wait_for_timeout(1500)
         _dismiss_consent(page)
+        print(f"  Login: page URL is {page.url}")
 
         email_input = page.query_selector(cfg["email_selector"])
         if not email_input:
+            print(f"  Login: email input not found (selector: {cfg['email_selector']})")
             return False
         email_input.fill(email)
+        print(f"  Login: email filled")
 
         pw_input = page.query_selector('input[type="password"]')
         if not pw_input:
@@ -229,12 +234,14 @@ def _login(page, cfg: dict) -> bool:
             pw_input = page.query_selector('input[type="password"]')
 
         if not pw_input:
+            print(f"  Login: password input not found")
             return False
 
         pw_input.fill(password)
         page.keyboard.press("Enter")
         page.wait_for_load_state("domcontentloaded", timeout=20000)
         page.wait_for_timeout(2000)
+        print(f"  Login: post-login URL is {page.url}")
         return True
     except Exception as e:
         print(f"  Login error: {e}")
