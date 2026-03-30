@@ -95,7 +95,7 @@ def send(pages_url: str, date: datetime | None = None) -> None:
   <div class="wrap">
     <div class="label">{date_str}</div>
     <h1>The Daily</h1>
-    <p>9 articles from The Economist, London Review of Books,<br>New Left Review, and Substack.</p>
+    <p>10 articles from The Economist, LRB, NLR,<br>RNZ, and Substack.</p>
     <a class="cta" href="{pages_url}">Open reading list &rarr;</a>
     <div class="footer">daily-reader &middot; delivered at 7am</div>
   </div>

@@ -1,8 +1,8 @@
 """
-Substack discovery via Twitter/X timeline (Nitter RSS).
+Substack discovery via Twitter/X timeline RSS.
 
-Reads the user's Twitter timeline via Nitter, extracts Substack article links
-from tweets, fetches those articles, and returns scored candidates.
+Tries multiple RSS proxy services for Twitter timelines, extracts Substack
+article links from tweets, fetches those articles with BeautifulSoup.
 
 Requires env var: TWITTER_USERNAME
 """
@@ -16,15 +16,17 @@ from dateutil import parser as dateparser
 from datetime import timezone
 
 
-NITTER_INSTANCES = [
-    "https://nitter.net",
-    "https://nitter.cz",
-    "https://nitter.privacydev.net",
-    "https://nitter.1d4.us",
+# RSS proxy services that can serve Twitter timelines
+# rsshub.app is the most reliable open-source alternative
+RSS_TEMPLATES = [
+    "https://rsshub.app/twitter/user/{username}",
+    "https://nitter.privacydev.net/{username}/rss",
+    "https://nitter.cz/{username}/rss",
+    "https://nitter.net/{username}/rss",
 ]
 
 SUBSTACK_PATTERN = re.compile(
-    r'https?://[a-z0-9\-]+\.substack\.com/p/[^\s"<>&]+'
+    r'https?://[a-z0-9\-]+\.substack\.com/p/[^\s"<>&\)]+'
 )
 
 HEADERS = {
@@ -36,27 +38,31 @@ HEADERS = {
 }
 
 
-def _fetch_nitter_feed(username: str) -> list:
-    """Try each Nitter instance until one returns entries."""
-    for instance in NITTER_INSTANCES:
-        url = f"{instance}/{username}/rss"
+def _fetch_timeline_feed(username: str) -> list:
+    """Try each RSS proxy until one returns entries."""
+    for template in RSS_TEMPLATES:
+        url = template.format(username=username)
         try:
-            feed = feedparser.parse(url)
+            resp = requests.get(url, headers=HEADERS, timeout=10)
+            if resp.status_code != 200:
+                continue
+            feed = feedparser.parse(resp.text)
             if feed.entries:
-                print(f"[substack] Nitter feed from {instance}: {len(feed.entries)} tweets")
+                print(f"[substack] Timeline feed from {url.split('/')[2]}: {len(feed.entries)} entries")
                 return feed.entries
         except Exception as e:
-            print(f"[substack] Nitter {instance} failed: {e}")
-    print("[substack] All Nitter instances failed")
+            print(f"[substack] {url.split('/')[2]} failed: {e}")
+            continue
+    print("[substack] All timeline RSS sources failed")
     return []
 
 
 def _extract_substack_urls(entries: list) -> list[str]:
-    """Extract unique Substack article URLs from tweet entries."""
+    """Extract unique Substack article URLs from feed entries."""
     seen = set()
     urls = []
     for entry in entries:
-        text = entry.get("summary", "") + entry.get("title", "")
+        text = entry.get("summary", "") + entry.get("title", "") + entry.get("content", [{}])[0].get("value", "") if entry.get("content") else entry.get("summary", "") + entry.get("title", "")
         for m in SUBSTACK_PATTERN.finditer(text):
             url = m.group(0).rstrip(".,)")
             if url not in seen:
@@ -91,7 +97,7 @@ def _fetch_substack_article(url: str) -> dict | None:
             byline = soup.find(class_=re.compile(r"byline|author", re.I))
             author = byline.get_text(strip=True) if byline else "Substack"
 
-        # Summary / description
+        # Summary
         summary = ""
         og_desc = soup.find("meta", property="og:description")
         if og_desc:
@@ -109,7 +115,7 @@ def _fetch_substack_article(url: str) -> dict | None:
             except Exception:
                 pass
 
-        # Full body content
+        # Full body
         content = ""
         body_div = (
             soup.find(class_="body markup")
@@ -144,19 +150,23 @@ def _fetch_substack_article(url: str) -> dict | None:
 def fetch(quota: int = 3) -> list[dict]:
     username = os.environ.get("TWITTER_USERNAME", "")
     if not username:
-        print("[substack] TWITTER_USERNAME not set — skipping Substack")
+        print("[substack] TWITTER_USERNAME not set — skipping")
         return []
 
     print(f"[substack] Fetching timeline for @{username}...")
-    entries = _fetch_nitter_feed(username)
+    entries = _fetch_timeline_feed(username)
     if not entries:
+        print("[substack] No timeline entries — skipping Substack")
         return []
 
     urls = _extract_substack_urls(entries)
     print(f"[substack] Found {len(urls)} Substack links in timeline")
+    if not urls:
+        print("[substack] No Substack links found in recent tweets")
+        return []
 
     articles = []
-    for url in urls[:10]:  # check at most 10 links
+    for url in urls[:10]:
         article = _fetch_substack_article(url)
         if article:
             articles.append(article)

@@ -18,7 +18,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.scrapers import economist, lrb, nlr, substack
+from src.scrapers import economist, lrb, nlr, substack, rnz
 from src.scrapers.fetch_body import fetch_bodies
 from src.filter import select_articles
 from src import renderer, mailer
@@ -28,7 +28,8 @@ QUOTAS = {
     "The Economist": 2,
     "London Review of Books": 2,
     "New Left Review": 2,
-    "Substack": 3,
+    "RNZ": 2,
+    "Substack": 2,
 }
 
 
@@ -44,6 +45,9 @@ def run():
 
     print("[main] Fetching NLR...")
     nlr_raw = nlr.fetch(quota=10)
+
+    print("[main] Fetching RNZ...")
+    rnz_raw = rnz.fetch(quota=10)
 
     print("[main] Fetching Substack...")
     substack_raw = substack.fetch(quota=QUOTAS["Substack"])
@@ -65,6 +69,11 @@ def run():
         sections.append({"source": "New Left Review", "articles": nlr_selected})
         print(f"[main] NLR: {len(nlr_selected)} articles selected")
 
+    rnz_selected = select_articles(rnz_raw, QUOTAS["RNZ"])
+    if rnz_selected:
+        sections.append({"source": "RNZ", "articles": rnz_selected})
+        print(f"[main] RNZ: {len(rnz_selected)} articles selected")
+
     substack_selected = select_articles(substack_raw, QUOTAS["Substack"])
     if substack_selected:
         sections.append({"source": "Substack", "articles": substack_selected})
@@ -77,7 +86,7 @@ def run():
         print("[main] No articles — aborting")
         sys.exit(1)
 
-    # Fetch full article bodies for all paywalled sources
+    # Fetch full article bodies for paywalled sources
     for section in sections:
         source = section["source"]
         articles = section["articles"]

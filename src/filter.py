@@ -10,6 +10,9 @@ TOPICS = {
         "monetary", "credit", "capital", "lending", "regulation", "regulator",
         "interest rate", "central bank", "fed", "boe", "rbnz", "debt",
         "investment", "market", "markets", "asset", "currency", "inflation",
+        "reserve bank", "orr", "robertson", "willis", "luxon", "labour",
+        "national party", "government", "budget", "economy", "nz economy",
+        "new zealand", "aotearoa", "wellington", "auckland",
     ],
     "history": [
         "history", "historical", "century", "centuries", "ancient", "medieval",
