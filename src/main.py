@@ -77,14 +77,14 @@ def run():
         print("[main] No articles — aborting")
         sys.exit(1)
 
-    # Fetch full article bodies (with footnote extraction for NLR)
+    # Fetch full article bodies for LRB and NLR only.
+    # Economist is not scraped — links go directly to economist.com where
+    # you can read with your subscription. Their JS-rendered DOM is too
+    # fragile to scrape reliably.
     for section in sections:
         source = section["source"]
         articles = section["articles"]
-        if source == "The Economist":
-            print("[main] Fetching Economist article bodies...")
-            fetch_bodies(articles, "economist")
-        elif source == "London Review of Books":
+        if source == "London Review of Books":
             print("[main] Fetching LRB article bodies...")
             fetch_bodies(articles, "lrb")
         elif source == "New Left Review":
