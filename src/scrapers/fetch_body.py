@@ -40,12 +40,19 @@ def _clean_html_to_text(html: str) -> str:
 def _extract_body(page) -> str:
     """Try common article body selectors, return cleaned text."""
     selectors = [
+        # Economist — try multiple known class patterns
         ".article__body-text p",
         "[data-test-id='Article'] p",
         ".ds-layout-grid p",
+        ".layout-article-body p",
+        "[class*='article-body'] p",
+        "[class*='ArticleBody'] p",
+        "[class*='body-text'] p",
+        # LRB
         ".article-body p",
         ".lrb-readmore p",
         ".article__body p",
+        # Generic
         ".entry-content p",
         ".post-content p",
         "article p",
@@ -196,11 +203,8 @@ LOGIN_CONFIGS = {
         "login_url": "https://myaccount.economist.com/s/login",
         "email_env": "ECONOMIST_EMAIL",
         "password_env": "ECONOMIST_PASSWORD",
-        # Economist uses a Salesforce JS form — wait for it to render before querying
         "email_selector": 'input[type="email"], input[name="username"], input[id="username"]',
         "wait_for_selector": 'input[type="email"], input[name="username"]',
-        # After Salesforce login, navigate to economist.com to set session cookie on that domain
-        "post_login_navigate": "https://www.economist.com",
     },
     "lrb": {
         "login_url": "https://www.lrb.co.uk/login",
@@ -260,20 +264,16 @@ def _login(page, cfg: dict) -> bool:
 
         pw_input.fill(password)
         page.keyboard.press("Enter")
-        page.wait_for_load_state("domcontentloaded", timeout=20000)
-        page.wait_for_timeout(2000)
+
+        # Wait for the redirect chain to fully complete.
+        # Economist: login → frontdoor.jsp → economist.com (sets cross-domain cookie).
+        # We wait for networkidle so all redirects and cookie-setting requests finish.
+        try:
+            page.wait_for_load_state("networkidle", timeout=25000)
+        except Exception:
+            page.wait_for_timeout(4000)
+
         print(f"  Login: post-login URL is {page.url}")
-
-        # Economist: after Salesforce login, frontdoor.jsp must redirect to
-        # economist.com to set the session cookie on that domain. Navigate there
-        # explicitly so subsequent article fetches have the correct cookie.
-        post_login_url = cfg.get("post_login_navigate")
-        if post_login_url:
-            print(f"  Login: navigating to {post_login_url} to establish session")
-            page.goto(post_login_url, wait_until="domcontentloaded", timeout=20000)
-            page.wait_for_timeout(2000)
-            print(f"  Login: session URL is {page.url}")
-
         return True
     except Exception as e:
         print(f"  Login error: {e}")
@@ -319,7 +319,14 @@ def fetch_bodies(articles: list[dict], site_key: str) -> list[dict]:
             try:
                 print(f"[{site_key}] Fetching body: {article['title'][:55]}")
                 page.goto(article["url"], wait_until="domcontentloaded", timeout=30000)
-                page.wait_for_timeout(2500)
+                # Economist renders article body via JS — wait for network to settle
+                if site_key == "economist":
+                    try:
+                        page.wait_for_load_state("networkidle", timeout=10000)
+                    except Exception:
+                        page.wait_for_timeout(4000)
+                else:
+                    page.wait_for_timeout(2500)
                 _dismiss_consent(page)
 
                 if is_nlr:
