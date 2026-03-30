@@ -199,6 +199,8 @@ LOGIN_CONFIGS = {
         # Economist uses a Salesforce JS form — wait for it to render before querying
         "email_selector": 'input[type="email"], input[name="username"], input[id="username"]',
         "wait_for_selector": 'input[type="email"], input[name="username"]',
+        # After Salesforce login, navigate to economist.com to set session cookie on that domain
+        "post_login_navigate": "https://www.economist.com",
     },
     "lrb": {
         "login_url": "https://www.lrb.co.uk/login",
@@ -261,6 +263,17 @@ def _login(page, cfg: dict) -> bool:
         page.wait_for_load_state("domcontentloaded", timeout=20000)
         page.wait_for_timeout(2000)
         print(f"  Login: post-login URL is {page.url}")
+
+        # Economist: after Salesforce login, frontdoor.jsp must redirect to
+        # economist.com to set the session cookie on that domain. Navigate there
+        # explicitly so subsequent article fetches have the correct cookie.
+        post_login_url = cfg.get("post_login_navigate")
+        if post_login_url:
+            print(f"  Login: navigating to {post_login_url} to establish session")
+            page.goto(post_login_url, wait_until="domcontentloaded", timeout=20000)
+            page.wait_for_timeout(2000)
+            print(f"  Login: session URL is {page.url}")
+
         return True
     except Exception as e:
         print(f"  Login error: {e}")
