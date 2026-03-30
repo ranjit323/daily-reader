@@ -8,6 +8,7 @@ import os
 import re
 import time
 
+from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
 
@@ -68,18 +69,49 @@ def _extract_body(page) -> str:
     return ""
 
 
+def _parse_nlr_paragraph(html: str) -> str:
+    """
+    Parse a single NLR paragraph's inner HTML using BeautifulSoup.
+    - Removes <a class="*note-ref*"> wrappers (and their text) entirely.
+    - Converts <sup>N</sup> → [N] markers.
+    - Returns clean plain text.
+    """
+    soup = BeautifulSoup(html, "html.parser")
+
+    # Remove NLR footnote anchor wrappers — these contain the word "footnote"
+    # and are immediately followed by <sup>N</sup>. We want only [N], not the word.
+    for tag in soup.find_all("a"):
+        classes = " ".join(tag.get("class") or [])
+        if "note-ref" in classes:
+            tag.decompose()
+
+    # Replace <sup> containing only a digit with [N]
+    for sup in soup.find_all("sup"):
+        text = sup.get_text(strip=True)
+        if text.isdigit():
+            sup.replace_with(f"[{text}]")
+        else:
+            # sup contains an <a> link — extract just the digit from it
+            inner = re.sub(r"\D", "", text)
+            if inner:
+                sup.replace_with(f"[{inner}]")
+            else:
+                sup.decompose()
+
+    return re.sub(r"\s+", " ", soup.get_text()).strip()
+
+
 def _extract_nlr_body_and_footnotes(page) -> tuple[str, list[str]]:
     """
     NLR-specific extraction.
     Returns (body_text, footnotes_list).
 
-    NLR wraps each in-text footnote as:
-      <a class="article-body__note-ref" ...> footnote </a><sup>N</sup>
-    We strip the <a> wrapper and convert <sup>N</sup> → [N].
-    Footnotes themselves live in .article-body__notes or similar.
+    Uses BeautifulSoup for paragraph parsing so NLR's multiline/complex
+    href attributes don't break the note-ref anchor removal.
+    Footnotes live in .article-body__notes or similar containers.
     """
 
-    # Scroll to bottom to trigger any lazy-loaded content
+    # Scroll to bottom twice to trigger lazy-loaded content
     try:
         page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
         page.wait_for_timeout(2000)
@@ -136,31 +168,11 @@ def _extract_nlr_body_and_footnotes(page) -> tuple[str, list[str]]:
             for p in paras:
                 try:
                     html = p.inner_html()
+                    text = _parse_nlr_paragraph(html)
                 except Exception:
-                    paragraphs.append(re.sub(r"\s+", " ", p.inner_text()).strip())
-                    continue
-
-                # Step 1: remove NLR footnote anchor wrappers entirely
-                # These look like: <a class="article-body__note-ref" ...> footnote </a>
-                html = re.sub(
-                    r'<a\b[^>]*\bclass="[^"]*note-ref[^"]*"[^>]*>.*?</a>',
-                    '',
-                    html,
-                    flags=re.DOTALL,
-                )
-
-                # Step 2: convert <sup>N</sup> or <sup><a ...>N</a></sup> → [N]
-                html = re.sub(
-                    r'<sup[^>]*>\s*(?:<a[^>]*>)?\s*(\d+)\s*(?:</a>)?\s*</sup>',
-                    r'[\1]',
-                    html,
-                )
-
-                # Step 3: strip remaining HTML tags
-                text = _clean_html_to_text(html)
+                    text = re.sub(r"\s+", " ", p.inner_text()).strip()
                 if len(text) > 40:
                     paragraphs.append(text)
-
             if paragraphs:
                 break
         except Exception:
