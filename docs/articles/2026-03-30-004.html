@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digging up the Dead — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Digging up the Dead</h1>
+      
+        <p class="article-header__summary">The attack on the small town of Nabi Chit in the eastern Bekaa Valley on 6 March shows the value placed on human lives by the regime in Israel and its...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Selma Dabbagh</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>27 Mar 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>More than a million people have been displaced by Israel’s invasion and bombardment of Lebanon, many fleeing with nothing more than the clothes on their back, camping in the hills or sheltering in schools or municipal buildings. The desire to turn Lebanon into another Gaza, articulated by Israeli spokesmen, is being fulfilled with attacks on journalists, the use of undercover operatives and the bombing of displaced families huddled in makeshift shelters. Familiar too was the timing of the attacks during Ramadan, frequently at iftar when people were about to break their fast.</p>
+          
+        
+          
+            <p>The attack on the small town of Nabi Chit in the eastern Bekaa Valley on 6 March shows the value placed on human lives by the regime in Israel and its backers in the United States. According to the Israeli government, the invasion was a rescue operation to retrieve the remains of an Israeli airman who disappeared forty years ago. Residents of Nabi Chit and the Lebanese army chief told the BBC that Israeli special forces entered the town ‘disguised in Lebanese military fatigues and used ambulances with signs of Hizbullah’s Islamic Health Organisation’. They headed to the corner of the graveyard, dug it up but found nothing there. The town fought back, causing the Israeli soldiers to withdraw. To cover their retreat, Israel carried out more than forty airstrikes in five hours, killing 41 people.</p>
+          
+        
+          
+            <p>There were reports last month that the Gaza War Cemetery had been bulldozed, disturbing Canadian graves. The Australian Senate was informed that 146 of the 263 Australian graves in Gaza have been damaged. According to the Commonwealth War Graves Commission, the Gaza War Cemetery ‘has suffered extensive damage to headstones, memorials, boundary walls, staff facilities and storage areas. Memorials with reported damage are the 54th (East Anglian) Division Memorial, the Hindu Section, Indian UN Memorial, the Turkish section and the Muslim section.’ At the cemetery in Deir al-Balah, ‘approximately 10 per cent of the headstones are damaged. Memorials with reported damage are the Hindu Memorial, the Sikh Memorial and the Muslim Memorial.’</p>
+          
+        
+          
+            <p>According to Euro-Med Human Rights Monitor, 58 of Gaza’s 62 graveyards have been damaged or destroyed:</p>
+          
+        
+          
+            <p>the Israeli army carried out a focused operation at al-Batsh Cemetery, east of Gaza City, in January 2026. The cemetery was converted into a military barracks, and more than 700 bodies were exhumed under the pretext of searching for the body of an Israeli detainee. The army later withdrew after extensive bulldozing that radically altered the cemetery’s landscape, preventing families from locating their relatives’ graves.</p>
+          
+        
+          
+            <p>in many cases, the Israeli army deliberately exhumed graves and converted cemeteries into military barracks under the pretext of searching for the bodies of Israeli detainees. These actions were carried out without documented, verifiable procedures, independent oversight, or a clear chain of custody and handover process. Israeli forces removed hundreds of bodies from their burial sites, mixed remains, failed to return them to their original locations, and provided no identifying or biological data to enable verification or documentation, making the recovery and identification of remains extremely difficult.</p>
+          
+        
+          
+            <p>Some of Israel’s methods are derived from British colonial legislation, the Defence (Emergency) Regulations of 1945:</p>
+          
+        
+          
+            <p>Notwithstanding anything contained in any law, it shall be lawful for a military commander to order that the dead body of any person shall be buried in such place as the military commander may direct. The military commander may by such order direct to whom and at what hour the said body shall be buried.</p>
+          
+        
+          
+            <p>The scope of this policy has been expanded in recent years and upheld by the Israeli Supreme Court. Amira Haas reported in Haaretz last month that Israel was holding the bodies of 776 Palestinians. There are 256 buried in nameless, numbered graves while the rest are held at military morgues. Nearly half were killed since October 2023 and 88 died in Israeli detention. These bodies are sometimes used as bargaining chips in negotiations, although in more recent exchanges many of the bodies have been unrecognisable when returned. There is at least one case of the wrong (long awaited) body being returned to the family.</p>
+          
+        
+          
+            <p>The grieving are not allowed to grieve, the reunited to celebrate. The repeated disruption of Palestinian funerals and prisoner releases has been bolstered by military orders that proscribe and punish expressions of Palestinian emotion. In February 2025, during a prisoner exchange, the psychotherapist Gwyn Daniels quoted Edward Said, who</p>
+          
+        
+          
+            <p>chose the word ‘inert’ not descriptively but to conjure up the Zionist fantasy about the ideal Palestinian body. Perhaps for the coloniser, this ideal body should be lifeless or ‘disappeared’. But given the stubborn persistence of Palestinians to remain living on their land, they should preferably cause as little disturbance to the colonisers as possible. Along with no displays of cultural identity, there must be no passion, no pride, no joy, no sorrow, no anger – indeed, no demonstrable emotions that might trouble their oppressors.</p>
+          
+        
+          
+            <p>The treatment of Palestinian journalists who have survived being detained by Israel does not make for easy reading. According to the Committee to Protect Journalists, there were more journalists imprisoned in Israel at the end of last year (29) than in Russia (27) or Belarus (25); only China (50) and Myanmar (30) were worse. The CPJ has collected testimony from 59 Palestinian journalists released from Israeli detention since October 2023. ‘These interviews revealed that 58 – all but one of those released – reported being subjected to what they described as torture, abuse or other forms of violence.’ Many of them said they were ‘explicitly targeted because of their work’.</p>
+          
+        
+          
+            <p>The journalists described the way they were treated at what the Israeli human rights group B’Tselem has called a ‘network of torture camps’:</p>
+          
+        
+          
+            <p>While conditions varied at different facilities, the methods those interviewed recounted – physical assaults, forced stress positions, sensory deprivation, sexual violence and medical neglect – were strikingly consistent ... The journalists’ accounts describe a system built to silence them, and to ensure that stories from Gaza and the West Bank never make it out.</p>
+          
+        
+          
+            <p>The gang rape of a Palestinian prisoner at Sde Teiman in July 2024 was so severe that the doctor examining him thought it the work of a rival armed group. When it transpired from CCTV footage that the perpetrators were Israeli prison guards, protesters stormed the prison and the chief military legal officer was forced to resign. Not because of shame and outrage at the act committed, but because the protesters considered it reprehensible that the soldiers might be disciplined for their actions.</p>
+          
+        
+          
+            <p>Israel this month dropped all changes against them and the lawyer who leaked the video is in detention facing charges that include fraud, breach of trust and obstruction of justice. ‘They raped a man,’ the UN Special Rapporteur Francesca Albanese said. ‘They gang-raped him. They raped him so brutally he had to be hospitalised. Doctors documented the injuries. The video of the assault was leaked. Now the rapists are free.’ Earlier this week Albanese presented a report on ‘Torture and Genocide’ to the UN:</p>
+          
+        
+          
+            <p>torture has become integral to the domination of and punishment inflicted on men, women and children, both through custodial abuse and through a relentless campaign of forced displacement, mass killings, deprivation and the destruction of all means of life to inflict long-term collective pain and suffering. A continuous, territorially pervasive regime of psychological terror is being imposed, designed to break bodies, deprive a people of their dignity and force them from their land. This is not incidental violence. It is the architecture of settler-colonialism, built on a foundation of dehumanisation and maintained by a policy of cruelty and collective torture.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/march/digging-up-the-dead"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
