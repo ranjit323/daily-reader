@@ -200,11 +200,11 @@ def _extract_nlr_body_and_footnotes(page) -> tuple[str, list[str]]:
 
 LOGIN_CONFIGS = {
     "economist": {
-        "login_url": "https://myaccount.economist.com/s/login",
+        "login_url": "https://www.economist.com/api/auth/login?redirectUrl=https%3A%2F%2Fwww.economist.com",
         "email_env": "ECONOMIST_EMAIL",
         "password_env": "ECONOMIST_PASSWORD",
-        "email_selector": 'input[type="email"], input[name="username"], input[id="username"]',
-        "wait_for_selector": 'input[type="email"], input[name="username"]',
+        "email_selector": 'input[type="email"], input[name="email"], input[name="username"], input[id="email"]',
+        "wait_for_selector": 'input[type="email"], input[name="email"], input[name="username"]',
     },
     "lrb": {
         "login_url": "https://www.lrb.co.uk/login",

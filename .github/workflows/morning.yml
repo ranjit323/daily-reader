@@ -57,5 +57,6 @@ jobs:
           git add docs/ docs/articles/ docs/archive/
           git diff --staged --quiet && echo "No changes to commit" || (
             git commit -m "reading list $(date -u +%Y-%m-%d)" &&
+            git pull --rebase &&
             git push
           )
