@@ -1,88 +1,76 @@
-# Daily Reader — Setup
+# daily-reader — Setup
 
-A morning reading list from FT, The Economist, London Review of Books, and New Left Review. Delivered at 7am via email. Hosted on GitHub Pages.
+Morning reading list from FT, The Economist, LRB, NLR, and Substack.
+Delivered at 7am NZT via email. Hosted on GitHub Pages.
+
+Live: https://ranjit323.github.io/daily-reader/
 
 ---
 
-## One-time setup
+## Secrets
 
-### 1. Create a GitHub repository
+Run the interactive secret setter:
 
 ```bash
-cd daily-reader
-git init
-git add .
-git commit -m "initial commit"
-gh repo create daily-reader --private --source=. --push
+./set-secrets.sh
 ```
 
-### 2. Enable GitHub Pages
-
-In your repository on GitHub:
-- Go to **Settings → Pages**
-- Source: **Deploy from a branch**
-- Branch: `main`, folder: `/docs`
-- Save
-
-Your reading list will be available at:
-`https://YOUR-USERNAME.github.io/daily-reader/`
-
-### 3. Get a Gmail App Password
-
-Your Gmail account must have 2-Step Verification enabled.
-
-1. Go to [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
-2. Create a new App Password — name it "daily-reader"
-3. Copy the 16-character password (spaces don't matter)
-
-### 4. Add GitHub Secrets
-
-In your repository: **Settings → Secrets and variables → Actions → New repository secret**
-
-| Secret name | Value |
+| Secret | What it is |
 |---|---|
-| `FT_EMAIL` | Your FT account email |
-| `FT_PASSWORD` | Your FT account password |
-| `GMAIL_ADDRESS` | Your Gmail address |
-| `GMAIL_APP_PASSWORD` | The App Password from step 3 |
+| `FT_RSS_URL` | Your personal myFT RSS URL — myft.ft.com → Contact preferences → RSS |
+| `GMAIL_ADDRESS` | Gmail address (send account and Ranjit's receive address) |
+| `GMAIL_APP_PASSWORD` | Gmail App Password — myaccount.google.com/apppasswords |
+| `RECIPIENT_EMAIL_2` | Second receive address (Steph) |
+| `TWITTER_USERNAME` | X/Twitter handle without @ — for Substack discovery |
+| `ECONOMIST_EMAIL` | Economist login |
+| `ECONOMIST_PASSWORD` | Economist password |
+| `LRB_EMAIL` | LRB login |
+| `LRB_PASSWORD` | LRB password |
+| `NLR_EMAIL` | NLR login |
+| `NLR_PASSWORD` | NLR password |
 
-### 5. Test it manually
+---
 
-In your repository: **Actions → Morning Reading List → Run workflow**
+## Trigger a manual run
 
-Watch the run — it should complete in ~3 minutes, then:
-- Check `docs/index.html` was updated in the repo
-- Check your Gmail inbox for the email
+```bash
+gh workflow run morning.yml --repo ranjit323/daily-reader
+```
 
 ---
 
 ## Timezone
 
-The cron runs at `18:00 UTC`:
-- **NZDT (UTC+13, Oct–Apr):** arrives at 7am ✓
-- **NZST (UTC+12, Apr–Oct):** arrives at 6am — change cron to `0 19 * * *` in April
+Cron runs at `18:00 UTC`:
+- **NZDT (UTC+13, Oct–Apr):** 7am ✓
+- **NZST (UTC+12, Apr–Oct):** 6am — change cron to `0 19 * * *` in April
 
-To update: edit `.github/workflows/morning.yml` and change `'0 18 * * *'` to `'0 19 * * *'`.
+Edit `.github/workflows/morning.yml` to change the time.
 
 ---
 
-## Local testing
+## Local run
 
 ```bash
-cd daily-reader
-pip install -r requirements.txt
-playwright install chromium --with-deps
+pip3 install -r requirements.txt
+python3 -m playwright install chromium --with-deps
 
-export FT_EMAIL="your@email.com"
-export FT_PASSWORD="yourpassword"
-export GMAIL_ADDRESS="your@gmail.com"
-export GMAIL_APP_PASSWORD="xxxx xxxx xxxx xxxx"
-export PAGES_URL="https://YOUR-USERNAME.github.io/daily-reader/"
+export GMAIL_ADDRESS="..."
+export GMAIL_APP_PASSWORD="..."
+export PAGES_URL="https://ranjit323.github.io/daily-reader/"
+# add other secrets as needed
 
-python src/main.py
+python3 src/main.py
 ```
 
-Then open `docs/index.html` in your browser to verify the design.
+---
+
+## Pages setup (one-time)
+
+If GitHub Pages is not yet enabled:
+- Repository → Settings → Pages
+- Source: Deploy from a branch → `main` → `/docs`
+- Save
 
 ---
 
@@ -90,34 +78,27 @@ Then open `docs/index.html` in your browser to verify the design.
 
 ```
 daily-reader/
-├── .github/workflows/morning.yml   # Daily cron + email
 ├── src/
-│   ├── main.py                     # Orchestrator
-│   ├── filter.py                   # Topic scoring (history, books, banking, quirky)
-│   ├── renderer.py                 # HTML generation
-│   ├── mailer.py                   # Gmail SMTP
+│   ├── main.py                  orchestrator
+│   ├── filter.py                topic scoring
+│   ├── renderer.py              HTML generation (index + article pages)
+│   ├── mailer.py                Gmail SMTP
 │   └── scrapers/
-│       ├── ft.py                   # Playwright (requires FT credentials)
-│       ├── economist.py            # Public RSS
-│       ├── lrb.py                  # Public RSS
-│       └── nlr.py                  # Public RSS
-├── templates/reading_list.html.j2  # Page design
+│       ├── ft.py                FT (myFT RSS + arts/culture public feeds)
+│       ├── economist.py         Economist RSS
+│       ├── lrb.py               LRB RSS
+│       ├── nlr.py               NLR RSS
+│       ├── fetch_body.py        Playwright body fetcher
+│       └── substack.py          Nitter → Substack discovery
+├── templates/
+│   ├── reading_list.html.j2     index page
+│   └── article.html.j2          per-article page
 ├── docs/
-│   ├── index.html                  # Latest reading list (GitHub Pages)
-│   └── archive/YYYY-MM-DD.html     # Archive
-└── requirements.txt
+│   ├── index.html               latest list (GitHub Pages)
+│   ├── archive/                 daily archives
+│   └── articles/                full article pages
+├── .github/workflows/morning.yml
+├── set-secrets.sh
+├── validate-credentials.py
+└── CLAUDE.md                    full technical context (for Claude)
 ```
-
----
-
-## Adjusting topics
-
-Edit `src/filter.py` — the `TOPICS` dict controls which keywords score articles higher. Add or remove keywords from any bucket.
-
----
-
-## Adding LRB/NLR credentials (optional)
-
-If the public RSS feeds return too few articles, add authenticated scraping:
-- Add secrets `LRB_EMAIL`, `LRB_PASSWORD`, `NLR_EMAIL`, `NLR_PASSWORD`
-- Extend `src/scrapers/lrb.py` and `nlr.py` with Playwright login (same pattern as `ft.py`)
