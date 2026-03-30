@@ -4,10 +4,12 @@ Writes to docs/index.html, docs/archive/YYYY-MM-DD.html,
 and docs/articles/YYYY-MM-DD-NNN.html for each article with full content.
 """
 
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
+from markupsafe import Markup
 
 
 TEMPLATE_DIR = Path(__file__).parent.parent / "templates"
@@ -27,8 +29,9 @@ def render(sections: list[dict], date: datetime | None = None) -> str:
 
     env = Environment(loader=FileSystemLoader(str(TEMPLATE_DIR)), autoescape=True)
     env.filters["format_date"] = _format_date
+    env.filters["linkify_footnotes"] = _linkify_footnotes
 
-    # Generate individual article pages and attach page path to each article
+    # Generate individual article pages
     article_template = env.get_template("article.html.j2")
     article_counter = 0
     for section in sections:
@@ -38,7 +41,6 @@ def render(sections: list[dict], date: datetime | None = None) -> str:
             page_filename = f"{slug}.html"
             page_path = f"articles/{page_filename}"
 
-            # Only write article page if there is meaningful content
             content = article.get("content", "")
             if content and len(content) > 200:
                 article_html = article_template.render(
@@ -49,7 +51,7 @@ def render(sections: list[dict], date: datetime | None = None) -> str:
                 (DOCS_DIR / "articles" / page_filename).write_text(article_html, encoding="utf-8")
                 article["_page"] = page_path
             else:
-                article["_page"] = None  # will link directly to external URL
+                article["_page"] = None
 
     html = env.get_template("reading_list.html.j2").render(
         sections=sections,
@@ -69,3 +71,11 @@ def _format_date(dt) -> str:
     if isinstance(dt, str):
         return dt
     return dt.strftime("%-d %b %Y")
+
+
+def _linkify_footnotes(text: str) -> Markup:
+    """Convert [N] markers in body text to superscript anchor links."""
+    def replace(m):
+        n = m.group(1)
+        return f'<sup><a href="#fn-{n}" id="fnref-{n}" class="fn-ref">{n}</a></sup>'
+    return Markup(re.sub(r'\[(\d+)\]', replace, str(text)))

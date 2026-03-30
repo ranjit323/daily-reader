@@ -107,7 +107,76 @@
       margin: 0 0 1.4em 0;
     }
 
-    /* ─── External link ─── */
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
 
     .article-footer {
       margin-top: 48px;
@@ -139,7 +208,7 @@
   <main class="page">
 
     <nav class="nav">
-      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+      <a class="nav__back" href="{{ back_url }}">&larr; The Daily</a>
     </nav>
 
     <header class="article-header">
@@ -163,13 +232,29 @@
       {% if article.content %}
         {% for para in article.content.split('\n\n') %}
           {% if para.strip() %}
-            <p>{{ para.strip() }}</p>
+            <p>{{ para.strip() | linkify_footnotes }}</p>
           {% endif %}
         {% endfor %}
       {% else %}
         <p style="color:#aaaaaa; font-style:italic;">Full text not available — read on the source site below.</p>
       {% endif %}
     </div>
+
+    {% if article.footnotes %}
+      <section class="footnotes">
+        <div class="footnotes__label">Notes</div>
+        <ol class="footnotes__list">
+          {% for fn in article.footnotes %}
+            <li class="footnotes__item" id="fn-{{ loop.index }}">
+              <span class="footnotes__num">
+                <a href="#fnref-{{ loop.index }}">{{ loop.index }}</a>
+              </span>
+              <span class="footnotes__text">{{ fn }}</span>
+            </li>
+          {% endfor %}
+        </ol>
+      </section>
+    {% endif %}
 
     <footer class="article-footer">
       <a class="article-footer__link"

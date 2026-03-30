@@ -1,6 +1,7 @@
 """
 Article body fetcher using Playwright.
 Attempts unauthenticated fetch first; falls back to authenticated if credentials set.
+NLR articles get special treatment: footnotes extracted separately.
 """
 
 import os
@@ -65,6 +66,81 @@ def _extract_body(page) -> str:
     return ""
 
 
+def _extract_nlr_body_and_footnotes(page) -> tuple[str, list[str]]:
+    """
+    NLR-specific extraction. Returns (body_text, footnotes_list).
+    - body_text: paragraphs joined by double newlines, with [N] markers for footnotes
+    - footnotes_list: list of footnote strings, index 0 = footnote 1
+    """
+    # --- Extract footnotes first ---
+    footnotes = []
+    fn_selectors = [
+        ".footnotes li",
+        ".article-footnotes li",
+        "#footnotes li",
+        ".endnotes li",
+        "ol.footnotes li",
+        ".fn-group li",
+        "section.footnotes li",
+    ]
+    for sel in fn_selectors:
+        try:
+            items = page.query_selector_all(sel)
+            if items:
+                footnotes = [
+                    re.sub(r"\s+", " ", item.inner_text()).strip()
+                    for item in items
+                    if item.inner_text().strip()
+                ]
+                break
+        except Exception:
+            continue
+
+    # --- Extract body paragraphs, preserving [N] footnote markers ---
+    paragraphs = []
+    body_selectors = [
+        ".article-body p",
+        ".entry-content p",
+        ".post-content p",
+        ".article__body p",
+        "article p",
+        "main p",
+    ]
+    for sel in body_selectors:
+        try:
+            paras = page.query_selector_all(sel)
+            if not paras:
+                continue
+            for p in paras:
+                # Get inner HTML so we can see <sup> tags
+                try:
+                    html = p.inner_html()
+                except Exception:
+                    html = p.inner_text()
+                # Convert <sup>N</sup> or <sup><a ...>N</a></sup> → [N]
+                html = re.sub(
+                    r'<sup[^>]*>\s*(?:<a[^>]*>)?\s*(\d+)\s*(?:</a>)?\s*</sup>',
+                    r'[\1]',
+                    html,
+                )
+                # Strip remaining HTML tags
+                text = re.sub(r"<[^>]+>", " ", html)
+                text = re.sub(r"\s+", " ", text).strip()
+                if len(text) > 40:
+                    paragraphs.append(text)
+            if paragraphs:
+                break
+        except Exception:
+            continue
+
+    # Fall back to plain _extract_body if nothing found
+    if not paragraphs:
+        plain = _extract_body(page)
+        return plain, footnotes
+
+    return "\n\n".join(paragraphs), footnotes
+
+
 LOGIN_CONFIGS = {
     "economist": {
         "login_url": "https://myaccount.economist.com/s/login",
@@ -124,11 +200,11 @@ def _login(page, cfg: dict) -> bool:
 def fetch_bodies(articles: list[dict], site_key: str) -> list[dict]:
     """
     Fetch full article bodies. Tries unauthenticated first, then authenticated
-    if credentials are available. Always returns articles (with whatever content
-    was retrievable).
+    if credentials are available. NLR gets footnote extraction.
     """
     cfg = LOGIN_CONFIGS.get(site_key)
     has_credentials = cfg and os.environ.get(cfg["email_env"]) and os.environ.get(cfg["password_env"])
+    is_nlr = site_key == "nlr"
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
@@ -142,7 +218,6 @@ def fetch_bodies(articles: list[dict], site_key: str) -> list[dict]:
         )
         page = context.new_page()
 
-        # Authenticate if credentials available
         if has_credentials:
             print(f"[{site_key}] Logging in...")
             logged_in = _login(page, cfg)
@@ -152,7 +227,6 @@ def fetch_bodies(articles: list[dict], site_key: str) -> list[dict]:
             print(f"[{site_key}] No credentials — fetching open content")
 
         for article in articles:
-            # Skip if we already have substantial content from RSS
             if article.get("content") and len(article["content"]) > 400:
                 continue
             try:
@@ -160,12 +234,23 @@ def fetch_bodies(articles: list[dict], site_key: str) -> list[dict]:
                 page.goto(article["url"], wait_until="domcontentloaded", timeout=25000)
                 page.wait_for_timeout(2000)
                 _dismiss_consent(page)
-                body = _extract_body(page)
-                if body:
-                    article["content"] = body
-                    print(f"[{site_key}]   → {len(body)} chars")
+
+                if is_nlr:
+                    body, footnotes = _extract_nlr_body_and_footnotes(page)
+                    if body:
+                        article["content"] = body
+                        article["footnotes"] = footnotes
+                        print(f"[{site_key}]   → {len(body)} chars, {len(footnotes)} footnotes")
+                    else:
+                        print(f"[{site_key}]   → no body extracted")
                 else:
-                    print(f"[{site_key}]   → no body extracted (may be paywalled)")
+                    body = _extract_body(page)
+                    if body:
+                        article["content"] = body
+                        print(f"[{site_key}]   → {len(body)} chars")
+                    else:
+                        print(f"[{site_key}]   → no body extracted (may be paywalled)")
+
                 time.sleep(1)
             except Exception as e:
                 print(f"[{site_key}] Error fetching {article['url']}: {e}")
