@@ -196,13 +196,16 @@ LOGIN_CONFIGS = {
         "login_url": "https://myaccount.economist.com/s/login",
         "email_env": "ECONOMIST_EMAIL",
         "password_env": "ECONOMIST_PASSWORD",
-        "email_selector": 'input[type="email"], input[name="username"]',
+        # Economist uses a Salesforce JS form — wait for it to render before querying
+        "email_selector": 'input[type="email"], input[name="username"], input[id="username"]',
+        "wait_for_selector": 'input[type="email"], input[name="username"]',
     },
     "lrb": {
         "login_url": "https://www.lrb.co.uk/login",
         "email_env": "LRB_EMAIL",
         "password_env": "LRB_PASSWORD",
-        "email_selector": 'input[type="email"], input[name="email"], input[name="username"]',
+        # From debug: field is input[name="_username"]
+        "email_selector": 'input[name="_username"]',
     },
     "nlr": {
         "login_url": "https://newleftreview.org/sign_in",
@@ -222,8 +225,18 @@ def _login(page, cfg: dict) -> bool:
     try:
         print(f"  Login: navigating to {cfg['login_url']}")
         page.goto(cfg["login_url"], wait_until="domcontentloaded", timeout=30000)
-        page.wait_for_timeout(1500)
         _dismiss_consent(page)
+
+        # Some sites (e.g. Economist) render the login form via JS — wait for it
+        wait_sel = cfg.get("wait_for_selector")
+        if wait_sel:
+            try:
+                page.wait_for_selector(wait_sel, state="visible", timeout=10000)
+            except Exception:
+                page.wait_for_timeout(3000)  # fallback delay
+        else:
+            page.wait_for_timeout(1500)
+
         print(f"  Login: page URL is {page.url}")
 
         email_input = page.query_selector(cfg["email_selector"])
