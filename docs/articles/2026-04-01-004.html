@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Epstein Marbles — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">The Epstein Marbles</h1>
+      
+        <p class="article-header__summary">On 20 April 2018, bidders gathered at Christie’s showrooms in Rockefeller Plaza for the auction house’s annual ‘exceptional sale’. The cover...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Erin L. Thompson</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>31 Mar 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>On 20 April 2018, bidders gathered at Christie’s showrooms in Rockefeller Plaza for the auction house’s annual ‘exceptional sale’. The cover of the catalogue showed the top half of an almost life-sized marble statue of Hercules holding a cornucopia, his beard neatly curling and his lion-skin cape pulled up over his head. The sculpture may have stood in the private shrine of an aristocratic Roman family in the first century CE, the catalogue said, and its value was estimated at $1.5 to $2 million. The catalogue also specified that the New York collector Jan Mitchell had bought the Hercules from the ‘Galleria Antiquaria, Rome’ in 1966 – before the 1970 Unesco Convention on the Means of Prohibiting and Preventing the Illicit Import, Export and Transfer of Ownership of Cultural Property – making it safe from seizure by the Italian authorities.</p>
+          
+        
+          
+            <p>The Jeffrey Epstein files tell a more complicated story. It isn’t the worst of Epstein’s crimes, by a long shot, though I think it reveals something about the ways that the spheres he moved in, including the art world, operate, as well as the ways that he manipulated them. In early 2017, Epstein lent about $500,000 to the real estate developer David J. Mitchell. (I am reconstructing events from dozens of email chains. When quoting from these documents, I’ve silently corrected spelling and other obvious errors.) Mitchell and Epstein were close, despite Epstein’s guilty plea and jail sentence in 2008 for soliciting a minor for prostitution. Mitchell agreed to serve as a trustee and executor for Epstein’s will in 2013, and stood surety for Epstein’s bail bond when he was indicted in New York in 2019.</p>
+          
+        
+          
+            <p>The loan was supposed to be short term, and by mid-2017 it was overdue. Mitchell’s funds were tied up in property investments, while any spare cash was disappearing into the renovation of a restaurant. His father was the restaurateur Jan Mitchell. In 1993, the Metropolitan Museum opened the Jan Mitchell Treasury in its Rockefeller Wing to house some of the seventy golden artefacts from South and Central America that Mitchell had donated. He died in 2009, leaving some of his art to his son.</p>
+          
+        
+          
+            <p>With Epstein pressing for repayment, David Mitchell offered some of the art he had inherited as collateral. Epstein accepted the Hercules and another marble, a two-foot-tall group of two boys. He then emailed a contact at Christie’s to ask them to send someone to look at a ‘gift of sculptures I received’. The sculptures were ‘purportedly Roman’, Epstein wrote, but he wasn’t sure they were worth all that much.</p>
+          
+        
+          
+            <p>The contact replied within hours that their colleague G. Max Bernheimer, the Head of Christie’s antiquities department, had agreed to visit Epstein’s townhouse as soon as he returned from a trip.</p>
+          
+        
+          
+            <p>Epstein had been both buying from and selling through Christie’s since at least 2004. He had also been the point person for sales of some hugely valuable modern masterpieces from the collection of Leon Black, a billionaire investor who paid Epstein millions of dollars a year for financial advice.</p>
+          
+        
+          
+            <p>A few months earlier, Epstein had negotiated the consignment of a Giacometti sculpture and a Braque painting for Black. Sotheby’s handled the Giacometti, while the Braque sold for more than $10 million at Christie’s New York. Christie’s wired $7.75 million to a trust controlled by Epstein as part of a complicated network of transactions between him and Black, seemingly intended to reduce taxes.</p>
+          
+        
+          
+            <p>Epstein’s long-time accounting adviser and all-around financial fixer, Richard Kahn, met Bernheimer at Epstein’s townhouse in August 2017. Bernheimer told Kahn that the sculptures were ‘incredible’ but essentially worthless without more provenance information. Mitchell hadn’t told Epstein anything about the pieces other than that he had inherited them after his father’s estate was settled in 2010. Christie’s wouldn’t offer antiquities for sale unless they had good provenance dating back to at least 2000.</p>
+          
+        
+          
+            <p>In 2014 and 2015, Christie’s had pulled antiquities from sale on the eve of auctions after an outside researcher matched them to Polaroids of recently looted artefacts seized from black market traffickers. In 2016, federal agents raided Christie’s showroom to seize smuggled Asian artefacts.</p>
+          
+        
+          
+            <p>The auction house began to require consigners to provide more provenance information. At first, they took a consigner’s word for it. This backfired later in 2016, when New York prosecutors arrested a prominent art dealer who had sold a collection of Asian antiquities through Christie’s. To fulfil the provenance requirement, she had simply given them a list of dates and vague descriptions of past owners and sales: a ‘member of the Diplomatic Corps’ here; a small auction sale there. The prosecutors seized the dealer’s files and found that she knew the pieces had come from notorious smugglers. After that, provenance information had to be independently verifiable.</p>
+          
+        
+          
+            <p>Bernheimer took the lead in coming up with more provenance information. Since Jan Mitchell had been such an important donor to the Met, Bernheimer though the museum might have a file on his collection. He explained that he was ‘friendly with the curatorial staff there’ andsent his assistant ‘to search through the file’.</p>
+          
+        
+          
+            <p>The file contained an inventory of Mitchell’s entire collection. Created in the early 1990s, it had specific enough descriptions of both sculptures for Bernheimer to declare that Christie’s internal provenance policy was satisfied and he was prepared to offer the pieces at auction, with an estimate of $200,000 to $300,000 for the Hercules and $150,000 to $200,000 for the boys.</p>
+          
+        
+          
+            <p>The inventory also noted that Mitchell had bought both sculptures from a Roman dealer named Giorgio Fallani in 1966. A couple of weeks went by as Bernheimer tried to verify this information. ‘Fallani is not the easiest to work with,’ Bernheimer wrote to Kahn. Fallani eventually told Bernheimer that the sculptures indeed ‘came from him’ but ‘sadly, he has no documentation from the 1960s, so there isn’t proof.’</p>
+          
+        
+          
+            <p>Still, Bernheimer spent months calling and emailing to win the right to sell ‘the Epstein marbles’ on what he claimed was a ‘superheated’ market with a ‘tremendous appetite for exquisite objects with solid provenance that are fresh to the market’. He also raised his estimates to $1.5 to $2.5 million for the Hercules and $600,000 to $800,000 for the boys.</p>
+          
+        
+          
+            <p>Bernheimer was acting as though Fallani had provided him with ‘solid’ provenance, but there was a key difficulty. The Giogio Fallani who sold the sculptures to Jan Mitchell in 1966 from his shop in Rome had died in 1994. The Giorgio Fallani that Bernheimer spoke to is a private dealer based in Geneva. He is a member of the same family as Giorgio the Elder, although two generations younger. The sculptures came not from him, but from his family, in a transaction that happened in his youth.</p>
+          
+        
+          
+            <p>I’m not sure if Bernheimer spotted this difficulty or not, or whether the failure to include Fallani’s name in the provenance statement printed in the catalogue is significant or just a typo. (The catalogue says only ‘Galleria Antiquaria’, which is about as specific as ‘gelateria’.) But Fallani had provided valuable information by saying that there were no records of the dealings of the Galleria Antiquaria Fallani from the 1960s. No one could prove that the sculptures had been sold then, but no one could disprove it, either.</p>
+          
+        
+          
+            <p>Mitchell wasn’t eager to sell the sculptures. But he still couldn’t repay the now long overdue loan, so Epstein persuaded him to ‘split the baby’ by putting only the Hercules up for auction. (Who actually owned the sculptures remains unclear, but Epstein told Christie’s he had acquired them through one of his trusts in 2017.)</p>
+          
+        
+          
+            <p>Christie’s normally charges sellers a variety of substantial fees, but they waived all these charges for Epstein and agreed to put the Hercules on the cover of the catalogue for the 2018 Exceptional Sale.</p>
+          
+        
+          
+            <p>Everything seemed to be proceeding smoothly until the evening before the auction. Bernheimer had been gathering ‘intel’ on potential bidders: talking to the people who came to see the Hercules during the preview exhibition; keeping track of the registrations for phone bidders, which signalled interest from deep-pocketed collectors abroad; and finally, it seems, phoning round the relatively small world of people willing to pay more than a million for a single ancient sculpture. The news was bad: the only person who had expressed any interest had told Bernheimer that he thought the estimated value far too high.</p>
+          
+        
+          
+            <p>Bernheimer asked for permission to call the collector to ‘feel him out’ by asking if his interest would be rekindled if the Hercules went for below $1 million. After Epstein gave him the go-ahead, Bernheimer reported that the collector had said he would bid if the reserve were set to $800,000 (even though the reserve is supposed to be confidential).</p>
+          
+        
+          
+            <p>In the end, no one bid more than the reserve. The Hercules, for all the glamorous photos and prime auction placement, didn’t sell. Epstein’s contact at Christie’s tried to soothe the disappointed financier while Bernheimer scrambled to make things better by privately offering the unsold sculpture to potential buyers for $700,000. There were no takers, either then or, as far as I could tell, after Mitchell consigned the sculptures to Phoenix Ancient Art, whose customers would already have been approached by Christie’s.</p>
+          
+        
+          
+            <p>Mitchell paid Epstein a chunk of what he owed in October 2018 and stopped forwarding him the increasingly despondent updates from Phoenix Ancient Art. According to public filings, the gallery had by then listed both sculptures as collateral for its own loans, despite not owning them. The Hercules last appeared in public towards the back of a photograph illustrating a news report in June 2019 about the seizure of the contents of Phoenix Ancient Art’s Brussels branch by Belgian authorities. The investigation ended with one of the gallery’s principals pleading guilty in 2023 to falsifying provenance documents to sell smuggled antiquities. I haven’t been able to determine where Hercules is currently pouring out his hopes of eternal prosperity.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/march/the-epstein-marbles"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
