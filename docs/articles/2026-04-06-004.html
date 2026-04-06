@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Walking the Way of St Augustine — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Walking the Way of St Augustine</h1>
+      
+        <p class="article-header__summary">The Way of St Augustine runs from Ramsgate to Canterbury, a walk of just under twenty miles across open country. You begin by the sea. After skirting...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Cal Revely-Calder</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>2 Apr 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>The Way of St Augustine runs from Ramsgate to Canterbury, a walk of just under twenty miles across open country. You begin by the sea. After skirting the coast to Cliffsend, under canopies of gorse, you cut inland, following the railway line past farmland to the town of Minster. From there to the village of Stodmarsh – one of the places to break the journey if you’re doing it over two days – you zig-zag over marshes like grassy canals. The mile from Stodmarsh to Fordwich, England’s smallest town, runs through a small patch of wet woodland – increasingly rare in these islands – with clearings that appear suddenly like fairy glens.</p>
+          
+        
+          
+            <p>At one end of the trail is the Shrine of St Augustine, a hard throw from the North Sea beach where the monk arrived from Rome in 597 to accost King Ethelbert of Kent. The church was built by Augustus Pugin in the mid-19th century and houses a relic of the saint: a dimly visible fragment of bone. At the other is the 11th-century cathedral where the shrine of Thomas Becket became England’s leading medieval pilgrimage site, and where Augustine’s 105th successor as Archbishop of Canterbury, Sarah Mullally, was installed last month. If you produce a ‘pilgrim’s passport’ on arrival at Canterbury, stamped at all the churches passed along the route, they’ll waive the £19.50 admission fee to the cathedral.</p>
+          
+        
+          
+            <p>In a dozen hours of walking, though both the going and the weather were largely fair, my companion and I passed few other travellers. And we heard almost nothing: just an ambient buzz of quiet, punctuated by bird calls, or a distant car, or the soft sound of our boots in the churches’ aisles. Walking the Way of St Augustine reminds you, if nothing else, how secular England feels: how far we are from the god-haunted era whose empty buildings we like to poke around.</p>
+          
+        
+          
+            <p>We added our signatures to the visitors’ books in the churches at West Stourmouth, Minster and Stodmarsh, several days after the last people had signed. Plaques on the medieval walls paid tribute to local benefactors and victims of the Great War. There was always a vase of flowers, always pale and fresh, and notices reminding visitors to close the screen doors to keep the birds out.</p>
+          
+        
+          
+            <p>In the 14th century, pilgrims would trek to cathedrals, shrines and other devotional sites not only to worship but also to pay for indulgences, and obtain in return the remission of some proportion of the temporal punishment due for their sins, whether on Earth or in Purgatory. The problem was that no one but God knew exactly how much punishment anyone was due in either realm, or how to convert time between the two. And while the theology was never as simple as ‘visit place – or pay monk – to get some time knocked off’, and even though indulgences only worked if you were sincerely penitent, the whole set-up was not only open to being interpreted as transactional, but could be exploited by corrupt clerics as long as there were punters willing to pay.</p>
+          
+        
+          
+            <p>The system became dizzyingly intricate, an early form of financialisation. The historian R.N. Swanson records a 15th-century calculation that pilgrimage to Becket’s shrine in Canterbury could earn you, if you played your cards right, as much as 37,503 years and 250 days of remission. A Cheshire man called Humphrey Newton collected a pardon worth 800,000 years. The wealthy took to the road: Margery Kempe voyaged as far as the Holy Land. The wealthiest didn’t bother. Elizabeth of York, the queen of Henry VII, paid pilgrims to travel on her behalf and collect indulgences for her.</p>
+          
+        
+          
+            <p>Unless you’re in it for the indulgence, pilgrimage isn’t a practical affair. It costs time and effort and money. It’s a rare triumph of uselessness in a world that prizes the reduction of daily life to utility. To become a pilgrim is to shun all that. You are, above all, deliberately inconveniencing yourself, if only temporarily. Most pilgrims walking the Way of St Augustine will leave or arrive at Canterbury on Britain’s only high-speed railway line. And the intentions with which you set out, now as a millennium ago, whether devotional, pleasure-seeking or self-optimising, fall gradually prey to the effects of the physical world: climate, weather, terrain, hunger, thirst, weariness. Walking through east Kent in the spring, your straits can only get so dire, but the clouds can lower surprisingly fast and the marshland offers no cover from the elements.</p>
+          
+        
+          
+            <p>The Augustine legend has been gussied up. Christianity had been in the British Isles for some time, perhaps a few centuries, by the time he arrived; he’d been sent to re-Christianise what Rome saw as reiver lands, a mission so unappealing that the forty monks accompanying him mutinied. And Ethelbert didn’t bend the knee right away, as the giant stone cross near Ramsgate suggests; he merely let Augustine preach, and converted later on. (Bertha, Kent’s Frankish queen, was already a Christian, and may have worked on her husband’s soul.) We don’t know the route Augustine took – Bede, writing a century later, skips from Thanet to Canterbury – and we couldn’t walk it if we did. The Isle of Thanet was then divided from Kent by the Wantsum Channel, a sizeable strait that wouldn’t silt up for a thousand years, so the holy party must have sailed some of the way, probably from Minster to Stourmouth, or some nearby part of the shifting shore.</p>
+          
+        
+          
+            <p>Still, all pilgrimages are repetitions, and the pleasure of a repetition is in its mixing of sameness and novelty. Augustine might have looked at the fields outside Minster and seen them being tilled for food, as they are still; but those marshes and their sinuous paths were many centuries away. He wouldn’t have seen the pebble-dashed semis or the faux-Viking ship at Ebbsfleet; he wouldn’t have walked in the shadow of the motorway bridge. History rolls the land, and the footpaths we followed may soon, in turn, be gone. Climate Central, a non-profit research group, forecasts that by 2050 the North Sea could rise enough to drown low-lying parts of Kent. If so, the marshes between Minster and Stourmouth will rise too, and the Wantsum Channel will return.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/april/walking-the-way-of-st-augustine"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
