@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Art of the Deal, Havana Edition — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">The Art of the Deal, Havana Edition</h1>
+      
+        <p class="article-header__summary">It should be clear that there is absolutely nothing democratic about the negotiations between Trump’s agents and the Cuban government. If an...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Samuel Farber</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>1 Apr 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>The US secretary of state, Marco Rubio, met in February with Raúl Castro’s grandson at a Caribbean Community (CARICOM) meeting on the island of St Kitts. Venezuelan oil deliveries to Cuba had already stopped, following the kidnapping of President Nicolás Maduro by the US. Shortly afterwards, Donald Trump ordered a blockade of any oil deliveries to the island regardless of their origin, though he has since allowed a Russian tanker to deliver a shipment – the first since January.</p>
+          
+        
+          
+            <p>The meeting in St Kitts was followed by negotiations between representatives of Cuba and the US. Little has been revealed about what was discussed, but Cuba has said it’s willing to pay a lump sum in compensation for the confiscations it carried out in the early 1960s, to be distributed by Washington to the roughly six thousand claimants (both businesses and individuals). The Cuban government has previously reached similar agreements with Canada, Switzerland, the United Kingdom and France, though the sums involved were much smaller.</p>
+          
+        
+          
+            <p>Both sides will find it easier to reach agreement on economic than on political matters. In recent years the Cuban government has made several concessions to the private sector, though it has often later gone back on them. Nevertheless, the private sector currently controls most retail business; the state’s monopoly on foreign trade has weakened as private enterprises have been able to import more goods from abroad; and, most important, there has been a substantial increase in the number of privately employed Cubans, who now make up about a third of the labour force. A law allowing the creation of mixed private-public enterprises was recently passed, although the practical effects of the policy remain to be seen.</p>
+          
+        
+          
+            <p>Yet there are serious obstacles to an economic agreement with the US. Cuba, unlike Venezuela, has little to offer economically. There’s barely anything left of the sugar industry. As for tourism, there’s a plethora of new but empty luxury hotels. Older buildings, roads, private cars, public transport and services such as rubbish collection have all deteriorated. US administrations, whether Republican or Democratic, will be inclined to come into Cuba and pick the low-hanging fruit of reconstruction projects and services and disregard the rest. Cubans who see the US as an economic saviour are bound to be disappointed. When an imperial power intervenes in a less developed country, there is a fundamental asymmetry between the profit drives of the imperial metropolis and the material needs of its colonies.</p>
+          
+        
+          
+            <p>For the US, there are significant legal and political hindrances to an agreement with Cuba. The Helms-Burton Act of 1996 systematised and strengthened the economic blockade of the island. The law is supposed to be in force until democracy is established in Cuba, and can only be repealed by Congress (a stumbling block to Barack Obama’s attempts during his second term to renew relations with Cuba). Title III of the act allows US nationals to sue foreign companies who ‘traffic’ in property confiscated by the Cuban government, although US presidents can suspend this. Every president from Bill Clinton to Joe Biden, Republican and Democratic alike, did exactly that – except for Donald Trump.</p>
+          
+        
+          
+            <p>Relatively few US citizens of Cuban origin have sued to be indemnified or recover their property. But that may change if Trump makes a ‘deal’ with Cuba like the one he made with Venezuela. Most Cuban Americans would be unhappy with any deal that kept the Castro family in power. It could also have electoral repercussions for the Republicans: In Florida, 5 to 6 per cent of voters are Cuban Americans.</p>
+          
+        
+          
+            <p>As for the Cuban government, it is unlikely to commit political suicide and give up the monopoly of the Communist Party, which the constitution places above the constitution itself. Nor will the government allow any significant democratisation of Cuban society. It may be willing, however, to bring back to life the Registro de Asociaciones and liberalise – up to a point – its criteria for registering new associations. The 1985 law on associations stipulates that no new group may be registered if it has identical or similar objectives to an already registered group. This prevents the formation not only of political parties other than the Communist Party, but also any association that would rival the party’s subsidiary organisations, such as the Cuban Federation of Women or the Confederation of Cuban Workers.</p>
+          
+        
+          
+            <p>The Cuban government would be likely to agree to the release of its approximately one thousand political prisoners, although it would also try to deport them as soon as they were released (as it has in the past). It would be even more interested in deciding which political exiles would be allowed to return: priority would be given to those returnees willing to invest in the country.</p>
+          
+        
+          
+            <p>It should be clear that there is absolutely nothing democratic about the negotiations between Trump’s agents and the Cuban government. If an agreement is reached, it will be a pure distillation of politics from above. Unlike previous US presidents, Trump has not even pretended to have a democratic justification for his foreign policy, and these negotiations won’t bring any significant democratisation to Cuba (as distinct from a degree of liberalisation). What Trump really wants out of these negotiations is to defeat the Cuban government in order to reaffirm and consolidate US control of Latin America and the Western hemisphere. Given the power imbalance, the Cuban government is most interested in gaining time, with the hope that a post-Trump administration would allow it to recover some of its power. But there can be little doubt that this government will have to make substantial concessions to Washington to survive.</p>
+          
+        
+          
+            <p>Still, the Cuban regime will never give up its revolutionary claims, whatever it may suffer at Trump’s hands. Latin America has seen previous examples of revolutionary posturing hiding a conservative turn. Mexico from the 1940s to the early 1980s was on paper a democratic republic but in fact a one-party state, whose so-called opposition parties were controlled by the ruling Partido Revolucionario Institucional. There was a degree of press freedom, as long as journalists did not seriously challenge the PRI. Despite Mexico’s many nationalised industries, economic dynamism after the Second World War came increasingly from the growing private sector. As part of its ‘revolutionary’ dissimulation, the PRI supported the Cuban Revolution, making Mexico the only Latin American country to maintain diplomatic relations with Castro for many years. At the same time, however, it gave free rein to the CIA – allowing, among other things, the surveillance of people travelling to Cuba through Mexican airports.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/april/the-art-of-the-deal-havana-edition"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
