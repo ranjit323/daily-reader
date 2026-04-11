@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>At a Budapest Scruton Café — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">At a Budapest Scruton Café</h1>
+      
+        <p class="article-header__summary">For Orbán and his allies, much is at stake beyond losing political power. Fidesz leaders and cronies like to live like 19th-century magnates; there...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Jan-Werner Müller</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>7 Apr 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>Tourists might stumble into a Scruton café in quite different parts of Budapest: one is on the second floor of a shopping centre called Mammut, surrounded by cheap clothing and perfume chains; another next to Red Ruin, a Communist nostalgia theme bar, which in turn is a few doors from the legendary Centrál coffee house. I remember seeing there, in 2004, a lone, lean, young opposition leader called Viktor Orbán working intently on papers at a small table.</p>
+          
+        
+          
+            <p>Back then Orbán was known to feel deeply resentful about having lost the 2002 election as an incumbent; we now know the lesson he drew. Hostile media had supposedly played a big part in what he considered an unfair outcome – and truly securing power meant securing cultural hegemony. Since his resounding electoral comeback in 2010, Orbán’s party, Fidesz, has largely brought the media and the education system under partisan control. Hungary’s urban landscapes have been systematically remade in line with what Fidesz considers authentic traditions, which may be the reason that Sir Roger’s wisdom is all over the cafés bearing his name, from T-shirts to wall inscriptions: ‘Conservatism is an instinct rather than an idea.’</p>
+          
+        
+          
+            <p>Yet Orbán, who won three more elections after 2010 (all free, but certainly not fair) might have lost his political instinct. Though the outcome of the parliamentary vote on 12 April remains uncertain, his challenger, Péter Magyar (a former Fidesz man), is topping most polls by wide margins. Orbán’s strategy has always been to polarise society and conjure up an existential threat from which only he can save the nation: Muslim refugees, George Soros, the EU, the LGBT community or, most recently, Volodymyr Zelensky. This approach appears no longer to work in the face of a very tangible cost of living crisis, which seems to have sharpened outrage at the regime’s corruption – long known, but apparently also long tolerated in the spirit of ‘they all do it.’</p>
+          
+        
+          
+            <p>For Orbán and his allies, much is at stake beyond losing political power. Fidesz leaders and cronies like to live like 19th-century magnates; there’s a lot of money in landed estates. A commitment to English aristocratic cosplay helps explain why Scruton became such a cult figure. You can admire his riding saddle and busts of the great man while sipping ‘strong Scruton tea’; at the ‘Scruton Bistro and More’, you can see ‘Sir Roger Scruton’s desk’ with ‘Sir Roger Scruton’s bag’ placed on top.</p>
+          
+        
+          
+            <p>As Europe’s leading self-declared ‘illiberal’ statesman, Orbán has built a whole intellectual infrastructure, from glossy magazines to think tanks and international conferences, to spread his philosophy. The flagship is the Mathias Corvinus Collegium, not a university but a foundation offering ‘supplemental education’ to students ‘throughout the Carpathian Basin’. The MCC has received more funds than all higher education institutions in Hungary combined; it organises festivals where famous friends of the far right, such as Peter Thiel, make appearances alongside supposed mainstream actors, such as the former Austrian chancellor Sebastian Kurz, eager to promote collaboration between the centre right and the far right. Along with the Scruton cafés, the MCC is an obligatory stop on a transatlantic pilgrimage route where Trumpists get to experience a Mitteleuropa far-right Disneyland. The MCC even has a branch in Brussels, the supposed bureaucratic hellhole populated by what Orbán derides as ‘liberal nihilists’; it features assorted conspiracy theorists and Populismusversteher valiantly doing ‘battle for the soul of Europe’.</p>
+          
+        
+          
+            <p>Perhaps this investment in what can generously be described as ‘ideas’ will pay off and vindicate Orbán’s political instincts. But it has already led to an effective talking point for his critics: the declared enemy of globalism is gallivanting on the global stage while citizens’ problems at home – not least a collapsing healthcare system – are ignored.</p>
+          
+        
+          
+            <p>Then again, the real proof of cultural hegemony is that your political opponents end up sharing your ideology. Magyar is a conservative, but also the only hope for defeating the regime; hence he has effectively absorbed most of what used to be liberal and left-wing opposition forces. Unlike Orbán and his henchmen, Magyar does not consider it his mission to incite hatred of minorities, but he also makes a point of keeping away from the Budapest Pride parade. The fact that 200,000 people defied Orbán’s ban of the march last June – many of them there mainly to voice discontent with the government – was an early sign that the regime’s control might be slipping. As a friend put it at the time, the crowd felt not so much angry as empowered. Subsequent attempts to assert the regime’s power – the police filing criminal charges against Budapest’s liberal mayor because of the parade – came across as desperation.</p>
+          
+        
+          
+            <p>Only a few days are left until the elections on Sunday, but even a day can be a long time in politics. There has not been an election of this importance in which both Trump and Putin – and probably also the Chinese regime, which has been happy to co-operate with Orbán on its Belt and Road projects – are all backing the same candidate. Moscow is said to have sent its vaunted ‘political technologists’ to swing things Fidesz’s way; and, if previous elections are anything to go by, people in poor rural areas may well be threatened and bribed on the day with anything from cash to potatoes to do the right thing at the ballot box.</p>
+          
+        
+          
+            <p>Orbán has bragged that he is not afraid of being opposition leader, since he has plenty of experience with the role. He might take heart from the fate of his fellow far-right populists in Poland: they lost their majority in parliament in 2023 but won the presidency last year, with the power of veto to paralyse the government; efforts to undo the damage far-right populists did to the courts and other institutions have had limited success (while the former justice minister was granted asylum in Hungary). Orbán has had sixteen years to change the system and place his people – starting with the public prosecutor – in positions from which they could only be removed if Magyar were to win a two-thirds majority in the national assembly.</p>
+          
+        
+          
+            <p>So maybe Orbán can afford to lose, hoping he’ll be back soon enough. But the immediate reaction of many observers, not just in Hungary, would still be that one of the most prominent models for the far right internationally has been defeated. Trump has officially endorsed Orbán (‘fantastic guy’); his vice-president cites the prime minister as an exemplar of how to subdue universities and flew into Budapest just now to support the prime minister (while whining about election interference by ‘Brussels bureaucrats’). If Hungarians say no to an exhausted kleptocratic autocracy, the repercussions will be felt across whatever remains of what used be called the West.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/april/at-a-budapest-scruton-cafe"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
