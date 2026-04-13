@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gamer’s Dilemma — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Gamer’s Dilemma</h1>
+      
+        <p class="article-header__summary">The Trump administration’s levity doesn’t make the bombs any heavier. The real game is an old one, as American as stolen labour: when life gives...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Arianne Shahvisi</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>9 Apr 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>In a strong field of contenders, the most morally troubling computer game ever made is probably RapeLay, released in Japan in 2006. Players are required to adopt the role of a sex offender who must stalk and rape a woman and her daughters, aged 12 and 17. It was banned in the UK in 2009 and eventually removed from sale in Japan too. The game spurred a debate among academic philosophers, centred on the ‘gamer’s dilemma’, a conceit formulated by Morgan Luck. Why is virtual killing morally acceptable in computer games, Luck asked, while virtual child sex abuse is not, given that no real person is harmed in either case?</p>
+          
+        
+          
+            <p>Luck and others have offered explanations for the apparent inconsistency, the most compelling of which is that fictional killing tends to be abstract, impersonal and obviously strategic while child abuse is simply too grave to be gamified. The distinction feels intuitively right but slippery, which suggests it derives from contingent cultural forces – murder-based games have simply been normalised – rather than an objective moral difference.</p>
+          
+        
+          
+            <p>Virtual murder has its critics. Concerns about computer games causing aggression, especially among young men, date back to the 1970s and the arcade game Death Race, which involved driving into gremlin pedestrians. It’s never been hard to argue that such violence is gratuitous – plenty of popular games do without it – but providing evidence of harm is trickier: several recent studies have found that computer games don’t cause violence against real people. The fact that violent games have grown up alongside livestreamed slaughter (Death Race was released in 1976, a year after the end of the first televised war) is a serious confounder.</p>
+          
+        
+          
+            <p>In 2021, ahead of the release of Six Days in Fallujah, the Council on American-Islamic Relations described the game as an ‘Arab murder simulator’ which ‘glorifies violence that took the lives of over eight hundred Iraqi civilians, justifies the illegal invasion of Iraq and reinforces Islamophobic narratives’. That is all undoubtedly true, but it’s also true that the game follows a fairly orthodox tactical first-person shooter format. It doesn’t include the use of white phosphorus munitions, which the US dropped during the Second Battle of Fallujah in 2004, burning the flesh from the bones of thousands of Iraqis and leaving a legacy of birth defects.</p>
+          
+        
+          
+            <p>The criticism is now more commonly made in reverse: real killing should not be gamified. The Ukrainian government last year introduced a competition which awards points to army units for successful strikes on Russian targets, with the aim of motivating exhausted soldiers as well as directing matériel to those who use it most effectively. Killing a Russian soldier wins you twelve points, which can be traded for ten kamikaze drones. When challenged on the dehumanising effects of the contest, Ukraine’s minister for digital transformation, Mykhailo Fedorov (he’s now defence minister), replied: ‘What is inhumane is starting a full-scale war in the 21st century.’</p>
+          
+        
+          
+            <p>Donald Trump and his secretary of war, Pete Hegseth, both former television personalities, have demonstrated that you can launch a full-scale war with all the fun of a game. In early March, the White House and Pentagon circulated official hype videos of Operation Epic Fury. Footage of strikes on Iran was interlaid with clips from the games Call of Duty, Wii Sports and Grand Theft Auto and the movies Top Gun, Braveheart and Gladiator, punctuated by comic book onomatopoeia. In the run up to the attacks, the US Office of the Under Secretary of War for Research and Engineering boasted in manosphere-speak: ‘Low cortisol. Locked in. Lethalitymaxxing.’</p>
+          
+        
+          
+            <p>Emmanuel Macron has chided Trump for being too flippant in his press conferences and online ravings: ‘When you want to be serious you don’t say every day the opposite of what you said the day before ... And maybe you shouldn’t be speaking every day.’ Barack Obama may have authorised nearly ten times as many drone strikes as George W. Bush, but he referred to civilian deaths as a ‘hard fact ... a risk that exists in all wars’ – the kind of dispassionate, statesmanlike language that befits the business of professional, organised murder. None of this ‘we’re going to bring them back to the Stone Age, where they belong’ or ‘open the Fuckin’ Strait, you crazy bastards, or you’ll be living in Hell.’ Joe Biden gave Israel thousands of 2000-pound bombs and vetoed every attempt by the UN to halt or slow the genocide in Gaza, but he never boasted about it or offended the sensibilities of the French president.</p>
+          
+        
+          
+            <p>The Trump administration’s irreverence is understandable: the depths of their impunity would make anyone giddy. It’s also wise to get ahead of the visual gravity of it all (the dusty orphaned toddlers, the body bags, the amputees) with a loading dose of prophylactic silliness. It may be uncouth and upsetting, but the posturing isn’t what matters most: the Trump administration’s levity doesn’t make the bombs any heavier. The real game is an old one, as American as stolen labour: when life gives you domestic scandals, foment a global crisis, with bonus points if you can hit oil. Bill Clinton dropped bombs whenever his affair with Monica Lewinsky returned to the headlines. He got through the worst nine months of the scandal with strikes on Iraq, Sudan, Afghanistan and Serbia. Operation Infinite Reach hit the Al-Shifa pharmaceutical factory in Khartoum, destroying most of the country’s medicines and causing a humanitarian crisis.</p>
+          
+        
+          
+            <p>Trump’s war on Iran began in the midst of intensifying scrutiny of the Epstein files, three million pages of which had been released a month before. They didn’t include FBI interview files containing allegations (‘completely baseless’, according to the White House) that Trump sexually abused a child, which were only released a week into the war. A poll on 11 March found that 52 per cent of Americans (and 81 per cent of Democrats) believe that Trump has gone to war as a distraction tactic. Critics have referred to the military action as ‘Operation Epstein Fury’.</p>
+          
+        
+          
+            <p>Thomas Massie, a Republican congressman who was key to the passing of the Epstein Files Transparency Act, has warned that ‘bombing a country on the other side of the globe won’t make the Epstein files go away.’ He’s wrong, at least for now: mentions of ‘Epstein’ in US news were rising steeply on 27 February and fell off on the 28th. This might not last, now that there are signs of a ceasefire, but that’s what forever wars are for.</p>
+          
+        
+          
+            <p>If there are rumours that you’ve sexually abused a child, waging an expensive, unpopular, illegal war, let alone one whose opening salvo kills more than a hundred little girls, seems a strange bid at reputation laundering. But Trump is relying on the wonky moral arithmetic that produces the gamer’s dilemma, plus the racial supremacy that drives all Western foreign policy: the suspicion that he abused a white girl is a threat to his legitimacy in a way that the documented obliteration of a school of brown girls is not.</p>
+          
+        
+          
+            <p>The inconsistency crops up again in the apologies that have spread like a rash among powerful men in Epstein’s orbit: they are sorry, they didn’t know, they hope for justice. Bill Clinton regrets his friendship. Does he regret obliterating Sudan’s malaria drugs and IV fluids? There is much to regret. Epstein was into everything: sexual abuse, eugenics, settler colonialism. He made donations to the Israeli Defence Forces and the Jewish National Fund, which finances illegal settlements on Palestinian land.</p>
+          
+        
+          
+            <p>There is an audio recording of Epstein’s friend Ehud Barak, the former prime minister of Israel, telling the financier that he had told Vladimir Putin that Israel needed a million Russian Jews to ‘control the quality’ of the population, given the growing numbers of Palestinians and racialised Sephardic and Mizrahi Jews, adding the sweetener that ‘many young, beautiful girls would come, tall and slim.’ Barak ‘regrets’ his links to Epstein. Does his regret his role as the defence minister who ordered the killing of 1400 Palestinians, including more than three hundred children, in Israel’s Operation Cast Lead?</p>
+          
+        
+          
+            <p>The apologies from those linked to Epstein are grubby, suspect, insufficient. But they display a deference to the terms of some kind of morality: it is never OK to sexually abuse a child and it is very bad to be associated with those who do. Is it OK to kill a child? To associate with those who do? What about twenty thousand children? Will we ever see apologies from those whose friends have blown the limbs off children in Palestine, Lebanon and Iran? The discrepancy that drives the gamer’s dilemma doesn’t come from our rightful horror at paedophilia – virtual or real – but from our complacency about so much murder.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/april/gamer-s-dilemma"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
