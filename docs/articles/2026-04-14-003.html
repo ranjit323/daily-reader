@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>City of Peace — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">City of Peace</h1>
+      
+        <p class="article-header__summary">The 2300 workers at the Volkswagen factory in Osnabrück, northwest Germany, have been confronted with an unexpected plan for industrial...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Rebekah Diski and Khem Rogaly</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>14 Apr 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>The 2300 workers at the Volkswagen factory in Osnabrück, northwest Germany, have been confronted with an unexpected plan for industrial transformation. Last month, it was reported that the car manufacturer was in talks with the Israeli state-owned arms company Rafael to make missile defence systems based on Israel’s Iron Dome. VW has never closed a factory in its home country, but in 2024 it announced that three plants, including Osnabrück, were at risk because of declining sales, high energy costs and competition from Chinese electric vehicle makers.</p>
+          
+        
+          
+            <p>Trade unions and local politicians alike have resisted plans to reduce costs by cutting jobs and wages, pressuring managers to find alternative production lines. The company’s proposed solution would see VW – which was established in 1937 by the Nazi German Labour Front and used forced labour to produce arms for the Third Reich – dealing with the Israeli war machine, currently engaged in its own genocide of Palestinians.</p>
+          
+        
+          
+            <p>Like other European states, Germany presents its rearmament as a response to Russia’s invasion of Ukraine, pressure from the US and its own declining industrial base. But the turn to militarisation, alongside diminishing low-carbon investment, will only make Europe less secure and more economically fragile. The security arguments for the prospective Osnabrück conversion are particularly specious: the Iron Dome is designed to stop short range rockets that would need to be fired within seventy kilometres of the German border.</p>
+          
+        
+          
+            <p>Together, European Nato members already spend more than half a trillion dollars per year on their militaries and arms industries, supporting global networks of military bases and partnerships with repressive states such as Saudi Arabia, Israel and Bahrain. As politicians declare France a ‘wartime economy’ and Britain an ‘armour-clad nation’, the security spending target adopted by Nato countries last year does not come with an outline of defensive needs or how they will be met by spending trillions more. The war on Iran has shown that the advantages of cutting-edge hardware are undermined by the extravagant cost of actually using it.</p>
+          
+        
+          
+            <p>While exempting member states’ military spending from its fiscal rules, the EU is retreating from its climate commitments: in 2025, the European Parliament voted to weaken the legislative provisions of its Green Deal and – under pressure from automakers and Germany in particular – dropped its plan to ban new internal combustion engine cars by 2035. This is even as Europe is battered by increasingly frequent and deadly floods, heatwaves and wildfires, while climate and ecological breakdown is also intensifying crop failures and driving up the cost of food. War only exacerbates these problems. Yet European states are designing an industrial strategy to cement themselves in a US-led military architecture rather than building economies that can survive the accelerating climate crisis.</p>
+          
+        
+          
+            <p>Osnabrück – known as the ‘City of Peace’ because the Treaty of Westphalia was proclaimed there in 1648 – reflects Europe’s role in the decomposing global order. Across the continent, political elites genuflect to a violent and erratic US in the throes of imperial decline. A militarist industrial strategy is combined with an anachronistic foreign policy through which Europe seeks to influence the world by partnering with US clients in the Middle East. As VW turns to Rafael to safeguard its future, the German shipping giant Hapag-Lloyd has merged with Zim, Israel’s largest container carrier.</p>
+          
+        
+          
+            <p>China, meanwhile, now dominates green industrial supply chains and the production of solar panels and electric vehicles. After the 2022 energy crisis, the EU and UK spent 1.8 per cent of their GDP on the energy transition while China spent 3.8 per cent. At the same time, the EU and UK found €368 billion more than China for their military budgets, which occupy a larger share of their economies. With a few exceptions, Europe’s strategy has left it dependent on liquefied natural gas imported from the US, vulnerable to coercion through Washington’s ‘energy dominance’ agenda and exposed to the aftershocks of the US and Israel’s illegal wars.</p>
+          
+        
+          
+            <p>To strike Iran, the US has relied on its military bases in Germany and its runways in Gloucestershire and Diego Garcia. The UK helps the US, Israel and the Gulf monarchies police the Middle East from its bases and territories that span thousands of miles from Cyprus to the Chagos Islands. It maintains garrisons still further ‘east of Suez’ in Brunei and Singapore. France’s ‘strategic autonomy’ extends to the Indian and Pacific oceans and a plan to parade its navy through the Strait of Hormuz once the war on Iran is over. The rearmament agenda may be cloaked in the language of defence, but it serves a colonial foreign policy that looks desperately outdated in a multipolar world.</p>
+          
+        
+          
+            <p>Both the rearmament strategy and foreign policy may yet be undermined by class cleavages. European citizens foot the bills for war, rearmament and liquefied natural gas. Military largesse comes at the express cost of further depleting public services, with a vocal coalition of foreign policy and fiscal hawks calling for cuts to social security to fund warmaking. Private shareholders reap the rewards of military contracts, which provide ever fewer jobs despite rising spending. In Osnabrück, protesters are calling for a conversion to green rather than military industry. If VW workers organise behind similar demands, they could claim a different future. Across Europe, as the old certainties of the Atlantic alliance crumble, there are openings for new alliances based on resistance to war and international climate co-operation.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/april/city-of-peace"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
