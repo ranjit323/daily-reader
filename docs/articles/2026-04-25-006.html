@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xi Ruochen: In Search of Good Books — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">New Left Review</div>
+      <h1 class="article-header__title">Xi Ruochen: In Search of Good Books</h1>
+      
+        <p class="article-header__summary">Where might Chinese-language readers hungry for critical histories and marginalized voices find such books? A history of Sinosphere publishing, charting the relationship between Hong Kong and the Mainland within a broader media ecology from the Revolution to the present.</p>
+      
+      <div class="article-header__meta">
+        
+        
+          <span>3 Mar 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>The annual Hong Kong Book Fair opened in mid-July 2025 at the Convention and Exhibition Centre, a shimmering landmark against the Victoria Harbour skyline, at the heart of Wan Chai. In the long shadow of the pandemic and the enforcement of the National Security Law in 2020, attendance at one of the world’s largest Chinese-language book-trade events has declined by nearly a sixth compared to the 2010s. This year, the Book Fair’s organizer, the Hong Kong Trade Development Council (hktdc), reportedly barred three independent publishers from the event, which can account for more than half of their annual revenue. Nevertheless, the event still attracted 890,000 visitors, a significant portion of whom were tourists from the Chinese mainland. Travelling on short-term visas, many of them made a round trip within a day or two, just to acquire the latest copies of their favourite authors and bring them back to the other side of the border—depending on whether they could make it through customs checks.</p>
+          
+        
+          
+            <p>If the presence of mainland readers has been a familiar sight at the Book Fair for nearly two decades, what’s striking today is the youth of this cohort and how well informed they are. Upon arrival, most would skip the dense cluster of mainland publishers, quickly skim through the stands of mainstream Hong Kong houses such as the Commercial Press, Joint Publishing and Chung Hwa Book Company—commonly known as the ‘Three Sinos’ due to their shared origins in Sino United Publishing, now the largest player in Hong Kong’s book industry. Skirting the sellers of children’s books and textbooks, where local visitors typically linger, these mainland readers would converge instead on a small number of specific stalls, where their coveted titles were on display. An influencer posted a vlog on Bilibili, China’s most popular video platform among Gen-Z, showing a virtual tour of the fair and advising viewers on which books were worth buying and which to avoid. This year, the recommendation was blunt: ‘Forget the rest. Go straight to the Chinese University Press.’</p>
+          
+        
+          
+            <p>The special appeal of the Chinese University Press may not be so apparent to a non-mainland reader. A Hong Kong-based, bilingual academic publishing house sui nominis, it’s neither the largest in scale (with only thirty or so staff in total), nor the most lucrative compared to general-interest publishers like the ‘Three Sinos’ or local giants such as Cosmos Books. What makes it attractive to mainland readers is the high quality of its works of history and biography, covering much of China’s tumultuous twentieth century. For the most part, these are not to be found in mainland bookstores, but word has spread, generating the gravitational force that pulls Chinese readers towards Hong Kong. It has become tacit knowledge that a stream of well-respected, quasi-offshore titles about contemporary China are to be found there, speaking to a readership curious about their country’s past and sceptical of the streamlined official narrative. Closer attention to such titles reveals a polyphony of voices, from well-established scholars based in the prc as well as researchers based in Hong Kong, Taiwan and beyond. Such a quasi-cosmopolitan landscape of Chinese historiography has never been fully achieved on the Mainland, and it seems a utopian prospect under the present injunction to combat ‘historical nihilism’ and ‘tell the Chinese story well’.</p>
+          
+        
+          
+            <p>Beneath the Book Fair’s carnival-like ambiance, with local consumers enjoying summertime cultural and recreational activities, there unfolds a map legible to dedicated readers. Starting with the Chinese University of Hong Kong Press, it then moves to nearby stalls of Oxford University Press and City University Press, where a broader range of Chinese-language publications from prc authors is on sale. Readers with sufficient English proficiency can spot enticing titles from Hong Kong University Press, on subjects like the ccp’s underground mobilization in the colony under British rule. With careful attention, one may also come across small, marginal publishers tucked into the corner of the exhibition hall, where amateur histories, personal archives of the Mao era and autobiographies by former Red Guards are on display. Conversations with seasoned book hunters might lead the way beyond the Fair itself to the ‘upstairs bookstores’, scattered through the busy districts of Mongkok and Sham Shui Po. Though many have retreated from the Book Fair in recent years, their collections nevertheless preserve the traces of a vanishing belle époque in the city’s intellectual life.</p>
+          
+        
+          
+            <p>The development of Chinese-language publishing in the age of globalization, and Hong Kong’s role within it, is a vast topic. This essay can provide no more than a bare outline, paying particular attention to the publication of high-quality original works and translations, over and above the sheer quantity of books traded. It explores a number of questions. How did the two distinct publishing regimes emerge? How has their relationship developed since the 1997 handover? How did post-colonial Hong Kong become the platform for an alternative cultural ecology, composed of offshore publishers, critical scholars and a de-territorialized reading public? What types of independent publishers have found niches there—and what are the prospects for them, amid political pressure and commercial conglomeration, in the years ahead?</p>
+          
+        
+          
+            <p>After the Revolution, the infrastructure of China’s commercial publishing industry was nationalized under the aegis of the Ministry of Press and Publication (mpp), which laid out annual publishing plans for the nation. Restaffed in state institutions, editors and print workers would henceforward employ their expertise in publishing books for the people. In tandem with a far-reaching literacy programme, a 1956 reform sought to standardize all written Chinese characters into a simplified script, a radical break in the country’s literary culture. Books were distributed domestically by the state-owned Xinhua Bookstore chain, as well as by internal Party organs, and exported to foreign markets via the Ministry of Culture. The cornerstone of this publishing regime was a system of standard national book numbers (shuhao). Book numbers, virtually the licence to circulate any title within the People’s Republic, were centrally allocated by the mpp to around two hundred state-owned publishing houses, making it the only player-and-rule-maker in the print industry. In practice, however, the ideal of complete control of information across the Chinese cultural landscape was never achieved, as self-published editions and smuggled copies continued to spread underground. From the outbreak of the Chinese Civil War to the early Cold War, knowledge acquired offshore, covering a diverse political spectrum—from kmt mouthpieces and Chinese Trotskyists, early refugees from the ccp, to Western reporters and China watchers—had circulated back into the Mainland. During the Mao era, such texts were included for ‘internal reference’ (neibu cankao) in restricted publications to which the public had no access. But ordinary people could still chance upon leaked versions, capable of provoking intense excitement in underground reading groups.</p>
+          
+        
+          
+            <p>By the time China reopened in 1978, its literary world had not only been inscribed into a distinct regime of cultural production but refashioned through its new writing system into a symbolic order that distinguished it from the rest of the Sinosphere. In the 1980s, the publishing realm underwent a rapid restructuring. The state-owned publishing houses were given greater managerial autonomy, allowing them to introduce wage subsidies and devise publishing programmes more adapted to market demands. The number of registered publishing houses skyrocketed from 75 in 1976 to 553 in the mid-90s. Book distribution also diversified: private outlets known as the ‘second channel’—by contrast with the ‘first channel’ of the Xinhua Bookstore chain—flourished and gradually gained official recognition. By the early 1990s, there were 14,237 more book-distribution outlets than there had been in 1978, with a nationwide total of 100,346. The increase was mostly due to private entrepreneurship (getihu) including independent firms and bookstores, not to mention innumerable guerrilla-style street vendors scattered throughout urban neighbourhoods. Growing marketization was accompanied by adjustments to international legal norms; China adopted the International Standard Book Number system (isbn) in 1986 and established its first copyright administration in 1987.</p>
+          
+        
+          
+            <p>The essence of the publishing regime remained a state monopoly, now through the National Press and Publication Administration (nppa), which served as both press regulator and national copyright administrator. Nevertheless, the developments of the 1980s helped to support the flourishing of intellectual endeavour known as China’s ‘Cultural Fever’, sweeping up poets, novelists, reporters and activists; after the reopening of the universities in 1978, young scholars began producing new book series and translating foreign works. Alongside this was the ccp’s attempt to rebuild a coherent national-historical narrative in the aftermath of the Cultural Revolution and the show-trials of the Gang of Four. The Party leadership issued its official evaluation of the Mao era in the second Historical Resolution of 1981; it invested massively in print and tv memorialism to rally popular opinion to its view. These efforts at unifying history were nevertheless unsettled by noises from offshore, as the still-colonized island territory of Hong Kong turned into a hub of alternative knowledge.</p>
+          
+        
+          
+            <p>During the Cold War, the British colonial government of Hong Kong had granted itself enormous power over the publication, sale, distribution, import, control, registration and licensing of the print media in the Control of Publications Consolidation Ordinance of 1951. From the late 1960s, however, with China engulfed in the Cultural Revolution and Taiwan locked down under the kmt, Hong Kong began to emerge as a major book producer in its own right. The context for this lay in the sweeping socio-political transformations taking place in Hong Kong, amid rising social unrest and international pressure. From 1971, the colonial government under Murray MacLehose introduced a series of social reforms and adjusted its cultural policies. Chinese was at last recognized as an official language in 1974; public education was promoted with indigenized curricula; the Book Registration Office was transformed from a den of censorship into a public institution responsible for cataloguing local publications and monitoring the use of isbns. In May 1976, the British government ratified the International Covenant on Civil and Political Rights (iccpr), extending these to Hong Kong, making freedom of expression a formal constitutional right in the colony.</p>
+          
+        
+          
+            <p>These measures combined with shifts already underway in the local cultural landscape, as economic take-off, demographic change and an expanding public sphere boosted the local book market. The 1970s saw the development of a dense, transregional book-distribution network, centred in Hong Kong, composed of foreign franchises (Longman, oup), local publishers—including textbook producers and commercial houses such as Cosmos, founded in 1976—and independent booksellers, often operating in the tiny, barely metre-wide upstairs niches in the crowded commercial tenements of Tong Lau. These upstairs bookstores, originally a response to soaring rents in the city, later became cornerstones of its cultural heritage.</p>
+          
+        
+          
+            <p>The 1970s also saw the growth of a more diverse Chinese-language media ecology, ranging from liberal cultural reviews (Min Pao Monthly), radical left-wing periodicals (The 70s Biweekly) to student journalism that jointly reshaped local political culture in the late-Cold War colony. While the commercial presses diversified into various popular genres and formats to meet the rising demand of the general public, the works available in the upstairs bookstores were the youngsters’ favourites. A writer recalled how students would flood into these spaces hunting for new titles, where a cluster of materials—non-conformist writing from the Mainland, intellectual periodicals from Taiwan, as well as counter-culture and critical theories fresh from the Euro-American world—were available. In terms of outlook, Hong Kong’s early engagement in the nascent global economy helped to shape a new middle-class consumer culture that ultimately contributed to a cosmopolitan identity, drifting away from the nationalist worldview shared by many diasporic Chinese, as well as refugees from war.</p>
+          
+        
+          
+            <p>The Mainland had long been the largest provider of Chinese-language publications for publishers and booksellers in Hong Kong, while English remained the official language. However, that asymmetry had reversed by the late 1970s. With the influx of international capital, technologies and outsourced services, Hong Kong moved from a downstream station in the value chain, with hand-binding sweatshops, to the world’s fourth largest print centre. In conjunction with the internationalization of the industry, the relaxation of controls over the media and publishing sectors and human resources cultivated by a bilingual higher-education system helped to elevate the city from entrepôt to major exporter, with influence across the Sinophone region. Hong Kong-based publishers—whose number now exceeded five hundred, for a city of roughly 5.5 million—pioneered the strategy of ‘One Book, Two Editions, Five Markets’, producing each title in both traditional and simplified Chinese-character editions, and selling to the People’s Republic as well as the Hong Kong, Taiwanese, Singaporean and Malaysian markets, to maximize returns on Chinese-language publishing within the global trading system. Pricey as they were due to prc tariffs, traditional-character books printed in Hong Kong and Taiwan began to enter the Mainland in limited numbers after 1978, once trade ties resumed during the Reform era. They formed a distinct ‘Gangtai’—‘Hong Kong–Taiwan’—category on mainland bookshelves, posing a challenge for librarians in the prc, who debated how to integrate these traditional-character titles into national catalogues, as well as for the censors trying to rebuild a coherent historical narrative.</p>
+          
+        
+          
+            <p>Nevertheless, once China launched its economic reforms in the 1980s, Hong Kong became the proving ground for mainland publishers to relearn print capitalism. The trio of mainland-background publishers in hk—Joint Publishing, Commercial Press and Chung Hwa Book Company—restored connections with their head offices in Beijing and began mediating copyright trades between the prc and roc Taiwan. In 1988 these merged into Sino United Publishing, which—with its subsidiary publishing, printing infrastructure and retail outlets—not only became the dominant force in the city’s books business but also established a branch in the Shenzhen Special Economic Zone, the prc’s first joint venture in the publishing sector, an experiment in developing a cultural enterprise with foreign investment that would become common practice nationwide in the 2000s.</p>
+          
+        
+          
+            <p>It was within this context that the Chinese University Press found its feet as a publisher of high-quality, well-produced books with a popular reach. The Chinese University of Hong Kong was set up by the colonial authorities in 1963, as a federation of three us-funded ‘refuge colleges’ originally created by Chinese academics and missionaries fleeing the Civil War. Its creation was a compromise decision by the British, aiming to hold a balance between multiple political forces in the midst of the Cold War, in which influences from both the prc and the roc in Taiwan were at work. This was the colony’s first bilingual institution of higher education; the older University of Hong Kong operated in English only. In 1977, its small publishing centre was restructured into an American-style university press, under the direction of Francis Pan. In an interview with the University Bulletin, Pan explained that the mission of the Press was ‘the promotion of cultural interflow between the East and West’. With a tiny annual budget of 25,000 hkd and limited staff, it produced roughly two editorial volumes and a dozen academic periodicals per year, initially serving the cultural ambitions of Shanghainese emigrants and overseas Chinese business elites. What differentiated it from the slightly older Hong Kong University Press, the only other academic publisher in the territory, was language. While hku Press’s exclusively English staff and publications were suggestive of its metropolitan identity, the cup was a bilingual publisher directed by Chinese emigrants—an indication of its ambivalent position within the British colony.</p>
+          
+        
+          
+            <p>The earliest publications of the Press had a civilizational slant, ranging from ancient Chinese classics to New Confucian philosophy and philology, compiled by exiles in its New Asia College and the Institute of Chinese Studies (ics)—the university’s emblematic institution, whose handsome infrastructure was built with a generous donation from the family of Lee Hy-san, the so-called ‘Opium King’ of the early colony. This was in line with the Chinese University’s mission to preserve ‘Cultural China’, a strategically ambiguous project allowing local Chinese elites to embrace a ‘cultural’ identity that was still acquiescent to colonial rule. There was some engagement with modern China: Lin Yutang’s Chinese-English Dictionary of Modern Usage (1972) offered, for example, a museum of Chinese language since the late nineteenth century, mixing archaic vocabulary, professional jargon and literary expressions in either ordinary or highbrow usage. Conceived as an effort to provide the local population with ‘a more adequate and up-to-date reference work’, one reviewer noted that it included anything and everything, with the exception of vocabulary that had developed in the prc.</p>
+          
+        
+          
+            <p>Under the direction of Richard Ming Lai, a bilingual writer and native of Port Louis who succeeded Pan in 1978 following a remarkable career as the first Chinese director of the Hong Kong Information Services Department, the profile of the Chinese University Press began to alter. In 1979, it published Jindai Zhongguo shigang [Outline of Modern Chinese History], a popular reader offering a concise but arresting narrative, recounting imperial encroachments on modern China from the 1840s to the Communist victory in 1949. With an explicit nationalist register, the book achieved immediate success with local readers, was reprinted twice the next year and became a long-term seller over the decade, listed by many Hong Kong secondary schools as recommended reading. Its author Kuo Ting-yee, based in the us after fleeing first from the Mainland and then from Taiwan under the kmt, subsequently revealed that the book was a commission from the university’s Institute of Chinese Studies, whose board, mostly diasporic intellectuals and us-educated elite émigrés, became vocal proponents of the ‘Greater China’ imaginary as Cold War tensions began to wane.</p>
+          
+        
+          
+            <p>In 1983 Dominic Tak Lung Tsim, a former student activist and civil servant involved in media liberalization in the colony, took over the direction of the Chinese University Press. The 1980s saw a flourishing of original bilingual titles, including the paperback series Renditions which introduced avant-garde authors from the prc to the city’s reading public. As discussions about the future of Hong Kong under the prc were spurred by the Sino-British negotiations of 1982–84, local intellectuals began to engage more closely with contemporary issues. Social-science research examined both Hong Kong and China; Liu Siu-kai and Kuan Hsin-chi’s The Ethos of the Hong Kong Chinese (1988) was a groundbreaking study of Hong Kong’s political culture. The shift was most evident in The Other Hong Kong Report (1989), a collaborative project among young social scientists at the Chinese University which continued until the 1997 handover. Providing an alternative perspective—independent and critical in outlook—to the official Hong Kong Yearbook, the editors’ stated mission was to challenge the age-old myth of ‘benevolent British rule’, holding the colonial government accountable with an ‘open response and constructive criticism by an educated public.’ In the wake of Tiananmen, the same group also created the annual China Review that watched closely the development of the prc.</p>
+          
+        
+          
+            <p>The period from 1989 to 1997 saw contrasting dynamics on each side of the border. In the countdown to the handover of Hong Kong, the British government moved to increase press freedoms, repealing the 1951 Ordinance in 1987 and amending nearly forty ordinances to give substantive rights to the iccpr, unleash tv and radio broadcasting and free classrooms to promote civic education. Though not without hypocrisy, the colonial administration widened the overall difference between the two publishing regimes. Meanwhile in the prc, the crackdown on publishing after June Fourth was followed by the intensification of market pressures.</p>
+          
+        
+          
+            <p>The result was to make Hong Kong a haven for marginal Chinese voices. Among them were Jin Guantao and Liu Qingfeng, two influential mainland scholars from the Chinese Academy of Sciences, hosted by the Chinese University from 1990 at its Institute of Chinese Studies. The couple were co-authors of Prosperity and Crisis (1984), the cultural emblem of the 1980s that popularized a narrative of China as an ‘ultra-stable system’ resistant to modernization, which inspired the tv series River Elegy (1988). They soon made the ics, initially a cultural preservation site, into an offshore base for prc scholarship. With the support of the ics’s overseas Chinese elite network, Jin and Liu founded a bi-monthly journal, Twenty-First Century [Ershiyi shiji], in 1990. They had long wanted to produce a comprehensive history of modern China and the journal embodied that ambition. Its non-academic tenor made it both an inclusive platform for minjian writers—independent from the state system and the utterances of power—and others working within universities, and an intellectual forum publishing texts from the prc, Hong Kong, Taiwan and overseas communities. Twenty-First Century’s publishing agenda gave new impetus to the Chinese University Press.</p>
+          
+        
+          
+            <p>The project could also draw upon the resources of the Universities Service Center (usc). Founded as a listening post for Western intelligence during the Cold War, and possessing a mass of documentation of Maoist China, the usc was made over to the Chinese University in the late 1980s and its archives were opened to the public as a research centre in 1993. The usc held regular seminars and international conferences on contemporary Chinese history, sponsoring research projects and documentation about it. The most well-known case of its work would be Song Yongyi’s project of building a Cultural Revolution Database, for which the author exhausted all library collections overseas and was even jailed during an archival trip to the Mainland. The database was distributed by the Chinese University Press in 2002, followed by others on the Anti-Rightist Movement and the Great Famine. The databases became an essential resource for scholars of the Mao era who cannot gain access to the official archives in the prc.</p>
+          
+        
+          
+            <p>Powered by the ics network and the usc’s resources, the Chinese University thus laid the bedrock for the new kind of scholarship—variegated and critical—of contemporary Chinese history that would define the profile of its Press. Scholars associated with Twenty-First Century and the usc were recruited as authors for this historiographic project, which Jin Guantao would later describe as ‘seeking to show the possibility of a critically reflective new type of historical consciousness’ (lishi fansi yishi). Liu also organized visiting programmes to facilitate mainland scholars travelling to Hong Kong to consult usc collections. One such was the minjian historian Gao Hua. A rising star at Nanjing University after it reopened in 1978, Gao began researching the Rectification Movement in Yan’an in the early 1940s, when Mao definitively imposed his dominance on the Chinese Communist Party, consecrated as a foundational moment in the official narrative. Gao’s project was entirely self-funded: he collected materials with his personal savings and did not inform the university about it until the work was completed in 1997. His manuscript might have been another example of ‘drawer literature’, never to be read. But in 1998 Gao was invited to the Chinese University in Hong Kong, where his book, How the Red Sun Rose, was published in 2000 by its Press.</p>
+          
+        
+          
+            <p>By then, the field of ccp history had seen the emergence of what the historian Yang Kuisong termed ‘different voices’ characterized by ‘originality and independent thinking’. Their work developed over the Internet—saturated in its early unregulated days with popular memories of the Mao era—and through cultural salons sponsored by private entrepreneurs or de-territorialized platforms overseas. In 2002, Jin and Liu brought together eleven prc-based historians—including Gao Hua, Yang Kuisong and Shen Zhihua, the legendary historian of the Cold War who bought up Soviet archives with a fortune made in gold trading—to begin work on a ten-volume History of the People’s Republic of China, covering the thirty years from the foundation of the prc in 1949 to the eve of the Reform Era in 1978. By the time the individually authored volumes began to appear in Hong Kong in 2008, it was no longer an underground operation. The History of the People’s Republic was understood as a collaborative project of prc scholars who positioned themselves as ‘writing on the margins of the system’ or as ‘grey dissenters’, rather than being in direct confrontation with it (some of the authors used pseudonyms to avoid trouble). The History was promptly embraced by the Chinese reading public and enlisted in its ‘counter-canon’, together with other ics productions distributed via the Chinese University Press.</p>
+          
+        
+          
+            <p>The rise of Hong Kong publishing in the 1990s was generally accepted by Beijing, partly because the traffic of books between the colony and the Mainland was subject to tight restrictions. Its one attempt to launch a campaign against a Hong Kong title backfired, turning the book into an immediate bestseller. For the first six years after the 1997 handover, Beijing made no direct interference in the city’s autonomy, granted by the ‘One Country, Two Systems’ framework. As a result, the cultural worlds of the Hong Kong Special Administrative Region (sar) and the Mainland remain largely segregated. Controversial authors could continue to enjoy Hong Kong’s recently granted freedom of speech, with the tacit understanding that their work would not be bootlegged back in simplified-character editions to the prc.</p>
+          
+        
+          
+            <p>Within the jurisdiction of the prc as it completed the final stretch towards wto accession, the authorities under Jiang Zemin proved largely tolerant of the unruly expansion of cultural capitalism. Mostly, writers and texts had to confront the milder face of market pressure rather than state persecution. The continuous economic growth of the 1990s drove more extensive cultural commodification, bringing a surge of de facto liberalization in the publishing realm. With subsidies dwindling, many state-owned publishers embraced the new opportunities, engaging in illicit trade of isbns to outsource their editing services to a third party in exchange for higher sales. Those that could not survive the market competition were snapped up by private entrepreneurs, who used the publishing houses’ legal credentials to produce market-oriented materials that sometimes transgressed the boundaries of censorship.</p>
+          
+        
+          
+            <p>Huge numbers of pirated editions, smuggled tamizdat and anonymous self-printed materials now began to circulate through flea-markets and other ‘secondary channels’. Although both the authorities and serious authors voiced alarm at the amorality unleashed by this tide, to which new regulations as well as scholarly debates on ‘the demise of Enlightenment’ and ‘loss of humanistic spirit’ (renwen jingshen) bore witness in the late 1990s, a new literary ecosystem gradually emerged between cultural entrepreneurs and their readers, both registering a certain autonomy. The state’s extensive privatizations also gave rise to an unofficial trade in primary sources for historical research, as old Party documents from shuttered factories and downsized institutions flowed onto market stalls and circulated through the networks of second-hand book sellers and private collectors. Party history has always been a highly centralized practice in the prc, where all publications—chronicles, anthologies, biographies of Party leaders—were lodged in a handful of specialized institutions, including the Bureau of Party Literature and Party History Research, whose ‘official historians’ enjoyed privileged access to Central Archives. The expansion of the market allowed researchers to bypass official obstacles to historiographic production. Identifying themselves as minjian they began to revise the official narrative from alternative perspectives. The 1990s thus saw a diversity of approaches in the field of prc history. In addition to domestic practitioners, these ‘grassroots archives’ also enriched the fieldwork of foreign scholars, nurturing a body of scholarship sometimes referred to as ‘Sinological garbology’.</p>
+          
+        
+          
+            <p>Other niches proliferated within the prc—again, not the result of official relaxation, but rather an outgrowth of the turbulent dynamics between the state and its globalizing market. All Sages Bookstore, for example, was initially established in 1993 as a tiny stall in the university complex of peripheric Beijing. Within a few years it expanded into retail distribution as well as publishing. The bookstore made its name within academic circles for its fine selection of serious scholarship in the humanities, an edge shaped by its co-founders Liu Suli and Gan Qi, graduates of Peking University who opted for cultural entrepreneurship in the Zeitgeist of the 1990s. All Sages also produced its own titles, working through publishing agents and delicate negotiations with the censors. One of the shop’s earliest bestsellers, Prelude to History (1999), was a compilation of the ccp’s scathing condemnations of the kmt dictatorship during the Civil War, alive with contemporary relevance—and showing how an independent publisher, albeit tiny in scale, could survive fierce competition through strong community ties with its target readers.</p>
+          
+        
+          
+            <p>In 2003, Beijing introduced a major change in the relationship between the Mainland and the city with its Closer Economic Partnership Arrangement (cepa). Portrayed as a gift from the Central Government to revitalize the Hong Kong economy after the ravages of the Asian Financial Crisis, it was designed to promote economic integration by simplifying approval for the import of goods and services to the Mainland, as well as enabling hk-registered service providers to operate in the corresponding sectors there. cepa also opened the way for post-wto China to access global financial markets via Hong Kong. Mainland companies could thereby attract international investment through a public listing by utilizing a Hong Kong shell—a practice known as ‘backdoor listing’ (jieke shangshi) that would become central to China’s global economic rise in the 2000s.</p>
+          
+        
+          
+            <p>The creation of cepa triggered a chain reaction in Hong Kong’s publishing landscape. Local industry saw an accelerating relocation of manufacturing and services into the Pearl River Region, reinforcing the interdependence between Hong Kong publishers and mainland service providers in the downstream chain. Meanwhile, Chinese investment flowed into Hong Kong. Backed by mainland capital and policy support, Sino United grew into a business monopoly that dominated the local publishing, retailing, logistics and distribution sectors, and became the largest agency in the hk-Mainland book trade. In tandem with this came an influx of mainland staff, fostered by cepa’s supplementary articles on technical immigration. ‘Shell’ publishers mushroomed in the sar, exploiting the grey zone between economic integration and separate jurisdictions to circumvent isbn restrictions. The annual reports of the Book Registration Office show that the number of new publishers’ prefixes—the unique ‘Registrant Element’ within an isbn that identifies the publisher of the book, obtainable by any entity or individual with a hk address—surged from around 300 per annum in 1997–2003 to 709 in 2004, climbing to a peak of 1,127 in 2012, suggesting that the sector’s expansion was driven by an influx of non-resident actors rather than local growth alone.</p>
+          
+        
+          
+            <p>The motivations of these shell publishers spanned the gamut between high politics and dubious tabloid endeavours. Some were explicitly polemical: Strong Wind Press, for example, registered in 2004, published material by ‘left’ conservatives such as the memoir of Deng Liqun, the chief Party ideologue to oppose ccp policies under Jiang Zemin. Vowing to ‘make positive use of the freedom of speech in Hong Kong to engage in serious intellectual exchanges’, Strong Wind’s principal mission was to defend leftist opinions that the current leadership had sidelined. The New Century Press, registered in 2010, published material reflecting the outlook of the now-ostracized 1980s reformist elites. Exclusive publication of their titles in simplified Chinese clearly indicated the target audience of both publishers. In other cases, the motivation was economic. Shidai Nongchao Cultural Development Co (hk), for example, was a shell for its namesake entity in Beijing, which published titles at private request. Spotting the market potential of the post-socialist ‘memory boom’, its creator Tu Jincan leveraged cepa to acquire Hong Kong isbns for family histories and personal memoirs financed by his mainland clients. As a pioneer of Zhongguancun—today China’s Silicon Valley—Tu was even hailed as a ‘model entrepreneur’ by mainstream media for his family-history business. Between the two poles were a spectrum of actors motivated by varying blends of lucre and politics, who registered as independent publishers in Hong Kong to engage in its public sphere.</p>
+          
+        
+          
+            <p>Meanwhile, the gradual opening of private tourism after 2003 brought thousands of mainland readers into Hong Kong’s bookstores, where a large number of Chinese-language publications, especially unorthodox histories, tabloid politics or censored literature, published locally or in Taiwan, had never been accessible in the prc. Many would take the risk of smuggling a few copies back across the border. The mass discovery of Hong Kong publications by mainland readers also spurred the development of the ‘forbidden books’ industry, where political gossip or fake memoirs of prc elites were snapped up by speculative Hong Kong publishers and circulated back to the Mainland via contraband reproduction that ultimately fed into the information circuits of the simplified-character world. Such materials, together with products of shell publishers, were mostly distributed through the upstairs bookstores in Hong Kong, which took a specifically mainland-oriented strategy.</p>
+          
+        
+          
+            <p>Hong Kong’s closer integration with the Pearl Delta region and increasing dependence on mainland capital, together with the emergence of a common readership created by the rise of a critical public on the Mainland and the gradual erosion of physical borders, brought these two worlds—formally distinct, both in jurisdiction and popular imagination, but essentially interconnected—into a sort of symbiosis, in which authors and readers could switch between sides without openly challenging authority, and publishers and booksellers could reap the profits. From a publisher’s point of view, no conflicting interests divided Hong Kong and mainland markets. The attractions of the latter—though largely restricted to the retail sector due to strict import controls—exerted a magnetic pull. Larger houses like oup and Cosmos increased their acquisitions from mainland-based authors, some of which became bestsellers through distribution channels controlled by Sino United, whose business empire covered half of the retail outlets in the city. Zhang Yihe’s The Last Aristocrat (2007) on the Anti-Rightist movement, Yang Jisheng’s Tombstone (2010) on the Great Leap Forward, both censored in the Mainland, found shelter under the wing of Hong Kong’s print capitalism.</p>
+          
+        
+          
+            <p>From the readers’ perspective, the ‘dual realities’ of the Chinese world nourished tacit forms of knowledge, communal ties and creative subcultures. On social-media platforms such as Douban, it became common practice to acknowledge overseas versions—usually traditional-character offerings published in Hong Kong or Taiwan—of a legally published book in the Mainland, to track the effects of censorship through close reading and textual comparison, or to exchange information about venues for acquiring ‘authentic’ copies. These self-taught Foucauldian archaeologists and their reading culture fostered an ecosystem in which private booksellers, travelling across the border, filled their suitcases with titles from Hong Kong for dispatch to anonymous online customers across China on a daily basis, forging a link between publishers in the city and enthusiastic mainland readers.</p>
+          
+        
+          
+            <p>The Hong Kong Book Fair saw a steady increase of visitors after 2003, rising to over a million attendees in 2014. According to an official survey, many were motivated by the appeal of ‘titles unavailable in the Mainland’. With per capita spending of 987 hkd, these mainland readers were an important source of revenue for the local book industry. Starting in 2005, the Book Fair began inviting authors from across the Sinophone worlds to meet the public. Among the mainland guests featured in its 2010 programme were real-estate tycoon Pan Shiyi, law professor and legal activist He Weifang and Han Han, blogger and millennial icon, speaking about his career as public writer. Investigative journalists, intellectuals and activists from Hong Kong and across the Taiwan Straits took part in the Fair’s panels, under the rubric ‘Caring for Society, Caring for the Earth’. Publicity for the panoramic exhibition hall showed the bustling crowd moved through a landscape of radical juxtapositions, where banners for fashion magazines and comic books hung alongside a giant poster for Reform Chronicle, the memoir of the purged leader Zhao Ziyang.</p>
+          
+        
+          
+            <p>Within this symbiosis, the Chinese University Press and its alternative histories began to encounter a larger public. In 2007, the arrival of a new director, Gan Qi, marked a step-change in its publishing history. Up to this point, the Chinese University Press had remained for the most part an old-style academic publisher—at least by comparison with its counterparts on the Mainland, where an extensive market-orientation and expansion was under way—although its staff and budget had expanded, and it was now publishing more than sixty titles a year, thanks in part to the success of its undergraduate history textbook, The Rise of Modern China. Gan Qi’s broader experience in independent publishing brought a new flair and sensibility. A co-founder of the All Sages Bookstore in Beijing in the early 1990s, she had helped to pioneer the holistic idea of a small independent publisher at once editing, producing and selling books, with a close connection to its readers. In this she was characteristic of the first post-Mao generation of cultural entrepreneurs, who were alert to the potential of serious knowledge in a censored marketplace and equipped with the practical know-how to navigate it.</p>
+          
+        
+          
+            <p>Moving to Seattle in 2001, Gan Qi wrote her ma on Chinese publishing. In 2006 she was appointed director of the New York office of Verso, another small independent publisher, if one spanning the Anglosphere. There she made contact with figures such as André Schiffrin of the New Press and Jason Epstein of Random House, both of whom emphasized the value of authors’ originality and accessibility. Transferring in due course back to the Sinosphere, she got a senior job in the tom media conglomerate, owned by a Hong Kong tycoon and operating in both Taiwan and the prc. In 2007, she became the first woman—and first mainlander—to direct the Chinese University Press. There her first initiative was to introduce a new business model. Her predecessors had already begun to orient the imprint to the market, but Gan Qi refashioned its brand more thoroughly to maximize the advantages of the city as a Special Administrative Region in the post-wto juncture. Its books began to have the full name of the house—‘Chinese University of Hong Kong Press’—emblazoned on their covers, in place of the less-specific ‘Chinese University Press’ that they had borne since colonial times. Freedom of title acquisition, alongside the traditional university-based committee system, henceforward gave the cuhkp greater independence in constructing its lists and opening them to creative editorial projects that gave it a stronger identity. Copyright buyouts, a common practice through which academic publishing houses would gain exclusive rights to a work and then sell subsidiary rights to other enterprises, allowed the Press to act as an intermediate rights agency, navigating (and monetizing) the divisions of sovereignty and language in the ‘Greater China’ market. At the distribution end, its network of contacts with agencies in North America and Europe provided access to Anglophone readers.</p>
+          
+        
+          
+            <p>With a larger toolkit and a younger editorial team, recruited from both the Mainland and the city, the Press produced a series of titles that established its image as a provider of diverse and original perspectives on Chinese history, ranging from monographs and biographies to documentary collections—such as the family letters of Zhang Chunqiao and the papers of Zhao Ziyang—and private histories, including the diary of a former Red Guard and the memoirs of a veteran revolutionary and reformist politician. Beyond the history of the People’s Republic, the Press also engaged with the experience of modern China more broadly, bringing to light the perspectives of marginal political groups—ethnic minorities, Third Force intellectuals—of women, of diasporic Chinese, as well as the City’s own dramatic past, which had long been regarded as a mere footnote to the national story. A bilingual publisher par excellence, it produced high-quality English translations alongside their Chinese titles, bringing native and non-English scholarship to the Anglophone world.</p>
+          
+        
+          
+            <p>Though its output and turnover were still quite small compared with major academic houses in the Anglosphere, the Chinese University of Hong Kong Press was confident enough to invest in ambitious programmes. Its striking 30/30 series, launched in 2013, became a widely recognized set of studies in modern prc history, renowned for its intellectual diversity. Inspired by traditional Chinese historiography that viewed history as a cyclical renewal of the cosmological order (dao) every thirty years (shi), the series aimed ‘to revisit the past of the prc—as to envision its future paths—at the time when the Mao and post-Mao eras have both gone through a full cycle’. In modern terms, the 30/30 rubric of the series indicated its focus on, respectively, the first three decades (1949–79) of the nation’s experience and the second three (1980–2010), since the foundation of the prc. The first five titles brought together such different visions of rural life in the Maoist era as us-based sociologist Gao Mobo’s ethnography Gao Village, whose sympathetic view of his subject was greeted with indignation by Chinese liberals, and Tsinghua sociologist Guo Yuhua’s Narratives of the Wretched, one of the earliest examples of ‘subaltern studies’ in prc scholarship. These contrasted accounts exemplified the aspiration of the series to bring scholars of different professional backgrounds and political standpoints into a dialogue that could broaden the landscape of sixty years of prc history.</p>
+          
+        
+          
+            <p>In 2019, a flyer featuring the cuhkp’s historical titles greeted the seventieth anniversary of the People’s Republic with the catchy slogan, ‘Swimming against the Tide of Oblivion’. The issue of memory has been a significant thread running through its Chinese titles. To name just a few: Footprints of the Missing (2009) recalled the forgotten youth intellectual movements during the Cultural Revolution; The Lost Generation (2009) examined the experience of the 17 million urban youths ‘sent down’ to the countryside during the high-Mao era; Dilemmas of Victory (2011) explored the everyday life of ordinary people after 1949. Printed in traditional characters, these works nevertheless set out to intervene in public historical discourse and were clearly written for a wider audience. Not unlike Prelude to History, many titles had a touch of irreverence. The cover of The Failure of Charisma (2009), for example, an exploration of the factional politics of the Cultural Revolution, bore twelve portraits of Mao, in each conspicuously averting his eyes from the reader, painted by the liberal artist Chen Danqing—reading the upheaval as a project in which the leader had lost control of his self-serving followers, as well as offering an invitation to readers to join the debate. Another example was the award-winning photographic album, Red-Colour News Soldier (2018), whose original cover—a faceless applauding crowd, catering to Western stereotypes of socialist China—was replaced by a black-and-white photo of young swimmers in caps and shorts, reading the Little Red Book. Above this monotone palette, the only trace of red was the Chinese title, rendered in Mao’s calligraphy.</p>
+          
+        
+          
+            <p>This deconstructivist impulse, evocative of the postmodern sensibilities of China’s 1990s, was notably wedded to the Enlightenment conviction that the Press needed not just to pluralize historical understanding but to engage with its public in the acquisition of knowledge. Mostly published in paperback, its titles generally included a proper scholarly and editorial apparatus, with editor’s notes, publication statements, translator’s afterwords and similar elements that conveyed a desire to communicate with readers. Adopting the motto buji busui, ‘neither radical nor conformist’—originally the slogan of the 1920s Xueheng [Critical Review] scholars—this twenty-first-century house signalled its intent to revive a humanist cause long stifled by the wars, revolutions, displacements and ideological upheavals that marked China’s eventful twentieth century. In a sense, the cuhkp could be described as a ‘shell publisher’ for the hopes of a wider group of public-spirited mainland houses, whose breathing space has been squeezed by the competitive cultural market fuelled by state-sponsored conglomeration since the early 2000s. Its anchorage in Hong Kong enabled that impulse to persist, while its access to the Mainland’s market provided it with some commercial ballast within the global book trade, where independent publishers were increasingly being gobbled up by the conglomerates.</p>
+          
+        
+          
+            <p>The symbiosis of the two publishing regimes peaked commercially in 2013, with the collaboration of the cuhkp and Beijing’s prestigious Joint Publishing Company to produce the Chinese translation of Ezra Vogel’s Deng Xiaoping and the Transformation of China, a flattering 800-page biography of the Chinese leader that became a bestseller in both markets. The cuhkp had secured the rights to Vogel’s book through his existing ties to the University—his research for it had benefited from the usc’s extensive archives—and brought out its traditional-character version, The Age of Deng Xiaoping, within six months, selling the simplified-character rights to Joint Publishing from among thirty competitors. There was, of course, a price to pay; some 53,000 characters were missing from the mainland edition, a tenth of the text and a third of the notes and appendices, in addition to numerous rewordings. But in this case, the author had agreed to the cuts, which he described as ‘a bargain’. ‘I thought it was better to have 90 per cent of the book available here than zero’, Vogel explained on his book tour of Chinese cities in early 2013.</p>
+          
+        
+          
+            <p>The mainland edition of The Age of Deng Xiaoping sold 500,000 copies within the first week and another 830,000 copies in the following months, making it that year’s bestseller. The book’s phenomenal success owed much to Joint Publishing’s masterful mobilization of the official publicity apparatus. A full-page interview with Vogel appeared in the People’s Daily under the headline, ‘Telling the West the Truth About Deng Xiaoping’, alongside coverage by major media outlets, including the Xinhua News Agency and cctv, with promotional campaigns at hundreds of Xinhua bookstores and coordinated launches in Beijing, Chengdu and Shenzhen, on the twenty-first anniversary of Deng’s Southern Tour. But perhaps the biggest winner was the cuhkp. The intensive debates outside the prc over what was missing from the mainland version translated into unprecedented publicity for its own editions, printed in four different formats to meet the demand: traditional and simplified characters, hard cover and paperback. For an independent press, returns from one such title could offset the losses on multiple scholarly works.</p>
+          
+        
+          
+            <p>The case of Vogel’s Deng Xiaoping provides a glimpse of the cultural landscape in globalizing China, where public engagement was broadened by transborder collaboration and expanding market forces, yet often involved a degree of compliance. In the wake of the 2014 umbrella protests, Hong Kong’s autonomy was further eroded and Beijing’s sovereignty more sharply enforced. The detention in 2015 of Gui Minhai, a Swedish citizen and owner of Causeway Bay Books, an independent bookshop known for its ‘forbidden books’ containing scabrous political gossip on Party leaders, had a chilling effect on local publishers. Journalists and other professionals faced increasing pressure from the sar administration and the Liaison Office. With the new round of protests in 2019, the sar authorities began resuscitating colonial-era censorship regulation. In 2021, the first full year after the National Security Law was imposed on the city, the number of newly issued isbns and new publishers’ prefixes fell by half compared to 2020, and neither had recovered by 2024. This suggests the scale of migration by Hong Kong-based press and publishers to overseas locations, with voices and memories losing their niche in the city. Another form of homogenization has seen Hong Kong publishers simply repackaging mainland titles in traditional characters to sell back to the mainland market, benefiting from the aura of the city.</p>
+          
+        
+          
+            <p>Political pressure has been compounded by commercial conglomeration through aggressive merger-and-acquisition campaigns, of the sort well known in the West. By 2018, four-fifths of book distribution and retailing in Hong Kong was run by Sino United, while nearly 87 per cent of the major media outlets in the territory were run by owners or editors considered pro-Beijing. In 2022 a new giant, the state-owned Bauhinia Culture Group, established dual offices in Hong Kong and Shenzhen, with interests spanning the film and television industry, media production, information services and cultural tourism, as well as publishing and distribution. Vaunting its ‘deep rootedness in the Greater Bay Area’, Bauhinia pledges ‘to tell China’s story well to the world and to promote the going out of Chinese culture’.</p>
+          
+        
+          
+            <p>Yet if this bifurcated story of globalizing China and post-handover Hong Kong reflects the tensions and uncertainties of the present, it also offers hope of resilience. The expediency of development and wealth accumulation during the prc’s integration into world capitalism in the 2000s left many unregulated grey zones, inadvertent spaces for alternative knowledge and critical minds, amid a temporary retreat of the state; many have dug in there and sunk deep roots. By the end of 2022, 106 of the 128 independent bookshops in Hong Kong remain in operation, though under pressure. In the corner of ‘Have a Nice Stay’, a new bookstore opened that year by five former media professionals, a stack of notebooks recorded the spontaneous dialogue between passers-by, where words of hope, frustration and mutual encouragement were left in both traditional and simplified characters.</p>
+          
+        
+          
+            <p>There are other signs of expansion. In 2024, the cuhkp and Hong Kong’s other two university presses—City University of Hong Kong and University of Hong Kong—launched Open Books hk, the first Chinese-language open-access book platform, under the rubric ‘Knowledge for All’. The platform got over 300,000 views and 100,000 downloads in just three months, allowing titles such as historian Joseph Esherick’s Accidental Holy Land, an elegant recasting of the founding myth of the ccp, to open new horizons. At the 2025 Hong Kong Book Fair, the Press’s Gongshui xianggang [Watering Hong Kong], a sociopolitical survey of Hong Kong’s dependence on mainland water supply, an issue of much public concern, achieved the highest single-day sales. At the stall, young readers browsed through old and freshly released titles, queuing for the long-coveted copies they had heard about through virtual communities. Striving for the freedom to know and the right to reckon with one’s past was fraught, but far from over.</p>
+          
+        
+      
+    </div>
+
+    
+      <section class="footnotes">
+        <div class="footnotes__label">Notes</div>
+        <ol class="footnotes__list">
+          
+            <li class="footnotes__item" id="fn-1">
+              <span class="footnotes__num">
+                <a href="#fnref-1">1</a>
+              </span>
+              <span class="footnotes__text">According to the Hong Kong Trade Development Council, the 2025 Book Fair hosted over 770 exhibitors; however, this includes participants from the ‘Sports and Leisure Expo’ and ‘World of Snacks’. Based on the list of exhibitors on the official website, the actual number might be around 480; during the period 2015–19, international book exhibitors alone exceeded 600.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-2">
+              <span class="footnotes__num">
+                <a href="#fnref-2">2</a>
+              </span>
+              <span class="footnotes__text">Bilibili user ‘ruc maomao’, ‘Xianggang shuzhan yinian buru yinian?’ [Is the Hong Kong Book Fair Declining Year by Year?], Bilibili video, 16 July 2025.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-3">
+              <span class="footnotes__num">
+                <a href="#fnref-3">3</a>
+              </span>
+              <span class="footnotes__text">For industrial print in the Republican era and the early years of the People’s Republic, see Robert Culp, The Power of Print in Modern China: Intellectuals and Industrial Publishing from the End of Empire to Maoist State Socialism, New York 2019.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-4">
+              <span class="footnotes__num">
+                <a href="#fnref-4">4</a>
+              </span>
+              <span class="footnotes__text">For an overview of media system in socialist China, see Nicolai Volland, The Control of the Media in the People’s Republic of China, Heidelberg 2003. For unofficial publications under the Mao era, see Shao Jiang, Citizen Publications in China Before the Internet, New York 2015. For underground reading groups under Maoist rule, see Song Yongyi, ‘A Glance at the Underground Reading Movement during the Cultural Revolution’, Journal of Contemporary China, vol. 16, no. 51, 2007.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-5">
+              <span class="footnotes__num">
+                <a href="#fnref-5">5</a>
+              </span>
+              <span class="footnotes__text">For example, Chinese Trotskyist Zheng Chaolin’s early writing was published in Hong Kong in 1950. During the Great Famine (1959–61), thousands of refugees flowed into Hong Kong, their experiences documented by colonial administrators and China watchers. Between 1972–74, Ming Pao Monthly, an influential Hong Kong press, published memoirs of early ccp leader Zhang Guotao in serial form.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-6">
+              <span class="footnotes__num">
+                <a href="#fnref-6">6</a>
+              </span>
+              <span class="footnotes__text">‘Book Publishing’, in Edward Davis, ed., Encyclopedia of Contemporary Chinese Culture, New York 2005, pp. 62–64.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-7">
+              <span class="footnotes__num">
+                <a href="#fnref-7">7</a>
+              </span>
+              <span class="footnotes__text">According to official statistics as of December 2022, there are currently 584 publishers in China with formal publishing qualifications: Weihua Zhou, ‘Publishing Industry in China Since 2012: Major Changes and Trends’, Council on East Asian Libraries Annual Meeting, 2022. The number of publishing houses in Taiwan reached 3,000 by the year 1990, and soared to 6,000 by 2001, after the abolition of Publishing Law in 1999. The number of publishing companies in Hong Kong was around 200 during the 1990s: Hong Kong Book &amp; Magazine Trade Association Limited, Book and Magazine Trading in Hong Kong, Hong Kong 1990; Xu Zhongrong, ‘Huawen chuban de qiyehua’ [The Commercialization of Chinese-Language Publishing], Quanguo xinshu zixun yuekan, no. 7, 2001.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-8">
+              <span class="footnotes__num">
+                <a href="#fnref-8">8</a>
+              </span>
+              <span class="footnotes__text">These ‘second channels’ covered all kinds of informal and private operations in the book distribution sector, from wholesale and retail outlets to street vendors, which had been long subjected to regulatory crackdowns due to their ambiguous legal status. For a vivid account of this shadow industry in the 1980s, see Jia Lusheng, ‘The Second Channel’, Index on Censorship, vol. 18, no. 2, February 1989. There is no official census of privately-run publishers in the prc, but according to unofficial figures there were 10,000 in China by 2009, of which 50 per cent were in Beijing: Steve O’Connor, ‘Publishing in China: An Overview’, Chinese Digital Library Construction and its Value-added Service Seminar, Hong Kong 2009.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-9">
+              <span class="footnotes__num">
+                <a href="#fnref-9">9</a>
+              </span>
+              <span class="footnotes__text">Fan Jun, ‘The Publishing Industry in New China: Eventful 7 Decades’, Publishing Research Quarterly, vol. 35, no. 4, December 2019.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-10">
+              <span class="footnotes__num">
+                <a href="#fnref-10">10</a>
+              </span>
+              <span class="footnotes__text">In 1992, China ratified the Berne Convention, marking its formal integration into the global copyright regime. For the history of copyrights in modern China, see Fei-Hsien Wang, Pirates and Publishers: A Social History of Copyright in Modern China, Princeton 2019.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-11">
+              <span class="footnotes__num">
+                <a href="#fnref-11">11</a>
+              </span>
+              <span class="footnotes__text">In 2001 the nppa was renamed the General Administration of Press and Publication (gapp).</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-12">
+              <span class="footnotes__num">
+                <a href="#fnref-12">12</a>
+              </span>
+              <span class="footnotes__text">See Chen Fong-ching and Jin Guantao, From Youthful Manuscripts to River Elegy: The Chinese Popular Cultural Movement and Political Transformation 1979–89, Hong Kong 1997, pp. 3–9; Wang Jing, High Culture Fever: Politics, Aesthetics and Ideology in Deng’s China, Oakland ca 1996.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-13">
+              <span class="footnotes__num">
+                <a href="#fnref-13">13</a>
+              </span>
+              <span class="footnotes__text">This development built upon the colony’s earlier role as a publishing and media-industry centre. Warfare and regime change in 1949 had brought a significant number of émigré professionals and infrastructure transplanted from the Mainland. In the 1950s and early 60s, this media ecology was instrumentalized by both the ccp and kmt regimes to influence overseas Chinese in Southeast Asia; it was also strategic for us Cold War cultural policies in the Asia-Pacific. See Fu Po-Shek, Hong Kong Media and Asia’s Cold War, Oxford 2023 and Shen Shuang, ‘Empire of Information: The Asia Foundation’s Network and Chinese-Language Cultural Production in Hong Kong and Southeast Asia’, American Quarterly, vol. 69, no. 3, September 2017.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-14">
+              <span class="footnotes__num">
+                <a href="#fnref-14">14</a>
+              </span>
+              <span class="footnotes__text">These legislative undertakings did not signal the end of political censorship, which persisted in more implicit forms throughout the 1970s: Michael Ng, Political Censorship in British Hong Kong: Freedom of Expression and the Law (1842–1997), Cambridge 2022. Book registration was a mechanism widely adopted across British colonies; for a discussion of its implementation in British India, see Robert Darnton, Censors at Work: How States Shaped Literature, New York 2014.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-15">
+              <span class="footnotes__num">
+                <a href="#fnref-15">15</a>
+              </span>
+              <span class="footnotes__text">For an in-depth study of this ‘contentious public sphere’ in postwar Hong Kong, see Edmund Cheng, ‘Loyalist, Dissenter and Cosmopolite: The Sociocultural Origins of a Counter-Public Sphere in Colonial Hong Kong’, The China Quarterly, vol. 246, June 2021.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-16">
+              <span class="footnotes__num">
+                <a href="#fnref-16">16</a>
+              </span>
+              <span class="footnotes__text">More diverse compared to the 1950s, when the Cold War ‘leftist-rightist’ divide could be found in almost all social settings, from newspaper establishments, bookshops and schools to cinemas and soccer teams. See Law Wing Sang, Collaborative Colonial Power: The Making of the Hong Kong Chinese, Hong Kong 2009, pp. 131–50.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-17">
+              <span class="footnotes__num">
+                <a href="#fnref-17">17</a>
+              </span>
+              <span class="footnotes__text">Chan Koon-chung, Shihou: Xianggang wenhua zhi [Aftermath: A Chronicle of Hong Kong Culture], Hong Kong 2008.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-18">
+              <span class="footnotes__num">
+                <a href="#fnref-18">18</a>
+              </span>
+              <span class="footnotes__text">Japanese print companies established branches in the early 1960s, followed by English publishing houses (Longman, Pearson): Sally Taylor, ‘20 Years Ago Today: The Asian Printing Phenomenon’, Publishers Weekly, vol. 253, no. 30, 2006.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-19">
+              <span class="footnotes__num">
+                <a href="#fnref-19">19</a>
+              </span>
+              <span class="footnotes__text">See Fu, Hong Kong Media and Asia’s Cold War and Shen, ‘Empire of Information’. The pre-eminence of the hk publishing industry within the Sinosphere during the 1970–80s was also shaped by contingent factors, notably China’s Cultural Revolution and roc’s press control in Taiwan.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-20">
+              <span class="footnotes__num">
+                <a href="#fnref-20">20</a>
+              </span>
+              <span class="footnotes__text">Hong Kong Book &amp; Magazine Trade Association Limited, Book and Magazine Trading in Hong Kong, p. 9; Hong Kong Publishing Professionals Society Publishing Committee, Shushan youlu [Paths Through the Mountains of Books: Oral Histories of Hong Kong Publishing], Hong Kong 2018, p. 151.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-21">
+              <span class="footnotes__num">
+                <a href="#fnref-21">21</a>
+              </span>
+              <span class="footnotes__text">Formal trade between the prc and Taiwan was not established until 1992.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-22">
+              <span class="footnotes__num">
+                <a href="#fnref-22">22</a>
+              </span>
+              <span class="footnotes__text">Guo Guocan, Xianggang zhongzi caituan [Chinese Consortium in Hong Kong], Hong Kong 2009, pp. 197–204. The practice of conglomeration did not occur in the prc until 1999, when several Shanghai-based soe publishing houses were regrouped and registered as Century Publishing (Shanghai) in 1999. This, however, became the major trend after China’s entry into the wto in 2001.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-23">
+              <span class="footnotes__num">
+                <a href="#fnref-23">23</a>
+              </span>
+              <span class="footnotes__text">An exception is hku’s Chinese Department, which has functioned as an ad hoc institution for teaching Chinese classics and Confucian values since its establishment in 1927. This arrangement embodied the colonial government’s strategic exploitation of cultural traditionalism to counter the impact of nationalist ideologies from the new Republic of China. Since the late 1930s, the Chinese Department of hku served as an auxiliary body for the British government’s educational policies, compiling a Chinese-language curriculum used in local primary schools. See Law, Collaborative Colonial Power, pp. 106–11.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-24">
+              <span class="footnotes__num">
+                <a href="#fnref-24">24</a>
+              </span>
+              <span class="footnotes__text">Chinese University Bulletin, Summer 1977, p. 13.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-25">
+              <span class="footnotes__num">
+                <a href="#fnref-25">25</a>
+              </span>
+              <span class="footnotes__text">hku Press was founded in 1956.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-26">
+              <span class="footnotes__num">
+                <a href="#fnref-26">26</a>
+              </span>
+              <span class="footnotes__text">Chinese University Bulletin, vol. 9, no. 3, December 1972, p. 2; D. E. Pollard, ‘Lin Yutang’s Chinese-English Dictionary of Modern Usage’, The China Quarterly, no. 56, December 1973.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-27">
+              <span class="footnotes__num">
+                <a href="#fnref-27">27</a>
+              </span>
+              <span class="footnotes__text">The book was later published in roc Taiwan but without its five chapters on the Chinese Civil War. The complete version did not come out until the 1990s, after martial law was lifted. The mainland version was published in 2012.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-28">
+              <span class="footnotes__num">
+                <a href="#fnref-28">28</a>
+              </span>
+              <span class="footnotes__text">The emblematic case is the sociologist Ambrose King, well-known for his Sinicization of modernization theory. For critical analysis of the ‘Greater China’ discourse and its political ramifications in contemporary China, see the special issue of The China Quarterly, no. 136, December 1993.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-29">
+              <span class="footnotes__num">
+                <a href="#fnref-29">29</a>
+              </span>
+              <span class="footnotes__text">Shuang Xiao and T. L. Tsim, ‘From Page to Print: In Conversation with T. L. Tsim about Renditions, cuhk Press and His Fellowship with John’, Cha, 11 September 2025.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-30">
+              <span class="footnotes__num">
+                <a href="#fnref-30">30</a>
+              </span>
+              <span class="footnotes__text">Joseph Cheng, ‘Introduction’, in The Other Hong Kong Report, Hong Kong 1989.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-31">
+              <span class="footnotes__num">
+                <a href="#fnref-31">31</a>
+              </span>
+              <span class="footnotes__text">Ng, Political Censorship in British Hong Kong, pp. 179–86.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-32">
+              <span class="footnotes__num">
+                <a href="#fnref-32">32</a>
+              </span>
+              <span class="footnotes__text">Presses like Cosmos and oup published titles by authors from the prc, most of whom were exiles, while smaller academic publishers like hkup and cup engaged more closely with both contemporary issues and, more specifically, the history and memories of the prc. For example, Cosmos produced an</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-33">
+              <span class="footnotes__num">
+                <a href="#fnref-33">33</a>
+              </span>
+              <span class="footnotes__text">For Jin and Liu’s intellectual endeavour in the 1980s, see, for example, Chen Fong-ching and Jin Guantao, From Youthful Manuscripts to River Elegy: The Chinese Popular Cultural Movement and Political Transformation 1979–89, Hong Kong 1997.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-34">
+              <span class="footnotes__num">
+                <a href="#fnref-34">34</a>
+              </span>
+              <span class="footnotes__text">The journal’s supporters included several Chinese University officials, such as physicist Charles Kuen Kao and sociologist Ambrose Yeo-chi King, alongside us-based scholars like physicist Yang Chen-ning and historian Yu Ying-shih.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-35">
+              <span class="footnotes__num">
+                <a href="#fnref-35">35</a>
+              </span>
+              <span class="footnotes__text">See Jerome Cohen, ‘The Universities Service Centre for China Studies—Present at the Creation’, January 2015, memo available on Cohen’s website; and Ezra Vogel, ‘Milestones in the History of the Universities Service Centre for China Studies’, The China Journal, no. 75, January 2016.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-36">
+              <span class="footnotes__num">
+                <a href="#fnref-36">36</a>
+              </span>
+              <span class="footnotes__text">For an overview of the unofficial minjian scholars in 1990s China, see Sebastian Veg, Minjian: The Rise of China’s Grassroots Intellectuals, New York 2019.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-37">
+              <span class="footnotes__num">
+                <a href="#fnref-37">37</a>
+              </span>
+              <span class="footnotes__text">Gao Hua, How the Red Sun Rose: Origins and Development of the Yan’an Rectification Movement, Hong Kong 2000. Gao’s mind-reading of Mao—reminiscent of court politics in traditional Chinese historiography—did not convince all readers: it left one with the impression that the book was imbued with a ‘smell of blood’: see Xiong Jingming, ed., Shijia Gao Hua [Gao Hua the Historian], Hong Kong 2012, p. 58. It would be misleading, however, to reduce this work to mere revisionism, as the author did not hide his sympathies for the Chinese Revolution.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-38">
+              <span class="footnotes__num">
+                <a href="#fnref-38">38</a>
+              </span>
+              <span class="footnotes__text">Yang Kuisong, ‘Wushi nianlai de zhonggong dangshi yanjiu’ [Fifty Years of Research on ccp history], Jindaishi yanjiu, no. 5, 1999.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-39">
+              <span class="footnotes__num">
+                <a href="#fnref-39">39</a>
+              </span>
+              <span class="footnotes__text">In 2006, the usc also initiated a ‘minjian history project’ to document private histories of the Mao-era. These collections were put online in 2008, on the usc-run platform ‘Folk History Archive’.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-40">
+              <span class="footnotes__num">
+                <a href="#fnref-40">40</a>
+              </span>
+              <span class="footnotes__text">Chen Yixin, ‘Tizhi bianyuan xiu guoshi’ [Writing the History of the prc from the Margins of the System], Ershiyi shiji, no.8, 2008; Jan Kiely, ‘Review of How the Red Sun Rose’, China Perspectives, vol. 120, no. 1, 2020.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-41">
+              <span class="footnotes__num">
+                <a href="#fnref-41">41</a>
+              </span>
+              <span class="footnotes__text">Three volumes did not appear due to a combination of contingent factors, including Jin and Liu’s retirement from cuhk in 2010 and Gao Hua’s death in 2011.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-42">
+              <span class="footnotes__num">
+                <a href="#fnref-42">42</a>
+              </span>
+              <span class="footnotes__text">The title was Li Zehou and Liu Zaifu’s Farewell to Revolution, a dialogue between two mainland intellectuals who had emigrated to the us after June Fourth, published in 1995 by Cosmos. It was reprinted three times in the next couple of years and saw a second edition in 1997.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-43">
+              <span class="footnotes__num">
+                <a href="#fnref-43">43</a>
+              </span>
+              <span class="footnotes__text">Gao Xingjian, former prc citizen and the first Chinese author to win Nobel Prize for Literature in 2000, was severely censored in the Mainland but allowed to sell books and stage plays in the sar.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-44">
+              <span class="footnotes__num">
+                <a href="#fnref-44">44</a>
+              </span>
+              <span class="footnotes__text">Ironically, the major crackdown in this period was a by-product of copyright protection. Facing growing complaints from international media tycoons and a us threat to impose sanctions on the import of Chinese goods, the state launched a harsh campaign against piracy, causing one man to be imprisoned for life for pirating 700,000 copies of twenty books: Ian McGowan, ‘Publishing in China’, Publishing Research Quarterly, vol. 15, Spring 1999.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-45">
+              <span class="footnotes__num">
+                <a href="#fnref-45">45</a>
+              </span>
+              <span class="footnotes__text">For Chinese perspectives on the transformation of the intellectual landscape in the 1990s, see Xu Jilin, ‘The Fate of an Enlightenment: Twenty Years in the Chinese Intellectual Sphere (1978–98)’, in Merle Goldman and Edward Gu, eds, Chinese Intellectuals Between State and Market, London 2004 and Wang Chaohua, ‘Minds of the Nineties’, in One China, Many Paths, London and New York 2003.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-46">
+              <span class="footnotes__num">
+                <a href="#fnref-46">46</a>
+              </span>
+              <span class="footnotes__text">For a detailed account of these sources, see Jeremy Brown, ‘Finding and Using Grassroots Historical Sources from the Mao Era’, Chinese History Dissertation Reviews, 15 December 2010.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-47">
+              <span class="footnotes__num">
+                <a href="#fnref-47">47</a>
+              </span>
+              <span class="footnotes__text">Nicholas Fu, ‘Publishing Industry in Hong Kong’, hktdc Research, 12 June 2025.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-48">
+              <span class="footnotes__num">
+                <a href="#fnref-48">48</a>
+              </span>
+              <span class="footnotes__text">Beijing’s unpopular attempts to suppress freedom of the press in the Special Administrative Region in this period, most famously the 2003 proposed legislation under article 23 of the Basic Law, ran into resistance from local business tycoons.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-49">
+              <span class="footnotes__num">
+                <a href="#fnref-49">49</a>
+              </span>
+              <span class="footnotes__text">Data from Hong Kong Yearbook, 1997–2024, assembled by the author. Note that this trend took place during a period of steady decline for the local publishing and printing industry: the number of registered publishing houses dwindled from around 300 in 1990 to 200 in 2001. See ‘Printing and Publishing Industry in Hong Kong’, Hong Kong Monthly Digest of Statistics, July 2003; Xu Zhongrong, ‘Huawen chuban de qiyehua’ [The Commercialization of Chinese-Language Publishing], Quanguo xinshu zixun yuekan, no. 7, 2001.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-50">
+              <span class="footnotes__num">
+                <a href="#fnref-50">50</a>
+              </span>
+              <span class="footnotes__text">Deng Liqun, Deng Liqun zishu: Shi’er ge chunqiu 1975–87 [Deng Liqun in His Own Words: Twelve Years (1975–87)], Hong Kong 2006.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-51">
+              <span class="footnotes__num">
+                <a href="#fnref-51">51</a>
+              </span>
+              <span class="footnotes__text">For example, the Chinese version of the Prisoner of the State: The Secret Journal of Premier Zhao Ziyang (2009).</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-52">
+              <span class="footnotes__num">
+                <a href="#fnref-52">52</a>
+              </span>
+              <span class="footnotes__text">See, for example, Yang Jiewen, ‘Wo haizai chuangye dajie xiu jiapu’ [I’m Still Compiling Family Genealogies on Entrepreneurship Street], Chinese Youth Journal, 22 December 2021.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-53">
+              <span class="footnotes__num">
+                <a href="#fnref-53">53</a>
+              </span>
+              <span class="footnotes__text">For example, Shidai Guoji Publishing Ltd, presumably a mainland agent, published many political biographies and non-official histories between 2004–11, including Shanghai historian Cao Shuji’s authoritative research on the number of deaths during the Great Famine, published in 2005. Another example was the Cultural Revolution History Press, established in Hong Kong by a mainland private entrepreneur in 2010, which produced a dozen titles on the young radicals as well as Gang of Four figures. Hong Kong media-publishing groups such as Min Pao and Open Magazine also produced numerous prc-related materials and biographies through their subsidiary establishments.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-54">
+              <span class="footnotes__num">
+                <a href="#fnref-54">54</a>
+              </span>
+              <span class="footnotes__text">Following the establishment of its hk office in 1961, oup mainly concentrated on textbook production. It did not begin publishing Chinese titles until 1992, under the direction of Lam To Kwan, a former cuhk graduate.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-55">
+              <span class="footnotes__num">
+                <a href="#fnref-55">55</a>
+              </span>
+              <span class="footnotes__text">Given the high entry barriers to the mainland publishing sector, hk actors mostly engaged with the market through copyright trades. The advantage of global access and administrative efficiency allowed hk publishers to acquire copyrights more easily and produce versions tailored for domestic consumption. As new players in international copyright trade, mainland publishers could also make use of Hong Kong as both test-bed and reservoir, in a hunt for promising foreign titles at a lower political risk.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-56">
+              <span class="footnotes__num">
+                <a href="#fnref-56">56</a>
+              </span>
+              <span class="footnotes__text">hktdc press release, 22 July 2014.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-57">
+              <span class="footnotes__num">
+                <a href="#fnref-57">57</a>
+              </span>
+              <span class="footnotes__text">hktdc press release, 27 July 2010. See also the Yazhou zhoukan special issue on Hong Kong Book Fair, 8 June 2010.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-58">
+              <span class="footnotes__num">
+                <a href="#fnref-58">58</a>
+              </span>
+              <span class="footnotes__text">This was the first Chinese-language translation of Immanuel Hsu, The Rise of Modern China, 6th ed., Oxford 2000 [1970]. cuhkp’s translation was published in 2001 and remains the Chinese University Press’s most reprinted title to date (14 reprints). Its popularity should be seen in the context of the sar government’s reform of the Chinese History curriculum between 2000–03, which proposed merging it with General History—a move that triggered public debates and protests from local professionals. See Flora Kan, Hong Kong’s Chinese History Curriculum from 1945: Politics and Identity, Hong Kong 2010. A simplified-character edition was published in 2009, minus its material on the ccp. In 2006–07, the cup produced 71 works in total, including 20 academic titles, 26 general titles, 13 issues of scholarly journals and 12 revised or reprinted titles: cuhk Annual Report 2006/2007.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-59">
+              <span class="footnotes__num">
+                <a href="#fnref-59">59</a>
+              </span>
+              <span class="footnotes__text">The two directors preceding Gan Qi, Paul Wong (1995–98) and Steven Kwok San Luk (1998–2007), both had experience in the media and publishing industry before taking over cup. Under their tenures, cuhkp began introducing popular English textbooks and negotiating copyright deals with mainland publishers.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-60">
+              <span class="footnotes__num">
+                <a href="#fnref-60">60</a>
+              </span>
+              <span class="footnotes__text">The name was not officially changed until 2018 but has been widely used on covers since 2010. See the catalogue of publishers in hksar gazette.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-61">
+              <span class="footnotes__num">
+                <a href="#fnref-61">61</a>
+              </span>
+              <span class="footnotes__text">Sun Yuecai, Beige yiqu: wenge shinian riji [A Lament: Ten Years of Diary Entries from the Cultural Revolution], Hong Kong 2011; Wu Jiang, Zhengzhi cangsang liushi nian [Sixty Years of Political Turmoil: Memoirs of Wu Jiang], Hong Kong 2012. In publishing such sensitive materials, the cuhkp was careful where it trod; the edition of Zhao Ziyang’s papers contained nothing after May 1989.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-62">
+              <span class="footnotes__num">
+                <a href="#fnref-62">62</a>
+              </span>
+              <span class="footnotes__text">Translations of Chinese scholarship included Gao Hua’s Red Sun (2018); French titles included Michel Bonin’s The Lost Generation (2013) and Lucien Bianco’s Stalin and Mao (2018); Japanese titles included Wang Ke’s The East Turkestan Independence Movement (2018) and Ishikawa Yoshihiro’s How the ‘Red Star’ Rose. In 2024, the cuhkp launched an English-language series featuring Japanese Sinology. It also continued the earlier mission of translating Chinese classics; a recent initiative was the English translation of Mozi, which was introduced into the Penguin Classics.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-63">
+              <span class="footnotes__num">
+                <a href="#fnref-63">63</a>
+              </span>
+              <span class="footnotes__text">Editor’s preface to the 30/30 Series, 2013.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-64">
+              <span class="footnotes__num">
+                <a href="#fnref-64">64</a>
+              </span>
+              <span class="footnotes__text">Gao Mobo’s 2001 article on Dushu, which was the introduction of the English version of Gao Village, sparked a fierce debate over how to evaluate the legacy of the Mao era. See Zhang Yongle, ‘No Forbidden Zone in Reading’, nlr 49, January–February 2008.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-65">
+              <span class="footnotes__num">
+                <a href="#fnref-65">65</a>
+              </span>
+              <span class="footnotes__text">Wang Shaoguang, The Failure of Charisma: Cultural Revolution at Wuhan, Hong Kong 2009.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-66">
+              <span class="footnotes__num">
+                <a href="#fnref-66">66</a>
+              </span>
+              <span class="footnotes__text">For a colourful account of this moment, see Zha Jianying, China Pop: How Soap Operas, Tabloids and Bestsellers Are Transforming a Culture, New York 1995.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-67">
+              <span class="footnotes__num">
+                <a href="#fnref-67">67</a>
+              </span>
+              <span class="footnotes__text">Such trends were taking place globally, see André Schiffrin, The Business of Books: How International Conglomerates Took Over Publishing and Changed the Way We Read, London and New York 2000.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-68">
+              <span class="footnotes__num">
+                <a href="#fnref-68">68</a>
+              </span>
+              <span class="footnotes__text">Ezra Vogel, Deng Xiaoping and the Transformation of China, Boston ma 2011. A retired Harvard sociologist, best known for Japan as Number One, Boston ma 1979, Vogel switched his attention to China in the 1980s; he served as us National Intelligence Officer for East Asia under Clinton, 1993–95. The biography had mixed reviews in the West; for a critical account, see Perry Anderson, ‘Sino-Americana’, London Review of Books, 9 February 2012.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-69">
+              <span class="footnotes__num">
+                <a href="#fnref-69">69</a>
+              </span>
+              <span class="footnotes__text">The Taiwan edition (2012) used a more literal translation of the English title.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-70">
+              <span class="footnotes__num">
+                <a href="#fnref-70">70</a>
+              </span>
+              <span class="footnotes__text">Andrew Jacobs, ‘Authors Accept Censors’ Rules to Sell in China’, New York Times, 19 October 2013. In addition to the expected abridgement of episodes such as the transition after Mao’s death and the upheavals of 1989, censors neutralized Vogel’s description of Mao as ‘vindictive’ and ‘devious’, and his criticism of Deng’s push for the 1988 price reform, which triggered high inflation and social unrest: Li Huimin, ‘Deng Xiaoping shidai daluban shaole shenme’ [What Is Missing from the Mainland Edition of The Age of Deng Xiaoping?]’, nyt Chinese Edition, 13 May 2013. On Joint Publishing’s negotiations with Vogel over the changes, see Li Xin, Naxie nian naxie ren he shu [Those Years, Those People and Books], Hong Kong 2020, pp. 382–409.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-71">
+              <span class="footnotes__num">
+                <a href="#fnref-71">71</a>
+              </span>
+              <span class="footnotes__text">The mainland version of The Age of Deng Xiaoping sold at 88 rmb (approximately $14) per copy, much higher than the average book price at the time, which was around 30 rmb (approximately $4.82): Christine Yunn-Yu Sun, ‘Book Prices in China’, Voices under the Sun, 29 May 2012.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-72">
+              <span class="footnotes__num">
+                <a href="#fnref-72">72</a>
+              </span>
+              <span class="footnotes__text">People’s Daily Supplement, 22 January 2013, p. 24. Vogel also received the ‘Special Book Award’, created in 2005 by the gapp to acknowledge contributions of foreign writers, translators and publishers to the ‘promotion of Chinese culture and the dissemination of Chinese works’ overseas. The sales helped pull the Joint Publishing Company out of the prolonged deficit into which it had been plunged since its privatization in 2005: People’s Daily, 13 August 2013. Despite obvious limits, the book’s reception in China should be viewed sympathetically; it provided a rare opportunity for the mainland public to discuss the recent past openly. Largely for this reason, it was selected for popular listings such as Shenzhen Reading Week’s ‘Book of the Year’ and ‘readers’ favourite’ on Sina.cn in 2013. See Chen Xiangyang, ‘Shenzhen dushuyue 2013 niandu shida haoshu jiexiao’ [Shenzhen Reading Month 2013 Announces ‘Top Ten Books of the Year’], Sina Book, 2 December 2013.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-73">
+              <span class="footnotes__num">
+                <a href="#fnref-73">73</a>
+              </span>
+              <span class="footnotes__text">A similar case for such practice is Guangxi Normal University Press, another rising star in the Mainland. The press built its reputation through the ‘Imaginist’ (the Chinese title Lixiangguo was the standard translation for Plato’s Republic), a cultural venture spearheaded by four influential public intellectuals based in Hong Kong and Beijing. Its renowned ‘Mirror Series’, launched in 2014, produced fine translations of Western scholarship on Nazi Germany and Soviet history. Coating the critical edge under foreign subjects, these titles found immediate resonance among domestic readers.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-74">
+              <span class="footnotes__num">
+                <a href="#fnref-74">74</a>
+              </span>
+              <span class="footnotes__text">International Publishers Association, ‘Freedom to Publish. Challenges, Violations and Countries of Concern’, 2020; Ng, Political Censorship in British Hong Kong, pp. 190–96.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-75">
+              <span class="footnotes__num">
+                <a href="#fnref-75">75</a>
+              </span>
+              <span class="footnotes__text">New isbns fell from 19,010 in 2020 to under 9,963 in 2021, while new publisher’s prefixes dropped from 1,118 to 654: author’s calculation using data from Hong Kong Yearbook (1995–2024).</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-76">
+              <span class="footnotes__num">
+                <a href="#fnref-76">76</a>
+              </span>
+              <span class="footnotes__text">Radio Television Hong Kong, Hong Kong Connection, 28 May 2018; Ng, Political Censorship in British Hong Kong.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-77">
+              <span class="footnotes__num">
+                <a href="#fnref-77">77</a>
+              </span>
+              <span class="footnotes__text">Ryan Ho Kilpatrick, ‘Media in Focus: How Sino United Created a Publishing Monopoly’, Lingua Sinica Substack, 13 March 2025. The same processes have long been underway on the Mainland, following a ten-year plan for the restructuring of the publishing industry that became official policy at the Sixteenth Congress of the ccp in 2002. By 2021, almost all publishing institutions apart from those catering to ethnic minorities had been reorganized into conglomerated groups. See Jun, ‘The Publishing Industry in New China’. China became an active player in international copyright trades and currently ranks 28th (of 126) in copyright protection and 27th in overall ip rights protection: see International Property Rights Index, 2025. By contrast, China ranked 178th (of 180) in press freedom: see Reporters Without Borders Index, 2025.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-78">
+              <span class="footnotes__num">
+                <a href="#fnref-78">78</a>
+              </span>
+              <span class="footnotes__text">Kin-long Tong, Rethinking the Politics of Scale: Independent Publishing for Social Changes in Hong Kong and Beyond, London 2025, p. 63.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-79">
+              <span class="footnotes__num">
+                <a href="#fnref-79">79</a>
+              </span>
+              <span class="footnotes__text">Gillian Cheng, ‘Knowledge for All: cuhk Library and Press Unlock a World of Information’, cuhk website; Benjamin Meunier, ‘Open Books Hong Kong: Pioneering Open Access in Asia’, International Federation of Library Associations and Institutions website, 9 March 2025.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-80">
+              <span class="footnotes__num">
+                <a href="#fnref-80">80</a>
+              </span>
+              <span class="footnotes__text">See also Siu-keung Cheung, ‘Reunification through Water and Food: The Other Battle for Lives and Bodies in China’s Hong Kong Policy’, The China Quarterly, no. 220, December 2014.</span>
+            </li>
+          
+        </ol>
+      </section>
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://newleftreview.org/issues/ii157/articles/ruochen-xi-in-search-of-good-books"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on New Left Review &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
