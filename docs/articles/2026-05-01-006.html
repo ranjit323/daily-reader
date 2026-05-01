@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nathan Sperber: Beyond Neoliberalism? — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">New Left Review</div>
+      <h1 class="article-header__title">Nathan Sperber: Beyond Neoliberalism?</h1>
+      
+        <p class="article-header__summary">Investigating the persistence—or retreat—of capital’s great prog­rammatic offensive, along its many fronts: ideological struggle, policy prescription, macro-regulation of economic life, class direction. A multi-dimensional analysis of an uneven condition.</p>
+      
+      <div class="article-header__meta">
+        
+        
+          <span>30 Apr 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>Whether neoliberalism is exiting the scene of history is a question posed anew with each economic and political convulsion; yet it remains some distance from persuasive resolution. Indeed, emphatic diagnostics of neoliberalism’s impending demise have accompanied its entire historical arc, even at the most unlikely of times—e.g., Eric Hobsbawm writing in 1998 that ‘the neo-liberal balloon is visibly deflating’. Since the global financial crisis of 2008, such verdicts have proliferated and become louder, seizing upon, inter alia, the Great Recession, Brexit, Trump’s first presidency, the Covid-19 pandemic, the ‘geo-economic’ challenge of China’s rise, ‘Bidenomics’, climate disorder, the Ukraine war and, finally, Trump’s second coming with its attendant trade commotions and military aggressions.</p>
+          
+        
+          
+            <p>Among noteworthy contributions—centred on the us case—David Kotz has argued in these pages that the neoliberal regime of accumulation has been mired in a structural crisis of stagnation since the 2008 crash, from which only the ‘construction of a new institutional regime’ can possibly effectuate a break. Gary Gerstle, in his Rise and Fall of the Neoliberal Order, depicts neoliberalism as a political order—that is, a ‘constellation of ideologies, policies and constituencies’—which eventually fractured along the rocky path leading from the 2008 crisis to the pandemic and the Capitol riots on 6 January 2021. More recently, analysing the drivers and likely repercussions of Trump’s trade wars, Lee Jones has written of the ‘accelerating decay’ of the neoliberal order, as evidenced by the United States’s hollowed-out manufacturing base, weakened state capacity and fraying global hegemony.</p>
+          
+        
+          
+            <p>On the opposite side of the argument, many interventions have emphasized persistence and adaptation. Colin Crouch and Philip Mirowski each published a memorable book in the aftermath of the 2008 financial crisis, highlighting the neoliberal doctrine’s uncanny tendency to be recast as the very solution to the economic failings and financial disorders caused by the adoption of its precepts. In a recent essay, Perry Anderson has observed that ‘the contemporary opponents of neoliberalism are still for the most part whistling in the dark’, as ‘little has changed in the underlying drivers and contradictions of the system it has created’. Moreover, an impressive array of qualifiers have been put forward to characterize neoliberalism’s reinvention since 2008: ‘zombie’ neoliberalism (Jamie Peck), ‘authoritarian’ neoliberalism (Ian Bruff), ‘punitive’ neoliberalism (William Davies), ‘mutant’ neoliberalism (William Callison and Zachary Manfredi) and ‘militarized’ neoliberalism (Trissia Wijaya and Kanishka Jayasuriya).</p>
+          
+        
+          
+            <p>What, then, are we to make of the present state of ‘the most successful political ideology in world history’? The following pages will suggest that the pattern of accumulation—financialized, globalized, elite-driven—birthed by neoliberalism’s ascent in the late twentieth century endures and that it might not be as fragile or decrepit as some of its detractors think. At the same time, however, neoliberalism as a policy doctrine has, by this point, unravelled in the West. The economic precepts and intellectual thematics of neoliberalism have either been jettisoned or have survived only to be hybridized with their opposites, resulting in programmatic and discursive admixtures that are no longer obviously neoliberal (though nor are they Keynesian, laissez-faire, dirigiste or any other term within reach in the historical nomenclature). This process of doctrinal dissolution has come about because Western governing strata, faced with a series of destabilizing developments stretching from 2008 to the present, have taken it upon themselves to discard neoliberal principles and violate neoliberal norms, one after the other, in a succession of political moves aimed above all at preserving the established pattern of accumulation. The resultant loss in intellectual integrity suits dominant corporate and class interests well enough for the time being. Scholars may find the absence of a consistent policy paradigm difficult to accept; accumulators of capital have fewer qualms.</p>
+          
+        
+          
+            <p>Any attempt to explore neoliberalism’s present-day condition must grapple with the concept’s fraught definitional boundaries. A rich academic literature in intellectual history has traced the genealogies of strands of neoliberal doctrine in early-twentieth-century Germany and Austria, together with their reformulations and transnational paths of diffusion up to the Reaganite and Thatcherite revolutions of the 1980s. This is not the place to explore the particularities of neoliberalism’s ideational components, as elaborated in these accounts. Suffice it to say that they are many, spanning several realms from political philosophy (for example, a conception of human liberty rooted in market freedoms) to constitutional design (such as insulating central banking from the political arena), administrative science (regulating markets to ensure neutral competition and a ‘level playing field’), policy advocacy (privatizing state-owned assets or lowering trade barriers), class struggle (anti-unionism and welfare retrenchment), macro-economic phenomena (financialization, globalization) and micro-social subjectivities (as nourished by cultures of entrepreneurialism and consumerism). An important feature to emerge from this broad landscape is that—unlike more classical strands of liberalism, and contrary to popular perception—neoliberal doctrine has aimed less for a weakening or retreat of the state than for its repurposing as an effective guardian of market order, and that this has produced not so much deregulation as ‘reregulation’ of economic life, in conformity with its precepts.</p>
+          
+        
+          
+            <p>The attributes constitutive of neoliberalism might be seen as relating to each other according to a Wittgensteinian logic of ‘family resemblance’: none of them, taken individually, is enough to ascertain neoliberalism’s instantiation; yet any combination of a large enough number of them in a particular social formation should make a claim for its existence there plausible. Undoubtedly, neoliberalism’s manifestations across time and place over the past half century have been uneven and variegated. At the same time, this ‘family resemblance’ standard implies that, under a certain threshold, the presence of scattered surviving morsels of neoliberalism, failing to cohere into a recognizable whole, should not be confused with the thing itself. Neoliberalism may be ‘mutant’ by its very nature, and it is well to bear in mind that ‘mutants are new life forms seeking to survive a changing environment’. Yet, extending the metaphor: as mutations accumulate, species change. It should also be said that neoliberalism is hardly coextensive with capitalism itself. The two operate on different temporal, spatial and ontological scales: capitalism is a mode of production extending over centuries and spanning the entire globe; neoliberalism, at most, denotes a ‘period’ of this mode of production, covering a handful of decades and only parts of the globe.</p>
+          
+        
+          
+            <p>Having laid this conceptual groundwork, and for the purpose of exploring what is alive and what is dead in the neoliberalism of the present within the West, three core dimensions should be distinguished. These are, first, political discourses and ideologies; second, economic policies and interventions; and third, the macro-institutional arrangements shaping the broad patterns of capitalist accumulation. The following sections address these in turn.</p>
+          
+        
+          
+            <p>It is often remarked that the dominant tropes of Western politics have undergone a significant shift in recent years, as the ideological sensibilities of neoliberalism’s golden age—from the 1980s to the 2000s—recede in collective memory. To be sure, the discursive incarnations of neoliberal doctrine have never been static and have typically been inflected by partisan orientations, national characteristics and short-term conjunctures. Yet a number of neoliberal leitmotifs can be identified, including: affirming the liberating effects of markets on the individual; acclaiming the spirit of private enterprise; valuing international openness and casting economic globalization as an opportunity; portraying economic rationality as beyond the arena of politics; applying a monetary gauge to all spheres of human experience.</p>
+          
+        
+          
+            <p>None of these motifs have exactly disappeared from the ideological landscape of the West; yet they have receded in centrality and consequentiality over the past twenty years. Still occasionally invoked, they seem to be taking on a more partisan character, bringing into relief the fact that they are no longer accepted as the common sense, or background noise, of the epoch. At the same time, since 2008 the successive experiences of financial crisis, recession, austerity, pandemic and resurgent inflation, together with the seemingly inexorable ratcheting up of geopolitical tensions, have combined to push to the forefront of Western public spheres an order of political discourse deeply discordant with neoliberalism, giving prominence to themes of sovereignty, resilience, protection, defence and—spoken of endlessly if rarely experienced directly—war.</p>
+          
+        
+          
+            <p>Paolo Gerbaudo has labelled the rhetoric of the putative post-neoliberal age ‘neo-statism’. In his reading, the three master-signifiers of this new discursive landscape are ‘sovereignty’, ‘protection’ and ‘control’. Neo-statism, he writes, ‘has become the political new normal, a meta-ideology that inflects virtually all political actors, but also a new battlefield where radically different visions of our political future are butting heads’. Put differently, neo-statism is cast as the new substratum of political rhetoric across the partisan spectrum, coming in different shades of left and right, progressive and reactionary, inclusive and xenophobic. To Gerbaudo, this new complexion of politics, catalysed by the experience of Covid-19, came about through a blending of opposites: ‘neoliberal thesis and populist antithesis engenders a statist synthesis, eclipsing many of the central ideological tenets of the phase of neoliberal expansion’. Gerbaudo may be overstating the intellectual coherence of the ideological end product, yet he is right to suggest that the sharp antinomy of the 2010s between the neoliberal establishments of Western states and their populist nemeses has blurred in the 2020s. If we take the figures of Trump, Biden, Macron and Meloni, it is far from obvious that the two purported ‘populists’ (Trump and Meloni) have been any less—or any more—neoliberal in office than the two ‘establishment’ representatives (Biden and Macron).</p>
+          
+        
+          
+            <p>Relatedly, the supersession of neoliberalism as the apex ideology of Western polities is vividly illustrated by the transformations undergone by its erstwhile champions. Biden, who supported neoliberal reforms consistently as a us senator from the 1970s to the 2000s, largely ceased to speak its language after entering the White House. As suggested by Adam Tooze, the most significant legislation enacted by the Biden Administration (the Infrastructure Investment and Jobs Act, the chips and Science Act and the Inflation Reduction Act) was premised on industrialism and a bid to contain China—with ‘national productivism’ the ‘common denominator of gop and Democratic politics since 2016’. The break with the neoliberal conception of economic life was made plain in April 2020 when Brian Deese, the director of the White House’s National Economic Council, declared that ‘strategic public investment must serve as the backbone to a strong industrial base’. Three years later, Jake Sullivan, Biden’s National Security Adviser, stated that ‘the postulate that deep trade liberalization would help America export goods, not jobs and capacity, was a promise made but not kept . . . The shocks of a global financial crisis and a global pandemic laid bare the limits of these prevailing assumptions’.</p>
+          
+        
+          
+            <p>Besides the succession of destabilizing economic and political developments that have beset the West since 2008, another factor in neoliberalism’s ideological recession, less often noted, is the phenomenon of generational change among elites—from politicians and officials to journalists, academics and businesspeople. Not only is the original ‘neoliberal thought collective’ long gone, the direct disciples of its most eminent figures—such as Friedrich Hayek, Wilhelm Röpke, Milton Friedman, James Buchanan and Gary Becker—are also well past retirement. The leading figures of politics, economics and culture at the time of neoliberalism’s peak in the 1990s are, for the most part, no longer the decision-makers. Instead, the formative years of today’s top politicians, business executives and ‘opinion-makers’ are increasingly likely to have overlapped with neoliberalism’s crises rather than with its triumphs. In the absence of the ‘collective intellectual’ which did so much to diffuse and ensconce neoliberal ideas in the halls of power in the 1970s and 80s, it is unsurprising that, this side of the millennium, neoliberalism has undergone a stepwise ideological dilution, one crisis after another.</p>
+          
+        
+          
+            <p>As policy, neoliberal measures continue to feature on the agendas of many Western governments, yet they have been mostly reduced to playing second fiddle to the resurgence of discretionary state interventionism, which has become the principal direction of economic policy. This new interventionism has involved a wide array of targets and instruments, but it largely falls into the following five categories, with occasional overlaps:</p>
+          
+        
+          
+            <p>Emergency measures. This refers to one-off or time-limited government interventions aimed at containing the fallout from various threatening episodes such as the 2008 meltdown, the Eurozone crisis, the Covid-19 pandemic and the Russian invasion of Ukraine—as well as averting the bankruptcies of major financial institutions in between. Most of these measures have involved extending funds or guarantees to private entities in the financial sector, from the rescue of Northern Rock and the Royal Bank of Scotland by the British government in 2008 to the extension of liquidity by Switzerland’s central bank to enable ubs’s takeover of a collapsing Credit Suisse in 2023. In a smaller number of cases, industrial concerns were salvaged, such as the us Treasury contributing over $50 billion to the rescue of General Motors in 2009. Other large-scale interventions have been aimed at safeguarding workers’ wages during recessions, as in Germany’s Kurzarbeit system or Rishi Sunak’s furlough scheme, and even at supporting the purchasing power of the general population, as with the three rounds of us ‘stimulus cheques’ in 2020 and 2021. In so far as they do not produce durable institutional change and chiefly seek to preserve the status quo ante, interventions in this category are the least significant. Yet they have shown an unmistakable tendency to scale up over time—witness the contrast between the remedial measures of 2020 and those in 2008—as if each new round of intervention further suppressed policy-makers’ neoliberal inhibitions.</p>
+          
+        
+          
+            <p>Monetary backstopping. This refers above all to the acquisition on the part of major Western central banks—the Federal Reserve and the European Central Bank foremost—of vast amounts of securities on secondary markets by means of monetary creation. The Fed’s ‘quantitative easing’ programme was introduced in late 2008 to stabilize capital markets, while the ecb started buying bank-issued debt securities and sovereign bonds after 2009, accelerating its purchases from 2015 onwards through its Public Sector Purchase Programme. The pandemic then led to a further round of central bank asset purchases. Both the Fed’s balance sheet and the ecb’s peaked in the spring of 2022, at $8.96 trillion (more than 35 per cent of us gdp) and €8.77 trillion (over 65 per cent of the Euro area’s gdp) respectively. Although never officially described or conceptually accepted as such, these sums represent financial capital under quasi-public ownership, as both the Fed and the ecb are quasi-public bodies. Furthermore, in so far as the assets in question have consisted in government debt securities, these measures have amounted to an indirect monetary financing of government deficits—again, rarely acknowledged as such.</p>
+          
+        
+          
+            <p>Industrial promotion. This is traditionally known as ‘industrial policy’, although today’s Western policy elites appear fonder of the phrase ‘industrial strategy’. It includes a broad panoply of interventions aimed at promoting the development of specific sectors, technologies, supply chains and firms in the name of a similarly broad array of justifications, including, inter alia: ‘national security’, ‘supply chain resilience’, ‘green transition’, ‘digital sovereignty’, ‘energy dominance’. Although it never fully disappeared from Western states’ repertoires even at the high tide of late-twentieth-century neoliberalism, industrial policy now sits at the forefront of us and eu policy-making. In addition to Biden’s raft of measures, Trump’s second term has seen an ‘ai Action Plan’ and a ‘Maritime Action Plan’. Industrial plans have likewise proliferated in Brussels since Ursula von der Leyen assumed office as Commission president in late 2019. These have included: the European Green Deal, the NextGenerationeu investment programme, the European Chips Act, the Green Deal Industrial Plan, the Critical Raw Materials Act, the Net-Zero Industry Act, the Clean Industrial Deal and (currently in preparation) the Industrial Accelerator Act.</p>
+          
+        
+          
+            <p>Government shareholding. This denotes government equity in corporations, whether amounting to full ownership (as in the traditional model of nationalized industries), partial ownership (on the model of, for example, Deutsche Telekom and Commerzbank in Germany, Enel and Eni in Italy, Orange and Renault in France) or—a limit-case—‘golden share’ arrangements affording special voting rights or veto power to the state. On aggregate, the value of government-controlled corporate stakes in oecd countries, measured as a proportion of gdp, has tended to increase since the early 2000s. In Western Europe, government shareholding is generally concentrated in energy, telecommunications, banking and defence. Although rarer in us capitalism, in the past year alone the Trump Administration has announced government equity investments in Intel, mp Materials, Lithium Americas, Trilogy Metals, Vulcan Elements, xLight, Atlantic Alumina, usa Rare Earth as well as the acquisition of a golden share in us Steel.</p>
+          
+        
+          
+            <p>Externally targeted actions. This refers to interventions, typically of a restrictive or onerous nature, designed to apply directly to actors located overseas or controlled from abroad. It covers trade-related measures including tariffs, quotas and other taxes and barriers on imports, as well as export controls, such as the many layers of export restrictions on semiconductor technologies adopted by the us in recent years. This category also encompasses measures targeting foreign direct investment—for example, national security screening mechanisms—international financial flows and public procurement across borders. It includes the use of economic sanctions and other instances of what has been labelled ‘weaponized interdependence’: ‘leveraging global networks of informational and financial exchange for strategic advantage’.</p>
+          
+        
+          
+            <p>What have been the drivers of Western states’ propensity to engage in discretionary economic interventions, at ever higher frequency and at ever larger scale, thereby involving often ill-prepared bureaucracies in matters of finance and production and discarding any semblance of safeguarding ‘free and fair competition’ or a ‘level playing field’? The destabilizing effects of unforeseen shocks have already been mentioned. Faced with the prospect of destructive financial contagion—whether in 2008–09, during the eurozone crisis, at the onset of Covid-19, or in subsequent cases of failing financial institutions such as Silicon Valley Bank in the us and Credit Suisse in Switzerland—governments and central banks have jettisoned neoliberal principles precisely to preserve the advantages of the corporate winners of the neoliberal era. In the longer run, it is equally possible that environmental challenges—mitigating the impacts of climate disorder, adapting to a warming planet—will take centre stage in further expanding the new interventionism.</p>
+          
+        
+          
+            <p>Another decisive factor has been the pressure of adversarial geopolitics on the economic policy-making of Western states. This is often referred to as ‘geo-economics’—defined thirty-six years ago by Edward Luttwak as ‘the logic of war in the grammar of commerce’. The accretion of Chinese power has been a decades-long process, but it was only in the second half of the 2010s that it reached the point at which the us foreign-policy nexus as a whole started to confront its existential implications for America’s global hegemony. This process of painful reckoning in Washington has been anything but smooth, but one of its most remarkable upshots has been the United States’s partial, lopsided and largely misrecognized emulation of features of Chinese development planning in its own industrial-policy initiatives under Biden and Trump. The Inflation Reduction Act’s ambition to accelerate the development of renewable energy and green tech in the us would not have materialized in this form in the absence of the exemplar of the Chinese state doing the same. Derivations of Chinese industrial statecraft can be identified in the fine print of the industrial plans put out by Washington and, increasingly, by Brussels, although—abstracted from the concrete workings of the Chinese party-state apparatus—such bureaucratic mimicry is fraught with obstacles and potential failures. This dynamic of flawed imitation, which might be termed ‘competitive isomorphism’, is essential to any explanation of the West’s new interventionism.</p>
+          
+        
+          
+            <p>Overall, the increase in Western states’ many-sided interpositions in economic life has had the effect of displacing neoliberalism as the unquestioned orientation of economic policy. Yet this development, spelling the stoppage of the ‘directional’ neoliberalism of the recent past, prompts some caveats. First, it is more pronounced in some policy areas than others. Whereas the politics of, for instance, critical supply chains have become unmistakably interventionist, issues of redistribution and welfare are still subjected to partisan tugs of war that have not fundamentally changed since the last century. Western Europe’s welfare states are for the most part immobilized, squeezed between structurally rising pension and health costs and financial technocrats’ fixation on containing fiscal deficits. Trump’s ‘Big Beautiful Bill’ of 2025 dispensed with Biden’s failed attempts to expand the social safety net and resumed the late-twentieth-century American tradition of tax cuts for the rich and welfare cuts for the poor.</p>
+          
+        
+          
+            <p>Second, the institutional embodiments of present-day interventionism bear the imprint of neoliberal experience even as they subvert neoliberal precepts. This is most visible at the interface of the state with the world of finance (the ‘state-finance nexus’) as states have applied principles to their own capital holdings—such as maximizing shareholder value, asset securitization or venture investing—that are associated more readily with the financialized private sector than with any historical template of dirigisme. Publicly owned, development-oriented banking may be on the rise in Europe, as suggested by the growing weight of the eu’s European Investment Bank, Germany’s KfW or France’s Bpifrance, yet these institutions often operate in symbiosis with private financial capital, offering credit guarantees in order to ‘crowd in’ and ‘de-risk’ private investors. Again, a hybridization of erstwhile opposites is at play, whereby government technocrats are repurposing neoliberal means for interventionist ends.</p>
+          
+        
+          
+            <p>Altering a state’s policy direction is one thing; restructuring the essential workings of the economy is another. The neoliberal reforms imposed across the West during the last quarter of the twentieth century established extensive institutional systems—encompassing public and private sectors—for managing economic life. These, in turn, enabled new patterns of capitalist activity that differed markedly from those of the immediate post-war decades. French Regulation School economists have termed these two aspects—institutional and material—the ‘mode of regulation’ and the ‘regime of accumulation’ operative within any given epoch of capitalism. In the words of Robert Boyer, a regime of accumulation can be defined as ‘the set of regularities that ensure the general and relatively coherent evolution of capital accumulation, that is, which allow the resolution or postponement of the distortions and disequilibria to which the process continually gives rise’.</p>
+          
+        
+          
+            <p>In those terms, the accumulation regime that has emerged from the decades of neoliberal policy dominance in the West continues, in the main, to operate today. Renewed government interventionism notwithstanding, most of the prior macro-institutional underpinnings of the neoliberal era remain in place. The persistence of this regime can be traced through its key structural characteristics. In the area of taxation, the fiscal architectures of Western states have undergone no significant overhauls over the past twenty years; nor have the main mechanisms of income redistribution. Unequal levels of taxation continue to reflect differential abilities to relocate wealth and income outside national borders: lower for firms (corporate tax) and the asset-rich (capital income), higher for wage earners (income tax) and consumers (vat in Europe). In the sphere of production, labour markets and employment protections have not undergone any fundamental transformation across major Western states. The cross-national gradient in labour rights persists—dismissing an employee under contract is easier in the United States than in, say, Germany—while the precariats continue to grow. As for corporate governance, the executives of the West’s largest corporations still tend to maximize short-term shareholder returns rather than prioritizing sales, investment, innovation or even profit—abiding by the ‘shareholder value’ paradigm that became dominant in the United States in the 1970s and 1980s before diffusing across much of the rich world.</p>
+          
+        
+          
+            <p>A central vector of capital accumulation under neoliberalism has been financialization. This term can be understood, according to an oft-cited definition, as ‘the increasing role of financial motives, financial markets, financial actors and financial institutions in the operation of the domestic and international economies’. The multifaceted expansion of finance has been a hallmark of the West’s political economy over the past half-century. It has been evident, inter alia, in the increase in corporate, household and government debt far beyond the pace of gdp growth; in the corresponding rise in the aggregate value of securities and other financial assets out of proportion to the growth of physical capital; in the proliferation of financial derivatives, much of it attributable to the need to hedge against rising volatility in interest rates and currencies following the revocation of the Bretton Woods system; in the surge in cross-border financial activity, feeding off the dismantling of much of the world’s capital controls at the height of the ‘Washington Consensus’ in the 1990s; and in the political dominance of high finance over industrial and commercial fractions of capital, to the point where New York financiers are casually described as ‘masters of the universe’.</p>
+          
+        
+          
+            <p>The 2008 financial crash, triggered by the implosion of the American securitized mortgage market and reverberating across the entire planet, made plain the crisis-prone character of us-centric financialized capitalism. While the meltdown could plausibly appear at the time as spelling the end of finance’s relentless ascent, this has not come to pass. Since 2008, Western central banks’ heightened interventionism has not only served to safeguard accumulated financial wealth but has backstopped continuing financial expansion. As a result, most of the pre-2008 dynamics of financialized accumulation persist today, with only a few alterations—such as asset managers à la BlackRock, Vanguard and State Street muscling in beside the big Wall Street investment banks at the system’s apex, and cryptocurrency frenzies reaching new heights of exuberance. Central bank asset purchases and moderate inroads of public-development banking notwithstanding, the overwhelming majority of Western financial capital remains in private hands—a mirror image of China’s state-dominated financial system. Capital controls have not been reimposed anywhere in the West; indeed, the very possibility is never discussed.</p>
+          
+        
+          
+            <p>Overlapping with financialization, another cornerstone of the neoliberal accumulation regime has been ‘globalization’. Starting in the 1970s and feeding off the neoliberal agenda of international ‘openness’, the cross-border movement of goods, services and capital underwent explosive growth which, in time, made most substantial capitalist-accumulation strategies reliant on transnational channels. From the 1990s onwards, China took a central place in the globalization-financialization nexus, as overseas investment in Chinese manufacturing fed the ‘Made in China’ export machine, which generated the trade surplus and foreign- exchange reserves which China, in turn, ploughed back into the us Treasuries market.</p>
+          
+        
+          
+            <p>The fallout from the crisis of 2008 imposed a sharp slowdown in the growth of international trade and in the transnational circulation of capital, yet in no sense did it bring about a reversal in the material scale of globalization. The same can be said of the coronavirus pandemic, Trump’s trade wars, the Russian invasion of Ukraine and the escalating Sino-American geo-economic contest of the past few years. While these have caused significant disturbances on the broad surface of globalization, and wreaked havoc in particular parts of it, they have not broken the internationalization of economic life as such. Western corporations are so enmeshed in global supply chains, and Western wealth so embedded in international financial circuitry, that only much greater cataclysms could turn the spectre of ‘deglobalization’ into a reality. As the growing politicization of markets forces multinationals into trade-offs between aligning with protective states and hedging across unreliable sovereigns, it is arguable that globalization may be becoming somewhat less ‘neoliberal’ and somewhat more ‘geostrategic’. From the standpoint of corporate capital, this adds layers of complication to playing the globalization game; it does not make the game itself any less relevant.</p>
+          
+        
+          
+            <p>Two significant heterodox thinkers of political economy have put forward readings of neoliberalism’s contemporary transformations that differ markedly from the diagnostic offered above. Wolfgang Streeck, an economic sociologist by training, today emeritus director of the Max Planck Institute for the Study of Societies in Cologne, has over the past fifteen years developed a wide-ranging account of the contemporary disorders of advanced capitalist societies. The cornerstone of this account is what he terms a ‘democratic-capitalist crisis sequence’ starting in the 1970s and now extending over half a century. This sequence, in Streeck’s view, has unfolded in four phases, each one displacing the crux of capitalist disequilibrium from one area to the next. Initially, the 1970s inflation crisis stoked by the oil shock and workers’ wage demands led to central banks’ embrace of monetarism and to the suppression of trade-union power under early neoliberal onslaughts in the 1980s. Once both inflation and working-class militancy had been tamed, higher interest rates coupled with mounting welfare-state commitments produced a steep rise in public debt—a development both conditioned and magnified by the rapid expansion of financial markets. A third stage came about in the 1990s when, as private financiers began to question Western states’ ability to repay their debts, governments imposed austerity and private household debt substituted for public deficits as a new lever of capitalist accumulation. Eventually, after the market for private debt imploded in 2008, the rich world, in Streeck’s telling, entered a fourth phase in which democratically unaccountable central bank executives have replaced weakened elected governments as the primary agents of economic policy—keeping financial markets afloat by means of quantitative easing without offering a credible path towards economic recovery.</p>
+          
+        
+          
+            <p>In such a dismal present, Streeck foresees stagnating growth, mounting inequality and rising debt reinforcing each other with no escape in sight. This, he further conjectures, may signal the endpoint of our capitalist era tout court, leading to a ‘post-capitalist interregnum’ in which political legitimacy is long gone, social institutions dissolve yet capital accumulation persists as atomized workers continue to adhere to an ethos of competitive individualism at once ‘hedonistic’ (in consumption) and ‘neo-Protestant’ (in production)—morbid cultural leftovers from neoliberalism’s better days.</p>
+          
+        
+          
+            <p>Streeck’s forceful prose has a magnetic quality rare among academic scholars of political economy. He also displays a formidable ability to uncover reciprocally constitutive relations between the financial and the political: successive stages in financialization’s forward march both enabled by, and shaping, shifts in the arena of political struggle and transformations in the character of state institutions. Revealingly, Streeck does not see neoliberal ideas, policies and institutions as underpinning a coherent period of capitalist development since the 1970s to the same extent that the ‘Keynesian bond which tied the profits of the rich to the wages of the poor’ did during the immediate post-war decades. Whereas a Regulation School approach—or indeed a straightforward Marxist periodization—would identify two capitalist epochs in succession, namely a ‘Keynesian’ one followed by a ‘neoliberal’ one, Streeck’s account implies an ontological imbalance between the two. According to him, the ‘post-war shotgun marriage between capitalism and democracy’, allowing for ‘steady growth, sound money and a modicum of social equity’, made possible an economic ‘equilibrium’ that no major capitalist country has experienced ‘since the end of post-war growth at the end of the 1960s’. On one side of 1970, then, growth, equilibrium, democracy; on the other, an unending sequence of crises, each involving temporary expedients that only ‘buy time’ until the final comeuppance of capitalist society. Streeck’s line of reasoning falters at the point where he suggests that what was lost at the moment of the neoliberal transition—namely, a more democratic, equitable or legitimate version of capitalist society—held the indispensable ingredients for capitalism’s reproduction. By implicitly making Germany’s soziale Marktwirtschaft or Johnson’s Great Society the lodestars against which to appraise subsequent capitalist developments, the latter cannot but be characterized negatively, the extent of their failings measured by the distance that separates them economically and politically from these localized precedents. The longue durée historical record, however, tells a different story: capitalist society hardly requires the aforementioned ingredients for its development and expansion, let alone for its survival.</p>
+          
+        
+          
+            <p>Branko Milanovic’s The Great Global Transformation, published this year, offers another reading of the conjuncture that may be counterpoised to the one set out in this article. A former economist at the World Bank currently teaching at the City University of New York, Milanovic cuts an unconventional figure within his discipline. Known above all as a scholar of global income inequality, his readings span impressive breadths of time, place and political sensibility—from Montesquieu to Lenin, Schumpeter and Polanyi. In Milanovic’s view, neoliberalism has been brought down, over the past decade, by the political repercussions of the two most significant historical processes it put in motion: the ascendancy of a new moneyed elite, on the one hand, and the rise of China on the other. He labels the rich of the neoliberal era ‘homoploutic’—that is, tending to be simultaneously income-rich and capital-rich, combining high corporate salaries and bonuses with returns on financial assets (a departure, he notes, from earlier patterns of capitalist stratification). In his account, the 2008 financial crisis and its aftermath laid bare to the American electorate the privileges of this homoploutic elite, who first profited from the financial boom and were then bailed out by Washington as the costs of the recession were shouldered by the population as a whole. In the same period, the offshoring of production to China was bringing about job and income losses among American workers, while the most privileged strata of Chinese society were inching up the global income tables to the point of overtaking the United States’s bottom deciles.</p>
+          
+        
+          
+            <p>In Milanovic’s telling, these interrelated developments produced the swell of political discontent that led to Trump’s 2016 victory. This watershed event marked the end of neoliberalism’s hegemony: since then, the entire us political establishment has turned its back on globalization and made it a priority to stem China’s ascent in a bid to contain the political threat posed by America’s own ‘malcontents’. Similar backlashes against the new rich, according to Milanovic, have occurred in China and Russia, such that Xi and Putin, like Trump, now aim to ‘stem or control the rise to complete economic and political dominance of the moneyed elites, and to curb or reverse globalization seen as causally linked with their rise’. The upshot of these developments, in Milanovic’s view, is that global neoliberalism has been replaced by a ‘new ruling model’, namely ‘national market liberalism’, which consists in discarding the globalist aspect of neoliberalism while retaining its domestic component: ‘liberal policies limited to national markets and mercantilism abroad’. This new dispensation, birthed by a ‘counter-revolution’ against global neoliberalism, accommodates the increasingly nationalistic character of domestic politics and accompanies the ongoing transition from a unipolar to a multipolar world order.</p>
+          
+        
+          
+            <p>Milanovic’s account has an appealing Marxo-Hegelian tinge to it: neoliberal globalism acting as its own gravedigger by spawning the political agent—in the shape of the West’s discontented citizenries—which eventually brings it down. Moreover, by drawing a distinction between the international and domestic components of neoliberalism, it appears to offer a clear-cut answer to the post-neoliberal conundrum. The attempt, however, fails to convince. As described above, many of the current modalities of the West’s resurgent state interventionism operate primarily at the national level (emergency measures, monetary backstopping) or blend domestic aims with international considerations in ways that belie a neat demarcation between the two (industrial promotion, government shareholding). Milanovic defines the homoploutic ‘elite’ or ‘ruling class’ as made up of individuals located simultaneously in the top income and wealth deciles, yet this group, whose levels of income and wealth span the top 10 per cent of their respective distributions, is too large to be identified with a ‘ruling’ stratum in a qualitative sense. Many American ‘malcontents’ of the right and left can be found in this top decile, if not in the top one or 0.1 per cent. In addition, casting Trump as an anti-ploutocratic figure stretches the imagination in view of the brazen mutual courtship currently taking place between the White House and large capitalists of all stripes. Finally, the way in which Milanovic pinpoints the drivers of neoliberalism’s decline is too narrow. He does not contemplate the possibility that the corporate elite itself—or parts of it—have a material interest in the adoption of economic policies antithetical to neoliberal precepts. Nor does he consider the geopolitical—as opposed to merely electoral—rationale for the United States to turn the tides on neoliberal globalism in response to the formidable challenge of China’s industrial and technological rise.</p>
+          
+        
+          
+            <p>What lessons, then, might be drawn from the uneven landscape of the West in the 2020s? Neoliberal doctrine no longer supplies the ruling framework of mainstream political discourse, and the neoliberal agenda no longer defines the primary direction of economic policy. In their stead, elements of a more protectionist and statist sensibility have permeated Western public spheres while policymakers have implemented a patchwork of interventionist measures which, taken together, suggest a break with programmatic neoliberalism yet do not amount to an agenda of structural economic transformation. As a result, the institutional architecture of economic life and the essential patterns of capitalist accumulation remain very similar to what they were at the turn of the century. Financialization and globalization—the two most significant interrelated material developments of the neoliberal age—remain central to the accumulation strategies of large corporations and the wealthy. At most, they are gradually taking a more politicized—or ‘statist’ or ‘geopolitical’ or ‘geo-economic’—character, imposing new kinds of risks and promising new types of rewards. Over time, such tendencies—especially if combined with more acute crisis episodes—might break one or the other or both. But viewed from the present, this is not the most likely outcome.</p>
+          
+        
+          
+            <p>Among other consequences, this configuration—already located beyond neoliberalism on some planes, still within it on others—has brought about a loss of consistency in doctrine as well as in policy. Unexpected shocks, political volatility and geopolitical rivalry have produced a succession of economic interventions which, in turn, make much of the neoliberal agenda look immaterial to the demands of the conjuncture. In this context, as observed by Rune Møller Stahl, the one profession still ensconced in the pre-2008 consensus—namely, mainstream economics—has found its expertise and advice increasingly sidelined in the policy design of the new ‘geo-economics’. Outside orthodox economics, there is a strong tendency in political economy—from the Regulation School to the American ‘social structures of accumulation’ and the more mainstream ‘varieties of capitalism’ approaches—to stress the coherence of institutional orders of capitalism and, conversely, to equate incoherence with systemic malfunction. This, however, can easily turn into an intellectualist fallacy—expecting, for the sake of theory, a congruity that the world itself does not need. At present, the prevailing regime of accumulation does not appear to be faltering any more than, say, a decade ago. The system is learning to live, for now, with an absence of doctrinal integrity.</p>
+          
+        
+          
+            <p>Looking back on the past half-century, three sub-periods of the Western neoliberal age may be identified. The 1970s, and especially the 1980s, were a time of combative neoliberalism. As the post-war Keynesian settlement was dismantled, neoliberalism’s intellectual and political champions imposed transformative reforms in neuralgic areas of the economy in the face of mostly recalcitrant or unmoved publics. After the fall of the Soviet Union, as cross-border economic activity reached new heights and the valuation of financial assets soared in the 1990s and 2000s, neoliberalism experienced its peak years—morphing into elite consensus in the midst of the ‘end of history’ atmosphere. Having entered received wisdom, however, it inevitably started to lose intellectual sharpness just as its prescriptions were being implemented more thoroughly than at any time before or since. The 2008 crisis interrupted those triumphal times. Since then, neoliberalism in the West has undergone an uneven, piecemeal and incomplete retreat.</p>
+          
+        
+          
+            <p>Amid a worsening economic conjuncture for the majority—if not for the very rich—with spells of rising unemployment, budgetary austerity and falling real wages, the ideological climate has shifted significantly. Political forces ostensibly hostile to the neoliberal order have come nearer to, and occasionally crossed, the thresholds of government office. Intellectual voices critical of the economic status quo have benefited from much greater visibility than in previous decades, in particular when able to finesse the moderate–radical divide—witness Thomas Piketty’s media aura in the 2010s or Adam Tooze’s this decade. As for the policy picture, it has become mixed: an uneasy amalgamation of a new interventionist drive with remnants of neoliberalism’s better days. While neoliberalism has undergone decline and displacement, then, the neoliberal era itself has not yet come to a close—since capital continues to be accumulated along the lines established by neoliberalism.</p>
+          
+        
+          
+            <p>The one historical constant across the three phases of neoliberalism over the past half-century has been the ascendancy of a selfsame capitalist elite. Class domination is the thread that ties together neoliberalism’s entire trajectory to date, from the pioneering reforms of the 1970s and 1980s to the doctrinal dissolution and policy patchwork of the present. It should be recalled that in the immediate post-war decades, the multinational corporation was a rarity and many Western states maintained capital controls, boxing private wealth inside national borders. Income differentials were contained, among other factors, by high marginal tax rates and stronger labour movements. The embrace of neoliberalism in the last quarter of the twentieth century, together with the financialization and globalization it helped to fuel, liberated the accumulation of corporate and personal wealth.</p>
+          
+        
+          
+            <p>These patterns persist today and are, if anything, intensifying. In the United States, the nominal wealth of the top one per cent increased by 42.8 per cent in the 2000s (the dot-com crash and 2008 meltdown notwithstanding), by 103.8 per cent in the 2010s and by 49.3 per cent during the first half of the 2020s alone; controlling for inflation, the respective figures are 11.3 per cent, 71.3 per cent and 40.1 per cent. As of 2024, aggregate us corporate profits stood at 3.8 trillion dollars, equivalent to 13 per cent of gdp—this latter figure on an upward trend since the 1990s. As for the S&P 500 stock market index, it has increased, this century, from 1469 (1 January 2000) to 6846 (1 January 2026): a cumulative growth of 366 per cent in nominal terms or 242 per cent in inflation-adjusted terms. There may be an ongoing speculative bubble around artificial intelligence, and the repercussions of the war in Iran may well take their toll on the financial markets, yet past patterns of bursting bubbles and crashes hardly suggest that the us stock market is liable to fall below the level it reached in 2020—let alone in 2008 or 2000. Although the same cannot be said of the vast majority of the working population, the most privileged strata across the West continue to do very well by the prevailing accumulation regime. Viewed from the top, that is, from the vantage of the capitalists themselves, the mode of production is in rude health.</p>
+          
+        
+          
+            <p>A common expectation in the academic literature on accumulation regimes is that any epoch-making transition away from neoliberalism should involve a sequence of developments analogous, or symmetrical, to the prior transition to neoliberalism. The accumulation regime of the post-war decades, whether labelled ‘Keynesian’, ‘Fordist’, ‘regulated’ or dirigiste, was beset by a crisis of profitability in the 1970s in a context of labour militancy and wage inflation. The Thatcher government and the Reagan administration came into office with plans to implement measures that would do away with both capitalist stagnation and political stalemate—and this they mostly did. It was always very unlikely, however, that the shift away from neoliberalism would conform to such a recognizable sequence of accumulation crisis, class struggle and, ultimately, political resolution. Instead, the ongoing retreat of neoliberalism is occurring in a piecemeal and tacit way. It is driven not by politicians and intellectuals acting as the vanguard of a class war—that battle was won long ago by the capitalist camp—but by a governing class, custodian of the prevailing regime, which mostly sees itself as reacting to unforeseen shocks the best it can and coming to terms, as it figures it should, with the formidable geopolitical challenge that is China. In such a conjuncture, fondness for the Gramscian concept of a historical interregnum does not pass muster. There is no organic crisis to speak of. The accumulation regime is solidly entrenched, and faring well on its own terms. It is not the case that the old is dying and the new cannot be born. The new is already busy replacing the old, only this process is unfolding gradually, bereft of doctrine and theoretical coordinates, shepherded by the establishment and conforming with the interests of the already privileged.</p>
+          
+        
+      
+    </div>
+
+    
+      <section class="footnotes">
+        <div class="footnotes__label">Notes</div>
+        <ol class="footnotes__list">
+          
+            <li class="footnotes__item" id="fn-1">
+              <span class="footnotes__num">
+                <a href="#fnref-1">1</a>
+              </span>
+              <span class="footnotes__text">Eric Hobsbawm, ‘The Big Picture: The Death of Neo-liberalism’, Marxism Today, special issue, November–December 1998, p. 8.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-2">
+              <span class="footnotes__num">
+                <a href="#fnref-2">2</a>
+              </span>
+              <span class="footnotes__text">David Kotz, ‘End of the Neoliberal Era? Crisis and Restructuring in American Capitalism’, nlr 113, September–October 2018, p. 30.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-3">
+              <span class="footnotes__num">
+                <a href="#fnref-3">3</a>
+              </span>
+              <span class="footnotes__text">Gary Gerstle, The Rise and Fall of the Neoliberal Order: America and the World in the Free Market Era, New York 2022, p. 2.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-4">
+              <span class="footnotes__num">
+                <a href="#fnref-4">4</a>
+              </span>
+              <span class="footnotes__text">Lee Jones, ‘Trump’s Tariff Gamble and the Decay of the Neoliberal Order’, American Affairs, vol. 9, no. 2, Summer 2025.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-5">
+              <span class="footnotes__num">
+                <a href="#fnref-5">5</a>
+              </span>
+              <span class="footnotes__text">Colin Crouch, The Strange Non-death of Neoliberalism, Cambridge 2011; Philip Mirowski, Never Let a Serious Crisis Go to Waste: How Neoliberalism Survived the Financial Meltdown, London and New York 2013.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-6">
+              <span class="footnotes__num">
+                <a href="#fnref-6">6</a>
+              </span>
+              <span class="footnotes__text">Perry Anderson, ‘Regime Change in the West?’, London Review of Books, vol. 47, no. 6, 3 April 2025.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-7">
+              <span class="footnotes__num">
+                <a href="#fnref-7">7</a>
+              </span>
+              <span class="footnotes__text">‘The brain has apparently long since ceased functioning, but the limbs are still moving, and many of the defensive reflexes seem to be working too. The living dead of the free-market revolution continue to walk the earth’: Jamie Peck, ‘Zombie Neoliberalism and the Ambidextrous State’, Theoretical Criminology, vol. 14, no. 1, 2010, p. 109; Ian Bruff, ‘The Rise of Authoritarian Neoliberalism’, Rethinking Marxism, vol. 26, no. 1, 2014; William Davies, ‘The New Neoliberalism’, nlr 101, September–October 2016; William Callison and Zachary Manfredi, ‘Introduction: Theorizing Mutant Neoliberalism’, in William Callison and Zachary Manfredi, eds, Mutant Neoliberalism: Market Rule and Political Rupture, New York 2020; Trissia Wijaya and Kanishka Jayasuriya, ‘Militarized Neoliberalism and the Reconstruction of the Global Political Economy’, New Political Economy, vol. 29, no. 4, 2024.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-8">
+              <span class="footnotes__num">
+                <a href="#fnref-8">8</a>
+              </span>
+              <span class="footnotes__text">Perry Anderson, ‘Idées-forces’, nlr 151, January–February 2025, p. 32.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-9">
+              <span class="footnotes__num">
+                <a href="#fnref-9">9</a>
+              </span>
+              <span class="footnotes__text">Philip Mirowski and Dieter Plehwe, eds, The Road from Mont Pèlerin: The Making of the Neoliberal Thought Collective, Cambridge ma 2009; Dieter Plehwe et al., eds, Nine Lives of Neoliberalism, London and New York 2020. See also Pierre Dardot and Christian Laval, The New Way of the World: On Neoliberal Society, trans. Gregory Elliott, London and New York 2013 [2009].</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-10">
+              <span class="footnotes__num">
+                <a href="#fnref-10">10</a>
+              </span>
+              <span class="footnotes__text">‘[T]he neoliberal project primarily reregulates and institutes an alternative set of infrastructural arrangements; it never ever wipes the slate clean so that it gets closer to the tabula rasa of laissez-faire’: Mirowski, Never Let a Serious Crisis Go to Waste, p. 16.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-11">
+              <span class="footnotes__num">
+                <a href="#fnref-11">11</a>
+              </span>
+              <span class="footnotes__text">This variability is captured by Neil Brenner and his co-authors: ‘neoliberalization proceeds above all through what might be termed parameterization. It is implemented, consolidated and reproduced through a complex of world-scale, multilateral and supranational juridical-institutional rearrangements that impose new, relatively circumscribed parameters . . . for regulatory experimentation across subordinate places, territories and scales’: Neil Brenner et al., ‘Variegated Neoliberalization: Geographies, Modalities, Pathways’, Global Networks, vol. 10, no. 2, 2010, p. 194. See also Quinn Slobodian and Dieter Plehwe, eds, Market Civilizations: Neoliberals East and South, New York 2022.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-12">
+              <span class="footnotes__num">
+                <a href="#fnref-12">12</a>
+              </span>
+              <span class="footnotes__text">William Callison and Zachary Manfredi, ‘Theorizing Mutant Neoliberalism’, p. 4.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-13">
+              <span class="footnotes__num">
+                <a href="#fnref-13">13</a>
+              </span>
+              <span class="footnotes__text">‘Harmless enough in everyday political speech, the substitution of an ill-defined “neoliberalism” for capitalism as such risks not only sweeping away the insights gained from over a century of inquiry into the latter’s dynamics as a mode of production and reproduction, but also blurs the fact that practices may be “post-neoliberal” but still decidedly capitalist’: Susan Watkins, ‘Paradigm Shifts’, nlr 128, March–April 2021, p. 6.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-14">
+              <span class="footnotes__num">
+                <a href="#fnref-14">14</a>
+              </span>
+              <span class="footnotes__text">Paolo Gerbaudo, The Great Recoil: Politics after Populism and Pandemic, London and New York 2021.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-15">
+              <span class="footnotes__num">
+                <a href="#fnref-15">15</a>
+              </span>
+              <span class="footnotes__text">Gerbaudo, The Great Recoil, p. 3.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-16">
+              <span class="footnotes__num">
+                <a href="#fnref-16">16</a>
+              </span>
+              <span class="footnotes__text">Gerbaudo, The Great Recoil, p. 8.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-17">
+              <span class="footnotes__num">
+                <a href="#fnref-17">17</a>
+              </span>
+              <span class="footnotes__text">Adam Tooze, ‘Great Power Politics’, London Review of Books, vol. 46, no. 21, 7 November 2024.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-18">
+              <span class="footnotes__num">
+                <a href="#fnref-18">18</a>
+              </span>
+              <span class="footnotes__text">Brian Deese, remarks at the Economic Club of New York, 20 April 2020, available online.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-19">
+              <span class="footnotes__num">
+                <a href="#fnref-19">19</a>
+              </span>
+              <span class="footnotes__text">Jake Sullivan, remarks at the Brookings Institution, 23 April 2023, available online.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-20">
+              <span class="footnotes__num">
+                <a href="#fnref-20">20</a>
+              </span>
+              <span class="footnotes__text">See, respectively: Federal Reserve Economic Data (fred) provided by the Federal Reserve Bank of St. Louis, available online at fred.stlouisfed.org; and Eurosystem balance sheet figures provided by the ecb Data Portal, available online at data.ecb.europa.eu.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-21">
+              <span class="footnotes__num">
+                <a href="#fnref-21">21</a>
+              </span>
+              <span class="footnotes__text">See Jens van ’t Klooster, ‘Technocratic Keynesianism: A Paradigm Shift without Legislative Change’, New Political Economy, vol. 27, no. 5, 2022, p. 776.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-22">
+              <span class="footnotes__num">
+                <a href="#fnref-22">22</a>
+              </span>
+              <span class="footnotes__text">Kyunghoon Kim, ‘Locating New “State Capitalism” in Advanced Economies: An International Comparison of Government Ownership in Economic Entities’, Contemporary Politics, vol. 28, no. 3, 2022.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-23">
+              <span class="footnotes__num">
+                <a href="#fnref-23">23</a>
+              </span>
+              <span class="footnotes__text">Michael Acton, Stephanie Stacey and James Fontanella-Khan, ‘us to Take Ten Per Cent Stake in Troubled Chipmaker Intel’, Financial Times, 22 August 2025; Martha Muir and Steff Chávez, ‘Pentagon Strikes Investment Deal with us Critical Minerals Producer’, ft, 10 July 2025; Jamie Smyth, Camilla Hodgson and Lauren Fedor, ‘White House Says It Will Take Ten Per Cent Stake in Trilogy Metals’, ft, 7 October 2025; Reuters, ‘us, Vulcan Elements Ink Deal to Boost Rare Earth Magnet Supplies’, 3 November 2025; Lee Chong Ming, ‘The us Is Taking a Stake in a Chip Startup Led by Intel’s Ousted ceo’, Business Insider, 2 December 2025; Antoine Gara et al., ‘us to Invest $1.6 billion into Rare Earths Group in Bid to Shore Up Key Minerals’, ft, 24 January 2026; Steff Chávez and Camilla Hodgson, ‘Pentagon Invests $150 million in us Gallium Company to Secure Strategic Supplies’, ft, 12 January 2026; Harry Dempsey and Leo Lewis, ‘Donald Trump Approves Nippon Steel’s $15 billion Takeover of us Steel’, ft, 14 June 2025.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-24">
+              <span class="footnotes__num">
+                <a href="#fnref-24">24</a>
+              </span>
+              <span class="footnotes__text">Henry Farrell and Abraham Newman, ‘Weaponized Interdependence: How Global Economic Networks Shape State Coercion’, International Security, vol. 44, no. 1, 2019.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-25">
+              <span class="footnotes__num">
+                <a href="#fnref-25">25</a>
+              </span>
+              <span class="footnotes__text">On the American response to the 2008 crisis, see Leo Panitch and Martijn Konings, ‘Myths of Neoliberal Deregulation’, nlr 57, May–June 2009.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-26">
+              <span class="footnotes__num">
+                <a href="#fnref-26">26</a>
+              </span>
+              <span class="footnotes__text">Edward Luttwak, ‘From Geopolitics to Geo-economics: Logic of Conflict, Grammar of Commerce’, The National Interest, no. 20, Summer 1990, p. 19.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-27">
+              <span class="footnotes__num">
+                <a href="#fnref-27">27</a>
+              </span>
+              <span class="footnotes__text">The New York-based Foreign Affairs has featured candid statements to this effect. For instance: ‘Other major economies now have little choice but to adopt trade and industrial policies that mirror some of China’s own successful efforts’: Aaron Friedberg, ‘Stopping the Next China Shock’, Foreign Affairs, September–October 2024. ‘If the United States wants to achieve results like China, it will have to build more like China by replicating certain aspects of how Beijing organizes and mobilizes its production economy, prioritizing speed and agglomeration’: Damien Ma and Lizzi Lee, ‘An Industrial Policy with American Characteristics’, Foreign Affairs, 1 July 2025. As the saying goes: imitation is the sincerest form of flattery.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-28">
+              <span class="footnotes__num">
+                <a href="#fnref-28">28</a>
+              </span>
+              <span class="footnotes__text">Karen Lai, ‘Financial Geography I: The State-Finance Nexus’, Progress in Human Geography, vol. 47, no. 4, 2023; Ilias Alami et al., ‘Quo vadis Neoliberalism in an Age of Resurgent State Capitalism?’, Finance and Space, vol. 1, no. 1, 2024.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-29">
+              <span class="footnotes__num">
+                <a href="#fnref-29">29</a>
+              </span>
+              <span class="footnotes__text">Daniel Mertens et al., eds, The Reinvention of Development Banking in the European Union: Industrial Policy in the Single Market and the Emergence of a Field, Oxford 2021; Angela Wigger, ‘The New eu Industrial Policy: Opening Up New Frontiers for Financial Capital’, Politics and Governance, vol. 12, 2024; Franziska Cooiman, ‘The Limits of Derisking: (Un)conditionality in the European Green Transformation’, Competition and Change, 26 December 2023 (online).</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-30">
+              <span class="footnotes__num">
+                <a href="#fnref-30">30</a>
+              </span>
+              <span class="footnotes__text">Robert Boyer and Yves Saillard, eds, Regulation Theory: The State of the Art, London 2002, p. 335.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-31">
+              <span class="footnotes__num">
+                <a href="#fnref-31">31</a>
+              </span>
+              <span class="footnotes__text">Gerald Epstein, ‘Introduction’, in Gerald Epstein, ed., Financialization and the World Economy, Cheltenham 2005, p. 3.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-32">
+              <span class="footnotes__num">
+                <a href="#fnref-32">32</a>
+              </span>
+              <span class="footnotes__text">See Jan Fichtner et al., ‘Hidden Power of the Big Three? Passive Index Funds, Re-Concentration of Corporate Ownership and New Financial Risk’, Business and Politics, vol. 19, no. 2, 2017.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-33">
+              <span class="footnotes__num">
+                <a href="#fnref-33">33</a>
+              </span>
+              <span class="footnotes__text">Ho-fung Hung, ‘America’s Head Servant? The prc’s Dilemma in the Global Crisis’, nlr 60, November–December 2009.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-34">
+              <span class="footnotes__num">
+                <a href="#fnref-34">34</a>
+              </span>
+              <span class="footnotes__text">Seth Schindler and Steve Rolf, ‘Geostrategic Globalization: us–China Rivalry, Corporate Strategy and the New Global Economy’, Globalizations, vol. 22, no. 6, 2025.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-35">
+              <span class="footnotes__num">
+                <a href="#fnref-35">35</a>
+              </span>
+              <span class="footnotes__text">See, in particular, Wolfgang Streeck, How Will Capitalism End? Essays on a Failing System, London and New York 2016 and Wolfgang Streeck, Buying Time: The Delayed Crisis of Democratic Capitalism, trans. Patrick Camiller, London and New York 2014 [2013].</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-36">
+              <span class="footnotes__num">
+                <a href="#fnref-36">36</a>
+              </span>
+              <span class="footnotes__text">Streeck, How Will Capitalism End?, p. 94.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-37">
+              <span class="footnotes__num">
+                <a href="#fnref-37">37</a>
+              </span>
+              <span class="footnotes__text">Streeck, How Will Capitalism End?, p. 45.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-38">
+              <span class="footnotes__num">
+                <a href="#fnref-38">38</a>
+              </span>
+              <span class="footnotes__text">Streeck, How Will Capitalism End?, p. 68.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-39">
+              <span class="footnotes__num">
+                <a href="#fnref-39">39</a>
+              </span>
+              <span class="footnotes__text">Streeck, How Will Capitalism End?, pp. 20, 47, 16.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-40">
+              <span class="footnotes__num">
+                <a href="#fnref-40">40</a>
+              </span>
+              <span class="footnotes__text">Branko Milanovic, The Great Global Transformation: The United States, China and the Remaking of the World Economic Order, Chicago 2026.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-41">
+              <span class="footnotes__num">
+                <a href="#fnref-41">41</a>
+              </span>
+              <span class="footnotes__text">Milanovic, The Great Global Transformation, p. 141. ‘Thus, each of these three leaders came from within the system of wealth accumulation and power of the rich they are now fighting to control. And each of them, like Moses in reaction to the Pharaohs, lashed out at those who brought him to power, not only for personal reasons but because he found a willing audience that would follow him and yield him power’: pp. 143–44.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-42">
+              <span class="footnotes__num">
+                <a href="#fnref-42">42</a>
+              </span>
+              <span class="footnotes__text">Milanovic, The Great Global Transformation, p. 158.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-43">
+              <span class="footnotes__num">
+                <a href="#fnref-43">43</a>
+              </span>
+              <span class="footnotes__text">See the case made in Julius Krein, ‘The Real Class War’, American Affairs, vol. 3, no. 4, Winter 2019.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-44">
+              <span class="footnotes__num">
+                <a href="#fnref-44">44</a>
+              </span>
+              <span class="footnotes__text">Referring to the Hobson-Lenin-Luxemburg lineage of thought on imperialism, Milanovic writes: ‘As in traditional imperialist competition theory, the root of the problem is not in international relations, but in domestic economics. It spills out from domestic economics into domestic politics and thence into the international arena. This is exactly what happened with Sino-American relations’, The Great Global Transformation, p. 75. This characterization—whether or not faithful to the intellectual tradition in question—appears to negate the possibility that contemporary us-China relations might be shaped in part by the militarized rivalry between two powerful and ambitious state organizations tout court.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-45">
+              <span class="footnotes__num">
+                <a href="#fnref-45">45</a>
+              </span>
+              <span class="footnotes__text">‘[D]ebates about macroeconomics and geo-economic strategies are increasingly detached from debates in the economics profession. They are to a lesser degree based on a coherent set of models or a fixed scientific paradigm and less dependent on being legitimated by professional academic stamp of approval’: Rune Møller Stahl, ‘The End of Economics Hegemony? Studying Economic Ideas in a Post-Neoliberal World’, Review of International Political Economy, vol. 32, no. 4, 2025, p. 1268.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-46">
+              <span class="footnotes__num">
+                <a href="#fnref-46">46</a>
+              </span>
+              <span class="footnotes__text">‘“[P]ost-neoliberalism” cannot refer to something that comes exclusively after neoliberalism, but rather . . . to a set of emergent rationalities, critiques, movements and reforms that take root in neoliberal societies and begin to weaken or transform key tenets of neoliberal reason and politics’: William Davies and Nicholas Gane, ‘Post-Neoliberalism? An Introduction’, Theory, Culture and Society, vol. 38, no. 6, 2021, pp. 4–5.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-47">
+              <span class="footnotes__num">
+                <a href="#fnref-47">47</a>
+              </span>
+              <span class="footnotes__text">Federal Reserve Economic Data (fred)—series wfrblt01026, ‘Net Worth Held by the Top 1 Per Cent’. For cumulative inflation figures, see the us Bureau of Labor Statistics, available online at bls.gov/data.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-48">
+              <span class="footnotes__num">
+                <a href="#fnref-48">48</a>
+              </span>
+              <span class="footnotes__text">For us corporate profit figures, see the us Bureau of Economic Analysis’s national income and product accounts (nipa), Table 1.12 ‘National Income by Type of Income’, available online at bea.gov/tools.</span>
+            </li>
+          
+        </ol>
+      </section>
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://newleftreview.org/issues/ii158/articles/nathan-sperber-beyond-neoliberalism"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on New Left Review &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
