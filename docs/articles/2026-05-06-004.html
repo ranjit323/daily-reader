@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>on J.H. Prynne — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">on J.H. Prynne</h1>
+      
+        <p class="article-header__summary">J.H. Prynne has always seemed to me to represent the real potential of poetry, as an art that can encompass everything, every kind of feeling and...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Ian Patterson</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>24 Apr 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>J.H. Prynne was not a name to conjure with when I was a first-year English student at Cambridge in 1966. As far as I knew, he was just another lecturer whose lectures I didn’t go to. By 1968, though, I was more involved in poetry, writing it and planning to launch a poetry magazine with my friend and fellow poet Nick Totton. Nick had read Prynne’s recently published Kitchen Poems and was full of enthusiasm for it. When I bought my own copy and sat down to read it I was simultaneously baffled and captivated, a state of mind that has been repeated each time I’ve opened a new book by Prynne in the 58 years since.</p>
+          
+        
+          
+            <p>The five poems were like essays in their apparent substance, but they had a manner, a rhythm and a music, as well as a density of thought that shifted my idea of what poetry was and what it could be and do. By the end of the 1960s Prynne had published five books: his first, Force of Circumstance (1962), has never been reprinted, but the others showed the extraordinary range and force of his intellect, the political intensity of his vision, and the grace and sometimes the lyric lightness of his verse.</p>
+          
+        
+          
+            <p>The publication of Brass in 1971 revealed a less earnest (but no less serious), more varied tone, and books continued to appear regularly, sometimes with one predominant theme (as with the biochemistry of Wound Response) but always with a plethora of discourses, wholly absorbed by the poet, and a constantly alert and shifting syntax, challenging and seducing the reader in equal measure. The 1982 volume Poems collected all the work published at that point, and as new books continued to appear every few years a larger collection gathered everything together in 1999, followed by extended versions in 2005 and 2015. (The 2015 volume runs to almost 700 pages.) This was followed in 2024 by a second volume, this time over 700 pages long, reprinting the 36 books and pamphlets Prynne had composed between 2017 and 2024.</p>
+          
+        
+          
+            <p>In the last decade of his life, he doubled his output. Slim books still continued to appear after that, the last two only last month. It is a staggering body of work, with a capacity, sometimes even a necessity to make changes in the way you think about things, and about the words you think you think with. Many, sometimes impenetrable lines remain lodged in my mind, often stuck there for forty or fifty years, like ‘the astrology of hunger proposes a starry bun.’</p>
+          
+        
+          
+            <p>Prynne’s poems have sometimes been dismissed by more mainstream cultural commentators as meaningless, absurdly difficult, unapproachable, pointless, elitist, or simply as nonsense or charlatanism. There is a long tradition of conservative lyric anecdotalism in English poetry, and in the way poetry is taught, that turns away from a poem that is not readily approachable. It’s true that poems like Prynne’s are difficult, in the way that a great deal of poetry is difficult if by that you mean it’s hard to approach at first reading. Poetry is an art that requires and rewards patient study, rereading, attending to paralinguistic features such as rhythm, rhyme, lineation, spacing on the page, and opening yourself to the poem, attending to the way it works on your feelings and in your body as well as on your mind, rather than just trying to manoeuvre what the poem ‘says’ into a plausible paraphrase.</p>
+          
+        
+          
+            <p>Looking now at his complete oeuvre, you can see how Prynne felt the need to change his way of writing in order to allow the language of the poems to exploit its axes of potential meaning, vertical-etymological as well as lateral-ambiguous. The poems of the last ten years are only the most extreme example of this. Lines like these, for example, require a degree of tolerance on the part of readers as they construct provisional connections, fragmentary scenes or tentative contexts:</p>
+          
+        
+          
+            <p>all through pinch night owl gospel furbelow dastard fulminatory, allegory grips bridle. Verbascum tampered groaning churn fawn foaming fluorspar, aventurine cant.</p>
+          
+        
+          
+            <p>And some of the many recent collections strike me as less interesting than the others, but even those are worth reading and pondering. Most of them are extraordinary, verse of the highest order, unlike any other English poet’s and, as always, ethically, politically and intellectually uncompromising.</p>
+          
+        
+          
+            <p>Following his death this week at the age of 89 there will doubtless be a great deal of comment on the poems, and on the man, too. I liked him, but never knew him well enough. He was inspiring, and extremely generous with his time. Poetry readings in Cambridge often ended up in his rooms in Caius College after the pubs closed, sometimes with visiting poets from the United States – I remember evenings with Ed Dorn and George Oppen in particular – sometimes with much less well-known figures, and I always came away with my head, muzzy though it may have been, filled with new ideas and new things to seek out and read.</p>
+          
+        
+          
+            <p>As a colleague in the English Faculty he could be just as generous, as I found when he and I were jointly setting and examining the paper that allowed students to read and write about French, German, Italian or Spanish writers. He was punctilious and could be scathing, but he encouraged a greater tolerance for student weaknesses than I was inclined at first to show.</p>
+          
+        
+          
+            <p>I regretted not having gone to his lectures on ‘Some Outlooks and Procedures of the Post-Romantic Mind’ in my first year, but I did learn a lot about Elizabethan poetry from his lectures and seminars subsequently. He has always seemed to me to represent the real potential of poetry, as an art that can encompass everything, every kind of feeling and every element of knowledge, and shape it into a form that affects its readers in a way that nothing else can. Many years ago, Peter Ackroyd described Jeremy Prynne as ‘without doubt the most formidable and accomplished poet in England today’, and so he was.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/april/gospel-furbelow-dastard"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
