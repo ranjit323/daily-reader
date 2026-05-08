@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Tobacco Endgame — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">The Tobacco Endgame</h1>
+      
+        <p class="article-header__summary">The successful passage of the 2026 Tobacco and Vapes Act into law is a major milestone on the journey towards achieving the tobacco endgame – where...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Nicholas Hopkinson</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>29 Apr 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>The successful passage of the 2026 Tobacco and Vapes Act into law is a major milestone on the journey towards achieving the tobacco endgame – where no one starts to smoke, everyone who smokes is supported to quit, and there is no longer any profit in tobacco. The last point is crucial: the global tobacco industry is not only responsible for an epidemic that kills more than eight million people a year, but has also been relentless in using its financial influence to block or delay tobacco control measures.</p>
+          
+        
+          
+            <p>The act’s headline measure is to make it illegal, from the beginning of next year, to sell tobacco products, herbal smoking products and cigarette papers to anyone born on or after 1 January 2009. Proxy sales are also covered, though purchase and possession will not be crimes. Internal documents from forty years ago that Philip Morris was forced to release describe the company’s fear that raising the age of sale to 21 in the US would ‘gut our key young adult market’. The introduction of a generational sales ban goes beyond this and is an existential threat to the tobacco industry.</p>
+          
+        
+          
+            <p>The Maldives passed a similar law last year, but the UK is the first large economy to take the step. In the past, tobacco control policies such as smoke-free laws and standardised packaging have seemed impossible until implemented – but after one country has taken the step, others follow quickly.</p>
+          
+        
+          
+            <p>A sales ban will not by itself end smoking. At present, rather astonishingly, anyone in the UK is allowed to sell cigarettes. The act includes a retail licensing scheme for tobacco and nicotine products, which means that licences can be withdrawn if laws are breached and could also give local authorities the power to limit licences. Trading standards officers will be able to issue fixed penalty notices for breaches, the proceeds of which must be spent on enforcement.</p>
+          
+        
+          
+            <p>The tobacco industry’s reflex, when faced with any restriction on its activities, has been to argue that the proposed measure will have the perverse effect of increasing illicit trade. But the quantity of illicit tobacco consumed in the UK has fallen by 90 per cent since the turn of the century, while the price of a pack of cigarettes in the UK has risen more than threefold.</p>
+          
+        
+          
+            <p>The UK government acknowledged that smoking causes lung cancer in the 1950s, but this did not translate into a comprehensive tobacco control plan until 1998, with Labour’s ‘Smoking Kills’ White Paper. Policies introduced since then include a steep tobacco tax escalator, raising the legal age of sale from 16 to 18, smoke-free laws, bans on advertising and sponsorship, and the introduction of standardised packaging. Adult smoking rates in the UK have fallen from 33 per cent in 2000 (above the then EU average of 32 per cent) to 10.6 per cent (less than half the current EU average). The rate of regular (at least weekly) smoking among 15-year-olds in the UK has fallen from around one in four to one in fifty.</p>
+          
+        
+          
+            <p>There are, however, still more than five million people who smoke in the UK, and smoking remains a major source of health inequality, killing two out of three people who continue to smoke and costing the UK economy more than £40 billion a year. Beyond the generational sales ban, the act strengthens or extends existing measures that cover smoking and other nicotine products, as well as limiting the tobacco industry’s ability to circumvent restrictions.</p>
+          
+        
+          
+            <p>What about vaping? As the chief medical officer, Chris Whitty, has put it, ‘if you smoke, vaping is much safer; if you don’t smoke, don’t vape; marketing vapes to children is utterly unacceptable.’ Nicotine addiction, with cycles of withdrawal, craving and relief, is distracting and disruptive to children and can increase anxiety. Healthy lung development needs clean air. The inhaled vapour from e-cigarettes is likely to cause some harms with long-term use, even if much less than smoking, and the best way to avoid long-term effects is never to start. The widespread availability of nicotine vapes also increases the scope for illicit vaping of other psychoactive substances.</p>
+          
+        
+          
+            <p>Disposable devices became widely available in 2020 and were aggressively marketed at children. The predictable effect has been widespread uptake of vaping among young people, including many who have never smoked. The previous government voted down amendments to the 2021 Health and Social Care Bill that would have given it the power to regulate such marketing. We are five years behind where we could have been in bringing youth vaping under control.</p>
+          
+        
+          
+            <p>Following last year’s ban on disposable vapes, and with an excise tax on vape fluid that comes into force in October, the act includes measures that should rapidly reduce the appeal and availability of vapes to young people, while maintaining them as an option, where appropriate, for adult smokers trying to quit. The existing ban on advertising and sponsorship that applies to tobacco products will be extended to cover vaping and other nicotine products. The 2007 ban on tobacco vending machines will be extended to include vending machines for all nicotine products. It will be possible to designate smoke-free places as vape-free, too. The tobacco industry has been adept at finding loopholes, but the measures introduced by the act will also apply to nicotine products that are yet to be created.</p>
+          
+        
+          
+            <p>Although it passed through Parliament with overwhelming cross-party support and is popular with the public, including Reform voters, Nigel Farage has said that his party would repeal the generational sales ban. This sets out a distinct far-right position, but also leaves Reform open to being labelled as the party of lung cancer, heart attacks and cot death. Reform-voting areas tend to have worse health than other parts of the country, with, in particular, higher rates of asthma and chronic obstructive pulmonary disease.</p>
+          
+        
+          
+            <p>The global health community needs some good news. The choice to pursue austerity policies since 2010 has led to falling disability-free life expectancy and widening health inequality in the UK. The Trump administration’s cuts to HIV prevention, vaccination programmes and other interventions are expected to cause 14 million additional deaths by 2030. The British Medical Journal has called for the US government’s actions to be categorised as a public health emergency of international concern, the status afforded to the Covid pandemic. The genocide in Gaza meanwhile has spawned a new acronym, SPERS, for Siege Pollution Exposure Respiratory Syndrome, to describe the lung damage caused by a convergence of toxic exposure, malnutrition and systematic destruction of healthcare infrastructure.</p>
+          
+        
+          
+            <p>The Tobacco and Vapes Act gives the UK one of the most robust regulatory frameworks for tobacco and nicotine products globally, paving the way for a smoke-free future. The extension of measures that worked to bring massive reductions in youth smoking can be expected to have the same impact on vaping, severely curtailing the industry’s ability to recruit addicts to new nicotine products. These products have a role in helping people to quit smoking, which the industry claims as its motivation for marketing them. But as smoking declines towards zero the need for them should also decline.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/april/the-tobacco-endgame"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>

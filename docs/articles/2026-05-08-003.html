@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>In Taos — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">In Taos</h1>
+      
+        <p class="article-header__summary">I rediscovered the power of abstract painting on a trip to New Mexico. From high above Albuquerque, the tawny, light-reflecting landscape stretched...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Ange Mlinko</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>7 May 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>I rediscovered the power of abstract painting on a trip to New Mexico. From high above Albuquerque, the tawny, light-reflecting landscape stretched below the solarised blue, with long straight highways looking as if they’d been scratched out by a fingernail. Mountain ranges came into view, and discrete volcanic cones, and I saw the terminus of the Sangre de Cristo where it met the plain.</p>
+          
+        
+          
+            <p>Soon enough I was on the ground and in the mountains, driving a monstrous SUV – I didn’t realise the dimensions of what I had reserved online – which I was later (grudgingly) grateful for when my Airbnb turned out to lie at the end of a two-mile dirt road: a converted shipping container sitting out on a wide expanse of sagebrush. The first thing I thought of was lightning. And every time I reached for the door handle, I did get a shock of static electricity. The wind was dry and fierce. There was a red flag warning on the weather app, for wildfire hazard.</p>
+          
+        
+          
+            <p>Driving to Taos, I wondered how much the car influenced abstract expressionism – that flash of a cherry tree in bloom by the side of a highway, the fiery grasses in the peripheral vision as you navigate the bends of the Rio Grande Gorge.</p>
+          
+        
+          
+            <p>Taos Pueblo, a Unesco World Heritage Site, was closed to visitors for the season, and the D.H. Lawrence Ranch was open only three days a week – the three days I would not be in Taos. I would not get to see Lawrence’s memorial, featuring an altar made of cement mixed with his ashes – his wife Frieda’s solution to keeping them from her rivals Mabel Dodge Luhan and Dorothy Brett.</p>
+          
+        
+          
+            <p>But at the Taos Art Museum at Fechin House there was an exhibition (until 10 May) of the first wave of Taos modernists, who converged on the town after the First World War, under Luhan’s auspices. And the Harwood Museum of Art was showing work (until 31 May) by the second wave, who arrived after the Second World War, largely sponsored by the government largesse that was the GI Bill.</p>
+          
+        
+          
+            <p>The Servicemen’s Readjustment Act of 1944 was designed to head off the anticipated economic tumult of millions of veterans returning to the workforce. It promised assistance with housing, healthcare, insurance and education. About half of the 16 million qualified veterans used the educational benefits. I knew that an outsize number of mid-century poets who had passed through Harvard had gone there on the GI Bill, including Frank O’Hara, Kenneth Koch and Richard Wilbur. The number of artists who drifted through Taos on the GI Bill, attending one or another of the three art schools that had sprung up since the 1930s, was enlightening. Louis Ribak came to Taos for his asthma after a stint in New York. His association with artists such as Ad Reinhardt lent allure to the Taos Valley Art School, which Ribak and his wife, the painter Beatrice Mandelman, founded in 1947. It was the ‘most active GI Bill-accredited school in Taos’, enrolling twenty or so students each semester.</p>
+          
+        
+          
+            <p>The veteran artists on display include Charles Stewart, who served as a tank destroyer at the Battle of the Bulge under General Patton. Ted Egri was a mapmaker for the navy in New Guinea. Louis Catusco was a navy sonarman. Richard Diebenkorn joined the US Marine Corps Reserves. John DePuy was a navy medic at the age of 18, in the Pacific during the Second World War and then the Korean War. Eva Mirabal (Eah-Ha-Wa, ‘Fast Growing Corn’) was a Taos Pueblo artist who joined the air force doing mural work. She was the first Native American woman cartoonist and creator of the GI Gertie comic strip.</p>
+          
+        
+          
+            <p>Oli Sihvonen, the child of Finnish immigrants raised in Connecticut, came to Ribak and Mandelman’s school after attending Black Mountain College, where he studied with Josef Albers. He had been a sergeant in the 603rd Engineer Camouflage Battalion, part of a unit known as the ‘Ghost Army’. ‘Landing in Normandy with Allied troops, they used ten thousand blow-up dummy tanks and heavy artillery, mobile loudspeakers, officer impersonations and rumours.’</p>
+          
+        
+          
+            <p>Alongside Sihvonen’s colour paintings in the show are his wartime sketchpads, filled with drawings made with black ink and a heavy line, and an untitled work from 1957, in ink on paper. As I was looking at it, the monochromatic mesh of lines appeared to be interrupted or overlaid by an unnerving bright ovoid, like a helicopter’s spotlight or the eyehole in a face covering, until I realised it was a reflection on the glass – another of New Mexico’s mirages, its delicate puckers of light and shadow.</p>
+          
+        
+          
+            <p>‘Untitled’ by Oli Sihvonen, 1957 (Mildred Tolbert Collection, M.A. Healy Family Foundation Purchase Fund)</p>
+          
+        
+          
+            <p>Lilly Fenichel, whose parents fled Austria after the Anschluss in 1938, studied at the California School of Fine Arts in 1950 and visiting Taos in 1951, eventually settling there in 1981. The Edges V (1984), in oil on alkyd-glazed gessoed fibreglass, is a witty comment on the mountains and desert: resembling a brown paper envelope, its flap protrudes in three dimensions, catching the light on one side and casting a shadow on the other. What lives inside the fold of this habitat, and what message does it have for us?</p>
+          
+        
+          
+            <p>The minimalist landscape impressionism is most starkly accentuated at the end of the gallery, where black-and-white paintings by Edward Corbett (White Painting, 1957), Lawrence Calcagno (Winter Solstice – Triptych, 1990), Robert D. Ray (Snow I, 1956), and the Sivhonen shown above are lined up at the threshold of the Agnes Martin Gallery, a highlight of the Harwood’s permanent collection. Martin, who came to New Mexico in the late 1960s and made it her home until she died in Taos in 2004, was one of several women – Luhan and Georgia O’Keeffe among them – who fell in love with the place. The seven paintings that hang in the octagonal chamber, lit by an oculus and embellished with chairs by Donald Judd, are a shrine to the desert visionary. They are pale white and blue, calmly horizontal, shimmering with cleanliness of line: ascetic and yet luminously receptive.</p>
+          
+        
+          
+            <p>The exhibition at the Taos Art Museum at Fechin House shows how many immigrants and children of immigrants contributed a European sensibility to the first flowering of American modernism. Polia Pillin was born in Częstochowa in Poland, settled in Chicago in her youth and painted throughout the 1930s and 1940s in New Mexico. Dorothy Brett was English and first went to NM with the Lawrences in 1924. B.J.O. Nordfeldt was born in Sweden and emigrated to the US as a teenager, coming to Taos and Santa Fe after the First World War. Emil Bisttram came to the US from Hungary as a child, arrived in Taos in 1930 and started the Bisttram Taos School of Fine Art two years later in 1932.</p>
+          
+        
+          
+            <p>Nicolai Fechin, born in Kazan in 1881, spent several years in the late 1920s and early 1930s renovating the adobe villa that now houses the museum under the auspices of the Fechin Institute, founded by his daughter Eya. His paintings and wood sculptures were strewn throughout the rooms of their former residence, the overtly Russian themes (Bathers in a Stream, Russian House) augmented by Orthodox icons arranged in corner shrines, blending ingeniously with the Indigenous and Spanish elements of the house (adobe walls, kiva fireplace, bespoke metalwork). The landscape, Fechin noted with pleasure, reminded him of Siberia.</p>
+          
+        
+          
+            <p>On the drive from Albuquerque to my Airbnb, I’d crest a hill and the landscape’s palette would change: now sepia, now cinnamon, now rose, now bone. From a long narrow window in my shipping container – a vertical rectangle – I saw horizontal bands of colour in the evening offset a strand of barbed wire on the fence just beyond the gravel driveway. A pompadour of cloud got redder and redder, and then purple asserted itself, squeezing down the orange into a long electric band that eventually went pale while the pompadour darkened into heron-blue and violet. The persistent gap between the edge of the cloud, ever thicker and more massive, and the horizon, the top of a distant mountain range, carried itself deeper into the hour. It seemed that nothing moved, not the bands of light, nor the cloud, nor the barbed wire running through it, while the light blue wash above it all was steadily growing indigo, as night came up from the other side of the sky.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/may/in-taos"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
