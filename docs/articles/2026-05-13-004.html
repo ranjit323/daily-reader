@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>‘The Death of Klinghoffer’ in Florence — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">‘The Death of Klinghoffer’ in Florence</h1>
+      
+        <p class="article-header__summary">By now, a production of John Adams’s opera The Death of Klinghoffer presumes its own opposition. At the Teatro del Maggio Musicale in Florence last...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Olivia Giovetti</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>11 May 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>By now, a production of John Adams’s opera The Death of Klinghoffer presumes its own opposition. At the Teatro del Maggio Musicale in Florence last month, however, the terms of that opposition had shifted: the protesters weren’t the work’s habitual antagonists, demonstrating under the misapprehension that the opera is antisemitic or glorifies terrorism. They were activists from Firenze per la Palestina.</p>
+          
+        
+          
+            <p>Posters lining the walkway towards the opera house before the première of Luca Guadagnino’s new staging of Klinghoffer carried a photo of a woman in Gaza dwarfed by a pile of rubble, captioned (in Italian): ‘Let’s not forget the real “show” happening now.’</p>
+          
+        
+          
+            <p>‘We have to talk now about genocide, not about Palestinians as terrorists,’ one of the demonstrators said, though she had no issue with the opera or its libretto in principle.</p>
+          
+        
+          
+            <p>‘The point is that nobody in mainstream art is taking a clear position on what’s happening,’ added another. ‘With this kind of work, there is no clear position.’</p>
+          
+        
+          
+            <p>Many opera houses and other arts institutions have lived down to this expectation, though in fairness Maggio Musicale has, in the past, taken a clear position. After an October 2025 performance of Verdi’s Macbeth, the entire organisation took a curtain call holding the Palestinian and Ukrainian flags with a banner that read: ‘No more innocent victims. No more genocide. No more massacres.’</p>
+          
+        
+          
+            <p>It was refreshing to speak with a group of Klinghoffer protesters who had actually listened to the work and read the libretto: the opera wasn’t bad, they said; the timing was. This hadn’t been the case the last time I saw it, at the Met in 2014, where demonstrators included an apoplectic Rudy Giuliani.</p>
+          
+        
+          
+            <p>Before the opera opened in New York there had already been six months of political grandstanding on both sides of the aisle, with one state senator asking whether the production was funded by Hamas. With the production in Florence, the previews in the Italian press focused more on Guadagnino directing what he considers his first opera (he has all but disavowed a 2011 production of Verdi’s Falstaff in Verona).</p>
+          
+        
+          
+            <p>In a way, these different reactions mirror the American and Italian responses to the hijacking of the Achille Lauro in 1985, on which Klinghoffer is based. Both countries had a stake in the crisis – the US because it had citizens onboard, Italy because its government owned the ship. Italy and Egypt (the ship had been seized off Alexandria) quickly formed a negotiating team. After Yasser Arafat denounced the attack and claimed no prior knowledge of it, the PLO joined the alliance in an attempt to work towards a bloodless diplomatic solution.</p>
+          
+        
+          
+            <p>The Reagan administration, meanwhile, at first planned a military assault on the ship, keen to capture or kill ‘those sons of bitches’, as the US ambassador to Egypt, Nicholas Veliotes, called them. After the hostages were released, the US intercepted an EgyptAir plane carrying the hijackers to Tunisia, forcing it to land in Italy. Arafat called the response ‘cowboy logic’. Newsweek magazine crowed: ‘the good guys finally won one.’</p>
+          
+        
+          
+            <p>If The Death of Klinghoffer is openly critical of anyone, it’s of those Adams once described as ‘comfortable, self-satisfied Americans’ for whom ‘Israeli behaviour on the world stage is off-limits.’ In a palpable hit at Reagan’s ‘cowboy logic’, he quotes the theme from The Magnificent Seven in an aria sung by one of the ship’s British dancers, who notes that the American passengers ‘were sure they had their rights, but this was war; something they failed to comprehend’. (The theme comes in on the word ‘ludicrous’.)</p>
+          
+        
+          
+            <p>Alice Goodman’s libretto also takes oblique aim at the mindset that perceives terrorism in the simple terms of good and evil. In the opening scene, the Captain sings of the ‘element of comprehensive solitude, which sharpens all one’s senses’ at sea. ‘Good and evil are not abstract there. One tastes their advent; it is pure, metallic, unripe, and it twists the gut.’ There is a moral shock to violence, but it isn’t immediately separable into the declarative framework that often guides America’s with-us-or-against-us foreign policy – as Italians have been reminded in recent weeks following Giorgia Meloni’s break with Donald Trump over Iran, Israel and the pope.</p>
+          
+        
+          
+            <p>While Klinghoffer’s creatorsclaim the work is ‘pro-nobody’ – in the words of the original director, Peter Sellars – it also isn’t an exercise in neutrality. At its best, it delivers that same somatic experience felt at sea, augmented by a duality that guides the work. (‘Who could forget Janus?’ the Captain wonders in an early scene.) Goodman’s libretto takes inspiration from Bach’s Passions, with arias sung by members of the ship’s crew, passengers and hijackers that pause time rather than propel dramatic action.</p>
+          
+        
+          
+            <p>These arias, rich with their own gut-twisting expression and experience, are inlaid in a structure of seven choruses. Six are paired off: Exiled Palestinians and Exiled Jews, Night and Day, Ocean and Desert. The seventh, Hagar’s Chorus, contains its own dichotomy, recalling the moment in Genesis when the Judaic and Arab tribes branch off from the same source.</p>
+          
+        
+          
+            <p>The arias, too, have potent symmetries: the Captain sings of a ship’s officer unable to get a signal on his shortwave set and ‘the unheeded shout of the sea’ filling his ears. Later, the PLF fighter Mamoud remembers the way he could pick up bootleg radio stations from Lebanon and Palestine at night: ‘Sound carries better when it’s later.’ The ship’s passengers are largely portrayed as retirees and grandparents, ‘keen now to enjoy themselves’. The hijackers, conversely, are young men (and, in this new staging, one woman), who ask that they ‘be worth the pains of death and not grow old in the world’.</p>
+          
+        
+          
+            <p>Guadagnino structures his Klinghoffer, the first performance of the opera since October 2023, with a clarity of line and sense of proportion, emphasising the contrapuntal structure, the narratives laid over one another without synthesis. During the opening Chorus of Exiled Palestinians, recounting when ‘Israel laid all to waste’ during the Nakba, the dancers – choreographed by Ella Rothschild – enter between the staggered rows of choristers in a mode of physical anguish that evokes some of Florence’s more wrenching Biblical frescoes.</p>
+          
+        
+          
+            <p>The role of Mamoud, a fictionalised hijacker who lost his mother and brother in the 1982 Sabra and Shatila massacre in Lebanon, was performed by the baritone Levent Bakirci. As he sang of the birds flying above the ship in the twilight of dawn, he moved off the stage and into the audience, Kalashnikov at his side, not afraid to make eye contact. It felt as if we were among the hostages while also being drawn into sympathy with one of their captors.</p>
+          
+        
+          
+            <p>The arias for Leon and Marilyn Klinghoffer were staged with similar care, and performed with dramatic intensity by Laurent Naouri and Susan Bullock. Bullock, whose early career was defined by roles such as Isolde and Brünnhilde, brought some of the dramatic implications of the mythical choruses to her character. She has the last words of the opera, berating the Captain for ‘embracing’ his hijackers even as they murdered her husband, and as her aria plays out, she is joined onstage by the chorus and dancers.</p>
+          
+        
+          
+            <p>Her monologue ends with two of the dancers left standing, locked in a stylised combat until the male dancer falls to the ground. The female dancer begins the arduous task of dragging him across the stage, which lasts for several minutes of silence after the final bars of music. She never makes it to the other side; the curtain closes first.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/may/the-death-of-klinghoffer-in-florence"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
