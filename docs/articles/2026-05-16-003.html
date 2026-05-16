@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plague Ships — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Plague Ships</h1>
+      
+        <p class="article-header__summary">A hantavirus outbreak is extremely unexpected. Part of the confusion in press coverage has arisen from the messiness of viral classification. Although...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Liam Shaw</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>14 May 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>Cruise ships are sometimes called floating cities. Icon of the Seas, with a maximum capacity of ten thousand people (passengers and crew), could accommodate most of the population of the city of Wells in Somerset. Most cruise ships are more like small if extraordinarily wealthy towns. And the MV Hondius, with 175 people from more than twenty countries on board when it departed from Ushuaia in Tierra del Fuego on 1 April, was probably the most diverse village in the world.</p>
+          
+        
+          
+            <p>Since the first reports of the hantavirus outbreak on the ship in early May, the travel itineraries of those villagers have been heavily scrutinised. The route of the Hondius has presented a cat’s cradle of contact tracing that emphasises just how connected these global travellers are. When the first passenger died onboard in the South Atlantic on 12 April, the nearest port was Tristan da Cunha, two and a half days away, with a population only slightly larger than that of the Hondius. The news that one passenger has since made her way to Pitcairn Island, thousands of miles away in the Pacific, with fewer than fifty permanent residents, came as no surprise. After the WHO announced the outbreak, all Hondius passengers are now reportedly self-isolating for 45 days.</p>
+          
+        
+          
+            <p>Cruise ship operators hate the negative press attention that outbreaks bring, but they’re a subject of fascination for epidemiologists. The Covid-19 outbreak on the Diamond Princess in February 2020, where at least seven hundred people were infected, permitted some of the best early estimates of key parameters for the spread of the virus. And in November 2020, when ‘cruises to nowhere’ became a popular holiday in Singapore – a multi-day jaunt on the high seas with no ports of call before returning home – analysis of social interactions found that passengers had a median of twenty unique close contacts every day. This means that a typical person was interacting with about twice the number of contacts of an average onshore European. Given that this was aboard ships operating at 50 per cent capacity during a global pandemic, with enhanced safety protocols, mask-wearing and social distancing, the potential for outbreaks is obvious.</p>
+          
+        
+          
+            <p>That said, a hantavirus outbreak is extremely unexpected. Part of the confusion in press coverage has arisen from the messiness of viral classification. Although virologists do their best to categorise viruses into the traditional hierarchies of taxonomy – species, genus, family – the results are rarely satisfactory. Hantaviruses are a fairly diverse group of related viruses containing at least twenty species, only some of which can infect humans, and causing quite different diseases when they do. The natural hosts for all those viruses are thought to be rodents. After the passengers on the Hondius were informed in early May that the authorities suspected hantavirus, at least one hoped that it meant the ship was rat-infested; the alternative was that the outbreak was of the Andes virus, the only hantavirus species believed to be capable of human-to-human transmission.</p>
+          
+        
+          
+            <p>So far eleven cases have been reported. Eight have been confirmed as Andes virus by laboratory testing, and three people have died. Preliminary genetic analysis of five cases suggests that they’re closely linked, with just two mutations separating them. That suggests a single spillover event before the first case boarded the ship, followed by transmission onboard. What we don’t yet know is how the outbreak strain compares to the strains circulating in rodent populations in Argentina and Chile, which might yet identify a likely place of infection.</p>
+          
+        
+          
+            <p>This is the first time that a cruise ship has been the site of a hantavirus outbreak. For most people the dangers of going on a cruise are much milder: respiratory conditions or gastrointestinal ailments such as norovirus. Cruise operators are understandably defensive about their hygiene and safety protocols. In ‘Shipping Out’ (1996), David Foster Wallace’s essay about taking a cruise, his boyish curiosity about the ship’s vacuum sewage system is met with ‘almost Nixonian paranoia’. Other cruise operators have been quick to point out that the operator of the Hondius, Oceanwide Expeditions, is not a member of the Cruise Lines International Association. The CLIA has maintained that its members are committed to ‘advanced cleaning and disinfection procedures, continuous monitoring for illness, and rapid response measures when health concerns arise’.</p>
+          
+        
+          
+            <p>The Hondius is scheduled to depart on another trip later this month. Oceanwide Expeditions has said it will confirm whether it can keep that schedule at the end of the week, but clearly they hope it’s going to be possible. So far there haven’t been any reports of passengers seeking to sue the operator, and ‘sweeping waiver terms’ suggest that unless gross negligence could be proven, a case would be unlikely to succeed. The realities of a cruise ship – close corridors, social mixing, buffets – mean that if a disease can spread, it probably will. Operators face a tension between protecting passengers and ruining their trip of a lifetime, which mirrors the situation faced by governments deciding the right balance of restrictions during Covid-19.</p>
+          
+        
+          
+            <p>Despite the attention, this exceptional outbreak seems unlikely to dent the popularity of cruises. Last year, more than 37 million people went on a cruise – the highest number ever. Unsurprisingly, according to the US Centres for Disease Control, there was also a record number of confirmed norovirus outbreaks.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/may/plague-ships"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
