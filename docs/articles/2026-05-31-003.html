@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gangster Politics — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Gangster Politics</h1>
+      
+        <p class="article-header__summary">It’s unusual for a defeated candidate in an Irish parliamentary by-election to make headlines outside the country. But Gerry Hutch, whose second bid...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Daniel Finn</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>29 May 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>It’s unusual for a defeated candidate in an Irish parliamentary by-election to make headlines outside the country. But Gerry Hutch, whose second bid to represent Dublin Central ended in failure last weekend, is best known for his suspected involvement in two of the country’s biggest armed robberies (although he has never been tried or convicted for those alleged offences, committed in the 1980s and 1990s). Hutch was also embroiled in Ireland’s most notorious criminal feud over the last decade. Though he didn’t make it over the line on election day, he outpolled the candidates of both Fianna Fáil and Fine Gael, Ireland’s traditional parties of government.</p>
+          
+        
+          
+            <p>Unlike many of his gangland peers, Hutch courted publicity and gave interviews to the national media. The stretched Humvee he bought for his limousine firm was a familiar sight on the streets of Dublin in the late 2000s.</p>
+          
+        
+          
+            <p>In September 2015, Hutch’s nephew Gary was murdered in Marbella by another Dublin crime family, led by Christopher Kinahan and his sons. In February 2016, Daniel Kinahan was at a boxing weigh-in at a North Dublin hotel when a group of armed men burst in. He escaped with his life but one of his associates, David Byrne, was killed. Suspicion immediately fell on the Hutch gang.</p>
+          
+        
+          
+            <p>The scale of the Kinahans’ international drug trafficking enterprise – they have since relocated from Spain to Dubai – made the Hutches seem like ‘the old Dublin corner shop going up against Tesco’, in the words of one police officer. As the feud escalated, nine more people were murdered in 2016, most of them associates of the Hutches. Several of the killings took place in the area of Dublin’s north inner city where Hutch grew up (and where he received his strongest vote on 22 May).</p>
+          
+        
+          
+            <p>Hutch stood trial for the murder of David Byrne in April 2023. According to the prosecution, he had not merely planned the hotel attack but had taken part in it. A special non-jury court acquitted him after a lengthy trial. The verdict wasn’t an unqualified exoneration: the judges agreed that the Hutch gang was responsible for Byrne’s death, and that Hutch himself was involved in trying to manage the fallout, but they weren’t satisfied that he was the architect of the attack or one of the gunmen. Such details didn’t matter to Hutch or his supporters though.</p>
+          
+        
+          
+            <p>Long before he tried his hand at politics, Hutch cultivated the image of a community-minded figure, stumping up the cash to establish a boxing club, for instance. And, crucially, he wasn’t visibly associated with the drug trade; he even attended meetings of a local anti-drugs campaign during the 1990s. Police sources have suggested that he may have profited indirectly from drugs by lending money at interest to other criminals, but the allegation has never been tested in court and doesn’t seem to have harmed his public standing.</p>
+          
+        
+          
+            <p>When he ran for a seat at the 2024 general election, his campaign carried out no door-to-door canvassing and had no policies worth speaking of. Hutch – who spends a lot of his time in Lanzarote – mainly interacted with voters by driving around the constituency in a truck blaring out ‘The Boys Are Back in Town’, which generated plenty of viral content for social media. He listed his profession on the ballot paper as ‘consultant’ and offered himself as the distillation of an anti-system, anti-establishment, anti-politics candidate.</p>
+          
+        
+          
+            <p>Under the Irish electoral system, each constituency has several seats – Dublin Central has four – and voters can rank candidates in order of preference. Hutch placed fourth in terms of first preferences, but was edged out in the race for the final seat by Labour’s Marie Sherlock, who picked up more lower-preference votes. He was able to try his luck again this year because Pascal Donohoe of Fine Gael resigned his seat to take up a job with the World Bank.</p>
+          
+        
+          
+            <p>(The Kinahans, meanwhile, are still in Dubai. With a $5 million FBI bounty on their heads, they were in no position to join the exodus of wealthy Westerners fleeing Iranian missiles. Now Daniel Kinahan is facing extradition after the conclusion of a treaty between Ireland and the UAE.)</p>
+          
+        
+          
+            <p>This time, rather than relying on Thin Lizzy songs, Hutch called for Somali immigrants to be interned at the Curragh, a military base used as a detention camp for IRA members in the 1940s and 1950s. ‘The other people that’s coming in from foreign countries,’ he said, ‘from India and all that type of stuff, genuine people coming in, bring your toolbox. Yous are more than welcome. But the ones that are Somalians and them type of people, no way. Interned.’</p>
+          
+        
+          
+            <p>The Somali population in Ireland is very small – just over a thousand people, according to the 2022 census. Hutch didn’t explain why he singled them out. ‘I have friends,’ he said, ‘Indians, blacks, whites, all colours. I’m certainly not racist.’</p>
+          
+        
+          
+            <p>It was hard to distinguish Hutch’s take on immigration from the views expressed by Bertie Ahern, Ireland’s longest-serving Taoiseach of the past fifty years, as he was canvassing for Fianna Fáil. In 2007, the party took nearly 45 per cent of the vote in Dublin Central; this year it lost its deposit. But Ahern made headlines when a woman recorded his comments on the doorstep.</p>
+          
+        
+          
+            <p>The potential voter started the conversation by reeling off a familiar list of far-right bogeymen, from Muslims to trans people; for some reason she also mentioned the Indian space programme. ‘I agree with you on the Africans,’ Ahern said. ‘We can’t be taking people in from the Congo and all these places. I think there’s too many from those places.’</p>
+          
+        
+          
+            <p>The 2022 census records fewer than a thousand people from the Democratic Republic of Congo living in Ireland. Like Hutch, Ahern mentioned an acceptable group of immigrants – Ukrainians, in his case, because they were fleeing a war zone, as if those from the DRC weren’t. Ahern finished by nodding along with the woman’s professed anxiety about sharia law being imposed on the people of Ireland: ‘I don’t worry about this generation of Muslims. The next generation, when the kids start growing up, that’s when I think the problem will be.’</p>
+          
+        
+          
+            <p>Ahern, like Hutch, indignantly denied that he was a racist, and seems to have regarded himself as the main victim of the controversy. One Fianna Fáil TD described him as ‘an analogue politician in a digital age’.</p>
+          
+        
+          
+            <p>Hutch’s first-preference vote share was nearly 2 per cent higher than in 2024, although the overall turnout was lower. That wasn’t enough to get him elected, however, and Daniel Ennis of the Social Democrats took the seat. Once again, Hutch struggled to pick up transfers from rival candidates, with the notable exception of Malachy Steenson, who passed on about half of his transfers to Hutch. Steenson is a much more ideological figure than Hutch with a base in far-right activism and a seat on Dublin City Council.</p>
+          
+        
+          
+            <p>Hutch has implied that he will be back for a third campaign at the next general election, due in 2029. He still has a Spanish money-laundering investigation to worry about. If he can steer clear of that, and has the patience to dig in for the long haul, he may yet win a seat. Hutch is unquestionably sui generis, neither a typical gangster nor a typical anti-immigrant demagogue, and it’s hard to imagine anyone else copying his formula. But his ability to make a splash is a symptom of Ireland’s current volatile state, with a government whose leaders appear to have taken J.K. Galbraith’s warning about private affluence and public squalor as a guiding principle.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/may/gangster-politics"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
