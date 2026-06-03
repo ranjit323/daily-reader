@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Images of the Exclusion Zone — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Images of the Exclusion Zone</h1>
+      
+        <p class="article-header__summary">Towards the end of April, a bus with fifteen foreign journalists headed north from Kyiv to Chornobyl (the transliteration of the Ukrainian place name...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Samuel Hanafin</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>28 May 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>Towards the end of April, a bus with fifteen foreign journalists headed north from Kyiv to Chornobyl (the transliteration of the Ukrainian place name, Чорнобиль, rather than the Russian Чернобыль, was adopted by the UN General Assembly in a resolution last December). For some reporters, this was their third or fourth trip to the abandoned city of Pripyat, a few kilometres from Reactor No. 4 in the thousand-square-mile exclusion zone. Access has been even more restricted since Ukrainian forces recaptured the area from Russia in April 2022. But this was the fortieth anniversary of the Chornobyl disaster: the press would be granted exclusive access to the ‘new safe confinement shelter’. The immense steel dome built in 2016 adds an extra layer of protection above the ageing and hastily built Soviet ‘sarcophagus’, which entombs more than two hundred tons of leftover radioactive material.</p>
+          
+        
+          
+            <p>According to the historian Serhii Plokhy, the disaster unfolded at the ‘periphery of Russian geography and consciousness’: Russian protests after the disaster in 1986 paled compared to those in Ukraine or Belarus, even though a swathe of Russian territory was contaminated. But dozens of anniversary ceremonies took place across Russia this year and the press published a series of retrospectives.</p>
+          
+        
+          
+            <p>The pro-Putin tabloid Komsomolskaya Pravda ran a long piece by two reporters who’d visited the exclusion zone in 2006 and were embedded with the Russian troops who briefly held Pripyat in 2022. They repeat the same motifs as Western journalists – ‘nature reclaiming its rights’, ‘ghost town Pripyat’ – but allege that Ukraine has been selling radioactive scrap and timber to the West. They sign off mournfully, remarking that the memory of the ‘shared misfortune’ of evacuees and Soviet liquidators – at least 600,000 people were involved in cleaning up after the disaster – is all but gone since Maidan.</p>
+          
+        
+          
+            <p>In Kyiv, a special exhibition on Chornobyl opened in January at the Ukrainian House, a convention centre that once housed documents and memorabilia relating to Lenin’s life but now displays the work of Ukrainian artists such as the grand modernist Mykhailo Boychuk, who was murdered during the Purges. I was braced for a bleak survey of the disaster and a lecture on the ills of the Soviet system. Instead, there were large photographs of lush green marshes and woodland thriving in the exclusion zone; white linen embroidered with traditional red and black designs; and recordings of evacuees singing traditional songs – a trace of a fading, displaced rural culture that had survived the previous disasters of the 20th century.</p>
+          
+        
+          
+            <p>A series of photographs showed the monumental art commissioned to adorn the showcase city of Pripyat and the power plant’s facilities. Ivan Lytovchenko oversaw most of the work. His tapestry Creativity, which once hung in Pripyat’s Palace of Culture but is now lost, featured a red figure, a mix between a Stakhanovite worker and an angel, whose wings depicted humanity’s achievements. The statues and mosaics have fared better, though rain, snow, vegetation and tourists picking up souvenirs have taken their toll. Creation, a sculptural relief with a mosaic finish, used to cover the front of a shop selling milk and cheese in Pripyat. It depicts the goddess Demeter presiding over scientists with graphite rods and ‘peaceful atoms’, harvesting energy and surrounded by grateful beneficiaries.</p>
+          
+        
+          
+            <p>The statue of Prometheus made in the late 1970s by Hrytsiuk Mykhailo and Yulii Synkevych for Pripyat’s central square was relocated to the powerplant and is now a tribute to the liquidators. Twenty-eight people died of acute radiation sickness. The number of premature deaths over the long term is harder to measure, but it is thought to be well into the tens of thousands. The exhibition includes dozens of portraits of liquidators from across the Soviet Union, sketched by artists who joined the clean-up effort.</p>
+          
+        
+          
+            <p>Despite what Komsomolskaya Pravda says, the show doesn’t frame Chornobyl as a uniquely Ukrainian disaster, though it does include an account of the way that Ukrainian environmental activists after Chornobyl intersected with emerging independence groups and provided them with political cover. The first major protests in Kyiv were about Chornobyl. Volodymyr Yavorivsky, the first MP to read out Ukraine’s declaration of independence, led the partially successful anti-nuclear movement that took off in 1986.</p>
+          
+        
+          
+            <p>As time passes, younger Ukrainians will hear fewer first-hand accounts from surviving liquidators visiting schools. Many have explored the Chornobyl disaster largely via an eerie post-apocalyptic aesthetics that has seeped into TV, fiction, social media and video games. As a child in 2009, I saw digitised images of Pripyat long before I knew that Ukraine was a real place, looking over my older brother’s shoulder as he played Call of Duty. On one mission, his SAS avatar infiltrated Pripyat to assassinate a Russian ultra-nationalist selling ingredients for a dirty bomb to an Arab despot. The assassination failed and disaster threatened to unfold, but the Americans helicoptered the character out of the contaminated zone and blew up Pripyat’s Ferris wheel, which collapsed on his pursuers.</p>
+          
+        
+          
+            <p>I didn’t mention this to my guide. She’d already asked me what I knew about Chornobyl and smiled when I said that I’d seen the HBO miniseries. Reading Svetlana Alexievich’s collection of first-hand accounts was a more acceptable answer.</p>
+          
+        
+          
+            <p>On the evening of 26 April, visitors streamed from the convention centre into the neighbouring Philharmonic concert halls for a commemorative concert. My guide and I made for home, walking across Maidan Nezalezhnosti. We passed a replica of the mosaic Boryviter: the original, a multi-coloured raven in flight, is in occupied Mariupol and was damaged during the siege. On the night of Saturday 24 May, Russian bombs blew out the windows of the Ukrainian House and laid waste to the National Chornobyl Museum.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/may/images-of-the-exclusion-zone"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
