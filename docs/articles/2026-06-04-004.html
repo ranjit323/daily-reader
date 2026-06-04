@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bolivia on the Edge — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Bolivia on the Edge</h1>
+      
+        <p class="article-header__summary">During popular insurrections like the one underway in Bolivia, which is calling for President Rodrigo Paz’s resignation after just six months in...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Forrest Hylton</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>4 Jun 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>During popular insurrections like the one underway in Bolivia, which is calling for President Rodrigo Paz’s resignation after just six months in office, the experience of time and space changes, acquiring an extraordinary charge from day to day, even hour to hour. Indigenous campesino insurgents have long characterised such moments as belonging to ‘another time’.</p>
+          
+        
+          
+            <p>The pace of events quickens, with too many developments to track adequately. This was the case in 1780-81 when Tomás Katari, Túpac Amaru and Túpac Katari nearly toppled the Spanish Empire in Peru; during the National Revolution in April 1952; and again in September to October 2003 and May to June 2005.</p>
+          
+        
+          
+            <p>The compression of time has a spatial counterpart, pitting the besieged urban citizenry against the campesino countryside. There are currently around a hundred blockades, in seven of nine departments. Movement between cities is restricted, and in La Paz, after more than a month of siege, it is restricted within the city too, since taxi and minibus drivers are among those on strike and private citizens have little fuel left in their cars.</p>
+          
+        
+          
+            <p>The contest over who rules Bolivia, how and on whose behalf, will ultimately be decided by endurance and numbers, not armed force. According to the Ombudsman’s Office, the country is on the ‘edge of the precipice’. Each passing day favours those who have risen up – chiefly Aymara campesino communities from twenty provinces in the department of La Paz. They produce their own food, which they take with them to the capital. They arrive by minibus and move about the city on foot or by cable car. As with community leadership or the sewing of fields, they take turns participating.</p>
+          
+        
+          
+            <p>Last week, tens of thousands of people – the campesinos were joined by miners, factory workers, teachers, transport workers and others – occupied the centre of La Paz, surrounding the presidential palace without trying to break the three rings of riot police around it. There were only twenty arrests. As in 2003, though unlike 2005, the point was to show strength in numbers, minimising physical confrontation in order to return another day in even greater numbers – until Paz resigns. (His defence minister stepped down on Tuesday.)</p>
+          
+        
+          
+            <p>In the remotest corners of the republic, mostly young Aymara and Quechua citizen journalists have filmed the collective local leadership declaring adherence to the communiqué issued on 24 May by the CSUTCB campesino union, condemning the death of 24-year-old Víctor Cruz Quispe in Vilaque, in Túpac Katari’s home province of Aroma, at the hands of the authorities the previous day. They were supposed to be on a ‘humanitarian’ mission to get medicines, oxygen and fuel moving between La Paz and Oruro. But there was no evidence of the Red Cross or the Catholic Church, or of any effort to engage in dialogue with the protesters.</p>
+          
+        
+          
+            <p>The mission was led by President Paz’s cousin, Mauricio Zamora, the minister of public works, whose qualifications include owning an expensive restaurant in Calacoto, an upscale neighbourhood of La Paz. He failed to accomplish his stated goals of clearing the roads and fled back to the city along secondary roads after being ambushed twice.</p>
+          
+        
+          
+            <p>At Cruz Quispe’s wake, the collective leadership spoke in turn, as is customary; his widow was too grief-stricken to speak, although she spoke in La Paz on Monday, calling for justice and the president’s resignation. She has a two-year-old daughter and a baby of three weeks. A preliminary police report has suggested that her husband’s death was due to friendly fire, even though 9 mm shells were recovered at the scene. Highland Bolivian campesinos don’t carry 9 mm pistols.</p>
+          
+        
+          
+            <p>Last Tuesday, Congress passed a bill to allow the military to be deployed against protesters. In their own words, lawmakers are ‘panicked’ and ‘terrified’. As in the coup of 2019, the urban middle class is projecting its fears onto an Indigenous campesino ‘invader’, which includes the many citizens of Aymara descent who live in El Alto and work in La Paz.</p>
+          
+        
+          
+            <p>The US State Department and the Bolivian government claim that the uprising is being organised by former president Evo Morales and funded by narco-traffic. Erik Prince, the founder of Blackwater, has suggested that Colombian and Peruvian narco-guerrillas are involved. This tale is being spread through the airwaves from Miami by José Carlos Sánchez Berzaín, a former defence minister wanted for extradition to Bolivia for his role in massacring 67 people, most of them Aymara, in September and October 2003. Sánchez Berzaín claimed that Colombians and Peruvians were outside agitators in 2003. On 2 June, Paz claimed that outsiders were invading Bolivia and threatening its integrity, and would therefore be rooted out and expelled.</p>
+          
+        
+          
+            <p>Like Sánchez Berzaín, the perennial far-right presidential candidate ‘Tuto’ Quiroga has been begging for a state of exception for weeks, claiming that Morales and narco-traffickers are directing and financing the popular protest. The more honest among the urban middle class admit that a state of exception will lead the military to fire on unarmed demonstrators, killing at least some, and that highland campesino trade unions do not respond to Morales or get paid to demonstrate.</p>
+          
+        
+          
+            <p>The deputy minister of the interior has said that, assuming legislation declaring a state of exception passes the Plurinational Assembly, ‘humanitarian missions’ to unblock roads will begin with efforts to convince the protesters to demobilise. Force will then be used judiciously, not indiscriminately. Ostensibly at least, they wish to avoid massacring unarmed Indigenous campesinos.</p>
+          
+        
+          
+            <p>Sánchez Berzaín and President Gonzalo Sánchez de Lozada fled to Miami in 2003 after declaring a state of exception and using lethal force. Their ghosts haunt President Paz. So does the figure of Jeanine Áñez, who came to power in a far-right coup in 2019, declared a state of exception, and, after Luis Arce was elected president in 2020, ended up in jail for the murder of unarmed demonstrators. She was only recently released.</p>
+          
+        
+          
+            <p>Most political analysts speak only of the suffering of the good citizens of La Paz. This is not to be minimised: several people have died because the blockades prevented them receiving medical care. But there is little representation or even awareness of campesino or working-class demands – only a monothematic insistence on ‘vandalism’, following the government line. Campesino leaders and community members say they are furious at being labelled ‘vandals’ by those they call the true vandals: the people who own and run Bolivia, most of them of European descent and based in the eastern lowlands.</p>
+          
+        
+          
+            <p>The conflict is over constitutional rights. The mobilised communities are demanding that their rights as Indigenous citizens be respected, not trampled (pisoteado). The Plurinational State is theirs, too, and they have the right to demonstrate and govern themselves. They want to be treated equally, not governed by decree. They voted for Paz – he wouldn’t have got to the Palacio Quemado without them – but he betrayed their trust. They told him after their general assembly in April, and he didn’t listen – they gave him twenty days to respond but never heard back. He is really ‘Spanish’ not Bolivian and governs on behalf of big business in the east, in Santa Cruz, with laws that go against the ‘interests of our class’. When they demonstrate peacefully they are tear-gassed or even killed in the name of providing humanitarian aid for paceños.</p>
+          
+        
+          
+            <p>There is no credible mediation in sight: the Catholic Church, Bolivian human rights organisations, the Inter-American Commission on Human Rights and the Ombudsman’s Office are all are notable for their absence, in part because they discredited themselves in 2019. Regional diplomacy is also lacking, with Brazil’s President Lula calling for dialogue with no understanding of the Bolivian government’s intransigence, or of Indigenous campesino grievances.</p>
+          
+        
+          
+            <p>A broad array of leaders stress repeatedly that they are following decisions taken in assemblies, and that if they don’t follow through on resolutions, their base will remove them. Quechua and Aymara campesino leadership is subject to recall. The same is true for urban neighborhood organisations and working-class unions. The head of the Bolivian Workers’ Centre, Mario Argollo, a mining leader, issued communiqués from hiding, until appearing in El Alto this week for a massive rally. Morales does the same, though to little effect beyond his coca growers’ trade union base in the tropical lowlands of the Chapare in Cochabamba.</p>
+          
+        
+          
+            <p>Although La Paz and El Alto are the centre of the uprising, road blockades have multiplied in Cochabamba, Oruro, northern Potosí and Chuquisaca. In the east, Santa Cruz is cut off from Beni as well as Cochabamba: counter-mobilisations are massive, and the head of the Santa Cruz Civic Committee, Stello Cochamanidis, has declared that his UJC fascist shock troops – this is not hyperbole – will do the work the government has not, clearing the roads by force in the name of ‘security, work and development’. He has yet to follow through on the threats. On 2 June, in northwestern Santa Cruz, community members from campesino unions shut down the petroleum valves in Santa Rosa del Sara, and police moved in to make arrests. There were blockades in Pando but they have been lifted.</p>
+          
+        
+          
+            <p>Last Monday, the coca growers’ trade union federation organised a motorised caravan to the headquarters of the Army’s 9th Battalion in Chimoré, Cochabamba, and conducted an inspection of the base to make sure no DEA or Argentine military personnel were on site. Barricades made of thick logs sharpened like pencils went up. The base is still surrounded. When the lights went out in the Chapare on 27 May, coca growers assumed the US might try to take Morales as they had Maduro, and rushed to surround the nearby anti-narcotics special forces unit, taking over the roads.</p>
+          
+        
+          
+            <p>But it is not Morales or the coca growers – or the urban middle class – who will decide the outcome of the contest. It is the Quechua-Aymara peasantry in the western highlands and highland valleys, four million strong, and their allies in El Alto and the trade unions. On 3 June, they announced they will march on La Paz again – this time to remove Paz, who, the same day, uploaded then deleted a video calling on people to mobilise with the police and military (many of whose conscripts would be facing off against people they consider kin) to end the blockades.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/june/bolivia-on-the-edge"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
