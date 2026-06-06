@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>In Southampton — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">In Southampton</h1>
+      
+        <p class="article-header__summary">Out-of-towners, including Tommy Robinson and Laurence Fox, merged with locals outside Southampton police station to form a crowd of several hundred....</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Tom Williams</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>4 Jun 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>On Tuesday, Southampton was the scene of a far-right demonstration intended to weaponise the killing of Henry Nowak, an 18-year-old white British student, in the Portswood area of the city last December. Vickrum Digwa, a 23-year-old British Sikh man, was found guilty of Nowak’s murder last week and given a life sentence on Monday.</p>
+          
+        
+          
+            <p>The demonstration descended into rioting as protesters clashed with police. Out-of-towners, including Tommy Robinson and Laurence Fox, merged with locals outside Southampton police station to form a crowd of several hundred. They marched to Belmont Road, where Nowak was killed. Riot police prevented them reaching Digwa’s family home.</p>
+          
+        
+          
+            <p>The troubling speed with which the protest was organised caught the city’s small but diligent antifa and its broad coalition of anti-racists by surprise. The march came within a couple of hundred metres of my house in Bevois Valley, where the only flags you’ll see are Palestinian or Ukrainian. I’m in local anti-racist networks and have been on my share of counter-protests – including those at a hotel where asylum seekers were being housed last year, where we comfortably outnumbered the far right – but I was oblivious. Given the severity of the rioting, it might have been for the best that we didn’t have time to organise a response.</p>
+          
+        
+          
+            <p>The far right has typically given Southampton a wide berth, focusing its organising and recruitment on Portsmouth: as a naval base, it’s more fertile ground for nationalist sentiment. Southampton, a port city driven largely by commerce, is by necessity a relatively outward-looking place: 32 per cent of its residents are non-white British, and there’s been a Polish community here since the 19th century.</p>
+          
+        
+          
+            <p>Our last brush with racial tension was largely astroturfed, when a TV company sent its cameras here more than ten years ago to film an episode of the deliberately inflammatory series Immigration Street for Channel 4. They were chased out. It was a small-scale but joyous example of organising across difference.</p>
+          
+        
+          
+            <p>The current crisis is in part the fault of the police. When they arrived on the scene, Digwa told them that Nowak had attacked him. Nowak told them that he’d been stabbed but they didn’t believe him. His last words, as they handcuffed him, were ‘I can’t breathe.’ These were also the last words of George Floyd, murdered in Minneapolis in 2020 by a white police officer, Derek Chauvin.</p>
+          
+        
+          
+            <p>The British far right have drawn a false equivalence between the two cases, with Nigel Farage claiming that ‘the rights and privileges of white people matter less than those of ethnic minorities’. Not only is this untrue, but using Nowak’s murder to stoke racial hatred is going against the wishes of his family. His father, Mark, issued a statement saying: ‘We do not want his death to be used to create further division, hatred or tension. We want his story to help make our streets safer for everyone.’</p>
+          
+        
+          
+            <p>As Laura Brown, a friend and neighbour, put it to me, ‘Sikhs are a minority in this country. Baptised Sikhs who wear the kirpan are a minority within a minority. Baptised Sikhs acting alone who kill somebody with a knife that may or may not have been a kirpan are a minority within a minority within a minority.’ Half her family are Sikh, and she is afraid.</p>
+          
+        
+          
+            <p>One of the drivers of incidents such as Tuesday’s riots is social atomisation. Many far-right demonstrators are connected online and have parasocial relationships with their fellow travellers, but are socially isolated offline. The confused coalition they have formed is often politically incoherent: as the patchwork of Union Jacks and flags of St George suggests, there are different types of nationalism at play.</p>
+          
+        
+          
+            <p>They aren’t always wrong about the societal ills and injustices they identify, but they misdiagnose the causes, blaming migrants instead of capital. (There was a revealing moment at the hotel protests last summer when both the left and right were singing, in unison, ‘Keir Starmer’s a wanker’ to the tune of ‘Seven Nation Army’.) Some on the far right are wealthy members of the exploiting classes, rubbing shoulders with the exploited. It may look like a spontaneous movement from below, but the reality is closer to a version of command and control, driven by social media.</p>
+          
+        
+          
+            <p>Southampton is a relatively affluent city, with plenty of green spaces and the New Forest on its doorstep. A gigantic teaching hospital provides jobs and makes healthcare slightly more accessible than it is in other parts of the UK. But deindustrialisation under Thatcherism led to thousands of job losses in shipbuilding and other manufacturing, and some areas of the city are among the most deprived in the country. As elsewhere, there is often a stark political cleavage between the city’s working classes and its educated class of graduates in bad jobs paying bad wages, despite their shared material interests. As elsewhere, the parts of the city with the fewest people of colour have the strongest anti-immigrant sentiment.</p>
+          
+        
+          
+            <p>The rise of the far right nationally has been facilitated by the Labour Party’s pandering to its whims. This includes the party’s would-be saviour, Andy Burnham, busily triangulating ahead of the Makerfield by-election, but Corbynism, too, failed to name the enemy. It may seem a cliché simply to blame capitalism, but the vast majority of people don’t know what capitalism is. Even the trade union movement avoids enlightening its millions of members about the way their labour is exploited for profit. Given this widespread ignorance and the unwillingness to address it, it is shocking but not surprising that anger should erupt in displays of grim nativist unrest such as we saw in Southampton.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/june/in-southampton"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
