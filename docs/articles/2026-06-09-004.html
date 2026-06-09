@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get Your Jabs — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Get Your Jabs</h1>
+      
+        <p class="article-header__summary">Among the unvaccinated, one in five people who get measles in the US will be hospitalised; one in twenty children will get pneumonia; one in a...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Edna Bonhomme</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>8 Jun 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>In the early spring, there was a scarlet fever outbreak at my son’s nursery in Berlin. My initial response was mild panic, as I thought of what the disease does to Beth in Little Women.But scarlet fever isn’t a phantom of the past; it’s an endemic childhood disease, caused by Group A Streptococcus bacteria, which circulates in nurseries and play groups. It’s highly contagious but usually responds to antibiotics.</p>
+          
+        
+          
+            <p>There is no vaccine, though I was relieved when another parent mentioned that he had looked up whether there was one – mostly because it meant that his child has received the scheduled immunisations. (Asking direct questions about another child’s vaccination status is verboten.)</p>
+          
+        
+          
+            <p>The scarlet fever passed without our son catching it. But, given that we were travelling to the UK soon, we were more worried about a measles outbreak in North London. Our child has received his first dose of the MMR vaccine, but this doesn’t guarantee total protection against infection: for everyone to be protected, almost everyone has to be vaccinated.</p>
+          
+        
+          
+            <p>In 2024, measles cases doubled in Europe, with 127,350 cases – the highest number since 1997, and nearly one-third of reported cases worldwide – leading to 38 deaths. Hans Kluge, the WHO’s regional director for Europe, said in March 2025: ‘Measles is back, and it’s a wake-up call. Without high vaccination rates, there is no health safety.’</p>
+          
+        
+          
+            <p>At the same time, the US Secretary of Health and Human Services, Robert F. Kennedy Jr, was telling Fox News: ‘When you and I were kids, everybody got measles, and measles gave you ... lifetime protection against measles infection. The vaccine doesn’t do that.’ His remarks misrepresent both the severity of the disease and the effectiveness of the vaccine. Kennedy continues to claim, in the face of all scientific evidence, that there is link between the MMR vaccine and autism.</p>
+          
+        
+          
+            <p>The alleged link was promoted in a spurious 1998 article by Andrew Wakefield that has since been retracted. In 2010 Wakefield was struck off the medical register after an investigation by the General Medical Council found him guilty of serious professional misconduct, including violations of research ethics, financial conflicts of interest, and subjecting vulnerable children to invasive medical procedures – lumbar punctures – that they did not need.</p>
+          
+        
+          
+            <p>Health authorities agree on the value of MMR vaccination. The CDC, NHS and WHO recommend two doses of the MMR vaccine, and scientists affirm that it is 97 per cent effective at preventing infection or severe symptoms of measles, mumps and rubella. (As of this year, the jab in the UK now also includes a varicella or chickenpox vaccine, and is known as MMRV.)</p>
+          
+        
+          
+            <p>Among the unvaccinated, one in five people who get measles in the US will be hospitalised; one in twenty children will get pneumonia; one in a thousand will develop encephalitis, which can lead to blindness, hearing impairment and other disabilities; and one in a thousand will die. Measles can also lead to immune amnesia: that is, the virus can erase the body’s memory of how to fight all the pathogens it has previously encountered.</p>
+          
+        
+          
+            <p>In the words of Paul Offit, the director of the vaccine education centre at the Children’s Hospital of Philadelphia, ‘the goal of a vaccine is to induce the immunity that is a consequence of natural infection without paying the price of natural infection.’</p>
+          
+        
+          
+            <p>Across Europe and North America, vaccination rates have been declining, dropping by a percentage point since 2019. Because measles is so infectious, coverage needs to be at least 95 per cent to prevent transmission. According to the WHO, the UK ranks last among G7 countries in MMR coverage: in 2024, only 89 per cent of children received their first MMR jab. The figure for Germany is 96 per cent; in France, Italy and Japan it’s 95 per cent; in the US, 92 per cent. There is wide regional variation within the US: it’s over 98 per cent in Connecticut but only 78.5 per cent in Idaho, where religious exemptions for vaccinations are allowed.</p>
+          
+        
+          
+            <p>‘The risk of measles remains low for most of the United States,’ the CDC’s Paul Prince told me, ‘due to high population-level immunity from MMR vaccination. Current outbreaks are largely concentrated in close-knit, under-vaccinated communities, with prevalent international travel that raises the risk of measles importation.’</p>
+          
+        
+          
+            <p>Vaccine scepticism isn’t the only reason vaccination levels have been declining. According to researchers at Imperial College London, ‘the Covid-19 pandemic caused a decline in routine childhood vaccination uptake globally, with disruption to routine vaccine services reported across 170 countries.’ The researchers also found that public spending cuts have fragmented immunisation services and worsened child health in the UK. In Hackney, the MMR vaccination rate is as low as 60 per cent; in Liverpool it’s 75 per cent.</p>
+          
+        
+          
+            <p>Mary Ramsay, the deputy director of public health programmes at the UK Health Security Agency, said: ‘While the majority of parents are vaccinating, we know some parents do find it difficult to navigate the booking system and attend all their children’s vaccination appointments. It is a complex schedule, and with busy lifestyles and other pressures, we know it can be hard for some to prioritise, find the time and get to their appointments.’</p>
+          
+        
+          
+            <p>NHS England officials say they aim to improve vaccination rates by establishing and securing more flexible appointment systems, making different vaccines more widely available across locations, providing easier access, and responding to the specific needs within each community.</p>
+          
+        
+          
+            <p>Anti-vaxxers have grown more emboldened since Covid, but they are still very much a minority. Most parents want to immunise their children. Often missing, though, is a sense of vaccination as a public good. Parents are more likely to be concerned with the safety of their own children than the collective healthcare of all children (and adults). There’s a lack of solidarity – yet that is the shape of contemporary parenting. As so many aspects of our lives have become privatised and reduced to the nuclear family, so has the way people think about their health. But personal choice can only take us so far.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/june/get-your-jabs"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
