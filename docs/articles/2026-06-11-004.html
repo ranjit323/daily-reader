@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>In Belfast — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">In Belfast</h1>
+      
+        <p class="article-header__summary">It isn’t an exaggeration to say that we are living under a kind of house arrest, unable to go out, with an oppressive sense that an assault could...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Luqman Saeed</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>10 Jun 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>Yesterday morning I woke up to what seemed like an ordinary day. Then I picked up my phone and came across a video clip showing what appeared to be a man attacking another man with a knife in a deprived area of North Belfast. The faces were blurred, and as we watched the video, my wife expressed a hope that would sound deeply disturbing in normal circumstances (but we do not live in normal circumstances): that the victim was not white.</p>
+          
+        
+          
+            <p>When it emerged that the victim was white and the alleged attacker was a foreign national, we knew what would follow. An atrocious criminal act – requiring a prompt police response, which it received – would be seized on as a justification for attacks on immigrants and people of colour with no connection to the crime. That is precisely what unfolded later in the day, as immigrants and ethnic minorities, along with their property and public infrastructure, were targeted.</p>
+          
+        
+          
+            <p>This is not our first summer of racially motivated unrest, but the level of fear this time is unprecedented. Videos circulating on social media appear to show masked individuals stopping cars to identify people from immigrant backgrounds, and masked men roaming the streets in search of people of colour. Whether or not every report proves accurate, the fear they provoke is all too real. Several people have told us that their white friends have been in touch and asked them to stay indoors. Such messages are reassuring reminders of solidarity and friendship, but they also reveal something more troubling about the scale of the perceived threat. This didn’t happen last year.</p>
+          
+        
+          
+            <p>It isn’t an exaggeration to say that we are living under a kind of house arrest, unable to go out, with an oppressive sense that an assault could occur at any moment. Members of ethnic minority communities have asked their white friends to accompany or drive them to work, hoping it would reduce the risk of being targeted. With more protests announced for today, schools closed early. I had to try to explain to my daughter why she would be missing her ukulele club this afternoon.</p>
+          
+        
+          
+            <p>Racist crimes in Northern Ireland reached a record high last year, and a political response is urgently required. It isn’t just a question of policing. There needs to be a co-ordinated strategy that tackles not only acts of violence but also the narratives that make them possible. Hostility towards immigrants does not develop in a vacuum.</p>
+          
+        
+          
+            <p>Northern Ireland has its own particular context for anti-immigrant mobilisation. Although sectarian violence has declined significantly since the Good Friday Agreement, sectarian divisions continue to shape everyday life in many parts of the region, especially in some of its most deprived communities. In a society where sectarian identities still determine political affiliations, immigrants and ethnic minorities have become the new other. Persistent hardship can also make residents more susceptible to extremist narratives and more wary of demographic change.</p>
+          
+        
+          
+            <p>It doesn’t help that the UK media relentlessly portray immigration as a problem – and, in some cases, a threat – that must be addressed, rather than as an ordinary or indeed positive aspect of human existence. The negative framing of immigration, amplified by social media, affects public attitudes. According to Ipsos polling, at the height of the Brexit campaign in 2015, 68 per cent of adults believed immigration should be reduced. That figure fell to 42 per cent by 2022, when immigration had become less salient, before rising sharply again to 67 per cent in 2025 as immigration panic returned to the headlines.</p>
+          
+        
+          
+            <p>The constant negative coverage of immigration not only reinforces perceptions of immigrants as a threat but also fosters attribution bias – the tendency to attribute the actions of a few individuals to an entire group. In this context, an event such as the attack on Stephen Ogilvie on Monday becomes what social scientists call an ‘information shock’ – a highly salient incident that appears to confirm existing fears and prejudices, often triggering hostility towards entire communities that bear no responsibility for the crime itself. Information shocks don’t happen if the fears and prejudices aren’t already present, waiting to be transformed into collective blame and violent action. (As Natalie McNally’s brother has observed, the sentencing of her murderer last week for a ‘brutal and frenzied attack that involved the use of a knife’ did not lead to ‘the same angry outcry and mobilisation’.)</p>
+          
+        
+          
+            <p>Political leaders have a clear responsibility to confront this issue at its roots. First and foremost, this country needs an honest discussion of immigration. Many among those taking part in violent protests believe there is a co-ordinated conspiracy by the political establishment to replace the white population with a non-white population. Has any major political party systematically challenged the absurdity underlying this narrative? Many rioters believe that immigrants receive preferential treatment in housing and welfare. How often have political leaders publicly explained that the overwhelming majority of immigrants hold student or work visas, and many of them pay hundreds of pounds a year in health surcharges while remaining ineligible for public funds? Last year, Northern Ireland’s health service received £81 million from health surcharges paid by immigrants.</p>
+          
+        
+          
+            <p>It isn’t enough simply to condemn attacks after they occur. A response centred solely on policing is treating the symptoms while ignoring the causes, and may even contribute to further alienation, radicalisation and entrenchment of ‘anti-establishment’ attitudes. Northern Ireland (and not only Northern Ireland) needs a political leadership willing to challenge misinformation, confront prejudice and speak up for those who have become the targets of systematic suspicion and violence. The question is whether anyone is willing to do so.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/june/in-belfast"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
