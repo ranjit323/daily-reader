@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wages Not Weapons — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Wages Not Weapons</h1>
+      
+        <p class="article-header__summary">John Healey’s resignation as defence secretary is the latest skirmish in a wider campaign to secure an increase in defence spending. Tom Stevenson...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Des Freedman</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>11 Jun 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>John Healey’s resignation as defence secretary is the latest skirmish in a wider campaign to secure an increase in defence spending. ‘You have been unable,’ Healey wrote to Keir Starmer, ‘and the Treasury has been unwilling, to commit the resources that the nation needs to defend the country at this time of rising threats.’</p>
+          
+        
+          
+            <p>MPs, commentators and journalists have been falling over themselves to condemn the government’s delay in publishing the Defence Investment Plan to follow last year’s Strategic Defence Review on the future of the UK’s military capability. Tom Stevenson described the SDR as the ‘object of a proxy battle between the armed forces and the Treasury’ and it seems that, for now, the Treasury is winning the battle over whether to stump up an additional £28 billion over the next four years. Most of the media, however, are on the side of the armed forces.</p>
+          
+        
+          
+            <p>A Sun editorial described the government’s rumoured proposal to provide a mere £13 billion extra as ‘handing defence chiefs a gun but withholding the bullets’. The Mail’s defence editor insisted that any shortfall ‘could be remedied today by getting serious about Britain’s spiralling welfare bill’. The Telegraph claimed that ‘voters tell Starmer’ to ‘cut benefits to boost defence spending’, quoting an Ipsos poll which apparently showed that ‘more than a quarter of Britons said they would like to see Labour cut the welfare budget in the event that it needed to raid public services to pay for a boost to the military.’</p>
+          
+        
+          
+            <p>More than a quarter is still a minority: according to the same poll, 45 per cent said they wouldn’t support an increase in defence spending if it meant cutting public services, and only 37 per cent think it should be increased at all. Much the most popular way to pay for a hypothetical increase would be higher taxes for those earning over £125,000.</p>
+          
+        
+          
+            <p>Yet the views of the majority who don’t support spending more money on the military get very little airtime. Instead there are multiple stories of the imminent threat from Russia that is said to justify an increase in the defence budget from 2.3 per cent of GDP today to 2.6 per cent by 2027 with an ‘ambition’ to reach 3.5 per cent by 2035.</p>
+          
+        
+          
+            <p>The former commander of Joint Forces Command, General Sir Richard Barrons, appeared on the BBC’s PM programme on 29 May to argue for the need to cut welfare and increase private sector investment as part of a programme of military rearmament. When asked if the UK was at imminent risk, he replied that the country ‘is attacked every day by Russia. The boss of GCHQ reminded us of that this week and Russia sees itself at war with the UK but below the threshold of military conflict.’ The presenter didn’t ask him to explain what it meant to be ‘at war’ but ‘below the threshold of military conflict’, or why that requires such intensive levels of rearmament.</p>
+          
+        
+          
+            <p>There are twenty stories from the past six months on the BBC’s page dedicated to ‘UK defence spending’. They draw on 71 different sources, of which not one is critical of an increase in defence spending. Around a third of sources are government figures or Labour MPs; the others include military representatives, Tory MPs, defence industry spokespeople and current or former Nato chiefs. Trade union leaders are quoted three times but they are all in favour of a hike in defence spending. There is nothing from any of the MPs who raise objections in Parliament (Labour, Green and SNP), or from any of the academics, researchers and campaigners with concerns about cutting welfare in order to increase defence spending.</p>
+          
+        
+          
+            <p>The Trades Union Congress, representing 5.5 million workers, passed a motion at its 2025 conference to ‘reaffirm that our movement’s priority is welfare and wages, not weapons and war’. No broadcaster touched the story and both the Guardian and the Independent ignored it. The Sun covered it in 65 words, under the headline ‘TUC fury on arms’, describing the ‘disappointment’ of one of the unions that voted against the motion. In the Mail, Quentin Letts described ‘a tetchy debate on defence spending ... won by pacifists in “Wages Not Weapons” T-shirts’.</p>
+          
+        
+          
+            <p>The Defence Investment Plan will soon be published; Britain will continue to increase military spending and ask for cuts from other ‘less important’ government departments. On 20 June, two thousand activists from across Europe and beyond will gather at Westminster Central Hall (where CND held its first meeting in 1958) for a conference to oppose the growing atmosphere of militarism. But don’t expect to see anything about it in the papers or on TV.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/june/wages-not-weapons"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
