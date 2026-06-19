@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Strange Rebirth of Municipal England — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">The Strange Rebirth of Municipal England</h1>
+      
+        <p class="article-header__summary">It has been a very large part of the failure of the Labour Party since 2010 that it has been unable to link the grave fact of austerity, its practical...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Tom Crewe</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>19 Jun 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>Ten years ago, I wrote a piece for the LRB called‘The Strange Death of Municipal England’. I had become fully aware of the scale of cuts to local government a couple of years earlier, when I was working as an intern for the Labour MP Margaret Hodge. I had briefed her before a meeting of the Public Accounts Committee concerning the National Audit Office’s report on the cuts, and had been astonished, and horrified, by the statistics – funding from national government being cut by 50 per cent, or even more; councils slicing hundreds of millions from their budgets. What was happening was fundamentally altering the relationship between the public and the state, as well as the public’s relationship with their own communities.</p>
+          
+        
+          
+            <p>The making of the British state, from welfare to utilities, was a municipal affair, but local government’s powers had been whittled away since the Second World War, and then attacked ferociously by the Thatcher government in the name of privatisation and competition (Thatcher simply abolished the troublesome Greater London Council). Blair had done little to change this, and the Tories, under Cameron and Osborne, had returned to finish the job.</p>
+          
+        
+          
+            <p>It was obvious then that communities would feel – already did feel – that the places where they lived had become shabbier, emptier, less functional, as services were cancelled, bus routes slashed, libraries and museums and Sure Start and youth centres closed, potholes left unmended. Obvious that the poorer the area, the worse the cuts, since these places were more dependent on the public sector and on government support (this meant that the cuts affected the North of England particularly badly). Obvious that resentment would grow, since council taxes would inevitably have to go up, to pay for less visible but essential (and mandated) services like social care, which swallowed an ever larger proportion of overall budgets, creating an accurate impression that voters were paying more for less – far less. Obvious that this situation would eventually fuel anger with all the main parties at local government level, since, no matter who you kicked out, the party that came in would have to administer the same austerity regime. And obvious that the desire for relief, for change, would push people in other directions, still fruitlessly, ultimately undermining faith in the democratic system itself. It was obvious, too, that the decline of local government was compounding a larger problem: it was further increasing the marketisation of society and the economy, so that the public’s dominant political relationships were with profiteering private companies, impossible to hold to democratic account. It wasn’t surprising that people were feeling increasingly powerless and adrift. The Brexit referendum, earlier in 2016, had already shown the potential of a politics that promised to ‘take back control’.</p>
+          
+        
+          
+            <p>In my piece I quoted Colin Crouch and David Marquand’s The New Centralism, published in 1990, in which they noted that the ‘population will have to rely, more than ever before, on Parliament for redress of grievances and to control government activity ... If Parliament does not change, the removal of local autonomy will lead to poorer services and a weaker democracy.’ Since then, I wrote,</p>
+          
+        
+          
+            <p>Five years later, with the UK still under Conservative rule (there were three more years to go), I wrote another piece, about leaving the North of England, where I grew up, and living all my adult life in the South. My argument was that such personal decisions are intrinsically political, frequently forced as a consequence of lack of opportunity, and often mourned or resented. The idea of ‘left-behind’ areas presupposes that people (and not just governments) are doing the leaving, and I suggested that ‘in all of this there is something Labour should be talking about, something the Tories can’t lay claim to: a narrative about the way the country works and fails to work that is capable of connecting its old heartlands with the newer ones in the magnetic urban centres.’</p>
+          
+        
+          
+            <p>The politics vindicated by Andy Burnham’s victory in the Makerfield by-election has been available to politicians on the left for a long time. It has been a very large part of the failure of the Labour Party since 2010 that it has been unable to link the grave fact of austerity, its practical consequences and its growing unpopularity, to a coherent and compelling argument about what is structurally wrong with the country, why it ‘doesn’t work’. Burnham was once part of this failure (he seemed bland and insignificant in both the 2010 and 2015 Labour leadership elections), but his experience as mayor of Greater Manchester seems to have given him the language that was needed. He has been able to channel the anger and helplessness created by the relentless running-down of towns and communities, especially in the North, and connect it to an energetic critique of the centralised Westminster state. In his victory speech, he spoke of a ‘Makerfield test at the heart of British politics’ that ‘will make sure that the places Westminster has neglected will now get fairness’. He has turned that anger and helplessness, so liable to become a poisonous and reactionary nostalgia, in another direction. His campaign has made unabashed use of the word ‘hope’.</p>
+          
+        
+          
+            <p>Most significant of all, in connecting his local analysis with a national one, Burnham has shown an awareness that the argument for more devolution, for the rebuilding of local government and the rebalancing of the country away from Westminster, goes hand in hand with a critique of Britain’s neoliberal, privatised economy. The British state was unmade by the collapse of the municipal project and can only be remade by its revival; public ownership and democratic accountability, and the clawing back of national capacity – Burnham has talked of a ‘productive state’ – are fundamental to the change Britain needs. ‘I think Britain has been on the wrong path for forty years,’ Burnham said early in his campaign. He’s right, of course – but I’m not sure anyone possessing his mainstream appeal has ever said so, or said so with a worldview that gives it practical meaning and purpose. It is a municipal worldview – one that neoliberals have always rightly viewed as their enemy. Burnham will in all likelihood soon be prime minister. The political conditions remain dire and limiting. He will not be given many chances. But it turns out that municipal England is not dead yet.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/june/the-strange-rebirth-of-municipal-england"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>

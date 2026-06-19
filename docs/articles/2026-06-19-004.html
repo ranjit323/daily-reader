@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rights for Gods — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Rights for Gods</h1>
+      
+        <p class="article-header__summary">Britain’s waterways are filthy and flowing with sewage, as well as fertiliser and pesticide pollution, thousands of tons of macro, meso and...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Jay Owens</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>18 Jun 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>The River Thames has many faces. William Morris described the upper reaches in the Cotswolds as the ‘far-off, lonely mother of the Thames’, a ‘sweet stream that knows not of the sea,/that guesses not the city’s misery’. At Oxford, the Isa or Ise (perhaps from the Brittonic Celtic isca, ‘water’) takes on the guise of Isis of Egyptian cosmology – until she is joined at Dorchester by the Thame and becomes Old Father Thames.</p>
+          
+        
+          
+            <p>The ‘great Father of the British floods’, as Pope calls him in ‘Windsor-Forest’ (1713), is often represented as a muscular figure with flowing hair and beard, like Poseidon, sometimes carrying an urn or horn of plenty as he feeds the nation with both nature’s bounty and, through maritime trade, the empire’s.</p>
+          
+        
+          
+            <p>‘Behold!’ Pope writes, ‘I see, I see, where two fair cities bend/Their ample bow, a new Whitehall ascend!’ But the river wasn’t so glorious close up. A century and a half later, it stank, as the growing city of 2.4 million – the largest in the world at the time – reached the limits of its ad hoc sanitation system. Two hundred thousand cesspits released their waste into drains and tributaries that flowed into the river, the city’s sewer. During a heatwave in June 1858 the smell drove MPs out of the Palace of Westminster. Punch reported that ‘the one absorbing topic in both Houses of Parliament ... was the Conspiracy to Poison question. Of the guilt of that old offender, Father Thames, there was the most ample evidence.’ In the magazine’s cartoons the once proud old man was now bedraggled and filthy, Dirty Father Thames, his trident a bit of estuarine junk impaled on a stick.</p>
+          
+        
+          
+            <p>Another century and a half on, Britain’s waterways remain filthy and flowing with sewage, as well as fertiliser and pesticide pollution, thousands of tons of macro, meso and microplastics, and an array of toxic PFAS or ‘forever chemicals’. The Thames may be cleaner than when it was declared biologically dead in 1957, but other rivers are close to ecological collapse, suffocated by algae, fungi and weeds that bloom in the run-off from industrial farming.</p>
+          
+        
+          
+            <p>On 1 June, Natalie Bennett, a former leader of the Green Party, waded into this slurry with the first reading of a private member’s bill in the House of Lords. The Nature’s Rights Bill calls for Nature (capitalised) to be recognised in law as ‘a legal subject and rights-bearing entity’ with ‘inherent rights’ to exist; to maintain its natural cycles, processes, ‘diversity’ and ‘abundance’; and ‘to be free from pollution, contamination and degradation that threatens ecological integrity, resilience or health’. The bill recognises ‘the rights of Nature ... as the foundation of human life, society and economic activity’ and would impose a legal duty on individuals, businesses and public bodies to operate inside safe ecological limits, with ‘a duty of care towards Nature’. A Nature Guardianship Council, Nature’s Rights Tribunal and Bioregional Councils would be created as governance structures.</p>
+          
+        
+          
+            <p>It’s the first time that the rights of nature have been formally considered at Westminster. It could not be more different from the instrumentalised, financialised model of nature that talks of ‘natural capital’ and ‘ecosystem services’, in which rivers, forests, meadows and mudflats are assessed in terms of their benefits to people. All this has been quantified – a paper in 1997 pegged the total value of the biosphere at $33 trillion per year, more than global GDP – and financialised as carbon offsets, land-management payments to farmers, and markets in ‘biodiversity units’ and ‘nutrient mitigation credits’ sold to property developers. On this view, nature is a fungible resource to be owned, used, traded and degraded.</p>
+          
+        
+          
+            <p>Bennett’s bill comes from the opposite position, proposing that nature’s rights are self-evident and ecosystems are our partners in the project of being alive on earth, not our property. Ecuador was the first country to set nature’s rights into law, amending its constitution in 2008 to recognise Pachamama (Nature) as a right-bearing entity, followed by Bolivia in 2009. Five years later, New Zealand settled a decades-long Māori tribal lands dispute by recognising the Whanganui River as an entity ‘with all the corresponding rights, duties and liabilities of a legal person’. The Ganges and Yamuna rivers in India were granted legal personhood in 2017 by the High Court of Uttarakhand state to tackle serious pollution (though the Supreme Court of India then overturned this); in 2022, Spain gave legal personhood to the Mar Menor, Europe’s largest saltwater lagoon.</p>
+          
+        
+          
+            <p>In the UK, though, rights of nature are so far more gesture than law. Crowhurst Parish Council in East Sussex has bestowed ‘personhood status’ on a 1300-year-old yew tree, which encouraged Rother District Council to announce its support for the rights of trees more widely. Also in Sussex, Lewes Council recognised the rights of the River Ouse, including its ‘right to an active and influential voice’ in planning and development, though ‘the council cannot and has not granted the River Ouse legal personality’.</p>
+          
+        
+          
+            <p>If some version of the Nature’s Rights Bill becomes law, then this may change. Whether it will alter Britain’s relationship with nature is another question. The Green Party hopes it will. Robert Macfarlane, for one, has doubts. ‘I wonder heretically,’ he writes in Is a River Alive?, looking at the laws passed by countries such as Ecuador,</p>
+          
+        
+          
+            <p>if so many people are drawn to the notion of nature’s rights because they are longing for something like transcendence from the law; beckoned by an overenchanted dream in which judicial language acts with a moral lucidity as clear as the waters of the Río Los Cedros. Perhaps, though, there is no good reason to believe that this new framing will get us out of our old conflicts, or slough off the confusion, bad faith and apathy that bedevil any attempt at betterment.</p>
+          
+        
+          
+            <p>Yet ‘Legal metamorphoses between persons/things have been recurrent in history,’ as the legal scholar Alexis Alvarez-Nakagawa says, giving the examples of human rights trials in Argentina, which gave retrospective rights to people who had been disappeared by the junta, and cases where orangutans, chimpanzees and elephants have been legally declared persons. If ‘persons can become things, animals can turn into persons, and even ghosts can obtain personhood in the legal domain,’ the ‘law would work then as a form of magic, a powerful instrument to create realities that, although fictional, have very real effects.’</p>
+          
+        
+          
+            <p>Macfarlane ultimately makes his argument from epiphany rather than reason, and may be the more persuasive for it. A river is alive, he concludes, in an ecstatic paragraph in which he describes being overwhelmed by the Mutehekau Shipu in Quebec, which was granted legal personhood in 2022. Yet he ‘can’t help but feel a fundamental incommensurability between the stiff discourse of “rights” and “standing” and this quicksilver being running three yards away from me’. The river to him is not a person but ‘a god. For now, I want to call the river a god.’ It may seem a shocking claim – reviewers haven’t known what to do with it – but really it’s a very old thought.</p>
+          
+        
+          
+            <p>The Thames, whatever it is – ecosystem, infrastructure, person (legal or otherwise), metaphor, caricature or deity – moves at a more stately pace than that rushing boreal whitewater, as does legislation in the UK. The Nature’s Rights Bill will have its second reading in the Lords in early July. Royal assent is still some way downstream.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/june/rights-for-gods"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
