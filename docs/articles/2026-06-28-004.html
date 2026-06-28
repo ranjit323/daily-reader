@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lemonade and Flowers — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Lemonade and Flowers</h1>
+      
+        <p class="article-header__summary">Bill Clinton called the White House the ‘crown jewel of the federal penitentiary system’ but that’s not the way Jill Biden saw it. On becoming...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Deborah Friedell</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>22 Jun 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>Bill Clinton called the White House the ‘crown jewel of the federal penitentiary system’ but that’s not the way Jill Biden saw it. On becoming first lady, she was transported into a ‘magical place’, an enchanted castle where wishes could be conjured into being. It wasn’t just that she could call down to the kitchen in the middle of the night and summon a cheeseburger, but that the building itself seemed to anticipate her desires.</p>
+          
+        
+          
+            <p>After an event, if she craved a glass of cabernet, ‘there would always be one waiting for me,’ or ‘if you enjoyed jazz and a martini, that’s what you’d arrive home to.’ She never had to remember which of her sisters took cream with coffee instead of milk – the half-and-half would simply appear in the fridge whenever the cream-taking sister visited. Once, when she wanted ‘to do something cheerful’ to celebrate Valentine’s Day, carpenters – they at least are acknowledged – ‘painted late into the night’ to cover the lawn in ‘giant cut-out hearts’.</p>
+          
+        
+          
+            <p>And the flowers! They’ve ‘always been an important part’ of her life, and now they filled ‘every room in the most creative, beautiful ways’. Anyone she’d ever wanted to meet – even Bono (‘my longtime crush’) – would become, if not a friend, then at least a dinner guest. Her daughter Ashley was a ‘huge fan of Mumford & Sons’, and so Marcus Mumford performed at Ashley’s birthday party in the Rose Garden, ‘thrilling everyone’; and granddaughter Naomi had a Vogue-worthy wedding on the South Lawn. No less idyllic were the family’s trips to ‘warm, cosy, peaceful’ Camp David:</p>
+          
+        
+          
+            <p>We’d walk into Aspen Lodge to the sound of our favourite music playing softly in the background. The fire would barely be dying down when the staff would appear with an armful of logs. Would you like lemonade or sangria at the pool? Need a birthday cake? No problem!</p>
+          
+        
+          
+            <p>And yet when Joe Biden was weighing a second term, his wife was somehow expected not to let the trappings of power affect her judgment. Her new memoir, View from the East Wing, is a chronicle of first ladyness at its most charming (or charmed). Other recent first lady memoirs can make the job seem wearying – one demand after another, unrelenting scrutiny – but not in Jill Biden’s telling. It may have helped that unlike Hillary Clinton, Laura Bush, Michelle Obama or Melania Trump, she wasn’t trying to raise children at the same time – though she often brought her grandchildren along for foreign trips.</p>
+          
+        
+          
+            <p>She wasn’t interested in pursuing her own policy agenda, but when the problems of the world intruded – for instance, when she read an article in the New York Times with the headline ‘Study Shows the Staggering Cost of Menopause for Women in the Work Force’ – she was proud that she could do rather more than post a link on Facebook. As first lady, ‘that same night, I asked Joe at dinner what he thought could be done,’ and not long after, he signed an Executive Order on Advancing Women’s Health Research and Innovation.</p>
+          
+        
+          
+            <p>Jill Biden insists that she’s ‘always let Joe steer his own ship’: it wasn’t her job to tell him to stand down. She’s also persuaded herself – she doesn’t say how – that if only Democrats hadn’t lost their nerve and bullied her husband into passing the torch to the less electable Kamala Harris, he would have beaten Trump in 2024. She is adamant that ‘even if he had slowed down in the years before his re-election bid, I believed in my heart that he was still good enough and wise enough and capable enough to govern’, and that if his ‘health had ever deteriorated to the point where he was no longer able to serve, he would have had the humility to admit that.’</p>
+          
+        
+          
+            <p>She thinks his performance in the debate against Trump in June 2024 was a fluke, ‘unprecedented’, not showing Joe Biden as he’d ever been before. She doesn’t downplay how badly he appeared – for long periods he stopped making sense – but never quite considers that if it happened once, it could happen again. The Bidens claimed it was ‘just a bad night’; she’s still hurt that old friends didn’t let that suffice.</p>
+          
+        
+          
+            <p>None of this would matter – aren’t spouses allowed a little blinkered loyalty? – if Joe Biden had been more clear-eyed about his own limits, or if his most influential aides hadn’t had their own reasons for wanting him to run again. In Original Sin: President Biden’s Decline, Its Cover-Up and His Disastrous Choice to Run Again, Jake Tapper and Alex Thompson are persuasive that Biden’s performance during the debate wasn’t a fluke, that many people close to the president knew it wasn’t, but that almost no one was willing to say so publicly.</p>
+          
+        
+          
+            <p>White House staff, donors, cabinet members and senior elected officials had observed that there was a ‘limit to the hours in which he could reliably function’ (between 10 a.m. and 4 p.m. was best), and an ‘increasing number of moments where he seemed to freeze up, lose his train of thought, forget the names of top aides or momentarily not remember friends he’d known for decades.’</p>
+          
+        
+          
+            <p>Biden’s most trusted aide, Mike Donilon, had negotiated a $4 million salary to advise the campaign in 2024, making the person best placed to dissuade the president from running again (after Jill Biden) arguably the one with the most to gain from his remaining in the race. Tapper and Thompson suggest that Donilon prevented pollsters from telling Biden how unlikely he was to win again.</p>
+          
+        
+          
+            <p>Other staffers, concerned about their prospects in a different Democratic administration, had their own reasons for wanting Biden to roll the dice. One donor told Tapper and Thompson that there was no point rocking the boat: ‘We weren’t going to change that he was running, and no one wanted to be on the outside in case he did win. So no one said anything. No one wanted to hear it, and if you said anything you got your head chopped off.’</p>
+          
+        
+          
+            <p>Last week, Hillary Clinton said there had been ‘conversations going on behind the scenes’ aimed at getting Biden to change his mind – she had taken part in a few – but with the White House in ‘total denial’ about his chances, there had been no way to get through to him. Barack Obama wouldn’t intervene: he believed that Biden resented him for not supporting his 2016 election bid, and any advice from him would backfire. Vice President Harris knew that telling him not to run would look self-serving.</p>
+          
+        
+          
+            <p>After the debate, polls showed not only that Biden would almost certainly lose but that he risked dragging the party down with him, dooming Democratic candidates in congressional, senate and gubernatorial races who might otherwise have won. The longer the charade continued, the harder it became to argue that Democrats held themselves to a higher standard than their opponents. On 10 July 2024, George Clooney published an op-ed in the New York Times imploring Biden to make way for someone else. He was willing to attest that a frail and confused Biden he’d seen at a Hollywood fundraiser was ‘the same man we all witnessed at the debate’. Democratic lawmakers echoed his assessment.</p>
+          
+        
+          
+            <p>Meanwhile, the White House says that Donald Trump is in ‘perfect health’, though a recent medical exam required 22 specialists. Dr Oz says the president keeps returning to Walter Reed because ‘he likes the results’ and ‘aces the test every single day’.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/june/lemonade-and-flowers"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
