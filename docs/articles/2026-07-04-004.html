@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Turn off the lights — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Turn off the lights</h1>
+      
+        <p class="article-header__summary">We chase away the dark. Since the industrial revolution humanity has been progressively shortening and lighting up the night. Cheap LED lights now...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Quentin Shaw</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>2 Jul 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>We chase away the dark. Since the industrial revolution humanity has been progressively shortening and lighting up the night. Cheap LED lights now turn suburban gardens into fairgrounds and industrial units into film sets. Our main roads are visible from space.</p>
+          
+        
+          
+            <p>But the darkness that we have abolished was nature’s essential counterbalance, which ecosystems needed to thrive. Many species are suffering, and few more than the glow worm.</p>
+          
+        
+          
+            <p>Lampyris noctiluca once flourished across England, Wales and Scotland (though not Ireland or the Isle of Man). It is only a ‘worm’ in the Anglo-Saxon sense of being something long, thin and a bit weird. Victorian natural historians worked out that it is a species of beetle, but it took them a while because only the males ever become something that looks like a beetle, and that very briefly. The females reach sexual maturity without changing from their larval form.</p>
+          
+        
+          
+            <p>The larvae are nocturnal carnivores, feeding on slugs and snails in the top layers of soil. After a year or two of this cryptic life they reach maturity. Then in midsummer the males metamorphose into flying beetles and the females become supersized, inch-long larvae which can, miraculously (i.e. through evolution and biochemistry), illuminate their rear three segments with a bright green light. As adults, neither sex bothers to eat, and they will only survive for a fortnight whether they mate or not.</p>
+          
+        
+          
+            <p>At around 10.40 p.m. on dark, warm nights in June and July, the females climb out of their burrows into low vegetation. They switch on the green light, about as bright as the charging lamp on an electronic device, hoping a low-flying male will land and mate. If no males arrive by around midnight they switch off and creep back to their burrows to wait for a better night tomorrow. Once they have successfully mated, females lay up to a hundred eggs and then lie down to die.</p>
+          
+        
+          
+            <p>Artificial Light At Night (ALAN) is devastating glow worm sex in several ways. The females won’t turn the lamp on in anything much brighter than moderate moonlight (about 0.1 lux). And, although they are producing a very precise wavelength of 550nm, the males have not evolved a filter for other wavelengths (in the past, when female glow worms were the only light in the darkness, they didn’t need to). A distant security light or even a solar-powered garden light may be enough to lure them to a death from exhaustion. Because females don’t fly, glow worm populations can’t migrate away from light. Once their area becomes too bright, they are doomed.</p>
+          
+        
+          
+            <p>To find glow worms now you must seek out the remaining dark places far away from ALAN. Disused railway cuttings, woodland glades or deep valleys in the countryside are a good bet. You need to wander about in total darkness, which for many of us is a novel experience in sensory deprivation. It feels like a transgressive adventure. One nocturnal companion asked me whether we ought to forewarn the police of our activity.</p>
+          
+        
+          
+            <p>If you’re lucky enough to find a glow worm shining like an emerald in the grass, look but don’t touch. If you disturb or move her, she may not be able to find her way back to the safety of her burrow. Report any findings to the UK Glow Worm Survey.</p>
+          
+        
+          
+            <p>It is something of a mystery that glow worms came to be so widespread. Surveyors have noticed that the places where the beetles survive today are often sites of ancient human habitation. Perhaps people deliberately introduced them, to brighten their lives and to chase away the dark.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/july/turn-off-the-lights"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
