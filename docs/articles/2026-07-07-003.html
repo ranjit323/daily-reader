@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trump’s Golden Dome — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Trump’s Golden Dome</h1>
+      
+        <p class="article-header__summary">A week into his second presidential term, Donald Trump issued Executive Order 14186: The Iron Dome for America, calling for ‘a next-generation...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Tom Stevenson</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>6 Jul 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>A week into his second presidential term, Donald Trump issued Executive Order 14186: The Iron Dome for America, calling for ‘a next-generation missile defence shield’. By the time the US National Security Strategy was published last November, the name had changed, irresistibly, to ‘a Golden Dome for the American homeland’.</p>
+          
+        
+          
+            <p>Until quite recently, ballistic missile defence was largely an American peculiarity that other states – Israel a notable exception – treated with suspicion. It’s fiendishly difficult (comparable to shooting a bullet with another bullet) and carries heavy penalties when it fails. As the Union of Concerned Scientists put it in 2016, missile defence is ‘enormously complex, expensive and mired with technical difficulties’.</p>
+          
+        
+          
+            <p>In March, the Wall Street Journal argued that the war in Iran had vindicated American commitments to missile defence: Iran’s regional counter-attack against Israel and US staging grounds in the Persian Gulf relied on thousands of ballistic missiles and one-way attack drones, many of which were shot down by the US Terminal High Altitude Area Defence (THAAD) system, Patriot batteries (also in use in Ukraine), Aegis ship-based interceptors and Israel’s various anti-ballistic missile systems.</p>
+          
+        
+          
+            <p>But they didn’t shoot down all of them. Some of the most important US military bases in the world couldn’t be defended from Iranian drone and missile attacks and had to be evacuated. Most have suffered serious damage.</p>
+          
+        
+          
+            <p>The Golden Dome is said to be a response to Russian and Chinese advances in missile technology. Nuclear-tipped hypersonic ballistic missiles and fractional orbital bombardment systems are apparently of great concern (though neither is in fact new technology). In May 2025, the Defence Intelligence Agency produced a public assessment of ‘missile threats to the US homeland’, which predicted that China would build many more hypersonic and cruise missiles, but also made clear that intercontinental ballistic missiles are still ‘the primary threat’.</p>
+          
+        
+          
+            <p>The US government says it plans to spend $175 billion over three years building Golden Dome, but both those numbers are fictional. The Congressional Budget Office estimates that building and running it would cost more like $1.2 trillion over twenty years (though that estimate is also disputed) and no one thinks it will be ready by 2029. That hasn’t stopped Trump and his secretary of war, Pete Hegseth, from posing next to a mock-up of the continental US shielded by a transparent, glowing hemisphere.</p>
+          
+        
+          
+            <p>The plans for Golden Dome have three layers. Thousands of satellites in low-Earth orbit will detect missiles as they’re launched and shoot them down from space shortly afterwards. New ground-based midcourse defence (GMD) sites and additional Aegis Ashore sites will shoot down missiles during the midcourse of their trajectories. A further 35 installations dotted around the US will be used for local defence against shorter-range missiles. At least, that’s the idea.</p>
+          
+        
+          
+            <p>If orbital interceptors worked they would be a major breakthrough in missile defence. Since the early 2000s, the US has deployed massive ground-based interceptors in silos in central Alaska (and more recently a few in California) that in theory could shoot down nuclear-armed ICBMs. But there’s a long-standing problem that exoatmospheric midcourse defence can be defeated either by multiple independently targeted re-entry vehicles or with ‘penetration aid’ decoys.</p>
+          
+        
+          
+            <p>There are only forty interceptors in Alaska and four in California, and Russia alone has more than three hundred ICBMs, each of which can carry multiple warheads. A single Russian nuclear-armed submarine carries enough warheads to overwhelm the whole GMD system even if it worked perfectly (it has only been tested under rather soft conditions).</p>
+          
+        
+          
+            <p>Orbital interceptors, armed either with lasers or, more plausibly, with untested kinetic weapons, would theoretically be able to intercept a Russian RS-28 Sarmat or a Chinese DF-61 ICBM in its boost phase, shortly after launch, before it could deploy countermeasures and decoys.</p>
+          
+        
+          
+            <p>The problem with orbital interceptors – aside from the fact that they don’t currently exist – is that, circling the Earth at high speed, they would seldom be in the right place. You would need many thousands of them to make sure some are always above potential launch sites, which could be anywhere in Russia or China or, for submarine-launched ballistic missiles, somewhere in the oceans.</p>
+          
+        
+          
+            <p>On 17 March, two US assistant secretaries of war, Marc Berkowitz and Robert Kadlec, testified to congress on the plans for Golden Dome. Kadlec explained that the US will soon have to deter two nuclear peers simultaneously in Russia and China. Berkowitz described Golden Dome as ‘the cornerstone of our homeland defence’. Without it, he said, the US only has a ‘limited’ capacity to defend itself, or to ‘deter China through strength’.</p>
+          
+        
+          
+            <p>As the original name ‘Iron Dome for America’ suggests, part of the impetus for Golden Dome came from Israel’s experiences. In April and October 2024, the Israeli military claimed it had intercepted 99 per cent of Iranian missiles using Iron Dome (the true figure was probably closer to 85 per cent, and in the 2026 war it was lower still). The continental US is 450 times the size of Israel and Iron Dome was not shooting down ICBMs. But the US had helped Israel construct Iron Dome, so why not bring it home?</p>
+          
+        
+          
+            <p>Trump has been talking about some version of Golden Dome since his first term, and when he announced it last year he said he was ‘completing the job president Reagan started forty years ago’. The 1983 Strategic Defence Initiative was supposed to replace mutual assured destruction with ‘defensive technologies’. Ronald Reagan compared missile defence to a roof that protects a family from the rain: a characteristically homely and misleading analogy. A global constellation of orbital interceptor weapons is nothing like a roof, or a shield, or a dome.</p>
+          
+        
+          
+            <p>If it were possible to build a working system of thousands of orbital missile-killers, why would an enemy state fire an ICBM at the US without first attacking the satellites? For now the question remains hypothetical. The US has begun building a small part of the constellation, referred to as the Proliferated Warfighter Space Architecture, but the few satellites it has launched are encrypted communications and sensor satellites, not orbital interceptors. Even these launches have run into delays.</p>
+          
+        
+          
+            <p>As for the other layers of Golden Dome, there has so far been little progress. On 23 June the Pentagon announced it had tested something called the Dynamic Defence Autonomous Defeat system, which used ‘directed energy’ to shoot down test drones and cruise missiles. It’s probably designed for local defence against drones. In 2024, the US Missile Defence Agency conducted a test interception against an air-launched medium-range ballistic missile fired at Guam, which apparently worked.</p>
+          
+        
+          
+            <p>American arms companies have already taken billions in development contracts, but there isn’t going to be a planetary net of satellite weapons in 2029. In April, the Pentagon requested a $1.5 trillion budget for next year. Even that gargantuan figure included only $18 billion (less than a quarter of the budget for drones) for Golden Dome. Some of the money will be go into research, and the US military wants to expand its satellite network. The more practical parts of Golden Dome were already being worked on during the Biden years.</p>
+          
+        
+          
+            <p>It’s fortunate that the US system in its present form lacks the organisation and determination necessary to fulfil its Promethean ambitions. Nuclear missile defence has always been indistinguishable from the pursuit of a splendid nuclear first strike. If the US built a perfect strategic defence shield, what would stop it from demanding that Russia and China disarm? If they refused, the US could destroy their nuclear weapons safe in the knowledge that it would be immune to a second strike in response.</p>
+          
+        
+          
+            <p>In May, Russia and China issued a joint statement which said the Golden Dome programme ‘completely negates the core principle of maintaining global strategic stability’. But the US, Russia, and China are all modernising their nuclear missile systems and their strategic bombers. China is engaged in a major build-up of its nuclear warhead stockpile. Missile arsenals are growing across the world. The US alone plans to acquire ten thousand cruise missiles and twelve thousand hypersonic missiles in the next three to five years.</p>
+          
+        
+          
+            <p>Golden Dome is a perfect project for Trump. It looks good on a poster, the technology either doesn’t work or won’t be built, and it promises an illusion of security that in fact undermines it.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/july/trump-s-golden-dome"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
