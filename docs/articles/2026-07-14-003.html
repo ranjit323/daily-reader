@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le Pen’s Hollow Revolution — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Le Pen’s Hollow Revolution</h1>
+      
+        <p class="article-header__summary">The hollowness of the RN revolution became clear this week, when Marine Le Pen announced she would be standing again to become France’s head of...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Nabila Ramdani</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>8 Jul 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>When I interviewed Jean-Marie Le Pen in Marseille at a party rally during his fifth presidential campaign in 2007, he told me with pride how he had started the Front National with other colonial army veterans who had failed to keep Algeria French, and former Third Reich conscripts who had fought for Hitler. Le Pen, a convicted racist and Holocaust denier who died last year at the age of 96, was less forthcoming on the torture he carried out during the Battle of Algiers, though he was happy to discuss the street violence in which he claimed to have lost an eye and the bombing of his apartment in Paris by unknown perpetrators in 1976.</p>
+          
+        
+          
+            <p>His daughter Marine was eight years old at the time of the attack. She took over the FN from her father in 2011 and later renamed it the Rassemblement National (RN, or National Rally). She too has been extremely combative whenever I’ve interviewed her, as you’d expect from someone who has driven her party through multiple scandals while apparently trying to detoxify it. She has partly succeeded, making it to the second round of the last two French presidential elections, and seeing her party become the largest in the National Assembly.</p>
+          
+        
+          
+            <p>The hollowness of the RN revolution became clear this week, however, when Le Pen announced she would be standing again to become France’s head of state, despite a criminal conviction for embezzlement being upheld. Three judges sitting at the Paris Court of Appeal concluded that she had indeed stolen millions from the European Parliament in Brussels and Strasbourg. Rather than using EU funds to pay assistants to MEPs, including herself and her father, Le Pen illegally diverted the money back to party headquarters in Paris.</p>
+          
+        
+          
+            <p>Such corruption took place over a period of at least a decade, the court heard, and at a time when Le Pen was regularly speaking out against the financial sleaze that characterised the Paris establishment. In a TV interview with Public Sénat in 2013, she asked: ‘When will we implement a lifetime ban on holding office for anyone convicted of offences committed thanks to their mandate or while in office?’</p>
+          
+        
+          
+            <p>Naming conservatives and socialists caught up in criminal investigations, Le Pen confidently claimed: ‘As for me, my record is spotless – full stop. They can thrash about all they want, but they won’t manage to tarnish me, because I have ethics and morals, and I stick to them.’ Yesterday evening, however, she announced that she would campaign for the presidency in 2027, to ‘begin the rebirth of France’.</p>
+          
+        
+          
+            <p>The evidence against her was overwhelming, but the judges reduced the five-year ban on her standing for public office to forty-five months, suspending thirty of them and wiping off the rest as ‘time served’ since the original conviction.</p>
+          
+        
+          
+            <p>They also gave her leave to make a further appeal to the Cour de Cassation, the highest court in France. If it confirms the guilty verdict, Le Pen will have to wear an electronic ankle tag while campaigning. She previously said she would never contemplate doing this, but has now changed her mind. ‘The French will be the judge,’ she said, ‘because the good news is from this evening they will be free to choose.’</p>
+          
+        
+          
+            <p>The principal loser in all of this is Le Pen’s thirty-year-old protégé, Jordan Bardella. He has worked for her nativist and reactionary party since he was a teenager and would have run as its presidential candidate next year if she couldn’t. Le Pen, who calls him her ‘lion cub’, said that his telegenic image and expertise on social media would make him an excellent ‘Plan B’, and the opinion polls suggested she was right.</p>
+          
+        
+          
+            <p>But Bardella is not a Le Pen, which counts against him among the RN base. The party has been around for nearly 55 years and throughout that time it has been strongly identified with the Le Pen clan: it would have been a far greater challenge for the RN in next year’s elections if Le Pen had opted not to run. I have interviewed many disillusioned far-right voters who don’t rate Bardella even as a future Nigel Farage, let alone a future Le Pen. They don’t think he’s mature enough to project himself as a disruptive personality who can bring about radical change in an increasingly divided country.</p>
+          
+        
+          
+            <p>In any case, he may soon find himself facing similar legal problems to his mentor. The anti-corruption watchdog Anticor has alleged that he was involved in the European Parliament scandal that saw Le Pen charged and convicted. It is claimed that Bardella took on a fake RN job in Brussels while helping to funnel cash back to his party’s coffers in Paris.</p>
+          
+        
+          
+            <p>He has not yet responded to the allegations, but as the second most senior politician in a party that is meant to be staunchly pro-law and order, he will soon have to. Like Le Pen, he will undoubtedly use every legal technicality possible to delay justice, while assisting in the RN’s efforts to turn a convicted criminal into a credible head of state.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/july/le-pen-s-hollow-revolution"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
