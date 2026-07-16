@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christian Sorace &amp; David Sneath: Steppe Transitions — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">New Left Review</div>
+      <h1 class="article-header__title">Christian Sorace &amp; David Sneath: Steppe Transitions</h1>
+      
+        <p class="article-header__summary">Mongolia’s diverse ecology was the site of revolutionary transformations in the twentieth century, when the principal source of wealth—the livestock herd—was sequentially the basis of feudal class, collective resource and a privatized asset. The socialist making of a nation-state and its capitalist unmaking—a materialist account.</p>
+      
+      <div class="article-header__meta">
+        
+        
+          <span>3 Jul 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>Earlier this summer, Mongolian protesters used old tyres to block the highway across the Gobi Desert from the vast Rio Tinto copper mine at Oyu Tolgoi, halting the stream of trucks that carry copper concentrate to China’s smelting plants and demanding a larger share of mining revenues. This was not the first wave of protests to be fuelled by claims for resource sovereignty, or anger over living standards, pollution or the corruption of the governing elite; Mongolia has seen multiple demonstrations over the past five years. But if these rumblings of discontent resonate with similar movements in Latin America and Southeast Asia, in Mongolia they are coloured by a unique national imaginary, informed by a history of nomadic production patterns for much of the twentieth century, under a modernizing developmentalist Soviet-model state.</p>
+          
+        
+          
+            <p>In 1921, barely a decade after their country had won independence from the collapsing Qing Empire, Mongolian revolutionaries overthrew their aristocratic rulers and proceeded to construct a people’s republic. Yet although Mongolia was the second-oldest state-socialist polity, and the first wholly in Asia, it is almost entirely absent from comparative accounts of twentieth-century state socialism. It is routinely relegated by historians to the backwater of inter-imperial competition and Cold War geopolitical intrigue; a satellite reflecting the glow or glare of the Soviet Union rather than emitting any light of its own. This marginalization reflects the persistent difficulty of imagining socialist modernity outside the familiar cartographies of Europe, China and the Soviet core. Mongolia is also typically omitted from comparative surveys of post-communist trajectories, although it offers a pointed record of what capitalist transition has meant in practice. It has always been a flickering presence on the periphery of different transnational constellations which it may help illuminate: the Qing empire, Inner Asian Buddhist cosmology, the Soviet Union, post-communist parliamentary democracy.</p>
+          
+        
+          
+            <p>As a socialist state, Mongolia performed impressively according to modernity’s metrics, with high human development indicators—education, public health and life expectancy—relative to both its own pastoral past and other developing countries. Although by the 1980s, Mongolia had a relatively low gdp per capita, it achieved a level of material well-being comparable to other states on the periphery of the Soviet world. In fact, Mongolia’s hdi rankings were close to those of Cuba and Eastern European states, and well above those of China and Vietnam. Capitalist transition would tell a different story: its first decade after 1990, referred to in Mongolia as zerleg kapitalizm (wild capitalism), ushered in a world of vast inequality and debt.</p>
+          
+        
+          
+            <p>Within the first three years of transition, approximately 27 per cent of the population fell into poverty. In the first decade, unemployment rose sharply, though official statistics systematically understated its scale. By the early 2000s, Mongolians faced difficulties obtaining adequate food: staple goods cost more than they had at the end of socialism, and new luxury imports were out of reach—a kilo of oranges cost 5 per cent of a worker’s monthly salary. This followed similar patterns of industrial collapse, wage depression and halted economic recovery in the post-Soviet Baltic states and Eastern Europe. The mineral boom would rescue the economy, but not the people. Less an outlier than an indicator, Mongolia exemplifies the logic of late-capitalist transition at the periphery: extraction without the promise of a future.</p>
+          
+        
+          
+            <p>We will argue here that Mongolia represented a significant experiment in the Leninist mode of ‘non-capitalist development’, proletarian internationalism and the scaled coordination of pastoral political economy. That experiment should be more than a footnote in the theoretical reckoning with state socialism and its afterlives. We proceed in four sections, beginning with the making of the Mongolian nation—an improbable formation, initially forged not from popular national consciousness but aristocratic genealogy, Buddhist authority and the strategic calculations of external powers, above all Russia. We then turn to the construction of socialism on the steppe: its heterodox foundations in pastoral collectivization, insertion into the international socialist division of labour and the material world it built. From there we trace the violent dismantling of that world in the shock-therapy decade of the 1990s and the emergence of a mineral-dependent, debt-ridden post-socialist order. We close with the contradictions of Mongolian democracy—a political form that has delivered elections without self-determination and development without collective prosperity.</p>
+          
+        
+          
+            <p>Mongolia is vast, roughly the size of Western and Central Europe combined, yet home to fewer than four million people. Its terrain resists the cartographic imagination of bounded statehood: no natural frontiers mark its edges and the steppe itself expands across what are now international borders, shading in the south into the Gobi Desert and in the north into forest and mountain. Yet the Western conception of the open steppe as a smooth nomadic space obscures the sovereign relations that long governed the rotation of pastures, land access and usage, while Mongolia’s apparent openness is composed of distinct ecological zones—desert, semi-arid grassland, mountain steppe, taiga—and, increasingly, cities: the capital Ulaanbaatar, the mining city Erdenet and the industrial centre Darkhan among the largest. The country’s northern borders were contoured through treaties with Tsarist Russia and finalized with the proclamation of the Mongolian People’s Republic in 1924, whereas the southern border with China was not officially demarcated until 1962. The nation-state form here is essentially a twentieth-century development, but its history remains obscured by the mythologies of the post-communist present. In Mongolia, national independence is the supreme political value, but the Mongolian nation was, historically, an unlikely construct, geopolitically fraught in its making, and still shadowed by existential uncertainty.</p>
+          
+        
+          
+            <p>At the start of the twentieth century, political authority on the steppe did not rest on a shared national consciousness, but flowed through aristocratic genealogies, houses and lineages. Mongol commoners did not share ancestry with the nobility, since aristocratic status depended on exclusive claims of descent from royal ancestors. The Mongolian term for nation, ulus, once referred to the people, animals and movable goods apportioned to a Mongol prince; common origin was not at stake. In the thirteenth-century Secret History of the Mongols, Chinggis Khan was praised for having unified the ulus, ‘the people of the felt-walled tents’. Today, this passage is often read retrospectively, as if it named Chinggis as the first lawgiver and founder of the Mongolian nation. But this is a nationalist anachronism. What it described was the formation of an empire out of contending pastoral aristocracies. Chinggis Khan ruled over an imperial sea of peoples, not a nation in the contemporary sense. The political grammar of the steppe is preserved, in distorted form, in one of the few Mongolian words absorbed into English: ‘horde’. Derived from ordon, the term referred not to a chaotic mass but a mobile royal court—a form of sovereignty in motion. Authority inhered not in bounded territory but in the dynastic household and its retinue; it was ordered through genealogy, rank and itinerant kingship. When no single sovereign prevailed, power was exercised through a ‘headless state’ of aristocratic elites.</p>
+          
+        
+          
+            <p>Multiple pressures converged in the final years of Qing rule to push Mongol aristocrats towards independence. The old compact between Mongol nobles and the Manchu court was fraying. It had rested on a carefully calibrated exchange: Mongol nobles supplied not only military power but, more subtly, the aura of Chinggisid descent, whose authority the Manchus claimed for themselves, while the Qing court offered an institutional framework of mediated sovereignty, religious networks and—most importantly—the preservation of aristocratic privilege. Whether this is best understood as colonial subjugation or imperial co-constitution remains contested. What is clear is that the delicate symbiosis between the Mongols and Manchus was disrupted by the post-1901 New Qing policies, introduced in response to Russian imperial encroachment, Japanese colonial expansion, the humiliation of the Boxer Protocol and the mounting domestic pressures for modernization. These reforms accelerated Han settlement in—and perceived Sinification of—Mongol lands, while deepening the indebtedness of Mongol ruling strata to Chinese merchant capital.</p>
+          
+        
+          
+            <p>At the same time, a new political and epistemic vocabulary—nation, race, heredity, population—was becoming available in translation from Chinese and Russian. This recast the Mongol body politic as a vulnerable organism, threatened by dilution, absorption and disease. As Lhamsüren Munkh-Erdene has shown, the imperative of ‘saving the Mongolian lineage-nationality or gene/stock/race and religion’ became central to the drive for independent statehood. As the 1911 revolution ripped through Qing territories, the Bogd Khan—spiritual leader of Mongolian Buddhism—issued an independence declaration that fused these anxieties to an older language of sacral kingship and dynastic descent, invoking the Mongols as the ‘white bone’ descendants of Chinggisid rulers. Mongolian independence, in this first modern form, was thus not a popular national awakening but an elite rupture, producing a theocratic state grounded in aristocratic genealogy, Buddhist authority and separation from China. But it planted the seeds of future transformation: the new state cultivated links with Tsarist Russia and a trickle of Mongolian schoolboys were sent for education in Khiakta and Irkutsk, where they were swept up in the intellectual ferment of their Russian fellow students.</p>
+          
+        
+          
+            <p>That Mongolia carved itself out of the Chinese empire, while Inner Mongolia, Tibet and Xinjiang remained within its marbleized mass, was not simply a matter of revolutionary will or aristocratic determination. Geography played a role: Mongolia’s remoteness from Chinese administrative centres gave it latitude. But the decisive factor was Russian imperial interest. For a weakened Tsarist court, an independent Mongolia served as a buffer on its vulnerable southern frontier, limiting Chinese consolidation and checking Japanese ambitions in the region. Inner Mongolia, by contrast, lay deep within the Chinese administrative and demographic orbit—although it did elicit Japanese attention and later occupation. The aristocracies in Inner Mongolia were also politically divided among independent, Republican Chinese, Japanese and socialist currents. The 1911 establishment of the Bogd Khanate was thus less a triumph of national self-determination than a fortunate convergence of elite rupture and imperial geometry, and the new theocratic state remained fragile, caught between its aristocratic foundations and the shifting geopolitics of collapsing empires.</p>
+          
+        
+          
+            <p>By the time the October Revolution swept away the remnants of the Tsarist order in 1917, the stakes had only intensified: Japanese expeditions into Siberia were now searching for Chinggis Khan’s remains, seeking to substantiate the claim that he was of Japanese descent—ambitions at once military and symbolic. In 1919, alarmed by what the revolution across the northern frontier portended for aristocratic privilege, Mongol princes and nobles were willing to trade away the substance of independence. They invited Chinese forces back into Mongolia on terms far less favourable than the old Qing compact: limited autonomy in exchange for Chinese protection. But once Chinese warlord forces entered the capital, they moved towards re-annexation. What had begun as an attempt at aristocratic self-preservation proved a political disaster, radicalizing a new generation—disaffected former state officials, younger intellectuals and commoners. Several clandestine groups emerged and soon began seeking contact with the Bolsheviks. In 1920 these coalesced into the Mongolian People’s Revolutionary Party (mprp), led by figures including Damdin Sükhbaatar, the charismatic army commander whose name still marks Ulaanbaatar’s central square.</p>
+          
+        
+          
+            <p>At first, the Bolsheviks hesitated. They had little desire to provoke China while still fighting for survival in the Civil War. But the arrival of another force, stranger and more violent, altered the situation: in 1921 Baron Roman von Ungern-Sternberg, a fanatical anti-Bolshevik commander of the White Army, entered Mongolia, drove out the Chinese garrison and installed a regime of extraordinary brutality. Ungern’s invasion quickly alienated the Mongolians, while pursuit of the counter-revolution gave the Red Army the pretext it needed to enter Mongolia. On 10 July 1921, with decisive Soviet military backing, the Mongolian revolutionaries took control of the capital Niislel Khüree and proclaimed a new independent order; three years later, they would rename it Ulaanbaatar—Red Hero. That date is still commemorated as Mongolia’s National Day. In the same month, far to the south, the Chinese Communist Party held its founding congress in Shanghai; across Inner and East Asia, revolutionary formations were starting to crystallize from the debris of empire. Yet Mongolia’s revolution did not immediately abolish the old order. The Bogd Khan remained in place until his death in 1924, allowing the new regime to govern through an uneasy dual structure in which Buddhist theocracy and revolutionary statecraft briefly coexisted. Only after his death did the mprp proclaim the Mongolian People’s Republic, which would endure until the democratic revolution of 1990.</p>
+          
+        
+          
+            <p>Independence was marked by a constitutive paradox: it depended on geopolitical forces beyond Mongolia’s control—above all, the shifting strategic calculations of the Kremlin. For one historian of Sino-Soviet relations, Mongolia’s independence was ‘effectively a by-product of Stalin’s geopolitical game’. From 1924 to 1945, Mongolia existed as a de facto independent state without de jure recognition. The Republic of China, claiming the territorial inheritance of the Qing empire, continued to regard it as a breakaway province. Stalin, however, saw strategic value in a formally separate Mongolia as a buffer against both Chinese instability and Japanese imperial expansion in Manchuria and East Asia. He therefore protected Mongolian statehood militarily and diplomatically, culminating in his demand at Yalta that China recognize its independence—outraging the Chinese Nationalists, who had been excluded from the conference itself. Stalin’s subsequent talks with Premier T. V. Soong distilled the wider geopolitical stakes:</p>
+          
+        
+          
+            <p>Soong: Chinese people since Sun Yat-sen, brought up on integrity of Chinese territory. I do beg Stalin to reconsider this.</p>
+          
+        
+          
+            <p>Stalin: Sign treaty for independence of Mongolia but make it public after defeat of Japan when China regains her territories. . . .</p>
+          
+        
+          
+            <p>Soong: If this is done, we will have difficulty with Tibet.</p>
+          
+        
+          
+            <p>Mongolia’s October 1945 plebiscite—accepted by China in a face-saving move—produced an overwhelming vote for independence, giving this settlement the form of popular self-determination, though its geopolitical terms had already been fixed elsewhere.</p>
+          
+        
+          
+            <p>Soong’s objection made plain that Chinese nationalism depended on treating the frontiers of the late Qing empire as the natural borders of the republic. Once one fragment of that imperial cartography fell away, the coherence of the whole was placed in question. The Nationalist regime continued to cling to its claim over Mongolia long after its retreat to Taiwan in 1949: against American advice, it opposed Mongolia’s bid to join the un in 1955. Chiang Kai-shek wrote to Eisenhower: ‘This is a matter which concerns our vital interests. It is analogous to our claim to sovereignty over the Chinese mainland.’ Only in 2002 did Taiwan finally recognize Mongolia as an independent country; in 2017, it dissolved the Mongolian and Tibetan Affairs Commission. For many older Mongolians, Stalin was remembered less as a foreign despot than the guarantor of national survival.</p>
+          
+        
+          
+            <p>Mao never reconciled himself fully to a Soviet-protected Mongolia on China’s northern rim. On the one hand, he shared the view that Mongolia had been severed from China by imperialist and Tsarist intervention. On the other, his room for manoeuvre was limited by Soviet power and his own internationalist commitments. He ultimately assumed that Mongolia might one day be drawn voluntarily into a wider socialist union centred on China. It was in this spirit—and as partial repayment of what Chinese leaders called a ‘historical debt’—that in 1955 Beijing dispatched nearly 30,000 Chinese workers to Mongolia as a gesture of proletarian fraternity and socialist diplomacy. Yet this internationalism was carefully delimited: Zhou Enlai reportedly ensured that the workers were Han, rather than ethnic Mongols from the Inner Mongolian Autonomous Region. Fraternity stopped short of any conviviality that might nourish a wider national consciousness across the Sino-Mongolian border. The spectre of Panmongolism haunted these arrangements. For Stalin, it was a bargaining chip proffered to Choibalsan—his Mongolian equivalent—who imagined a socialist Mongolia with imperial lineaments, extending into Xinjiang and Inner Mongolia. The threat of such possibilities turned murderous during the Cultural Revolution: ethnic Mongol cadres in Inner Mongolia were persecuted under the paranoid fiction that they belonged to a subterranean Panmongolist conspiracy. Even in the high tide of communist internationalism, national revenants continued to stir.</p>
+          
+        
+          
+            <p>When Mongolia underwent its peaceful free-market revolution in 1990, the paradox of its independence had to be effaced from the national narrative. The Soviet Union was retrospectively depicted as a foreign and colonial imposition, while the socialist period appeared as a febrile interruption in the onward march of national history. In the words of the historian O. Batsaikhan, the anniversary of the October Revolution is ‘a day we have no reason to celebrate’. What remains, in disavowed form, are the socialist foundations of the Mongolian nation-state itself; discarded is the memory of another possible world opened by the October Revolution—internationalism, solidarity and a horizon beyond the nation.</p>
+          
+        
+          
+            <p>In Mongolia, the construction of socialism was heterodox from a classical Marxist perspective. At the turn of the twentieth century, this was a largely pastoral country; most of its population of about half a million were engaged in herding livestock and other rural occupations, tied to the vast estates belonging to the secular aristocracy and wealthy Buddhist monastic establishment. These relations were embedded in the world market, with pastoral produce—wool, meat, leather—sold to Chinese and Russian merchants, and many necessities imported from abroad. The only substantial urban centre was the capital city of Urga—now Ulaanbaatar—the seat of the Bogd Khan, with about twenty thousand lamas and perhaps as many as forty thousand others including lay Mongols and Chinese traders. Rural life was carefully regulated. Land within each territorial ‘banner’ (khoshuu) was controlled by the ruling prince (zasag) or a Buddhist monastery with an equivalent entitlement. Commoner households were assigned by princely or monastic officials to herd livestock in specific lands and permitted certain migratory patterns; transgressions were punished. Herd size meant the difference between wealth and poverty, economic security and insecurity: those with only a small number of animals could be ruined by bad weather or livestock disease, while the rich were able to delegate various herds to poorer herders, who might tend them in exchange for a supply of milk and wool. The wealthy also donated herds to monasteries, which stood not only as religious institutions but as centres of economic command and dependency—themselves allotting animals to the sons of impoverished families for tending. These relations perpetuated concentrations of wealth on the one hand and, on the other, a supply of dependent herders with no capacity to benefit from the growth of a herd, and few other options in an almost entirely rural society.</p>
+          
+        
+          
+            <p>This was the landscape in which Mongolian communism emerged. Since the country lacked an industrial proletariat, it became a paradigmatic case of what Soviet theorists would call ‘non-capitalist development’: an attempt to bypass the full passage through capitalism and build socialism in a largely pastoral society. The main source of ‘primitive socialist accumulation’ lay in livestock capital (malyn khöröng) concentrated in monasteries and aristocratic households. Class struggle therefore unfolded not primarily in factories—and only secondarily over land—but around the ownership, redistribution and collectivization of herds. What elsewhere might have served as the agrarian base of capitalist accumulation became in Mongolia the foundation of a non-capitalist path: herds were to be transformed into communal and state-managed assets, the chief store of socialist value, and the pastoral basis on which foreign trade and industrialization alike would rest.</p>
+          
+        
+          
+            <p>Existing class structures persisted under the early Mongolian People’s Republic, making for combustible social contradictions overdetermined by geopolitical tensions and the national question. The mprp was composed in part from elites inclined to ally with the Soviet Union primarily for nationalist reasons, but cadres also came from the youth and rural poor. Through the 1920s a polarization developed along these lines, with ‘leftists’ and the Union of Revolutionary Youth pushing in a more radical direction, and making the first attempts to introduce rural collectives in the late 1920s and early 1930s—a near-fatal blunder for the new regime. The policies were so disastrous and unpopular as to bring Mongolia to the brink of civil war. Armed revolts broke out throughout the country, largely organized by the monastic and lay nobility, and thousands were killed. The Party soon backtracked, labelling the rush towards collectivization a ‘leftist deviation’, but such ideas were not abandoned.</p>
+          
+        
+          
+            <p>In addition to reorganizing herds, the mprp set out to break the feudal and religious power of the lamasery. Lamas were framed as feudal remnants and suspected of sympathies with Japanese imperialism and counter-revolution. Since many were thought to have entered monastic life through material necessity rather than vocation, the mprp sought to draw them out into the productive economy, often by redirecting them into pastoral labour. This logic reached its most violent expression in the Great Repression of 1937–39: monasteries were razed, lamas shot and a central infrastructure of Mongolian social life annihilated in the name of socialist security and development. Yet the pastoral collective was not simply an alien Soviet form imposed on the steppe: for all the violence of forced collectivization and leftist adventurism, herding in Mongolia had long been organized through large-scale politico-economic units and communal land.</p>
+          
+        
+          
+            <p>Significant improvements in the conditions of poor herders through ‘non-capitalist development’ were unlikely in the turbulence of the Republic’s first decades. But the modern Mongolian state would finally be consolidated in the climacteric of imperial rivalries around World War Two: in 1939 the joint Mongolian–Soviet defeat of Japan at Khalkhin Gol, where Mongolia’s eastern border abutted the puppet state of Manchukuo, united the country and diverted Japanese ambitions away from Northeast Asia and towards the Pacific. This in turn enabled a redeployment of Soviet troops westwards for a war effort in which Mongolia would soon be tightly involved—leaving a strong imprint on national consciousness. The mprp’s Tenth Congress in 1940 announced a new phase of ‘directly building socialism’, pushing for increases in the number of livestock, while a new constitution—copied from the Soviet one—affirmed the nationalization of land and natural resources, though few social gains could be made while so much was allocated to the war effort. Party and state structures were consolidating, while the 1941 introduction of Cyrillic in place of the traditional script signalled a rupture with the Buddhist institutions that had hitherto been the privileged sites of learning. Thus, while the war held back significant social advances, through its course foundations were being laid for a shift after victory came, and with it international recognition.</p>
+          
+        
+          
+            <p>The postwar recovery got off to a slow start under Choibalsan’s repressive rule, but after his death in 1952, the campaign to build ‘rural economy collectives’ (khödöö aj akhuin negdel) was relaunched under the leadership of Yumjaagiin Tsedenbal, emulating earlier pastoralist collectivization policies which had been implemented—in general much more brutally—throughout Siberia. This time, the policies included a powerful set of incentives for pastoralists to join. Collectives received the best pastures, winter shelters, veterinary care, transport and infrastructure. By 1959, nearly all pastoral households had joined. Membership brought clear advantages. Households were allowed to retain a private herd for domestic use, fifty head of livestock per household and seventy-five in the Gobi region, which for many poorer families was as much livestock as they had possessed before collectivization. Members also received wages for their labour on behalf of the collective, typically for around 150 workdays a year, and these earnings soon overtook private livestock as the principal source of household income.</p>
+          
+        
+          
+            <p>Further investment in the 1960s and 1970s deepened this transformation. Mechanized hay production, motor transport, mobile shops and other amenities expanded the reach of the collective economy. Total livestock numbers fell slightly and then stabilized, but productivity rose markedly. Pastoral output fed growing urban populations and supplied the new industrial sector, which by 1960 had overtaken agriculture as the principal source of national wealth. Large-scale mechanized wheat farms were also established, and by the 1960s grain production was sufficient to meet domestic consumption. Socialism on the steppe thus did not simply collectivize existing pastoral life; it reworked it into the productive base of an industrializing national economy.</p>
+          
+        
+          
+            <p>The collectives (negdel) were gradually amalgamated until, by the 1960s, most of the roughly 300 rural sum districts were organized around a collective, except where state farms (sangiin aj akhui) took their place, especially in districts devoted to large-scale crop cultivation or specialized livestock production. In each sum, a central settlement of a few hundred households was developed, while pastoral families were organized into production brigades moving through seasonal pastures on schedules coordinated by collective managers. This was more than an economic reorganization. It expressed a Leninist commitment to narrowing the divide between urban and rural life. The collective and the local state became vehicles for carrying urban institutions, aspirations and standards into the countryside. The sum centre condensed this socialist transformation into built form. There one found the boarding school, medical clinic, post office, collective headquarters, motor pool, police station, local government offices and the soyolyn ordon—the ‘cultural palace’ that hosted films, lectures and visiting performers.</p>
+          
+        
+          
+            <p>As salaried members of collectives and state farms, pastoralists became, by any reasonable standard, far wealthier than all but the richest commoners of the pre-revolutionary order. But this material ascent was bound to unprecedented forms of state supervision and social engineering. Through ‘cultural campaigns’ (soyolyn dovtolgoon), the home itself became an object of socialist transformation. Hygiene, cleanliness and domestic order were recoded as signs of modernity. Soap, towels, toothbrushes, toothpaste, washbasins and white cotton sheets entered Mongolian households not simply as commodities, but as instruments of pedagogy, enforced through inspections, spot checks and penalties. The domestic sphere was remade in the image of socialist respectability and modernity: old forms persisted, but they were increasingly reorganized around new norms of discipline and comfort.</p>
+          
+        
+          
+            <p>A second path to non-capitalist accumulation lay not within Mongolia itself but in its insertion into a wider socialist world. If the country lacked an advanced proletariat of its own, it could draw on the productive power of others through the institutions of proletarian internationalism. Socialist friendship was presented as a new kind of international relation, founded on cooperation rather than capitalist competition or inter-imperial rivalry. But the language of friendship concealed a hierarchy. The Soviet Union appeared as elder brother—emulation in exchange for development, subsidies and protection; fraternity, for all its warmth, remained uneven. These relations extended well beyond the Soviet Union and were formalized in 1962, when Mongolia became the first Asian country to join the Council for Mutual Economic Assistance (comecon). Soviet aid predominated, but the gdr, Poland, Hungary, Bulgaria, Czechoslovakia and—until the Sino-Soviet split—China also supplied engineers, technicians, loans, machinery and building materials. Together they helped construct much of socialist Mongolia’s built environment: power plants and transmission lines, meat-processing combines, cement and slate factories, irrigation systems, mines, bridges and apartment blocks. The material traces remain visible in Ulaanbaatar, from the Friendship Bridge built by Chinese workers to the state circus gifted by Romania.</p>
+          
+        
+          
+            <p>In return, Mongolia exported livestock products, raw materials and minerals extracted through Soviet-assisted development. The international socialist division of labour was therefore a concrete mechanism for the redistribution of resources, expertise and labour power. Mongolia industrialized within limits set by the wider needs of the socialist world. Its pastoral economy was modernized and partially transformed, yet it remained tied to a regional order in which meat, wool, hides and mineral wealth moved outward, while infrastructure, machinery and technical knowledge flowed in. That exchange built the material foundations of Mongolian socialism. It generated not only factories, roads and urban housing, but a wider social world of schools, hospitals, electrification, wage labour, technical training and the expectation that development was a collective and international project rather than a competitive national race.</p>
+          
+        
+          
+            <p>Given its starting-point—with its unique geography, far from the centres of modernity—Mongolia occupied a highly distinct position within comecon. In gdp per capita terms, it started out lowest, just below Vietnam, but steadily climbed throughout the socialist period. Life expectancy at birth was also lowest—just 45 years in 1960—but had improved by more than 30 per cent by 1990; infant mortality showed a similar trend. In terms of doctors per capita it outperformed many of its peers, coming close to the level of Czechoslovakia by the end of the period. This was an important achievement given the challenges of providing healthcare to so dispersed a population—something the proponents of structural adjustment were blind to in the 1990s: seeing only an unusually high ratio, they prescribed drastic cuts, ignorant of Mongolia’s needs. Bolovsrol (education) was a core value of the socialist order, with personal accomplishment esteemed and occupational status fundamental; gains in this sphere were perhaps the most impressive, rising from just 0.7 average years of total schooling in 1950 to 7.7 in 1990—roughly the same level as Cuba. An overriding concern with progress, a drive to ‘catch up’, was reflected in the notion of khögjil (development), and came to be deeply embedded as a national value and mission of government. When socialism was dismantled after 1990, it was this world—its institutions, networks and solidarities—that was taken apart.</p>
+          
+        
+          
+            <p>Mongolia’s free-market revolution was significant not only for what it achieved, but for the tragedies it avoided. After months of protests, sit-ins and hunger strikes in 1990, the Politburo resigned and dissolved the government. Unlike in Beijing the previous year, mass mobilization in Ulaanbaatar did not end in massacre. That outcome owed something to the wider conjuncture of the late Soviet world: Gorbachev’s hostility to the Tiananmen crackdown narrowed the space for violent repression across the socialist bloc. It also owed much to the leadership: Jambyn Batmönkh, the Party’s General Secretary, refused to authorize force against the protesters, despite pressure from harder-line elements within the ruling apparatus; the fact that some protesters were children of the mprp elite might also have had something to do with it. Activists such as Sanjaasürengiin Zorig and Tsakhiagiin Elbegdorj were products of the late socialist world—often educated in Russia or other socialist countries—who encountered perestroika and glasnost abroad and brought those political idioms back with them. These developments thus formed part of a wider late-socialist chain of opposition, with Polish Solidarity reportedly assisting Mongolian protesters in producing posters and leaflets. The movement drew strength not only from student activism and the urban intelligentsia but a broader social coalition: reformers reached out to other constituencies with their own struggles and demands, such as miners and monks, and were granted access to state radio to address a wider public.</p>
+          
+        
+          
+            <p>The mprp entered the new democratic order with every reason to expect that, given its nationwide network of local organizational structures, it could compete successfully in free elections—which, in the event, it did. It remains the dominant force, but has undergone a familiar itinerary, reinventing itself in the 1990s as a centre-left democratic socialist party, embracing market reforms and privatization; positioning itself alongside the French Socialists or British New Labour. Although, as elsewhere in the ex-Soviet bloc, the early reformers were more focused on political and democratic change, the agenda of market fundamentalists such as Davaadorjiin Ganbold and Mendsaikhany Enkhsaikhan won out, with backing from the usual international agencies—imf, World Bank, Asian Development Bank. Political pluralism thus arrived fused to market orthodoxy, while foreign tutelage and the expanding rule of debt replaced Soviet and comecon support.</p>
+          
+        
+          
+            <p>In the decade of shock therapy and its aftermath, Mongolia’s economy cratered and living standards fell with it. Education, welfare, manufacturing and public provision were actively disassembled. Conservative parliamentarian and national poet O. Dashbalbar described the democratic revolution as a ‘cruel and meaningless thing’; political scientist Tom Ginsburg judged it ‘the most serious peacetime economic collapse any nation has faced during this century’. In terms of aggregated output, this trajectory most closely resembled Albania’s, with neither country recovering its 1990 gdp level until around 2002 (see Figure 1).</p>
+          
+        
+          
+            <p>On the steppe, privatization meant the dissolution of the negdel and the parcelling out of collective herds. This was not merely an exchange of property, but a reorganization of the conditions and forms of pastoral life. As in so many post-socialist settings, alongside these material transformations ran an ideological campaign to naturalize the new property regime. Private herds, private shops and free trade were held up by reformist politicians such as Dashiin Byambasüren—the last prime minister of the Mongolian People’s Republic, who requested imf and World Bank membership within a month of taking office—as the conditions of individual liberty. Private property had no deep genealogy on the steppe: land use had historically been mediated through sovereignty, obligation and usufruct. But the breakup of collective assets was cast by figures such as Byambasüren and Davaadorjiin Ganbold, under the Mongolian term khuviin—private, one’s own share or portion—as a return of property to its rightful holders, as it dissolved the institutional forms that had made pastoral life socially viable.</p>
+          
+        
+          
+            <p>Processing plants, transport links, veterinary services and employment were stripped away. What remained was a fractured economy, broken down into smaller and more vulnerable units, deprived of the buffers and support systems once provided by the collective—and thus more exposed to climatic volatility and dzud, the catastrophic winter conditions that periodically devastate herds. Pastoralism grew increasingly precarious, and for many households, untenable. One result was waves of migration to Ulaanbaatar, where families settled in the expanding ger districts on the city’s periphery. There, the unmaking of the socialist countryside reappeared in another register: coal-burning stoves, informal settlement and the lethal winter air pollution of the post-socialist capital. The Red Hero was satirically renamed Utaabaatar—‘Smoke Hero’.</p>
+          
+        
+          
+            <p>Mongolia’s immense mineral wealth remained largely untouched through much of the socialist period, save for some ventures such as the joint Soviet–Mongolian Erdenet copper and molybdenum complex. Built in the 1970s, Erdenet materialized the socialist vision of development: a small city was built for the workforce, complete with residential districts, schools and amenities. Employees looked forward to jobs for life and positions for their children. After 1990, with few other industries surviving the transition, mining came to dominate. The sector was opened to foreign capital, which moved to acquire licences and invest in copper, gold and coal extraction, most notably at Rio Tinto-controlled Oyu Tolgoi in the South Gobi. Construction there started in 2010: a gigantic high-security desert compound with dormitory housing for a workforce composed largely of contractors and subcontractors, typically commuting from the capital for gruelling shifts, like oil-rig workers—the archetypal neoliberal enterprise, stripped down to its profit-making essentials, for which urban development and civic infrastructure are someone else’s problems. While Erdenet remains at least nominally state-owned, relations between government and Oyu Tolgoi—now having surpassed Erdenet as the mainstay of the export economy—have become a tug-of-war over share holdings and tax payments, surrounded by persistent rumours of corruption. Mongolia also sits atop vast coal deposits, exploited at the gigantic Tavan Tolgoi mine complex in the Gobi, which is widely seen as entangled with Chinese interests and the corruption of the political elite. In the latest 2022–23 ‘coal theft’ scandal, high-ranking officials were accused of selling coal to China off-the-books through opaque customs contracts.</p>
+          
+        
+          
+            <p>Mineral extraction has been presented as the remedy for the instability produced by market reform, and the new engine of national development. In the early twenty-first century, mining revenues fuelled bursts of economic growth, speculative property development and a soaring real-estate market in Ulaanbaatar. A minute elite amassed fortunes, such as Odjargal Jambaljamts—chairman of the Mongolian Mining Corporation—and Chinbat Lhagva, whose Gatsuurt Group has diversified holdings across mining, construction, agriculture and other sectors. Meanwhile, in 2024, 27 per cent were still below the poverty line. Households live from loan to loan, piecing together a livelihood through informal credit, pawnshops and precarious exchange. The depression of the 1990s forced a large part of the public into opportunistic survival strategies—picking through the debris of the planned economy for resaleable scrap metal, improvising livelihoods in informal markets. By the start of the twenty-first century, an estimated hundred thousand people were working in unauthorized artisanal gold mining. ‘Ninja miners’, as they became known, endured gruelling and dangerous conditions as they dug makeshift tunnels by hand. At the most popular sites, temporary yurt settlements housing thousands appeared in the summer season, complete with improvised shops, bars and service-traders. But having peaked around 2006–7, this ‘people’s gold-rush’ evaporated as commercial mining companies acquired exclusive rights to gold-rich territories and found ways to enforce them.</p>
+          
+        
+          
+            <p>Anticipated state revenues from mining led both major parties to promise cash payments for citizens, particularly children, in gestures that faintly echoed socialist-era welfare provision and pro-natalist policy. By 2012, after handouts amounting to a few hundred dollars per person, the schemes were scaled back to a modest child benefit payment. Meanwhile the environmental damage wrought by the mining sector has loomed large in public discourse, given the role of the natural environment in national identity. Water sources sucked dry to feed mines and pastures choked by dust from open-cast quarrying cut against deep-rooted pastoralist sensibilities, fuelling popular environmental campaigns. In 2009 parliament passed legislation, popularly known as ‘the law with the long name’, prohibiting mineral extraction in environmentally sensitive regions. But mining licences continued to be granted regardless, giving rise to persistent rumours of corruption, nepotism and Chinese investors standing behind nominally Mongolian companies. Where Chinese mines operate, they have frequently been described as forming ‘enclaves’, bringing their own labourers and managerial workforce rather than employing Mongolians. In some cases, both Chinese managers and Mongolian officials have even attempted to prevent any contact between workers and locals. Meanwhile, increases in cashmere production driven by the transformation of the pastoral economy have led to severe overgrazing and desertification.</p>
+          
+        
+          
+            <p>In 2010 the mprp completed its neoliberal facelift by reverting to its pre-1924 name, the Mongolian People’s Party (mpp). Its principal rival, the Democratic Party, presents itself as the heir to the 1990 protest movement and a centre-right alternative, though it has historically lacked the institutional coherence of the mpp. What unites all significant political formations is Mongolian nationalism. The vision of a small sovereign nation caught between two giant neighbours has become the frame within which all other claims must be made. From the mid-1990s, Mongolia sought to offset reliance on Russia and China by treating distant partners—Japan, the United States, Canada, Singapore—as ‘third neighbours’. But the free trade agenda pushed by international agencies had a predictable long-term effect: large-scale Chinese involvement returned to the Mongolian economy. Worth almost $14 billion in 2023, Mongolia’s exports to China dwarfed those to other countries: the figures for Russia and the us were just $111 million and $36 million respectively. National independence has always been shadowed by the proximity and scale of China, the spectre of which now racializes the faceless abstraction of global capitalism. Still shaping party politics and public discourse are anxieties about losing independence; suspicions that land and resources are being sold to Chinese investors and markets, for paltry public benefit. Popular demands to curb foreign control of the mining sector found legislative expression in 2012, when parliament enacted a strategic foreign investment law that drew immediate accusations of ‘resource nationalism’ from international commentators, while doing little to change the brute realities of Mongolia’s extractive political economy. In 2015 the leader of a mine workers’ union called a press conference to protest the worsening terms of employment and transfer of contracts to a Chinese company. This, he maintained, amounted to the selling of Mongolian workers to a foreign country. He then set himself on fire, his life saved only by the intervention of bystanders.</p>
+          
+        
+          
+            <p>Mongolia has been celebrated by figures such as John Kerry as an ‘oasis of democracy’ in an authoritarian region. Governments have changed and parliament remains a site of real contestation, while there is a vocal culture of discontent—in contrast to the ‘imitation democracies’ found throughout Central Asia, in which elections are a fig leaf for authoritarian power—but the stagnation of living conditions, the deep rot of corruption and the absence of political alternatives have begun to sap confidence in democracy. In the hollow trunk of political representation, populism and nationalism reverberate as the only available idioms of political dissatisfaction. The transnational energies and hopes that once animated democratic protest have gradually evaporated into the ‘fog’—manan in Mongolian, which is also the conjoined acronym of the two major parties—of factional manoeuvring and clientelist politics. A change of government typically installs new personnel, patronage networks and political branding, but seldom produces substantive policy shifts. Never has national independence been more paramount as a value, and never has it been so thoroughly hollowed out in practice—by debt, corruption, pollution and the unfinished struggle over the question of to whom Mongolia’s natural endowments belong.</p>
+          
+        
+          
+            <p>Post-socialist Mongolia has a recurring pattern of popular mobilization—in 2005, 2008, 2021, 2022, 2025—each driven by some combination of corruption scandal, austerity and the accumulated weight of broken promises. For several weeks in December 2022, youthful protesters occupied Sükhbaatar Square in Ulaanbaatar. The immediate spur was inflation—surging globally at the time and driving protests around the world—but a refrain in slogans and chants was stark: ‘We are not living, only surviving’. Protesters demanded ‘hope for the future’ (ireedüid amidrakh itgel ög), and the conditions to ‘live well in our country’ (ekh orondoo saikhan amidarmaar baina). ‘Is this life?’, some asked. Others voiced the cruelty of a social prestige out of reach: ‘If only I could live like a member of parliament.’ Again and again, the crowd hurled the same injunction at the unresponsive façade of the Government Palace: ‘Do your job’ (ajlaa hii).</p>
+          
+        
+          
+            <p>What does it mean for the state to ‘do its job’? For many protesters, the answer was simple: to make life economically bearable, so that Mongolians would not have to leave for South Korea or the us in search of work, or merely stitch together the semblance of a life at home. In this sense, the protests were animated by the moral and social expectation that the state should take care of its people—perhaps an afterlife of socialism. But post-socialism has foreclosed much of the political vocabulary and latitude of imagination through which such discontent might once have been articulated. With socialism widely consigned to the past, opposition is expressed through other vernaculars: for liberals, as meritocratic anti-corruption demands—another wave of which precipitated a political crisis in May 2025—and the ideal of cosmopolitan good governance; for nationalists, the dream of a Chinggis-like sovereign who might return to restore order and empire’s imagined plenitude. Both circle around the wound without naming it. Poets such as O. Dashbalbar and D. Galsansükh bear witness to the calamity of capitalism in militant nationalist language; without socialist internationalism, all that remains is the poetry of the nation. The democratic revolution has lost its lustre, and transitology its explanatory magic; Mongolia is experiencing what Kristen Ghodsee has described as the ‘gaslighting of Eastern Europe’: the insistence that everything is getting better, when palpably it is not.</p>
+          
+        
+      
+    </div>
+
+    
+      <section class="footnotes">
+        <div class="footnotes__label">Notes</div>
+        <ol class="footnotes__list">
+          
+            <li class="footnotes__item" id="fn-1">
+              <span class="footnotes__num">
+                <a href="#fnref-1">1</a>
+              </span>
+              <span class="footnotes__text">For an international survey of the anti-extractivist and resource-sovereignty movements that are accompanying the China-led shift to solar power and evs, see Thea Riofrancos, ‘The New World Climate Order’, nlr 159, May–June 2026.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-2">
+              <span class="footnotes__num">
+                <a href="#fnref-2">2</a>
+              </span>
+              <span class="footnotes__text">To date there has been no treatment of Mongolia in New Left Review’s comparative surveys of post-Soviet Bloc outcomes: Dmitri Furman, ‘Imitation Democracies’, nlr 54, Nov–Dec 2008; Emily Morris, ‘Unexpected Cuba’, nlr 88, July–Aug 2014; Joachim Becker, ‘Europe’s Other Periphery’, nlr 99, May–June 2016. See also Vladimir Popov, ‘Russia Redux?’, and the reply by Tony Wood, ‘Contours of the Putin Era’, in nlr 44, March–April 2007.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-3">
+              <span class="footnotes__num">
+                <a href="#fnref-3">3</a>
+              </span>
+              <span class="footnotes__text">Morris Rossabi, Modern Mongolia: From Khans to Commissars to Capitalists, Berkeley 2005, p. 134.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-4">
+              <span class="footnotes__num">
+                <a href="#fnref-4">4</a>
+              </span>
+              <span class="footnotes__text">Becker, ‘Europe’s Other Periphery’.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-5">
+              <span class="footnotes__num">
+                <a href="#fnref-5">5</a>
+              </span>
+              <span class="footnotes__text">Igor de Rachewiltz, trans. and ed., The Secret History of the Mongols: A Mongolian Epic Chronicle of the Thirteenth Century, Vol. 1, Leiden and Boston 2004, p. 133; Ayşe Zarakol, Before the West: The Rise and Fall of Eastern World Orders, Cambridge 2022.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-6">
+              <span class="footnotes__num">
+                <a href="#fnref-6">6</a>
+              </span>
+              <span class="footnotes__text">David Sneath, The Headless State: Aristocratic Orders, Kinship Society and Misrepresentations of Nomadic Inner Asia, New York 2007.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-7">
+              <span class="footnotes__num">
+                <a href="#fnref-7">7</a>
+              </span>
+              <span class="footnotes__text">See, for example, Lhamsüren Munkh-Erdene, The Taiji Government and the Rise of the Warrior State: The Formation of the Qing Imperial Constitution, Leiden 2022; and Nicola Di Cosmo, ‘From Alliance to Tutelage: A Historical Analysis of Manchu-Mongol Relations before the Qing Conquest’, Frontiers of History in China, vol. 7, no. 2, 2012.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-8">
+              <span class="footnotes__num">
+                <a href="#fnref-8">8</a>
+              </span>
+              <span class="footnotes__text">Charles Bawden, The Modern History of Mongolia, London 1968, pp. 97–101; M. Sanjdorj, Manchu Chinese Colonial Rule in Northern Mongolia, London 1980.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-9">
+              <span class="footnotes__num">
+                <a href="#fnref-9">9</a>
+              </span>
+              <span class="footnotes__text">Lhamsüren Munkh-Erdene, ‘The Mongolian Nationality Lexicon: From the Chinggisid Lineage to Mongolian Nationality’, Inner Asia, vol. 8, 2006, p. 82.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-10">
+              <span class="footnotes__num">
+                <a href="#fnref-10">10</a>
+              </span>
+              <span class="footnotes__text">Christopher Atwood, Young Mongols and Vigilantes in Inner Mongolia’s Interregnum Decades, 1911–1931, Leiden 2002; Uradyn Bulag, Collaborative Nationalism: The Politics of Friendship on China’s Mongolian Frontier, Lanham 2010.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-11">
+              <span class="footnotes__num">
+                <a href="#fnref-11">11</a>
+              </span>
+              <span class="footnotes__text">Tatiana Linkhoeva, ‘Samurai and Mongols: How a Medieval Samurai Became Chinggis Khan’, Journal of World History, vol. 34, no. 3, 2023.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-12">
+              <span class="footnotes__num">
+                <a href="#fnref-12">12</a>
+              </span>
+              <span class="footnotes__text">Sergei Radchenko, ‘Carving up the Steppes: Borders, Territory and Nationalism in Mongolia, 1943–1949’, Eurasia Border Review, vol. 3, 2012, p. 31; see also Xiaoyuan Liu, Reigns of Liberation: An Entangled History of Mongolian Independence, Chinese Territoriality and Great Power Hegemony, 1911–1950, Stanford 2006.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-13">
+              <span class="footnotes__num">
+                <a href="#fnref-13">13</a>
+              </span>
+              <span class="footnotes__text">‘Record of Meeting between T. V. Soong and Stalin (2 July 1945)’, available in the University of Maryland digital archive.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-14">
+              <span class="footnotes__num">
+                <a href="#fnref-14">14</a>
+              </span>
+              <span class="footnotes__text">This is one reason why the New Qing History—which questions the identification of China with the Qing Empire’s Inner Asian conquests—remains so sensitive in Beijing. As the American historian James Millward has noted, ‘Mongolia’s independent political status challenges the ccp historical narrative that everything once part of the Qing Empire is now part of the prc.’ James Millward, ‘China’s Reincarnation Monopoly Has a Mongolia Problem’, Foreign Policy, 23 April 2023.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-15">
+              <span class="footnotes__num">
+                <a href="#fnref-15">15</a>
+              </span>
+              <span class="footnotes__text">‘Telegram from the Department of State to the Mission at the United Nations’, 26 November 1955, Foreign Relations of the United States, 1955–57, United Nations and General International Matters, vol. xi, doc. 185, Office of the Historian, us Department of State.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-16">
+              <span class="footnotes__num">
+                <a href="#fnref-16">16</a>
+              </span>
+              <span class="footnotes__text">Christian Sorace and Ruiyi Zhu, ‘The Short-Lived Eternity of Friendship: Chinese Workers in Socialist Mongolia (1955–64)’, in Ivan Franceschini and Christian Sorace, eds, Proletarian China: A Century of Chinese Labour, London and New York 2022.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-17">
+              <span class="footnotes__num">
+                <a href="#fnref-17">17</a>
+              </span>
+              <span class="footnotes__text">Sergey Radchenko, ‘Choibalsan’s Great Mongolia Dream’, Inner Asia, vol. 11, no. 2, 2009.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-18">
+              <span class="footnotes__num">
+                <a href="#fnref-18">18</a>
+              </span>
+              <span class="footnotes__text">Yang Haiying, 没有墓碑的草原：蒙古人与文革大屠杀, trans. Liu Yingbo and Liu Yanzhi, Taipei 2014; T.J. Cheng, Uradyn Bulag and Mark Selden, A Chinese Rebel beyond the Great Wall: The Cultural Revolution and Ethnic Pogrom in Inner Mongolia, Chicago 2023.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-19">
+              <span class="footnotes__num">
+                <a href="#fnref-19">19</a>
+              </span>
+              <span class="footnotes__text">O. Batsaikhan, ‘Mongol ündestnii darkhlaa sul baina’, News.mn, 24 December 2014.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-20">
+              <span class="footnotes__num">
+                <a href="#fnref-20">20</a>
+              </span>
+              <span class="footnotes__text">Christopher Atwood, Encyclopedia of Mongolia and the Mongol Empire, New York 2004, p. 568.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-21">
+              <span class="footnotes__num">
+                <a href="#fnref-21">21</a>
+              </span>
+              <span class="footnotes__text">Caroline Humphrey, ‘Pastoral Nomadism in Mongolia: The Role of Herdsmen’s Cooperatives in the National Economy,’ Development and Change, vol. 9, no. 1, 1978, pp. 133–9.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-22">
+              <span class="footnotes__num">
+                <a href="#fnref-22">22</a>
+              </span>
+              <span class="footnotes__text">Khöröngtönii bish khögjliin zamyn tukhai V.I. Lyeninii üzel sanaag Mongold kheregjüülsen tüükhen turshlaga [Historical Experience of Implementing V.I. Lenin’s Idea on the Path of Non-Capitalist Development in Mongolia], Ulaanbaatar 1971; Ivan Sablin and Amgalan Zhamsoev, ‘A “Live Laboratory” of Noncapitalist Development: Positioning Mongolia in the Informal Soviet Empire, 1919–40’, in Robert Fletcher and Alec Zuercher Reichardt, eds, Inlands: Empires, Contested Interiors and the Connection of the World, New York 2024.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-23">
+              <span class="footnotes__num">
+                <a href="#fnref-23">23</a>
+              </span>
+              <span class="footnotes__text">Irina Morozova, Socialist Revolutions in Asia: The Social History of Mongolia in the Twentieth Century, London 2009, chapters 3 and 4.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-24">
+              <span class="footnotes__num">
+                <a href="#fnref-24">24</a>
+              </span>
+              <span class="footnotes__text">Christopher Kaplonski, The Lama Question: Violence, Sovereignty and Exception in Early Socialist Mongolia, Honolulu 2014.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-25">
+              <span class="footnotes__num">
+                <a href="#fnref-25">25</a>
+              </span>
+              <span class="footnotes__text">Morozova, Socialist Revolutions in Asia, pp. 110, 118.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-26">
+              <span class="footnotes__num">
+                <a href="#fnref-26">26</a>
+              </span>
+              <span class="footnotes__text">Morozova, Socialist Revolutions in Asia, pp. 102–6.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-27">
+              <span class="footnotes__num">
+                <a href="#fnref-27">27</a>
+              </span>
+              <span class="footnotes__text">Kenny Linden, ‘Veterinarians, Vaccines and Hybrids: Veterinary Science in the Mongolian People’s Republic’, Mongolian Studies, vol. 42, 2023, pp. 112–46; Daniel Rosenberg, ‘The Collectivization of Mongolia’s Pastoral Production’, Nomadic Peoples, vol. 9, 1981, pp. 23–39.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-28">
+              <span class="footnotes__num">
+                <a href="#fnref-28">28</a>
+              </span>
+              <span class="footnotes__text">Ines Stolpe, ‘Display and Performance in Mongolian Cultural Campaigns’, in Fernanda Pirie and Toni Huber, eds, Conflict and Social Order in Tibet and Inner Asia, Leiden 2008.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-29">
+              <span class="footnotes__num">
+                <a href="#fnref-29">29</a>
+              </span>
+              <span class="footnotes__text">This is based on the reconstructed gdp series in Jutta Bolt and Jan Luiten van Zanden, Maddison Project Database 2023.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-30">
+              <span class="footnotes__num">
+                <a href="#fnref-30">30</a>
+              </span>
+              <span class="footnotes__text">Data from World Bank Development Indicators database.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-31">
+              <span class="footnotes__num">
+                <a href="#fnref-31">31</a>
+              </span>
+              <span class="footnotes__text">Rossabi, Modern Mongolia, pp. 64, 168–9.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-32">
+              <span class="footnotes__num">
+                <a href="#fnref-32">32</a>
+              </span>
+              <span class="footnotes__text">Data from Barro-Lee Educational Attainment Dataset 2025.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-33">
+              <span class="footnotes__num">
+                <a href="#fnref-33">33</a>
+              </span>
+              <span class="footnotes__text">Rossabi, Modern Mongolia, p. 2.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-34">
+              <span class="footnotes__num">
+                <a href="#fnref-34">34</a>
+              </span>
+              <span class="footnotes__text">Rossabi, Modern Mongolia, pp. 30–7.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-35">
+              <span class="footnotes__num">
+                <a href="#fnref-35">35</a>
+              </span>
+              <span class="footnotes__text">Rossabi, Modern Mongolia; C. Dashdavaa, ‘Mongolyn niigem sistyemiin khyamralaas süirel rüü’, 24 August 2004.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-36">
+              <span class="footnotes__num">
+                <a href="#fnref-36">36</a>
+              </span>
+              <span class="footnotes__text">Ochirbatyn Dashbalbar, Oyuun sanaany yaruu nairag, Ulaanbaatar 2017, p. 17; Tom Ginsburg, ‘Political Reform in Mongolia: Between Russia and China’, Asian Survey, vol. 35, no. 5, May 1995, p. 459.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-37">
+              <span class="footnotes__num">
+                <a href="#fnref-37">37</a>
+              </span>
+              <span class="footnotes__text">Based on gdp comparisons from the Penn World Table. See also Lea Ypi, Free: Coming of Age at the End of History, London 2021.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-38">
+              <span class="footnotes__num">
+                <a href="#fnref-38">38</a>
+              </span>
+              <span class="footnotes__text">Dulam Bumochir, The State, Popular Mobilization and Gold Mining in Mongolia: Shaping ‘Neoliberal’ Policies, London 2020, p. 26.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-39">
+              <span class="footnotes__num">
+                <a href="#fnref-39">39</a>
+              </span>
+              <span class="footnotes__text">David Sneath, Mongolia Remade: Post-socialist National Culture, Political Economy and Cosmopolitics, Amsterdam 2018.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-40">
+              <span class="footnotes__num">
+                <a href="#fnref-40">40</a>
+              </span>
+              <span class="footnotes__text">Manlai Chonos, ‘Mongolia’s Neoliberal Turn Has Been an Ecological Disaster’, Jacobin, 9 May 2024.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-41">
+              <span class="footnotes__num">
+                <a href="#fnref-41">41</a>
+              </span>
+              <span class="footnotes__text">Christian Sorace, ‘Ghosts of Urban Past, Present and Future in Ulaanbaatar’, Current History, vol. 123, no. 855, 2024; Rebekah Plueckhahn, ‘Accessing Heat: Environmental Stigma and “Porous” Infrastructural Configurations in Ulaanbaatar’, Urban Studies, vol. 59, no. 3, 2022.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-42">
+              <span class="footnotes__num">
+                <a href="#fnref-42">42</a>
+              </span>
+              <span class="footnotes__text">Sanchir Jargalsaikhan, ‘Mongolia’s Crisis Is an Opportunity to Transform Its System’, Jacobin, 5 February 2026</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-43">
+              <span class="footnotes__num">
+                <a href="#fnref-43">43</a>
+              </span>
+              <span class="footnotes__text">Dulam, The State, Popular Mobilization and Gold Mining in Mongolia.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-44">
+              <span class="footnotes__num">
+                <a href="#fnref-44">44</a>
+              </span>
+              <span class="footnotes__text">Asian Development Bank Basic Statistics 2026.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-45">
+              <span class="footnotes__num">
+                <a href="#fnref-45">45</a>
+              </span>
+              <span class="footnotes__text">Rebecca Empson, Subjective Lives and Economic Transformations in Mongolia: Life in the Gap, London 2020.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-46">
+              <span class="footnotes__num">
+                <a href="#fnref-46">46</a>
+              </span>
+              <span class="footnotes__text">Robin Grayson, ‘Anatomy of the People’s Gold Rush in Modern Mongolia’, World Placer Journal, vol. 7, 2007; Gantulga Munkh-Erdene and David Sneath, ‘Enclosing the Gold-Mining Commons of Mongolia: The Vanishing Ninja and the Development Project as Resource’, Current Anthropology, vol. 59, no. 6, 2018.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-47">
+              <span class="footnotes__num">
+                <a href="#fnref-47">47</a>
+              </span>
+              <span class="footnotes__text">Mikkel Bunkenborg, Morten Nielsen and Morten Axel Pedersen, Collaborative Damage: An Experimental Ethnography of Chinese Globalization, Ithaca 2022, pp. 71–98.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-48">
+              <span class="footnotes__num">
+                <a href="#fnref-48">48</a>
+              </span>
+              <span class="footnotes__text">un Comtrade Database.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-49">
+              <span class="footnotes__num">
+                <a href="#fnref-49">49</a>
+              </span>
+              <span class="footnotes__text">Iyko Day, Alien Capital: Asian Racialization and the Logic of Settler Colonial Capitalism, Durham nc, 2016; Franck Billé, Sinophobia: Anxiety, Violence and the Making of Mongolian Identity, Honolulu 2014.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-50">
+              <span class="footnotes__num">
+                <a href="#fnref-50">50</a>
+              </span>
+              <span class="footnotes__text">For example, Nicholas Watson, ‘Mongolia: Mine Ownership Gets Political’, ft, 26 April 2012.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-51">
+              <span class="footnotes__num">
+                <a href="#fnref-51">51</a>
+              </span>
+              <span class="footnotes__text">Yeganeh Torbati, ‘Kerry Hails Mongolia as “Oasis of Democracy” in Tough Neighbourhood’, Reuters, 5 June 2016.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-52">
+              <span class="footnotes__num">
+                <a href="#fnref-52">52</a>
+              </span>
+              <span class="footnotes__text">Furman, ‘Imitation Democracies’.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-53">
+              <span class="footnotes__num">
+                <a href="#fnref-53">53</a>
+              </span>
+              <span class="footnotes__text">Christian Sorace and Sanchir Jargalsaikhan, ‘Lost in the Fog’, Jacobin, 29 January 2019.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-54">
+              <span class="footnotes__num">
+                <a href="#fnref-54">54</a>
+              </span>
+              <span class="footnotes__text">Christian Sorace and Zoljargal Enkh-Amgalan, ‘In Mongolia, Protesters With Empty Stomachs Are Denouncing Empty Promises’, Jacobin, 20 April 2022.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-55">
+              <span class="footnotes__num">
+                <a href="#fnref-55">55</a>
+              </span>
+              <span class="footnotes__text">Hedwig Waters, Moral Economic Transitions in the Mongolian Borderlands: A Proportional Share, London 2023.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-56">
+              <span class="footnotes__num">
+                <a href="#fnref-56">56</a>
+              </span>
+              <span class="footnotes__text">Christian Sorace, Steppe Immunity: Reimagining Political Futures from Mongolia, Stanford, forthcoming; Anahid Nersessian, The Calamity Form: On Poetry and Social Life, Chicago 2020.</span>
+            </li>
+          
+            <li class="footnotes__item" id="fn-57">
+              <span class="footnotes__num">
+                <a href="#fnref-57">57</a>
+              </span>
+              <span class="footnotes__text">Kristen Ghodsee, ‘Lies, Damn Lies and Transition: The Gaslighting of Eastern Europe’, Social Research, vol. 93, no. 1, 2026.</span>
+            </li>
+          
+        </ol>
+      </section>
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://newleftreview.org/issues/ii159/articles/christian-sorace-david-sneath-steppe-transitions"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on New Left Review &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
