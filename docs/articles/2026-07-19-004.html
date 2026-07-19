@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Annexation with a Sales Pitch — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Annexation with a Sales Pitch</h1>
+      
+        <p class="article-header__summary">My friend Jawad Ali, a Palestinian American lawyer, was at his daughter’s graduation last month when he got a call from his sister in the West Bank...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Selma Dabbagh</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>15 Jul 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>My friend Jawad Ali, a Palestinian American lawyer, was at his daughter’s graduation last month when he got a call from his sister in the West Bank. ‘She was crying, almost hysterical,’ he said, as she told him that settlers were ‘trying to burn us alive in our home’.</p>
+          
+        
+          
+            <p>This was not the first attack on Jawad’s family home and neighbourhood. On a visit in June 2023, Jawad’s wife heard shooting around midnight and looked out to see a gang of men approaching on the nearby ‘settler only’ highway. Her teenage daughters, trained to prepare for school shootings in the United States, took cover immediately. The house was attacked again in 2024 and 2025, when a mob tried to break their fences and burn their olive groves. The attack last month was the worst. CCTV footage shows three masked men pouring fuel around the edges of their home and setting it alight.</p>
+          
+        
+          
+            <p>Jawad’s village is in Area C, meaning it’s under full Israeli civil and military control. ‘The only authority in charge of our security is the Israeli army,’ Jawad said, ‘but instead of protecting us, they protect the perpetrators of the attack ... The message they are trying to send us is clear – leave your land and home, or else! But we won’t.’</p>
+          
+        
+          
+            <p>The Israeli human rights organisation B’Tselem records a ‘sharp increase in both the number and severity of settler attacks’ since October 2023. It rests on Palestinians, especially the young, to defend their homes and families, putting themselves at risk of death, injury or imprisonment. The administrative detention regime means that any Palestinian can be jailed for any (or no) reason, without charge or trial, for an indefinite period: 99 per cent of Palestinians who come before Israeli military courts are found guilty.</p>
+          
+        
+          
+            <p>Israel has recently been added to a UN blacklist of countries that commit sexual violence in war zones. Prisoners are subjected not only to solitary confinement, starvation, scabies and overcrowding but to sexual assault and torture. The UN ‘verified multiple incidents’ last year:</p>
+          
+        
+          
+            <p>Violations consisted of rape, including with objects, gang rape, attempted rape, physical violence to the genitals, instances of targeted shooting of the genitals, touching of breasts and genitals, strip and cavity searches conducted without apparent security justification, forced nudity and threats of rape.</p>
+          
+        
+          
+            <p>Days before the attack on Jawad’s home, the Scottish Labour MP Melanie Ward asked in the House of Commons why 32 UK charities have been able to funnel £28 million to illegal settlements in the West Bank over the past five years. The foreign secretary, Yvette Cooper, replied:</p>
+          
+        
+          
+            <p>The minister for the Middle East will be meeting the CEO of the Charity Commission tomorrow to pursue exactly this issue to ensure there is a thorough investigation. Some evidence suggests that rules are being broken. We should not end up with UK gift aid being funnelled to illegal settlements.</p>
+          
+        
+          
+            <p>Elsewhere in London, though, the Great Israeli Real Estate Event was taking place. Amnesty International has condemned it for ‘openly advertising the sale of land in Israeli settlements in the occupied West Bank’ and called it not a property fair but ‘apartheid and annexation with a sales pitch’.</p>
+          
+        
+          
+            <p>Cooper also said that ‘the UK has introduced sanctions against individual members of the Netanyahu government’. The Conservative MP Kit Malthouse called this a ‘pathetic delusion’ as the so-called sanctions amounted merely to freezing any assets held in the UK, excluding goods and services. Cooper retorted that Labour are doing more than the Conservatives did.</p>
+          
+        
+          
+            <p>The bar is very low. She did not mention Keir Starmer’s claim in October 2023 that Israel had the right to cut water and electricity to Gaza; or the ‘massive increase’ in arms export licences under his leadership; or the more than five hundred RAF surveillance flights over Gaza between October 2023 and March 2025; or the welcoming of Israeli politicians such as President Isaac Herzog, who declared on 13 October 2023 that ‘it’s an entire nation out there that is responsible.’ His words have been taken as evidence of Israel’s genocidal intent. When Herzog said them more than seventy thousand people who have since been killed – artists, writers, lawyers, computer programmers, engineers, filmmakers, doctors, teachers, students, mothers, wives, sons, babies – were still alive.</p>
+          
+        
+          
+            <p>In August 2024, a British diplomat, Mark Smith, resigned from the Foreign Office over UK arms sales to Israel, on the basis that it was ‘perpetrating war crimes in plain sight’. He said he had raised his concerns at ‘every level’. In July 2025, Wes Streeting privately wrote to Peter Mandelson:</p>
+          
+        
+          
+            <p>Israel is committing war crimes before our eyes. Their government talks the language of ethnic cleansing and I have met with our own medics out there who describe the most chilling and distressing scenes of calculated brutality against women and children.</p>
+          
+        
+          
+            <p>Official government statements at the time acknowledged that ‘the new Israeli aid system is inhumane’ but stopped short of calling war crimes by their name.</p>
+          
+        
+          
+            <p>According to the International Court of Justice 2007 ruling on Bosnia and Herzegovina v. Serbia and Montenegro, the duty to prevent genocide crystallises ‘at the instant that the state learns of, or should normally have learned of, the existence of a serious risk that genocide will be committed’. Both the UN Special Rapporteur and the UN Commission of Inquiry have argued that ‘the ongoing genocide in Gaza is a collective crime, sustained by the complicity of influential third states.’ The means available to these states to prevent genocide are set out: they include the use of force by the Security Council, resolutions by the General Assembly, arms and trade embargoes, the denial of safe passage to perpetrators and prosecution.</p>
+          
+        
+          
+            <p>Jeremy Corbyn asked why the UK was ‘still supplying parts for F-35 jets knowing full well that those planes are used in acts of genocide against the Palestinian people’. Cooper side-stepped the question. In Australia, three Palestinian human rights organisations – al-Haq, PCHR and al-Mezan – are trying to compel the minister of defence to release documents. One of al-Haq’s lawyers is Ahmed Abofoul. More than eighty members of his family have been killed in Gaza in the past three years. At least two parts of the F-35 ‘are exclusively made in Australia’, he says. ‘No F-35 can fly anywhere in the world and kill anyone without Australian complicity.’</p>
+          
+        
+          
+            <p>When Starmer announced he would be stepping down as prime minister, the British Palestinian Committee issued a statement:</p>
+          
+        
+          
+            <p>Chief among the many failures that his premiership will be remembered for is the missed opportunity to shift the UK’s approach to Palestine. Rather than charting a principled course grounded in justice, accountability and international law, Starmer’s administration has stubbornly resisted demands to end British complicity in and contribution to Israel’s continued violation of Palestinian lives and rights.</p>
+          
+        
+          
+            <p>Earlier in the month, the Turkish American activist Cenk Uygur and his nephew, Hasan Piker, were prevented from coming to the UK to speak at SXSW London and the Oxford Union. Uygur said:</p>
+          
+        
+          
+            <p>The real reason that they’re banning me is not because they’re worried about antisemitism. I’m not at all antisemitic. My two co-founders are Jewish. I have Jewish family. No, they’re worried about my criticism of Israel, and they are callously using Jewish people as a way to hide behind civilians and they’re driving up antisemitism by pretending that all Jewish people are in favour of Israel’s wars and genocide.</p>
+          
+        
+          
+            <p>‘One of the worst weeks, surely, in UK history in terms of the abolition of civil liberties and rights,’ Juliet Stevenson wrote to me after four Palestine Action activists were sentenced as terrorists at Woolwich Crown Court despite the jury having found them guilty not of terrorist offences but of criminal damage and, in one case, grievous bodily harm.</p>
+          
+        
+          
+            <p>A few days later the Court of Appeal upheld the proscription of Palestine Action as a terrorist organisation. ‘Palestine Action has little or nothing in common with the suffragettes,’ the Lady Chief Justice said. But the suffragettes were if anything more violent: they carried out a nationwide bombing campaign and horsewhipped Winston Churchill at Bristol railway station.</p>
+          
+        
+          
+            <p>Andy Burnham will become prime minister next week. ‘I know many people feel,’ he said, ‘that at the start of Israel’s military action in Gaza my party didn’t get it right and I am sorry about that. The response has too often not been good enough. We need to do better.’ The Campaign against Arms Trade has said that Burnham’s apology is ‘meaningless unless followed by an end to arms sales to Israel’.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/july/annexation-with-a-sales-pitch"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
