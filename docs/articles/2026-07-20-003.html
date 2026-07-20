@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evicted — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Evicted</h1>
+      
+        <p class="article-header__summary">The masked men had hidden the identification on their olive green private security uniforms. They wore sunglasses, body cameras and a variety of...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Naoise Dolan</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>17 Jul 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>The masked men had hidden the identification on their olive green private security uniforms. They wore sunglasses, body cameras and a variety of baseball hats; one said ‘Bailiff Services Ireland’, another ‘Police’. The actual Irish police force had arrived at around 9 a.m. to arrest two of the people inside, Eoghan Lynch and Seán Doyle. Now, thirty minutes later, this mysterious squad had come to evict the other six of us. The police vacated the building and left them to finish the job.</p>
+          
+        
+          
+            <p>Seven weeks earlier, the Revolutionary Housing League had acquired Ardee House in the Liberties district of Dublin and turned it into the Anne Devlin Community Centre. (‘This isn’t “squatting”,’ Seán told me. ‘This is acquisition.’) The space had since been open to the public for music sessions, Irish-language events and coffee.</p>
+          
+        
+          
+            <p>Ardee House is a Victorian redbrick building on the corner of Chamber Street and Ardee Street, with red striped wallpaper inside and a cast iron bath in the attic. It was a pub for decades before closing in 2010. Since then the building had been vacant. There didn’t seem to be any structural problems when we got in but it took us a while to get the place clean; I tried three different sprays on the laminate countertop upstairs but only vinegar would kill the mould. The bird poo scrubbed easily enough off the polyester seats.</p>
+          
+        
+          
+            <p>According to the government’s latest homelessness report, there are more than eight thousand adults and over four thousand children in emergency accommodation in Dublin. The Liberties has lost community spaces in favour of sightseeing attractions and luxury short lets. Stoneybatter, across the river from the Liberties, has seen working-class residents priced out by gentrification. While ever more amenities pop up for tourists, locals struggle to secure adequate housing. In the month that the Anne Devlin Community Centre opened, people were campaigning against a proposed aparthotel development and for the city council to tackle mould and rats in the Oliver Bond public housing complex.</p>
+          
+        
+          
+            <p>We held two public meetings to see how the local community wanted to use the building. Events included first aid classes, bike repair workshops and film screenings, with strictly no alcohol on the premises. The centre paid for itself through the donation-based Café Saoirse, open daily and staffed by volunteers.</p>
+          
+        
+          
+            <p>The Liberties was historically a strong Irish-speaking district of Dublin. I assembled a small library of secondhand Irish-language books. On hand-lettered signs for the centre I used seanchló, the old Gaelic script that the government dropped in the 1960s for being backwards and impractical. There were weekly Irish-language meetings and we talked about starting language classes. Most courses and textbooks are more likely to teach you how to complain about your hotel bedsheets than how to use Irish in court to delay an eviction.</p>
+          
+        
+          
+            <p>The High Court issued a trespass injunction within days of the centre’s opening. The owner of the investment company that bought the building in 2016, the whiskey entrepreneur Jack Teeling, only realised we were using it when the Irish Times contacted him. ‘I am just trying to get my head around this,’ he told them. Litigation followed.</p>
+          
+        
+          
+            <p>Over seven weeks of court proceedings, the owner often sent round the bailiffs who would eventually evict us. They mostly took photos. ‘We don’t come to intimidate you, we don’t come to beat nobody,’ one assured us.</p>
+          
+        
+          
+            <p>On 24 June, the judge put out a warrant for Eoghan and Seán to be arrested and brought to court on 7 July. They had come forward as representatives of the Revolutionary Housing League when the legal dispute began, and their names were on the injunction and order to vacate; now they had to answer a contempt charge for continuing to occupy the centre and invite people in.</p>
+          
+        
+          
+            <p>We spent the evening of 6 July in the building, wondering if the guards would actually come the next day. We got pizza and chips from the local takeaway. Some of us slept, some talked, one spent the night looking out the window.</p>
+          
+        
+          
+            <p>By 9 a.m. – with the hearing scheduled to start at 10.30 – it seemed unlikely the guards would appear. We removed the bolts from the door to let out a couple of people who had volunteered to go to the court hearing. ‘Will we go to Centra and get some breakfast stuff?’ someone asked me. ‘Just let me get my boots on,’ I said. I laced them upstairs and came back down. I was a metre from the black metal door when there was a bang on it. Another kick and a policeman had forced his way in.</p>
+          
+        
+          
+            <p>There were around ten guards. They arrested Eoghan and Seán, and left the private security to complete the eviction. An hour later in court, the judge struck off the case against us, the owners having secured their aim: vacant possession.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/july/evicted"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>

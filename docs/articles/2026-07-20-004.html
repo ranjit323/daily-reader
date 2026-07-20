@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Take the ball — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">London Review of Books</div>
+      <h1 class="article-header__title">Take the ball</h1>
+      
+        <p class="article-header__summary">Before the final yesterday I was puzzled as to why Jennifer Hudson was singing the US national anthem: did they think we might have forgotten where...</p>
+      
+      <div class="article-header__meta">
+        
+          <span>Natasha Chahal</span>
+          <span class="article-header__meta-sep">&middot;</span>
+        
+        
+          <span>20 Jul 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>Harry Redknapp thinks the England team should have an English manager. I think that we benefit from some outside wisdom. No English club manager has ever won the Premier League. On trial for tax evasion in 2012 – he was cleared – Redknapp said in his defence: ‘I can’t work a computer, I don’t know what an email is, I can’t, I have never sent a fax and I’ve never even sent a text message.’ I imagine Thomas Tuchel can send an email and I think he has been good for us, despite the semi-final loss to Argentina.</p>
+          
+        
+          
+            <p>The last time Argentina knocked England out of the World Cup was in 1998 (we beat them in the group stage in 2002), when Diego Simeone’s histrionics got David Beckham sent off (Beckham’s own antics didn’t help). Simeone’s son Giuliano was on the pitch last week. The game was fraught from the off. England took the lead with Anthony Gordon’s goal in the second half but Enzo Fernández equalised in the 85th minute with Lionel Messi assisting and soon afterwards Lautaro Martínez headed in the winner from Messi’s cross.</p>
+          
+        
+          
+            <p>‘I think ball possession plays a crucial role,’ Tuchel said afterwards. ‘It’s maybe not in our DNA like it is in the Spanish DNA or Argentinian or Brazilian DNA to take the ball, control the game with the ball.’ After scoring England had only 12 per cent possession. I don’t think ‘our DNA’ has much to do with it – Tuchel faced criticism for bringing on too many defensive players – but England didn’t look like a team that expected to win. Argentina clearly did, unfurling a homemade banner after the match that said: ‘Las Malvinas son Argentinas’ (‘The Falklands are Argentine’).</p>
+          
+        
+          
+            <p>Playing France for third place, England won 6-4: an absurd scoreline but without the pressure we excelled. Tuchel observed of Southgate’s England when we lost to Spain in the Euros two years ago that ‘they were more afraid to drop out of the tournament than having the hunger and excitement to win it.’ That still seems to be true of the team under Tuchel.</p>
+          
+        
+          
+            <p>France had lost to Spain the day before England lost to Argentina. Mikel Oyarzabal opened with a penalty. Pedro Porro made it two. Lamine Yamal’s potential third was ruled offside. I dug out my father’s old Spain shirt from the 1996 Euros.</p>
+          
+        
+          
+            <p>Before the final yesterday I was puzzled as to why Jennifer Hudson was singing the US national anthem: did they think we might have forgotten where the match was being held? As if in a fever dream I saw Robbie Williams, Tom Cruise, Donald Trump’s favourite ring announcer Michael Buffer (‘let’s get ready to rumble’) and, like something from the TK Maxx Gold Label range, a Louis Vuitton trophy box. No one scored in the first half. The half-time show – don’t forget this is America – looked like a long advert for Coca Cola, culminating in children singing with Coldplay and a gigantic carpet displaying the word ‘love’. Meanwhile the US war on Iran intensified.</p>
+          
+        
+          
+            <p>The game moved on to extra time. A strike from Nico Williams for Spain was disallowed but at last Ferran Torres scored. Simeone had a shot for Argentina that ballooned over the bar. The whistle blew and Spain had deservedly won the World Cup. They had conceded only one goal all tournament, to Belgium in the quarter-finals, and won all their matches apart from the early draw with Cape Verde.</p>
+          
+        
+          
+            <p>After the match Leandro Paredes tried to fight the Spanish subs, hitting Eric García in the neck. Ian Wright reminded the ITV audience not to forget about the treatment of the Iranian team or the referee who was refused entry to the US. The Spanish side collected their medals and this time, even with Trump there, no one was kissed against their will like Jenni Hermoso after the 2023 Women’s World Cup. Spain is the first country to hold both the women’s and men’s title at the same time. Next year the women’s tournament will be held in Brazil. I may actually be able to afford that one.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://www.lrb.co.uk/blog/2026/july/take-the-ball"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on London Review of Books &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
