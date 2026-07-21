@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Régis Debray: Metamorphoses — The Daily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { color-scheme: light; }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 56px 32px 96px;
+    }
+
+    /* ─── Back nav ─── */
+
+    .nav {
+      margin-bottom: 48px;
+    }
+
+    .nav__back {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #c0392b;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid #e8a89e;
+      padding-bottom: 1px;
+    }
+
+    .nav__back:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    /* ─── Article header ─── */
+
+    .article-header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid #111111;
+      margin-bottom: 36px;
+    }
+
+    .article-header__source {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 16px;
+    }
+
+    .article-header__title {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #111111;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__summary {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #444444;
+      margin: 0 0 20px 0;
+    }
+
+    .article-header__meta {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #aaaaaa;
+    }
+
+    .article-header__meta-sep { margin: 0 6px; color: #dddddd; }
+
+    /* ─── Body ─── */
+
+    .article-body {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 14.5px;
+      line-height: 1.9;
+      color: #222222;
+    }
+
+    .article-body p {
+      margin: 0 0 1.4em 0;
+    }
+
+    /* ─── Footnote markers in body ─── */
+
+    .fn-ref {
+      font-size: 10px;
+      color: #c0392b;
+      text-decoration: none;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      vertical-align: super;
+      line-height: 0;
+    }
+
+    .fn-ref:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Footnotes section ─── */
+
+    .footnotes {
+      margin-top: 56px;
+      padding-top: 28px;
+      border-top: 1px solid #dddddd;
+    }
+
+    .footnotes__label {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+      margin-bottom: 20px;
+    }
+
+    .footnotes__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footnotes__item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      line-height: 1.65;
+      color: #555555;
+    }
+
+    .footnotes__num {
+      flex-shrink: 0;
+      color: #c0392b;
+      font-size: 10px;
+      padding-top: 2px;
+      min-width: 18px;
+    }
+
+    .footnotes__num a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footnotes__num a:hover {
+      text-decoration: underline;
+    }
+
+    .footnotes__text {
+      flex: 1;
+    }
+
+    /* ─── External link footer ─── */
+
+    .article-footer {
+      margin-top: 48px;
+      padding-top: 28px;
+      border-top: 1px solid #eeeeee;
+    }
+
+    .article-footer__link {
+      font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+      font-size: 12px;
+      color: #999999;
+      text-decoration: none;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 1px;
+    }
+
+    .article-footer__link:hover {
+      color: #111111;
+      border-color: #999999;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 72px; }
+      .article-header__title { font-size: 26px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <nav class="nav">
+      <a class="nav__back" href="../index.html">&larr; The Daily</a>
+    </nav>
+
+    <header class="article-header">
+      <div class="article-header__source">New Left Review</div>
+      <h1 class="article-header__title">Régis Debray: Metamorphoses</h1>
+      
+        <p class="article-header__summary">Reflections on having lived the passage from one age to another, as prospects give way to retrospects, pages to screens and time to space. With the close of one century, the onset of the next provides an occasion to take stock of what has been lost—and what gained—in the transition.</p>
+      
+      <div class="article-header__meta">
+        
+        
+          <span>3 Jul 2026</span>
+        
+      </div>
+    </header>
+
+    <div class="article-body">
+      
+        
+          
+            <p>Two lives for the price of one: such is the bonus enjoyed by all those who, in passing from one century to the next, have found themselves inhabiting a different world, often without quite realizing it. Asphodels and butterflies, sun and clouds, carnations and cherries will tomorrow remain what they were yesterday. A comforting thought: we shall not be changing sky or planet any time soon. More disconcerting is how our manner of living, reacting, feeling and thinking has been transformed, upending old habits and assumptions. Have we lost or gained in the bargain? Each must decide for himself, by his own lights, according to what moves him—or leaves him cold.</p>
+          
+        
+          
+            <p>Distant horizons having failed to keep their appointment, the hour of homecomings has arrived: the time of reckonings and, now and then, of nostalgia. As tomorrows fade, yesterdays return. One may welcome the change. One may also reflect on it.</p>
+          
+        
+          
+            <p>The future was yesterday. We still remember it. We had programmes; now we have scruples. Our verbs have slipped from the future tense into the imperfect. We have moved from aspirations to assessments. The pro- words have lost their lustre—progress, programme, project. The dis- words are on the march: disenchantment, disengagement, disintegration. The planners are out of a job. We restore and preserve, safeguard and conserve. Even progressives have their doubts. Fortunately, the guardians of our inheritance are still at their posts: the École des Chartes, the Inventaire général de la patrimoine, curators and conservators. Ecological museums for rare orchids, a Panthéon for heroes, anthologies for poets, centenaries, bicentenaries and millennial commemorations for those who have left their mark on history. The Gallic cock has returned to the henhouse. Now and then it still flexes its claws to reclaim some semblance of historic destiny, but without ever explaining where, should matters turn serious, the commander-in-chief is to come from, nor who will draw up the battle plans. ‘Europe? What’s its telephone number?’ Kissinger once asked—a question better left unanswered.</p>
+          
+        
+          
+            <p>‘When you don’t know where you’re going, look where you came from.’ These are hard times for the Principle of Hope, settled weather for Prudence. After the extremists, the archivists. Not so long ago, both Cross and Banner had their professionals. In villages and market towns one might encounter a Don Camillo and a Peppone, the parish priest and the communist mayor. Whites and reds. The Church as Party and the Party as Church. Each preached the Good Word, whether from the Holy Father or Big Brother, with missionary zeal. After years of quarrelling, they became an oddly endearing duo. Each had its tenors and choristers: one striking up La Jeune Garde, the other the Magnificat. On both sides voices rang out. The Petits Chanteurs à la Croix de Bois and the Red Army Choir alike could warm and enchant. Whether for Christ arisen or socialism under construction, the joy of faith renews the hymns of the past. Such is the miracle of tightly knit groups, the blessing of acting as one. We feel more deeply and intensely when we form part of a larger whole. We vibrate, come alive, reconnect, fall in step. It is a happiness one dreams might be permanent, indisputable and transcendent. And all this with complete confidence, even pride, despite—or perhaps because of—the lack of assurance either that the Christ child awaits us in Heaven or that equality will reign on Earth tomorrow. There is no proof in such matters, only certainties. Faith trusts. The Catholic crosses himself; the communist toes the line. Both with an eye to the millennium, if not the impossible. A collective dream sometimes inspires more devotion than a party manifesto. Most great enthusiasms are born of an error of judgement. Mathematicians, with rare exceptions, know nothing of such states of grace—nor the gloom that follows.</p>
+          
+        
+          
+            <p>The working class, it turns out, will not be going to Paradise. Camillo and Peppone now find themselves unemployed, a little melancholy. A problem for archbishops as it is for the crowds marching from Bastille to République. For Jesus Christ no less than Karl Marx. Catechism and messianism have both found recruitment difficult of late. A more realistic age prefers butter croissants. The age of upheavals has given way to the age of upkeep. Everyone is resetting their watches; they were either running fast or running slow. Civic education no longer has much use for barracks. The future belongs to museums. To rapiers and arquebuses. Many of our adventurers have found their way back to the family home, including those who once declared that ‘the duty of a revolutionary is to make the revolution’, when what was really at stake was always to remake one. Refusing to inhabit the present as it is produces that backward-looking futurist we call a rebel: someone who hopes to refashion a past failure into future success. Subversives are unrecognized traditionalists. Current affairs are not their natural habitat. Latin American guerrillas invariably borrowed the names of ancestors: Sandinistas, Tupamaros, Zapatistas, Montoneros. Out of those legends they fashioned banners, turning yesterday into tomorrow. A present without a past has no future. Hence the antiquarian streak that runs through every serious revolutionary. Firebrands need archives. Hence too the disarray of our futures now that our pasts are fading. When a country stops making history, it compensates by producing historians. Better that than nothing. We live off accumulated capital, but let us not complain. Those relics—they were for a worthy cause.</p>
+          
+        
+          
+            <p>After all, our marble monuments, gilded halls and ceremonies have never done any harm to scientists, still less the trailblazing kind. Meanwhile, neural activity is mapped with microelectrodes; anti-idiotype cancer vaccines are developed; nuclear fusion promises to unleash vast quantities of energy. We may congratulate ourselves on our restorations and refurbishments, indebted as we are to the firefighters and craftsmen who rebuilt Notre-Dame. Happily, they are not alone. Nor should we forget Valéry’s warning: ‘Modern man is the slave of modernity. There is no progress that does not end in complete servitude.’ The atomic bomb taught us as much. More is never a guarantee of better. The Third Reich was replete with men of learning, and the distance from laboratory to crematorium is not so great. At bottom there are two kinds of duty to remember. One draws strength from the past, the other finds excuses in it. One furnishes resources, the other rehearses grievances. The first gives us a kick up the backside, the second puffs out our chest. The inflation of the ‘here-and-now’ has become so all-encompassing that one sometimes wishes for a little more distance to recover a sense of the future. It might help us see further and more broadly, even if that means revisiting the old idea of estrangement and the plays of Bertolt Brecht. It is the ‘view from afar’ that enables us to understand the present. Only by stepping back can we move forward. Towards the day when our age finally tires of worshipping itself.</p>
+          
+        
+          
+            <p>In theory and in the popular imagination, our Republic is a democracy and vice versa. We use the two terms interchangeably, out of custom and carelessness. There were once attempts to distinguish them, in their principles as in their implications. A lost battle—one among many. Yet it is worth recalling, for the record, that they are not the same thing.</p>
+          
+        
+          
+            <p>In the nation-state, the crucial element is the hyphen. France became a nation because it possessed a state and has remained one because it preserved it. A nation implies a sense of belonging, which can harden into passion: nationalism. A state implies protection, which can harden into statism. The Republic was a curious singularity, the product of a long history. Democracy, by contrast, designates a code of public conduct, grounded in legal norms. The former has institutions, the latter associations. The first speaks its own language, the second an international idiom. The one is unitary, the other federal. These are, of course, highly schematic ideal-types, which may overlap without ever becoming identical.</p>
+          
+        
+          
+            <p>The Republic rested on two pillars: free, compulsory secular education and universal military service. The lycée and the barracks. The driving forces of democracy, by contrast, are Money and Opinion. Profits and media. Each model has its cruelties. On the one hand, women confined to the kitchen and the knout in the colonies; on the other, profiteers and demagogues. This is not a question of Good versus Evil, merely two different ways of ordering society, each with its own defects and crimes.</p>
+          
+        
+          
+            <p>Democracy often forgets about war. It speaks the language of ‘human rights’, which have a way of evaporating on the battlefield. It is also the passage from the written page to the screen, from Nation to Communities. Jules Ferry gives way to Michael Jordan, the schoolyard to the marketing pitch, the letter in the post to the mobile phone in one’s pocket. There was arrogance there; there is conformism here. There was a people; now there are populations. Once, the Republic was ‘one and indivisible’; now it resembles a mosaic of minorities. Rigid and supple. Set menu and self-service buffet. The Republic, let us not forget, also meant empire, machismo and moustaches; penal colonies and military fossils; mines and slums. Democracy is more open, sociable and accommodating, all kisses and pats on the back. The old-fashioned republican is austere, sometimes tedious, often uptight. An anal temperament. As for laïcité—that European exception—it remains ostentatiously on display and ever less demanding in practice. The transition from one world to the other took place quietly, without fanfare or rupture, more as an adjustment than a revolution. Schoolchildren are no doubt happier without four-hour detentions, the blackboard and the ink bottle. Yet that world also had Brylcreem and plus-fours for adolescents, tandem bicycles and lottery tickets for the masses, wireless sets and black-and-white tvs for all. Here, brass bands and dance halls; there, Deauville and its boardwalk.</p>
+          
+        
+          
+            <p>One may debate when the before gave way to the after. It is hard to spot if you stay put, among streets and façades that have scarcely changed. You get used to the drug store and the evening news. At times we even welcomed a breath of fresh air, grumblers notwithstanding. The shift from native terroir—Basque berets, folk dances, bagpipes, accordions—to United Colors of Benetton—open collars, blue jeans, trainers, rock music—passed almost unnoticed. So too did the passage from Bleu-Blanc-Rouge to Black-Blanc-Beur, from the cut-throat razor to the electric shaver, from the stiff-necked to the streetwise. Historians will one day date the turning point, or invent one. As a layman, more drawn to longues durées than dramatic moments, I might tentatively nominate the Goude parade of 1989. Or perhaps 1992, when the Renault plant at Billancourt closed and Disneyland opened outside Paris. A shift from ‘once upon a time’ to ‘up to date’, from the bal-musette to commercialized entertainment, from typography to video. Nothing traumatic, nothing spectacular. ‘One cannot see grass growing’, as Pasternak observed.</p>
+          
+        
+          
+            <p>Without quite noticing, we became a variant of the New World on the Old Continent, far removed from a time when ‘Popular Front’ and ‘sovereign people’ were neither metaphors nor clichés. I was fortunate enough to be alerted to this transformation in adolescence by a handful of distinguished and underpaid teachers, men with briefcases, lavallière ties and a fondness for Latin quotations. They introduced me to the venerable tradition embodied by Jacques Muglioni, my philosophy teacher. One is not born a republican; one becomes one, provided a few mentors lend a hand along the way. Muglioni did. A remarkably exacting man, pacing calmly up and down the aisles, pipe in hand. He spoke without notes or affectation, almost as if talking to himself. Austere without coldness, distant without pride, almost outside time, he remains with me as a kind of reproach: I was never truly faithful to what he taught. It was thanks to him that I was later able, despite being no philosopher, to do a little philosophy. Such teachers, who turn children into pupils, teach us above all how to do without teachers. And never to grant the final word to an opinion poll. Not to place our trust in the strongest, nor in the ‘new’, which is so often idiotic. One recalls Verdi’s paradox: ‘Let us return to the past—that will be progress.’ A joke, but a perceptive one. Verdi, who was no reactionary, understood that the present does not invalidate everything that came before it. As long as one keeps one’s sense of humour. The rigorous ought also to be amusing, the deductive a little fanciful. None of which rules out going to the cinema or even dancing the night away. The fact that the Republic has become little more than a name does not oblige the anachronistic among us to retreat into syllogisms. Still less to grow prim and joyless with age. Life offers too many occasions for smiling—at others and above all at oneself.</p>
+          
+        
+          
+            <p>Monsieur’s housekeeper packed her bags and left long ago. With peace as its accomplice, this reversal has reshaped habits of immemorial antiquity, much to the bewilderment of those whom one can no longer call, without provoking laughter, lord and master. Difficult times lie ahead in the West for the gentlemen.</p>
+          
+        
+          
+            <p>There was once the Church, the Army and the Academy. They shared a common feature: all were masculine institutions. There were nurses, nuns and the Salvation Army, not to mention dutiful wives, but the division of roles was fixed. Authority and breadwinning on one side, cooking and darning socks on the other. The arrangement survives in the Catholic clergy, though not among Protestant pastors. France, after all, had its excuses: this had been the norm since Cro-Magnon. God created woman? It was not considered one of His better ideas. Adam owed Eve Original Sin, and long, righteous reprisals followed. To give a patina of refinement to little boors of my sort, reared in those prehistoric years to sort women into ‘stunners’ and ‘frights’, the beddable and the plain. The first were unattainable; the second uninteresting. There were, admittedly, film stars, usually American, those ‘mediators between Heaven and Earth’ celebrated by Edgar Morin, but they remained stubbornly out of reach. In our towns and villages there reigned an unspoken apartheid between the sexes, reflected in the division of labour. Le Deuxième Sexe had female readers, delighted or scandalized, but few male ones. Women had acquired the franchise after the war, but since they were expected to vote like their husbands the damage seemed limited. Should trouble arise, however, finding an abortionist in Paris could take weeks. Fortunately, that Dark Age is behind us.</p>
+          
+        
+          
+            <p>The catch-up measures have benefited us all. Men have lost their monopoly on the human condition, which is no bad thing. The rougher sex, once so loud and self-assured, has had to pipe down as their quieter counterparts have asserted themselves. For one thing, women live markedly longer, not to mention the widows left by war. More strikingly, at least in our milieu, Simone de Beauvoir has outlived Jean-Paul Sartre; Marceline Loridan, Joris Ivens; Marguerite Duras, Robert Antelme; and the list could be extended. Then there is the fact—let us admit it—that women, having experienced childbirth, are generally less delicate and more resistant to pain. An awkward truth for men. Finally, in literature, it is common knowledge that they are now the most productive and often the most gifted members of our modest profession, as any bookseller will confirm. Scientific, mathematical and digital fields remain somewhat different, though even there women have made significant advances. The École polytechnique, after all, is headed by a woman. Sexism is not dead, but it is badly wounded. The same is true of pay inequality. For that matter, Indira Gandhi and Margaret Thatcher acquitted themselves rather well as wartime leaders, in their own fashion.</p>
+          
+        
+          
+            <p>The stereotypes of the old world are therefore in poor shape. Gone is the habit of reducing one half of the species to its biological destiny, even though the other half owes it life itself. Gone too is the assumption that the division of labour is self-evident: foraging and cooking here, hunting and ploughing there; starches on one side, protein on the other. Women replenished the labour force by perpetuating the species, notwithstanding the example of the praying mantis. There were coal mines and skilled seamstresses; department heads and nurses; maître d’s and children’s dinners; the poet and his muse; the motorcar and the vacuum cleaner. We read that ‘woman is the future of man’. We have had to recognize that gender, a matter of culture, has succeeded sex, a matter of nature, and that ‘Madame So-and-so, widow of . . .’ can now be followed by ‘Monsieur So-and-so, widower of . . . ’. Violent sports still survive, boxing and wrestling among them, though they attract ever smaller audiences, much like matadors and picadors. Nor are our gallant soldiers, after the Debacle, Dien Bien Phu and Algeria, quite what they once were. Uniforms no longer make young women swoon. A torrent of legislation took us from ‘a wife owes obedience to her husband’ to the legalization of abortion. Beauvoir and Simone Veil helped consign androcentrism to the museum, and women become prime ministers. Quite a turnabout. One may wonder whether the twenty-first century, in Europe at least, will not confound old certainties still further, as men become more feminine and women more masculine. There has always existed an ancient pact between women and life, while men long claimed the prerogative to dispense death, to let the blade fall in the public square. Françoise Héritier reminded us that humans are ‘the only species whose males kill females’. But this never prevented women from excelling in armed struggle, as the Resistance proved. Peace, Balance and Happiness are no longer regarded as uniquely feminine attributes. The once weaker sex handles a pistol perfectly well.</p>
+          
+        
+          
+            <p>Diderot had already warned us: ‘Man may be no more than woman’s monster . . .’ Nowadays the poor fellow negotiates with la patronne as best he can. Diego follows Frida. For the first time in the history of art, she comes first and he second. Hence ‘human rights’ replacing the ‘rights of man’. Collective mentalities lag behind individuals, of course. The head of the family does not surrender overnight to joint parental authority. Nor does India change in an instant, though Indira Gandhi did much to put an end to customs whereby a respectable widow was expected to die with her husband. Millennia of the ‘female condition’ do not disappear in the blink of an eye. Deep down, many of us still associate activity with man, passivity with woman; production with one, reproduction with the other. It is Eve who bites the apple. The appetite of a single creature brings about the fall of all the rest. Ariadne loses the thread, Pandora opens the box, Ophelia drowns. Venus emerges from the waves, like Aphrodite herself, a water-nymph—‘ma femme au sexe d’algues’, as Breton put it, sensitive to the scent of iodine. Nature has become a Great Lady, while the State resembles an irritable old man in steep decline. Despite the familiar oppositions of song and story—feeling against intellect, tradition against progress, the temptress against the righteous man, fluid and solid, moist and arid, soft and hard, Venus and Mars, Europe and America, curve and straight line, Mother Goddesses and Our Father. Even if some pasts are reluctant to pass. Gisèle Halimi taught us how to turn the page. She championed not only the cause of women but that of many oppressed peoples, near and far, and she plainly deserves a place in the Panthéon—without anyone needing, in the meantime, to inscribe on its pediment ‘Aux grandes femmes, la Patrie reconnaissante’.</p>
+          
+        
+          
+            <p>Alongside paternity leave, ecology has helped Mother Nature find her voice, and she is unlikely to be silenced any time soon. The hero having withdrawn, the victim has stepped into the spotlight. The husband may now pass the torch to the wife, the brother to the sister. Whatever caricatural macho presently struts about at the head of the United States, the European, for his part, seems ready to cast his lot with the feminine—at least so long as peace reigns.</p>
+          
+        
+          
+            <p>Not long ago there existed a collective superego, at once censor and spur. For us it could take the form of ‘a certain idea of France’. Then ‘me, myself and I’ relegated ‘all of us’ to the past. As though, demonstrations and marches notwithstanding, every man for himself had replaced the shoulder-to-shoulder solidarities of days gone by.</p>
+          
+        
+          
+            <p>‘It is only when we leave something behind that we give it a name’, André Gide warned us. And only when a past has left us does its charm make itself felt. Monuments and museums are its friendly ghosts, sources of pleasure in their own right. We delight in these encounters with a vanished world, and the citizen becomes a tourist, even at home, with Notre-Dame and the French cancan. It is at dusk that Minerva’s owl takes flight, casting an aura over what has vanished. The thousand-franc note once known as a Richelieu; the women of the Rue Saint-Denis politely called respectueuses; the coal miner, a proletarian; the bistro transformed into a Burger King; the gavotte replaced by line dancing. Our grandparents, during the Belle Époque, already waxed nostalgic over wing collars and alexandrines, parasols and sputtering motorcars, double-decker buses and steam locomotives. Does not every century possess its own genius? We do not yet know the emblem of the twenty-first; perhaps it will be Mars. The twentieth belonged to collective illusions, the nineteenth to literature, the eighteenth to philosophy, the seventeenth to moral reflection, the sixteenth to the clergy. Even today certain recollections almost bring a tear to one’s eye: unfolding a Michelin map in the car to find the right road, wrestling with tax forms, writing in blue Waterman ink, stammering through a hesitant Franglais. The old codger still remembers the well-behaved little boy who called a young woman mademoiselle and a policeman in his cape monsieur l’agent. He remembers the motorcades of the ‘Big Four’—the United States, Russia, Britain and France—gliding past the Palais de Chaillot on their way to conferences convened by Charles de Gaulle. It was an Indian summer before autumn arrived, before we rediscovered our true dimensions. Such are the indignities of time, even if the old country survives within us like a fire not quite extinguished. To be French today is a little like the Cheshire Cat: the smile remains, the cat has disappeared.</p>
+          
+        
+          
+            <p>Hence a series of curious transmutations. The nation becomes society; the citizen, a resident; the future, current affairs; the school, a childcare facility; fraternity, a registration form; society, a mosaic; the state, a memory; the army, a nato contingent. The country becomes a landscape, one member among others of a ‘plural Europe’, an economic amalgam that provides neither a homeland nor a sense of belonging. One places a hand upon one’s heart when solemnly invoking the destiny of the West, without specifying where this noble entity begins or ends, who defines its war aims or under whose command it operates.</p>
+          
+        
+          
+            <p>A cycle is drawing to a close, although the optimists insist that France remains herself precisely by changing. We have done with the edifying, the unifying, with Clovis or Clemenceau wheeled out at regular intervals to fulfil our ‘duty of memory’. Everyone now has his own locality, his own inheritance. Unlike History, which is linear and orderly, local memory is untidy, emotional and often egotistical. To this have been added repentance and atonement for the ‘dark years’, salutary remorse for the carefree. The more the collective we recedes, the more the ego flourishes. Little wonder that, as a reaction against the now defunct notion of French exceptionalism, our horizon has become global—a realistic and perhaps even beneficial development.</p>
+          
+        
+          
+            <p>As a sense of belonging gradually recedes, it subsists in poems and novels. Ours, fortunately, extends beyond the Hexagon, though institutional Francophonie is on life support. Did not Latin outlast the Roman Empire, and Greek outlast Athens? A people’s way of speaking and singing is more enduring than a state on its way out. That’s a source of pride, come what may. When the nation-as-memory finally expires, you can bet that its obituary will still be written in French. Many ageing francophones will shed a tear, even in countries where English has become the lingua franca.</p>
+          
+        
+          
+            <p>Europe no longer embodies a centripetal civilization. But however centrifugal it has become, it still bequeaths us a culture. In France this takes the form of an insistent reminder of great memories, of military parades along the Champs-Élysées, of excellent cooking and visits to the local bookshop. Even if the country now absorbs more novelties than it produces, even if its sphere of influence contracts by the day—driven out of Africa; zombified in Latin America, where only a dwindling generation of elderly elites still speak its language; folkloric in the United States; absent from Asia—within the Hexagon French culture finds both refuge and laboratory. The nation still possesses nuclear weapons, that Gaullist inheritance which serves no purpose except deterring others from using theirs. It oscillates between an economy deprived of culture and a culture deprived of an economy. It has become, more or less, a country like any other: the eastern flank of a self-absorbed empire. Old habits of independence still flatter the national self-image, while the country occasionally serves as auxiliary in imperial wars that are lost before they begin. Let us not be gloomy, however. Like a sepia-toned family photograph, France has lost none of its charm. If the nation is slowly unravelling, the language continues, alongside others, to bind people together and occasionally still serves as a point of reference.</p>
+          
+        
+          
+            <p>For French remains, perhaps, the finest thing that Frenchness ever produced.</p>
+          
+        
+          
+            <p>Europe: the peninsula of Time; America: the continent of Space. It is the latter that continues to expand its reach, on the map and in the imagination. Europe strives to keep up, at the risk of trading its own language and dreams for those of another. We thought ourselves unique. Perhaps we were merely behind.</p>
+          
+        
+          
+            <p>We have lived through a shift in our centre of gravity. The European must cross the Atlantic to get to where the action is. In so doing, he leaves behind the history of yesterday for the geo-history of today. Demotion and promotion at once. Bad news for old-timers, marooned between the Gallo-Roman world of yore and the Gallo-American of today. Mémoires d’outre-tombe ended on a prophetic note: ‘The scenes of tomorrow are no longer my concern; they call for other painters. To you, gentlemen.’ It is the New World that everyone looks to and which imposes its standards on the Old.</p>
+          
+        
+          
+            <p>Thus arrives the ‘spatial turn’. The triumph of on the road and go west, young man—soon enough, no doubt, to be followed by go east. The cowboy has become an astronaut. Tomorrow eclipses yesterday; spaces displace terroirs; optimism supplants pessimism. ‘Nothing will have taken place but the place itself’, Mallarmé foretold. Here, the order of the day is conservation; there, expansion—Canada, Greenland, the Pacific, and one eye fixed on Mexico. America anticipates; Europe remembers. One exports its language, its hot dogs, its films and its ai; the other imports them, gratefully. Reckless ambition has crossed to the other shore, leaving us, gladly enough, our Bordeaux wines, our couturiers and fine phrases.</p>
+          
+        
+          
+            <p>It may be that the more space we occupy, the less attention we pay to the time that remains to us. Geography, at any rate, has killed fewer people than History—mountaineers and explorers aside. History has doubtless lost its capital ‘H’, its sense of direction and founding myths, withdrawing instead into our libraries, accompanied by fatigue, resignation, dirges and laments. It was perhaps a prudent withdrawal, for wherever one encounters that murderess, hatred is never far behind. A hard lesson to learn. History in the raw is painful. It has its moments of jubilation, certainly, but more often it tastes of tears. Let us not forget Stendhal, however, who survived the retreat from Russia and concluded that ‘if you insist on living in step with the age you’ll be buried along with it’. A prediction that has never prevented anyone from living day to day. Men may not know the history they are making, but they are desperate to know—and to see—what today’s news is made of. The disappearance of the ‘grand design’ has, on balance, made people happier. Perhaps the history written by historians, who turn our misfortunes into books, reminds us that close involvement in great events is rarely good for one’s health. Freed from the weight of centuries, we may lose a few feathers, but when you can no longer take flight at least you’re sure to keep your feet on the ground. Besides, it’s important to know when to leave at the right time. And if the moment has passed, there is always the option of lacing up one’s trainers and setting off. Where to? It scarcely matters. The internationalist felt at home everywhere, labouring for the happiness of humankind.</p>
+          
+        
+          
+            <p>Now that history falls outside our windows like snow, and our projects vanish like dreams, it is the accomplished fact that tells us what time it is. And perhaps there is something to be said for letting bygones be bygones. The number of psychologists in France has doubled in five years; the number of militants has fallen by four-fifths. The former encourage their patients to speak about the past; the latter burnish a future that never arrives. Animal triste post historiam. We once had programmes, now we have weather forecasts. And wind turbines among the lucerne. No doubt we worked ourselves into a fever when we believed in tomorrows. Once Progress is packed off to the attic, the freshness of beginnings gives way to the melancholy of twilight years.</p>
+          
+        
+          
+            <p>As for the United States, I had the good fortune one day to watch it arrive on our doorstep, brisk and vigilant, when the Big Boss graciously agreed to lunch at the Élysée with his boys. For the occasion, I was asked to keep out of sight, lest my presence somehow displease one or another member of the imperial delegation. From my little window overlooking the courtyard, I was able, from early morning onward, to observe the Secret Service take possession of the premises. Robust, relaxed fellows, wearing dark glasses and earpieces, exceedingly stylish, they inspected every nook and cranny of the palace while whistling to themselves, opening doors, checking corridors, entering offices and brushing aside our pot-bellied policemen, who looked a little too provincial. The place had become theirs. For among heads of state there exists a sliding scale of prestige, each according to rank. When the French president pays a brief visit to his Zulu counterpart, our own security officers take control of the huts with no excessive concern for etiquette. The periphery of the West remains under control, thanks to aircraft, tanks and warships. Underground is harder to reach. Such is the eternal weakness of the strong: too well-fed to crawl through tunnels.</p>
+          
+        
+          
+            <p>The North controls Space and strikes where it pleases; the South possesses only Time. Hence the Vietnamese, Afghans, Iraqis and many others eventually send the heavily armed gis packing. The lean outlast the fat. The latter crush the former beneath bombs and napalm, but cannot endure. Sooner or later they must go home. None of which prevents North Americans from being charming hosts. They welcome visitors with open arms and hearty slaps on the back, address us immediately by our first names, yet Dupont should understand that this affable, accessible John will have forgotten him by the next morning. Smith, smelling faintly of deodorant, strikes us as a bit simple, a sort of overgrown child. Dupont, less carefully groomed, strikes him as slightly needy. Each has his strengths. One is too hasty, the other too ceremonious.</p>
+          
+        
+          
+            <p>Among us there was a teacher of history and geography who bridged the divide. Julien Gracq spent his life exploring the connection between storytellers and gardeners. This practitioner of geofiction reconciled la face de la terre with the intimacy of dreams, the movement of things with la plante humaine. For that we are indebted to him. It was in his company that I learned a little geology and a little botany, the immutable flesh of the world. This quiet subversive, as orderly as he was unsettling, possessed the gift of skimming the froth of everyday life from deep waters—or perhaps the reverse. He reminds us that forgetting how to contemplate, in one’s eagerness to transform the world, is not always a happy fate. So much effort for human beings, and so little for elephants . . .</p>
+          
+        
+          
+            <p>The wider our horizons, the less we seem to know where we stand. The euro has undoubtedly made life easier than the old franc: calculations are simpler, travel less cumbersome. But a closer look gives pause. Banknotes without identity, for a Europe still searching in vain for one of its own?</p>
+          
+        
+          
+            <p>The almost imperceptible drift from the symbolic to the merely functional finds a revealing illustration in the passage from the franc to the euro. What do we see on these notes? On one side, a window; on the other, a bridge. Arches and gateways, no doubt signifying openness; bridges, exchange and communication. Five euros: a classical archway and an aqueduct. Ten euros: a Romanesque portal and a stone bridge. Two hundred euros: a viaduct. Aqueducts, mullioned windows, bridges and roads, all apparently allegories of the free circulation of goods. In one corner, the twelve little stars—twelve apostles, perhaps, lingering traces of a Christian inheritance. However not a single human being appears beneath these vaults suspended between earth and sky, as though they were gifts from Heaven itself, columns and pillars set against the void. No portraits. No mottos. No date, no place. The European Monetary Institute congratulated itself on having produced an ‘appropriate representation’ of Europe: that is to say, an abstraction composed of interchangeable pictograms. Marketing and design thus gave birth to a cold, lifeless entity. Euroland as no man’s land. A nowhere as boring as polling day in a European Parliament election. Is this the ‘meta-nation’ in the making that dreams of one day springing to life?</p>
+          
+        
+          
+            <p>Monetary symbols, like slips of the tongue, often reveal more than they intend, and this one invites reflection. It recalls an old principle of formal logic: the broader the scope, the shallower the substance. One cannot possess breadth and depth simultaneously. Yet the United States demonstrates that a common currency shared by fifty federated states need not be devoid of flesh and blood. The dollar tells an epic tale; the euro embodies a worthy idea. One dollar bears George Washington; two, Thomas Jefferson; five, Abraham Lincoln; ten, Alexander Hamilton; twenty, Andrew Jackson; fifty, Ulysses Grant. True, the American colonies shared, at the outset, a language, a Protestant faith, a common culture and a common enemy in the British Crown. United despite the Civil War, they have retained evocative names and places. North America, as everyone knows, forged its unity by tearing itself apart. If you have the chance to hold a hundred-dollar bill, you will find Benjamin Franklin on the front and Philadelphia’s Independence Hall on the reverse, set within a clearly recognizable landscape beneath the motto In God We Trust. Europe is not the land of a Chosen People, and that is something to be thankful for. But is its sole ambition to facilitate the exchange of goods and services?</p>
+          
+        
+          
+            <p>The euro, from the outset, spoke only of itself. Take a dollar bill. There is an oval portrait of Washington: former commander of the Continental Army, powdered wig, lace cravat, sixty-four years old. The eagle represents American sovereignty. Its head stands for the Executive, its shield for the Legislature, its tail feathers for the Judiciary. In its right talon it carries an olive branch; in its left, the arrows of war. Above all hovers a divine glory, the Holy Spirit. Turn the bill over. The eye of Providence crowns a thirteen-tiered pyramid, representing the thirteen original colonies. Secular power—army and bureaucracy alike—places itself beneath divine election. Annuit coeptis: Providence has favoured our undertakings. This green-and-white rectangle befits a messianic nation, destined by God, so it believes, for global leadership. The euro, by comparison, resembles Monopoly money. It proposes neither a history to carry forward nor a destiny to assume. There is something troubling in its inability to personify itself, to tell its own tale.</p>
+          
+        
+          
+            <p>A united Europe was constructed from above, and its lowest common denominator has yielded little more than an administrative mythology. But are we truly without baggage? Without heritage? Let us set aside political and military glories, which inevitably bruise national amour-propre. That still leaves Erasmus, Newton, Camões, Shakespeare, Garibaldi, Goethe, Voltaire, Cervantes . . . ‘To Europe’s great men, a grateful Europe’? One destroys only what one replaces. But how and with what could France replace Richelieu, Pascal, Delacroix, Bonaparte or Saint-Exupéry? What of Victor Hugo on the five-hundred-franc note, lips closed, gaze fixed, against his royal blue and gold background? To create a soul, Renan said, one needs memories and a future, a history and a hope, a great purpose—something other than buying, selling and eating well—and a baptism of fire. Is it really so difficult to depict nations without nationalism, a Europe without Europeanism, a world without globalism?</p>
+          
+        
+          
+            <p>The scandal of this anonymous abstraction was noted at the time. It seems the protests have been heard, since the European Central Bank now promises less insipid banknotes before the decade is out. Future euros will feature not stones but rivers and birds. Better still, they may display the profiles of Europe’s great artists and scientists—Maria Callas, Beethoven, Marie Curie, Cervantes, Leonardo da Vinci and others—to demonstrate both our concern for the environment and our all-too-neglected cultural inheritance. In short, our central bankers have laboured long and hard to devise what any seven-year-old child could have imagined at considerably less expense.</p>
+          
+        
+          
+            <p>No political entity has ever arisen from economic interest alone. There is something touching in this attempt. It springs from good intentions, though alas without any real emotion or horizon beyond itself. Hence these hollow titles, these empty protocols, these chassis without engines, these sets without a script, these believers without rosaries: fonts without holy water, crucifixes without the Crucified. The Apostolic Roman Church now accepts priests without cassocks, nuns without habits and clergy without celibacy. Our banknotes, signs without signifieds, mirror our churches without altar boys, parties without militants and armed forces standing idle. After the missionaries, the aid workers? It is far from certain that rights without duties can ever build a political community without a common stock of legends and memories.</p>
+          
+        
+          
+            <p>Nothing great, as we know, is accomplished without passion. Perhaps it will return one day, as those who still believe in Heaven continue to hope even when the sky clouds over.</p>
+          
+        
+          
+            <p>The cause of books, once so respectable, now seems more than a little precarious in our world of screens, images and robots. Despite some honourable delaying actions, a page is turning in the book of hours.</p>
+          
+        
+          
+            <p>The proportion of readers, relative to viewers and listeners, has halved over the past fifty years. Television, leisure culture and video games have reduced them to a worthy but modest phalanx: roughly one French person in five. Older people are deserting the art-house cinemas, the young have iPads and increasingly home-theatre systems, too, sparing them the queue outside. From the comfort of an armchair, drink and snacks at hand, they can consume American series to their heart’s content. Reading demands either less appetite or more self-denial, even if the readership for graphic novels has exploded. Despite the efforts of the Centre national du livre, despite subsidies and encouragement schemes—including in prisons—the written word is caught in a vice between the omnipotence of the image and the return of orality. Between football, the Tour de France and screens of every size. Never have so many books been published in France for so few readers. Shop windows are piled high, bedside tables empty. A ride on a commuter train is enough to notice that only women still seem to hold books in their hands, while men keep their eyes fixed on their phones. Julien Gracq, who disdained pocket editions for his own work, believed that France would always have ten thousand readers of literature, literary prizes aside. He was being optimistic. So too was the comforting belief that a book can change the world. It happens, but only rarely. Some have indeed had great effects—the Gospels, Capital, The Gulag Archipelago. The rest disappear into the indistinct, indifferent and endless swell of new publications. We have undergone a mutation. For all Mallarmé’s attachment to the ‘spiritual instrument’, the book-as-tool is yielding to the book-as-object, destined for bibliophiles and collectors.</p>
+          
+        
+          
+            <p>The Reformation, the Revolution and the Republic, those three daughters of print, all had Gutenberg for a grandfather. It is worth recalling what those upheavals owed to paper, that fragile vehicle for what matters most, which succeeded clay, bamboo, wood, silk and papyrus, while itself requiring water and old rags—there must be rag-pickers if there are to be men of letters. Let us not forget what the novel owed to the steel nib before the arrival of the Bic, nor what our history owed to the transition from copyist to printer, from parchment to paper. Balzac was no enthusiast for novelty, yet Illusions perdues already foresaw that there were only a few steps from wood pulp to revolution. The more discreet and inexpensive the medium became, the more dangerous it proved. ‘What is really to be feared’, Voltaire observed, ‘are those little portable books that cost thirty sous. Had the Gospel cost twelve thousand sesterces, Christianity would never have taken root.’ Pamphlets, booklets and leaflets costing a few euros remain effective agents of subversion, just as they were for generations of paper-devouring troublemakers. There was once a library at the Labour Exchange, and it was the aristocracy of lead—foremen, compositors, proof-readers—who brought crowds into the streets. Typographers were the most manual of intellectuals, or the most intellectual of manual workers. Liber, in Latin, from which we derive livre, also designated the freedman. Had thought not left its imprint in lead, it would have vanished without a trace. Hence the question: can an image convey an idea? Every photograph is the portrait of a man, never of humanity. The triumph of the visual is not the triumph of the intelligible.</p>
+          
+        
+          
+            <p>‘The typographer’, Apollinaire wrote with customary prescience, ‘is bringing his career to a brilliant close at the dawn of those new means of production, cinema and photography.’ Poets and painters, fortunately, retain a sixth sense for anticipating the times to come; the pen generally follows where the brush has gone before. Screens may move us, certainly, but what of robots? We can already see humanoids tidying offices, driving cars, winning the hundred metres, even playing the piano. True, the human hand seems resistant to mechanization and remote control, and old-fashioned books retain some advantages: they function without electricity, they are compact, portable and, above all, bound within covers. By enclosing the imagination, they release it. They resemble a shelter that patiently awaits the readers of tomorrow. The written word gives permanence to what would otherwise be fleeting. Poetry, whether recited or printed, no longer stirs the masses except by accident. But it retains one privilege: it can sleep quietly on a shelf, waiting to be awakened at any moment, by anyone, free of charge.</p>
+          
+        
+          
+            <p>With death no longer part of everyday life, out of sight and out of mind, an awkward but unavoidable question arises: once the promise of Resurrection—or any afterlife whatsoever—has vanished, why accompany the dead to the cemetery rather than the crematorium? Hygiene, economy, efficiency: this disappearance act is not without consequences.</p>
+          
+        
+          
+            <p>We are perhaps the first civilization to have misplaced the user’s manual for death. We understand the process far better than our predecessors did, but the corpse no longer has any place among us. The cemetery, once at the centre of the village as death stood at the horizon of life, has migrated to the suburbs or gone up in smoke. A curious development in a once Christian country. The Vatican itself lifted its prohibition on cremation in 1963, at a time when less than 1 per cent of the population were prepared to vanish into the clouds, mainly free-thinkers and Freemasons. Today the figure approaches 50 per cent. Anglicans and Protestants, with their usual head start on Rome, authorized the practice as early as 1888, reasoning pragmatically that there was little point in depositing flowers on a grave year after year. Less time lost, less money spent. Funeral costs in France remain relatively modest: three thousand euros at the lower end, thirty thousand at the upper, all expenses included. This observance may distinguish man from beast, but the dead remain cumbersome. France records six hundred thousand a year, and only two thousand palliative-care beds. Death must therefore be discreet, almost invisible, stripped of ceremony—especially now that places of worship have become cultural sites. Western Europe once paid a heavy price on the battlefield. On 24 August 1914, the French army lost fifteen thousand men in a single day. We have forgotten this.</p>
+          
+        
+          
+            <p>The way we hand over the reins to those who come after us says much about the state of our hearts and minds. Transmission has become furtive, or vaporous. No flowers, no wreaths. No more funeral corteges, to avoid disrupting traffic. No undertakers in bicorn hats. Mourning no longer lasts three years, as it once did for widows, but three days. Black tie optional. You’d almost think death itself had died, now that the dead have nowhere to go—save into the clouds. No more cenotaphs or catafalques, even for the illustrious. We have even seen the arrival of ‘humusation’, the conversion of human remains into compost. Meanwhile, in the United States, always one step ahead, websites such as Happy End have dispensed with grave and solemn faces altogether. Yet funerals are often our last opportunity to see old friends or distant relatives again, to revive forgotten complicities, fleeting occasions to reconstitute a we where the cult of the ego has dissolved it. Eco-friendly departures, hastily dispatched, will struggle to recreate that. All the same, it cannot be denied that progress has been made. Funeral cooperatives, ‘positive death’, festive and colourful ceremonies, professional death coaches. Not every change is for the worse. ‘We carry death within us’, Rilke observed, ‘as the fruit carries its stone.’ If the fruit remains, the stone has disappeared. Hence a consequence already noted by Jérôme Fourquet: with ongoing Americanization, Halloween has transformed All Saints’ Day, once devoted to the dead, into an occasion for buying pumpkins rather than chrysanthemums. It’s less expensive.</p>
+          
+        
+          
+            <p>Knowledge and feeling have parted company. As an organic process, death no longer presents much mystery. We know that it unfolds in two stages: cardiac first, then cerebral. We are increasingly able to postpone both. As a social fact, however, it has become more embarrassing and disconcerting. Witness our euphemisms. Just as secretaries have become ‘personal assistants’ and cleaners ‘facilities staff’; cancer, a ‘long illness’; an old person, a ‘senior citizen’; the morgue, a ‘farewell room’; euthanasia, ‘assisted dying’. One no longer dies; one ‘passes away’, destination unspecified. Tartuffe could hardly improve on it: ‘Hide that corpse, which I cannot bear to see.’ Louis xiv died in public, amid great ceremony. Michelet regarded the cemetery as the ‘essential organ of the City’, without which ‘a town becomes barbarous, barren and savage’. Bioethics has undoubtedly changed the equation, at the cost of breaking with traditions that date back thousands of years. In the Upper Palaeolithic, eight millennia before Christ, red ochre and haematite—the colour of life—were applied to the eye sockets of the dead. Roman tombs were decorated with lotus flowers, divers and brightly coloured birds. There is no longer any need to leave provisions for departed loved ones. The ancients adorned sarcophagi with vines and bacchantes; few things were more colourful than an Etruscan tomb. Bichat would have approved, he who defined life as ‘the sum of forces resisting death’. La Rochefoucauld, perhaps less so: ‘Neither the sun nor death can be looked at steadily.’ Veils spared us the effort then, sunglasses now.</p>
+          
+        
+          
+            <p>Today there are no death masks, no moulds taken from the face before decay sets in. Yet it is thanks to that precaution we possess the masks of Dante and Pascal, as well as Nadar’s photograph of Victor Hugo on his deathbed and Man Ray’s of Proust. Our generation was among the last able to contemplate, if only in photographs, the marble-like faces of Jean Cocteau and Édith Piaf, who died on the same day in 1963—to Cocteau’s misfortune. The traditional photo of the deceased has not been outlawed, but it now requires consent from the next of kin. Our posthumous appearance has become a protected asset: the photographer who secretly took a picture of Mitterrand on his deathbed, and made the mistake of having it published, was ostracized. In the case of the Supreme Pontiff, the Vatican raised no objections. A concession to which the Catholic Church has resigned itself, while going so far as to abandon, after Vatican ii, the Dies Irae. There remains, however, that troublesome human desire to go on living. Assisted by cosmetics and aesthetic surgery, we are expected to stay presentable to the end, if not exactly youthful. We are ashamed of death. In this respect Africans are more civilized than Westerners. Among us, the old are inconvenient. We hide them away. They are already expensive enough to look after, though some nursing homes have discovered how profitable they can be. In a consumer society, there is no place for those who no longer consume.</p>
+          
+        
+          
+            <p>We have banished the Grim Reaper—anywhere but here. Our flats are too small and our diaries too crowded. Four-fifths of deaths now occur not at home among family but in hospitals. Given the cost of terminal care and oxygen tents, the end cannot be prolonged indefinitely. The helpless person who must be fed and washed, the abandoned who must be kept alive at all costs, require highly specialized personnel. Village cemeteries meanwhile are increasingly deserted. Add one further fact, too rarely noted: death as an absolute end is a recent discovery, thanks to de-Christianization. Human life has in fact been drastically shortened by the disappearance of eternity and the promised Resurrection at the end of time. Average life expectancy has nearly tripled over the past two centuries, yet our existence has never seemed shorter. Once it made sense to preserve a femur or a finger in anticipation of Judgement Day. There was a hereafter. Now that ‘now’ is all there is, without any hope of resurrection, what purpose do cemeteries serve? Life was once merely a waiting room. We enjoy it more now that there is neither Hell to fear nor Original Sin to expiate. But existence has become not a prelude but a cul-de-sac. Robespierre is no longer fashionable—‘the French people recognize the existence of God and the immortality of the soul’—nor is Auguste Comte, for whom Humanity, that ‘Great Being’, consisted more of the dead than the living. We survivors, precarious though we are, enjoy better health than our predecessors. But we are far less practised in patience, because there is nothing at the end of the road. Those once charged with instructing us in it—priests, monks and nuns—numbered 177,000 in France in 1950. Today not even ten thousand remain. Respectable families no longer call their daughters Marie, and even in affluent districts few attend Mass on Sundays. The Church is not alone in its decline. In France, motherland of revolutions, these days the radiant future doesn’t draw many takers either.</p>
+          
+        
+          
+            <p>The dead no longer whisper at night and our cemeteries are no longer places to stroll. We live in a civilized country, where social ties are frayed and euphemisms remarkably discreet. We have learned, certainly, how to help people through their final days. Palliative care has recently, though unevenly, become available. Hence the question some now ask: since life no longer belongs to God, why should we not have the right to decide the manner of our own death? The priest is gone, but the doctor has arrived. The churches, given the scarcity of vocations, can no longer provide last rites; the dying person has become a patient. ‘Deep and continuous sedation’ does not hasten the end but allows it to come. There may have been no progress regarding the meaning of existence, but there has been plenty in the relief of pain. For those still in good health there are advance directives, which can be entrusted to relatives or legal representatives. If the patient asks, the truth must be told. In hospices, the irreversible retains a human face. Claude Grange, who for twenty-five years has helped to usher countless minds and bodies across the ultimate threshold, likes to say that ‘death must be resocialized’. We are moving in that direction, even if the transition from everything to nothing will always carry an inescapable dread. No law or code will ever master it, because law deals in generalities while every death is singular.</p>
+          
+        
+          
+            <p>Our ‘dark continent’ has changed longitude. It is no longer sex that conceals its secrets. Sex is everywhere. Death is what hides, disguises itself, retreats from view. It has become the great thing we repress. The twentieth century reconnected love with sex. The twenty-first will have to reconnect life with death. Or, if one prefers, everything with nothing.</p>
+          
+        
+          
+            <p>There is work ahead. We shall have to excavate the unconscious, public as well as private.</p>
+          
+        
+      
+    </div>
+
+    
+
+    <footer class="article-footer">
+      <a class="article-footer__link"
+         href="https://newleftreview.org/issues/ii159/articles/regis-debray-metamorphoses"
+         target="_blank"
+         rel="noopener noreferrer">
+        Read full article on New Left Review &rarr;
+      </a>
+    </footer>
+
+  </main>
+</body>
+</html>
